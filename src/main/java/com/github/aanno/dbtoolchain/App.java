@@ -14,7 +14,24 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
         // S9ApiSingleton.getInstance();
+
+        /*
+usage: java -jar docbook-xslt2-2.3.8.jar [options] dbdoc.xml [param=value [param=value] ...]
+    --css <css>                   A CSS stylesheet (CSS print only)
+ -f,--format <format>             The format: (x)html (css)print foprint
+ -h,--help                        Usage: org.docbook.Main [options]
+                                  dbdoc.xml
+    --ns <namespace>              Namespace binding
+ -o,--output <output>             Name for the output file (defaults to
+                                  stdout)
+    --params <params>             A file of parameters
+    --pdf <pdf>                   Name for the output PDF file (print
+                                  only)
+    --postprocess <postprocess>   Post-processing stylesheet
+ -s,--style <style>               Custom final-pass XSL stylesheet
+
+         */
         // Main.main(new String[] {"-h"});
-        Main.main("-f foprint -o out.fo ./examples/db/transition/howto.xml".split("[ \t]+"));
+        Main.main("-f foprint -o out.fo ./examples/db/transition/howto.xml return-secondary=true".split("[ \t]+"));
     }
 }
