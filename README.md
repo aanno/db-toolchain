@@ -4,6 +4,7 @@
 
 * [References](https://tdg.docbook.org/)
 * [Big Example](https://docbook.org/docs/howto/howto.html) (with xml and pdf)
+* [DocBook XML Schema](https://docbook.org/xml/5.1/)
 * [Docbook Wiki](https://github.com/docbook/wiki/wiki)
 
 ### Instructions
@@ -30,9 +31,14 @@
 
 ## Docbook Stylesheets
 
-* [XSLT 2.0](https://github.com/docbook/xslt20-stylesheets)
 * [To Context XSL](https://github.com/doctribute/docbook-to-context-xsl-stylesheets)
 * [Chunking](https://github.com/doctribute/docbook-xinclude-based-chunking-stylesheets)
+
+### XSLT 2.0
+
+* [XSLT 2.0](https://github.com/docbook/xslt20-stylesheets)
+* [Saxon 9.6 documentation](https://saxonica.com/html/documentation9.6/about/index.html)
+* [XSLT 2.0 java implementations](https://stackoverflow.com/questions/529309/open-source-java-xslt-2-0-implementation)
 
 ## FOP
 

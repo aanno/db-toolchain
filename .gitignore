@@ -6,9 +6,11 @@ build
 
 *.class
 *.jar
+*.hprof
 .gradle
 /gradle/
 /tmp/
 /examples/
+/schema/
 gradlew
 gradlew.bat
