@@ -8,3 +8,11 @@
  */
 
 rootProject.name = "db-toolchain"
+
+// https://github.com/gradle/gradle/issues/5816
+// include("xslt20-stylesheets", "xslt20-resources")
+
+// https://docs.gradle.org/current/userguide/composite_builds.html
+includeBuild("xslt20-stylesheets")
+includeBuild("xslt20-resources")
+// includeBuild("xslt20-java")
