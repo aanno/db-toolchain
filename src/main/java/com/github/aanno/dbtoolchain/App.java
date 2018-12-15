@@ -3,6 +3,8 @@
  */
 package com.github.aanno.dbtoolchain;
 
+import com.github.aanno.dbtoolchain.xml.S9ApiSingleton;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -10,5 +12,6 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        S9ApiSingleton.getInstance();
     }
 }

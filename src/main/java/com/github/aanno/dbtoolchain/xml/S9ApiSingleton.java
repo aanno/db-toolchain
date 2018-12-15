@@ -1,8 +1,11 @@
 package com.github.aanno.dbtoolchain.xml;
 
 import net.sf.saxon.s9api.Processor;
+import net.sf.saxon.s9api.SaxonApiException;
 import net.sf.saxon.s9api.XsltCompiler;
 import net.sf.saxon.s9api.XsltExecutable;
+
+import java.io.IOException;
 
 /**
  * https://www.saxonica.com/html/documentation/using-xsl/embedding/
@@ -12,6 +15,8 @@ public class S9ApiSingleton {
 
     private static S9ApiSingleton INSTANCE = new S9ApiSingleton();
 
+    private final TraxSingleton traxSingleton;
+
     private final Processor processor;
 
     private final XsltCompiler compiler;
@@ -19,8 +24,17 @@ public class S9ApiSingleton {
     private final XsltExecutable db51ToFo;
 
     private S9ApiSingleton() {
-        processor = new Processor(S9ApiUtils.getConfiguration());
-        compiler = processor.newXsltCompiler();
-        db51ToFo = compiler.compile();
+        try {
+            traxSingleton = TraxSingleton.getInstance();
+            processor = new Processor(S9ApiUtils.getConfiguration());
+            compiler = processor.newXsltCompiler();
+            db51ToFo = compiler.compile(traxSingleton.getSource(S9ApiUtils.getDocbookPath()));
+        } catch (IOException | SaxonApiException e) {
+            throw new ExceptionInInitializerError(e);
+        }
+    }
+
+    public static S9ApiSingleton getInstance() {
+        return INSTANCE;
     }
 }

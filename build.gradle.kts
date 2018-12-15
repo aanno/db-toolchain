@@ -24,6 +24,7 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:26.0-jre")
     implementation("net.sf.saxon:Saxon-HE:9.9.0-2")
+    implementation("org.docbook", "docbook-xslt2", "2.3.8")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
