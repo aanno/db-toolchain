@@ -26,6 +26,9 @@ dependencies {
     // implementation("net.sf.saxon:Saxon-HE:9.9.0-2")
     implementation("org.docbook", "docbook-xslt2", "2.3.8") {
         exclude("org.apache.xmlgraphics")
+        exclude("org.apache.xmlgraphics:fop")
+        exclude("org.apache.xmlgraphics:batik-all")
+        exclude("org.apache.xmlgraphics:batik-xml")
     }
     implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
     implementation("org.apache.xmlgraphics", "fop", "2.3")

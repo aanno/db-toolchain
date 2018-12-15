@@ -4,6 +4,7 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.xml.S9ApiSingleton;
+import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
 
 public class App {
     public String getGreeting() {
@@ -12,6 +13,9 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
+
+        String css = S9ApiUtils.getDefaultCss().toString();
+
         // S9ApiSingleton.getInstance();
 
         /*
@@ -31,7 +35,9 @@ usage: java -jar docbook-xslt2-2.3.8.jar [options] dbdoc.xml [param=value [param
 
          */
         // Main.main(new String[] {"-h"});
-        org.docbook.Main.main("-f fo -o out.fo.xml ./examples/db/transition/howto.xml return-secondary=true".split("[ \t]+"));
+        // org.docbook.Main.main(("-f cssprint -o out.fo.xml --css ./" +
+        //         css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        org.docbook.Main.main("-f fo -o out.fo.xml examples/db/transition/howto.xml".split("[ \t]+"));
 
         /*
 USAGE

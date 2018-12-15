@@ -25,4 +25,8 @@ public class S9ApiUtils {
         return Paths.get("xslt20-stylesheets/build/xslt/base/pipelines/docbook.xpl");
     }
 
+    public static Path getDefaultCss() {
+        return Paths.get("xslt20-resources/build/stage/css/default.css");
+    }
+
 }
