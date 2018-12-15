@@ -22,6 +22,9 @@ gradlew.bat
 /out/
 *.log
 *.out
+*.pdf
+*.fo
+*.fo.xml
 
 # idea
 .idea
