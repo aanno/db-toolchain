@@ -1,0 +1,6 @@
+[submodule "xslt20-stylesheets"]
+	path = xslt20-stylesheets
+	url = https://github.com/docbook/xslt20-stylesheets.git
+[submodule "asciidoctor-fopub"]
+	path = asciidoctor-fopub
+	url = https://github.com/asciidoctor/asciidoctor-fopub.git
