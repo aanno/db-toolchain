@@ -4,14 +4,17 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.xml.S9ApiSingleton;
+import org.docbook.Main;
 
 public class App {
     public String getGreeting() {
         return "Hello world.";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
-        S9ApiSingleton.getInstance();
+        // S9ApiSingleton.getInstance();
+        // Main.main(new String[] {"-h"});
+        Main.main("-f foprint -o out.fo ./examples/db/transition/howto.xml".split("[ \t]+"));
     }
 }
