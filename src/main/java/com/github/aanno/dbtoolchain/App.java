@@ -32,6 +32,6 @@ usage: java -jar docbook-xslt2-2.3.8.jar [options] dbdoc.xml [param=value [param
 
          */
         // Main.main(new String[] {"-h"});
-        Main.main("-f cssprint -o out.fo ./examples/db/transition/howto.xml return-secondary=true".split("[ \t]+"));
+        Main.main("-f fo -o out.fo ./examples/db/transition/howto.xml return-secondary=true".split("[ \t]+"));
     }
 }

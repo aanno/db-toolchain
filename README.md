@@ -40,6 +40,14 @@
 * [Saxon 9.6 documentation](https://saxonica.com/html/documentation9.6/about/index.html)
 * [XSLT 2.0 java implementations](https://stackoverflow.com/questions/529309/open-source-java-xslt-2-0-implementation)
 
+#### Technology used with DB XSLT 2.0
+
+* [XProc](https://de.wikipedia.org/wiki/XProc)
+  + [XProc Spec](https://www.w3.org/TR/xproc/)
+  + [Calabash: XProc Implementation](http://xmlcalabash.com/)
+    - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
+* [EXProc](http://exproc.org/): XProc extensions
+
 ## FOP
 
 * [Apache FOP](https://xmlgraphics.apache.org/fop/)
