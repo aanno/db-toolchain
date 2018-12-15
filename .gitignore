@@ -4,13 +4,25 @@
 # Ignore Gradle build output directory
 build
 
+# java
 *.class
 *.jar
 *.hprof
-.gradle
+.idea/
+
+# gradle
 /gradle/
-/tmp/
-/examples/
-/schema/
 gradlew
 gradlew.bat
+
+# misc
+/examples/
+/schema/
+/tmp/
+/out/
+*.log
+*.out
+
+# idea
+.idea
+*.iml

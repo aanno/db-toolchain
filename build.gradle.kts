@@ -11,7 +11,7 @@ plugins {
     java
 
     // Apply the application plugin to add support for building an application
-    application
+    // application
 }
 
 repositories {
@@ -28,12 +28,33 @@ dependencies {
     testImplementation("org.testng:testng:6.14.3")
 }
 
+/*
 application {
     // Define the main class for the application
     mainClassName = "com.github.aanno.dbtoolchain.App"
 }
+ */
 
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
+}
+
+tasks {
+    withType<Jar> {
+        manifest {
+            attributes(
+                    mapOf(
+                            "Main-Class" to "com.github.aanno.dbtoolchain.App"
+                    // "Main-Class" to application.mainClassName
+                    // "Class-Path" to configurations.compile.collect { it.getName() }.join(' ')
+                    )
+            )
+        }
+        val version = "1.0-SNAPSHOT"
+
+        // archiveName = "${application.applicationName}-$version.jar"
+        // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
+    }
+
 }
