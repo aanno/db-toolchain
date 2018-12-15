@@ -29,24 +29,29 @@
 * [docToolchain](https://doctoolchain.github.io/docToolchain/#_generatedocbook)
 * [from asciidoctor](https://asciidoctor.org/docs/convert-documents/#converting-a-document-to-docbook)
 
-## Docbook Stylesheets
+### Docbook Stylesheets
 
 * [To Context XSL](https://github.com/doctribute/docbook-to-context-xsl-stylesheets)
 * [Chunking](https://github.com/doctribute/docbook-xinclude-based-chunking-stylesheets)
 
-### XSLT 2.0
+#### XSLT 2.0
 
 * [XSLT 2.0](https://github.com/docbook/xslt20-stylesheets)
 * [Saxon 9.6 documentation](https://saxonica.com/html/documentation9.6/about/index.html)
 * [XSLT 2.0 java implementations](https://stackoverflow.com/questions/529309/open-source-java-xslt-2-0-implementation)
 
-#### Technology used with DB XSLT 2.0
+##### Technology used with DB XSLT 2.0
 
 * [XProc](https://de.wikipedia.org/wiki/XProc)
   + [XProc Spec](https://www.w3.org/TR/xproc/)
   + [Calabash: XProc Implementation](http://xmlcalabash.com/)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
 * [EXProc](http://exproc.org/): XProc extensions
+
+### Math with DB
+
+* [mathml1](https://www.data2type.de/xml-xslt-xslfo/docbook/block-elemente/gleichungen/docbook-und-mathml/) (in german)
+* [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
 
 ## FOP
 
@@ -63,3 +68,10 @@
 * [Installing the Toolchain](https://asciidoctor.org/docs/install-toolchain/)
 * [AsciidoctorJ](https://asciidoctor.org/docs/asciidoctorj/)
 * [Syntax Highlighting](https://asciidoctor.org/docs/user-manual/#source-code-blocks)
+
+## Alternativen
+
+* [DITA](https://www.dita-ot.org/)
+* [CommonMark](https://commonmark.org/): Unify Markdown
+* [Lyx Editor](https://www.lyx.org/)
+* [Context](https://wiki.contextgarden.net/Main_Page)
