@@ -4,3 +4,10 @@
 [submodule "asciidoctor-fopub"]
 	path = asciidoctor-fopub
 	url = https://github.com/asciidoctor/asciidoctor-fopub.git
+[submodule "xslt20-resources"]
+	path = xslt20-resources
+	url = https://github.com/docbook/xslt20-resources
+[submodule "xslt20-java"]
+	path = xslt20-java
+	url = https://github.com/docbook/xslt20-java.git
+	branch = saxon95
