@@ -18,15 +18,10 @@ public class XmlSingleton {
 
     private final TraxSingleton traxSingleton;
 
-    private final Properties resolverProperties;
-
-    private final org.xmlresolver.Configuration catalogConfig;
-
-    private final Catalog catalog;
-
     private XmlSingleton() {
         traxSingleton = TraxSingleton.getInstance();
 
+        /*
         resolverProperties = new Properties();
         resolverProperties.setProperty("relative-catalogs", "yes");
         catalogConfig = new org.xmlresolver.Configuration(resolverProperties, null);
@@ -37,14 +32,11 @@ public class XmlSingleton {
             throw new ExceptionInInitializerError(e);
         }
         catalog = new Catalog(catalogConfig, list);
+         */
     }
 
     public static XmlSingleton getInstance() {
         return INSTANCE;
-    }
-
-    public Source lookupURI(String uri, boolean validating) throws IOException {
-        return traxSingleton.getSource(catalog.lookupURI(uri).body(), validating);
     }
 
 }

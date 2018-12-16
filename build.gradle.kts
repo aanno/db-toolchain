@@ -25,6 +25,7 @@ dependencies {
     implementation("com.google.guava:guava:26.0-jre")
     // implementation("net.sf.saxon:Saxon-HE:9.9.0-2")
     implementation("org.docbook", "docbook-xslt2", "2.3.8") {
+        exclude("org.xmlresolver:xmlresolver")
         exclude("org.apache.xmlgraphics")
         exclude("org.apache.xmlgraphics:fop")
         exclude("org.apache.xmlgraphics:batik-all")
@@ -34,6 +35,7 @@ dependencies {
     implementation("org.apache.xmlgraphics", "fop", "2.3")
     implementation("org.apache.xmlgraphics", "batik-all", "1.10")
     implementation("com.helger", "ph-schematron", "5.0.8")
+    implementation("org.xmlresolver", "xmlresolver", "0.14.0")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")

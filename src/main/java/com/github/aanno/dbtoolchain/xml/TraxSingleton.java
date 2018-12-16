@@ -3,6 +3,7 @@ package com.github.aanno.dbtoolchain.xml;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+import org.xmlresolver.Catalog;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class TraxSingleton {
 
@@ -23,6 +25,11 @@ public class TraxSingleton {
         // TODO tp:
         System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
                 XMLSyntaxSchemaFactory.class.getName());
+        System.setProperty("xml.catalog.files",
+                "/home/tpasch/scm/db-toolchain/schema/5.1/schemas/catalog.xml"
+        );
+        System.setProperty("xml.catalog.cacheUnderHome", "true");
+        System.setProperty("xml.catalog.prefer", "true");
     }
 
     private static TraxSingleton INSTANCE = new TraxSingleton();
@@ -31,7 +38,11 @@ public class TraxSingleton {
 
     private final SAXParserFactory simpleSaxParserFactory;
 
+    private final Catalog catalog;
+
     private TraxSingleton() {
+        catalog = new Catalog();
+
         saxParserFactory = SAXParserFactory.newInstance();
         saxParserFactory.setNamespaceAware(true);
         saxParserFactory.setValidating(true);
@@ -59,6 +70,23 @@ public class TraxSingleton {
             throw new IllegalStateException(e);
         }
         return result;
+    }
+
+    public Source sourceFromUri(String uri, boolean validating) throws IOException {
+        return getSource(catalog.lookupURI(uri).body(), validating);
+    }
+
+    public Path pathFromUri(String uri) throws IOException {
+        String result = catalog.lookupURI(uri).uri();
+        if (!result.startsWith("file:/")) {
+            throw new IllegalStateException(result);
+        }
+        result = result.substring(6);
+        return Paths.get(result);
+    }
+
+    public String uriFromUri(String uri) throws IOException {
+        return catalog.lookupURI(uri).uri();
     }
 
     public Source getSource(Path path, boolean validating) throws IOException {
