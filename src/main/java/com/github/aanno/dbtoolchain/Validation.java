@@ -1,6 +1,7 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.xml.TraxSingleton;
+import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.pure.SchematronResourcePure;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
@@ -22,26 +23,19 @@ public class Validation {
     }
 
     public static void main(String[] args) throws Exception {
-        // TODO tp:
-        System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
-                XMLSyntaxSchemaFactory.class.getName());
-
         TraxSingleton traxSingleton = TraxSingleton.getInstance();
+        XmlSingleton xmlSingleton = XmlSingleton.getInstance();
 
-        Path catalogPath = Paths.get("schema/5.1/schemas/catalog.xml");
         Path dbRelaxPath = Paths.get("schema/5.1/schemas/rng/docbookxi.rng");
         Path dbSchematronPath = Paths.get("schema/5.1/schemas/sch/docbookxi.sch");
         Path dbPath = Paths.get("examples/db/transition/howto.xml");
-
-        org.xmlresolver.Configuration config = new org.xmlresolver.Configuration(null, null);
-        Vector<CatalogSource> list = new Vector<>();
-        list.add(new CatalogSource.InputSourceCatalogSource(traxSingleton.getSAXInputSource(catalogPath)));
-        Catalog catalog = new Catalog(config, list);
 
         SchemaFactory relaxFactory = SchemaFactory.newInstance(XMLConstants.RELAXNG_NS_URI);
         relaxFactory.setProperty("http://relaxng.org/properties/datatype-library-factory",
                 new org.relaxng.datatype.helpers.DatatypeLibraryLoader());
         Schema dbRelax = relaxFactory.newSchema(traxSingleton.getSource(dbRelaxPath, false));
+
+        // xmlSingleton.lookupURI("http://www.oasis-open.org/docbook/xml/5.1CR4/rng/docbookxi.rng", false);
 
         Validator validator = dbRelax.newValidator();
         validator.validate(traxSingleton.getSource(dbPath, false));

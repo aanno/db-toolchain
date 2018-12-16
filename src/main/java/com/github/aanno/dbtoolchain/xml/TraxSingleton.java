@@ -1,19 +1,29 @@
 package com.github.aanno.dbtoolchain.xml;
 
+import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.Source;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.SchemaFactory;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class TraxSingleton {
+
+    static {
+        // TODO tp:
+        System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
+                XMLSyntaxSchemaFactory.class.getName());
+    }
 
     private static TraxSingleton INSTANCE = new TraxSingleton();
 
@@ -55,6 +65,15 @@ public class TraxSingleton {
         try {
             SAXParser parser = getSAXParser(validating);
             return new SAXSource(parser.getXMLReader(), new InputSource(Files.newInputStream(path)));
+        } catch (SAXException e) {
+            throw new IOException(e);
+        }
+    }
+
+    public Source getSource(InputStream inputStream, boolean validating) throws IOException {
+        try {
+            SAXParser parser = getSAXParser(validating);
+            return new SAXSource(parser.getXMLReader(), new InputSource(inputStream));
         } catch (SAXException e) {
             throw new IOException(e);
         }
