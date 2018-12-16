@@ -33,12 +33,18 @@ popd
 pushd "$TMP"
 
 download https://docbook.org/xml/5.1/docbook-v5.1-os.zip 2
+download https://docbook.org/xml/5.0/docbook-5.0.zip 2
 
 popd
 
 mkdir -p "schema/5.1"
 pushd "schema/5.1"
-
 unzip "$TMP/docbook-v5.1-os.zip"
-
 popd
+
+mkdir -p "schema/5.0"
+pushd "schema/5.0"
+unzip "$TMP/docbook-5.0.zip"
+popd
+
+rm -r "$TMP"
