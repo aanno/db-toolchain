@@ -7,6 +7,7 @@ import javax.xml.transform.Source;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Properties;
 import java.util.Vector;
 
 public class XmlSingleton {
@@ -17,6 +18,8 @@ public class XmlSingleton {
 
     private final TraxSingleton traxSingleton;
 
+    private final Properties resolverProperties;
+
     private final org.xmlresolver.Configuration catalogConfig;
 
     private final Catalog catalog;
@@ -24,7 +27,9 @@ public class XmlSingleton {
     private XmlSingleton() {
         traxSingleton = TraxSingleton.getInstance();
 
-        catalogConfig = new org.xmlresolver.Configuration(null, null);
+        resolverProperties = new Properties();
+        resolverProperties.setProperty("relative-catalogs", "yes");
+        catalogConfig = new org.xmlresolver.Configuration(resolverProperties, null);
         Vector<CatalogSource> list = new Vector<>();
         try {
             list.add(new CatalogSource.InputSourceCatalogSource(traxSingleton.getSAXInputSource(catalogPath)));

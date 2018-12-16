@@ -35,7 +35,7 @@ public class Validation {
                 new org.relaxng.datatype.helpers.DatatypeLibraryLoader());
         Schema dbRelax = relaxFactory.newSchema(traxSingleton.getSource(dbRelaxPath, false));
 
-        // xmlSingleton.lookupURI("http://www.oasis-open.org/docbook/xml/5.1CR4/rng/docbookxi.rng", false);
+        xmlSingleton.lookupURI("http://www.oasis-open.org/docbook/xml/5.1CR4/rng/docbookxi.rng", false);
 
         Validator validator = dbRelax.newValidator();
         validator.validate(traxSingleton.getSource(dbPath, false));
