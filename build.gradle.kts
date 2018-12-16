@@ -34,8 +34,14 @@ dependencies {
     implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
     implementation("org.apache.xmlgraphics", "fop", "2.3")
     implementation("org.apache.xmlgraphics", "batik-all", "1.10")
-    implementation("com.helger", "ph-schematron", "5.0.8")
+    implementation("com.helger", "ph-schematron", "5.0.8") {
+        exclude("com.helger:ph-jaxb")
+        exclude("com.helger:ph-jaxb-pom")
+        exclude("org.glassfish.jaxb:jaxb-bom")
+    }
     implementation("org.xmlresolver", "xmlresolver", "0.14.0")
+
+    implementation("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")

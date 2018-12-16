@@ -11,3 +11,6 @@
 	path = xslt20-java
 	url = https://github.com/docbook/xslt20-java.git
 	branch = saxon95
+[submodule "asciidoctor.org"]
+	path = asciidoctor.org
+	url = https://github.com/asciidoctor/asciidoctor.org.git

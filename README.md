@@ -65,6 +65,7 @@
   + [Relax NG home page](https://relaxng.org/)
   + [java validation with relax ng](https://stackoverflow.com/questions/47185975/validate-an-xml-document-with-relax-ng-and-namespaces)
   + [jing-trang](https://github.com/relaxng/jing-trang)
+    - [jing home page](https://relaxng.org/jclark/jing.html)
 * [Schematron](http://schematron.com/)
   + [ph-schematron Implementation](https://github.com/phax/ph-schematron/)
     - [ph-schematron home page](https://phax.github.io/ph-schematron/)
