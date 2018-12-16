@@ -54,6 +54,10 @@
 
 #### Technology used for DB Validation
 
+* [XML catalog](http://xmlcatalogs.org/)
+  + [xmlresolver implementation](https://xmlresolver.org/)
+    - [xmlresolver github](https://github.com/ndw/xmlresolver/)
+  + [java implementation (since java 9)](https://docs.oracle.com/javase/9/core/xml-catalog-api1.htm)
 * [NVDL](https://www.kosek.cz/xml/2008w3c-nvdl/foil18.html)
   + [jNDL Implementation](http://jnvdl.sourceforge.net/)
   + [NVDL within jing-trang (experimental)](https://github.com/relaxng/jing-trang/blob/bf4bafa3fef13aa2bed1ea03aea0c79a257680b3/mod/nvdl/src/main/com/thaiopensource/validate/nvdl/SchemaImpl.java)

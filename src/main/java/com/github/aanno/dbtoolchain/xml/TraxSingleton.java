@@ -4,6 +4,7 @@ import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xmlresolver.Catalog;
+import org.xmlresolver.Resolver;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
@@ -40,8 +41,11 @@ public class TraxSingleton {
 
     private final Catalog catalog;
 
+    private final Resolver resolver;
+
     private TraxSingleton() {
         catalog = new Catalog();
+        resolver = new Resolver(catalog);
 
         saxParserFactory = SAXParserFactory.newInstance();
         saxParserFactory.setNamespaceAware(true);
@@ -58,6 +62,10 @@ public class TraxSingleton {
         return INSTANCE;
     }
 
+    public Resolver getResolver() {
+        return resolver;
+    }
+
     public SAXParser getSAXParser(boolean validating) throws SAXException {
         SAXParser result = null;
         try {
@@ -69,6 +77,7 @@ public class TraxSingleton {
         } catch (ParserConfigurationException e) {
             throw new IllegalStateException(e);
         }
+        result.getXMLReader().setEntityResolver(resolver);
         return result;
     }
 

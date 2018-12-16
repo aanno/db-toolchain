@@ -29,16 +29,12 @@ public class Validation {
         // TODO tp: no public uri in catalog!
         // String dbSchematronUri = traxSingleton.uriFromUri("http://www.docbook.org/xml/5.1CR4/xsd/docbookxi.xsd");
 
-        SchemaFactory relaxFactory = SchemaFactory.newInstance(XMLConstants.RELAXNG_NS_URI);
-        relaxFactory.setProperty("http://relaxng.org/properties/datatype-library-factory",
-                new org.relaxng.datatype.helpers.DatatypeLibraryLoader());
-        Schema dbRelax = relaxFactory.newSchema(traxSingleton.getSource(dbRelaxPath, false));
-
+        Schema dbRelax = xmlSingleton.getRelaxNgSchema(dbRelaxPath);
 
         Validator validator = dbRelax.newValidator();
         validator.validate(traxSingleton.getSource(dbPath, false));
 
-        ISchematronResource aResPure = SchematronResourcePure.fromFile(dbSchematronPath.toString());
+        ISchematronResource aResPure = xmlSingleton.getSchematronResource(dbSchematronPath);
         if (!aResPure.isValidSchematron()) {
             throw new IllegalArgumentException("Invalid Schematron!");
         }
