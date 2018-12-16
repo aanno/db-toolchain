@@ -23,6 +23,8 @@
 
 * [docbkx-tools (maven plugin)](https://github.com/mimil/docbkx-tools)
 * [fopub (java based)](https://github.com/asciidoctor/asciidoctor-fopub)
+* [AsciiBook](https://github.com/arnaldorusso/AsciiBook): toolchain from AsciiDoc to PDF (in JS)
+* [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub): toolchain from DB (4.5) to PDF
 
 #### Tools with DB *output*
 
@@ -48,16 +50,36 @@
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
 * [EXProc](http://exproc.org/): XProc extensions
 
+### Validation DB
+
+#### Technology used for DB Validation
+
+* [NVDL](https://www.kosek.cz/xml/2008w3c-nvdl/foil18.html)
+  + [jNDL Implementation](http://jnvdl.sourceforge.net/)
+  + [NVDL within jing-trang](https://github.com/relaxng/jing-trang/blob/bf4bafa3fef13aa2bed1ea03aea0c79a257680b3/mod/nvdl/src/main/com/thaiopensource/validate/nvdl/SchemaImpl.java)
+* [Relax NG](https://relaxng.org/jclark/)
+  + [Relax NG home page](https://relaxng.org/)
+  + [java validation with relax ng](https://stackoverflow.com/questions/47185975/validate-an-xml-document-with-relax-ng-and-namespaces)
+  + [jing-trang](https://github.com/relaxng/jing-trang)
+* [Schematron](http://schematron.com/)
+  + [ph-schematron Implementation](https://github.com/phax/ph-schematron/)
+  + [Skeleton XSLT Schematron Implementation](https://github.com/Schematron/schematron)
+
 ### Math with DB
 
 * [mathml1](https://www.data2type.de/xml-xslt-xslfo/docbook/block-elemente/gleichungen/docbook-und-mathml/) (in german)
 * [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
+
+### (Source) Code Syntax Highlighting in DB
+
+* [xslthl](http://xslthl.sourceforge.net/) (old)
 
 ## FOP
 
 * [Apache FOP](https://xmlgraphics.apache.org/fop/)
 * [Apache FOP Images Plugin](https://xmlgraphics.apache.org/fop/fop-pdf-images.html)
 * [XSL-FO Input](https://xmlgraphics.apache.org/fop/fo.html)
+* [XSL-FO Reference](https://www.data2type.de/xml-xslt-xslfo/xsl-fo/xslfo-referenz/) (in german)
 
 ## dblatex
 
@@ -72,6 +94,7 @@
 ## Alternativen
 
 * [DITA](https://www.dita-ot.org/)
+  + [Converter Manual](http://www.xmlmind.com/ditac/_distrib/doc/manual/index.html)
 * [CommonMark](https://commonmark.org/): Unify Markdown
 * [Lyx Editor](https://www.lyx.org/)
 * [Context](https://wiki.contextgarden.net/Main_Page)

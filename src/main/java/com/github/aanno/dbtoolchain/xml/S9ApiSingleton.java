@@ -29,7 +29,7 @@ public class S9ApiSingleton {
             traxSingleton = TraxSingleton.getInstance();
             processor = new Processor(S9ApiUtils.getConfiguration());
             compiler = processor.newXsltCompiler();
-            db51ToFo = compiler.compile(traxSingleton.getSource(S9ApiUtils.getDocbookPath()));
+            db51ToFo = compiler.compile(traxSingleton.getSource(S9ApiUtils.getDocbookPath(), true));
         } catch (IOException | SaxonApiException e) {
             throw new ExceptionInInitializerError(e);
         }
