@@ -56,19 +56,38 @@
 
 * [NVDL](https://www.kosek.cz/xml/2008w3c-nvdl/foil18.html)
   + [jNDL Implementation](http://jnvdl.sourceforge.net/)
-  + [NVDL within jing-trang](https://github.com/relaxng/jing-trang/blob/bf4bafa3fef13aa2bed1ea03aea0c79a257680b3/mod/nvdl/src/main/com/thaiopensource/validate/nvdl/SchemaImpl.java)
+  + [NVDL within jing-trang (experimental)](https://github.com/relaxng/jing-trang/blob/bf4bafa3fef13aa2bed1ea03aea0c79a257680b3/mod/nvdl/src/main/com/thaiopensource/validate/nvdl/SchemaImpl.java)
 * [Relax NG](https://relaxng.org/jclark/)
   + [Relax NG home page](https://relaxng.org/)
   + [java validation with relax ng](https://stackoverflow.com/questions/47185975/validate-an-xml-document-with-relax-ng-and-namespaces)
   + [jing-trang](https://github.com/relaxng/jing-trang)
 * [Schematron](http://schematron.com/)
   + [ph-schematron Implementation](https://github.com/phax/ph-schematron/)
+    - [ph-schematron home page](https://phax.github.io/ph-schematron/)
+    - [example of use](https://github.com/phax/ph-schematron/blob/master/ph-schematron/src/test/java/com/helger/schematron/docs/DocumentationExamples.java)
+      basically there are 2 different ways to use, read the home page!
+  + [jing-trang also contains a schematron implementation (experimental)](https://relaxng.org/jclark/jing.html)
   + [Skeleton XSLT Schematron Implementation](https://github.com/Schematron/schematron)
 
 ### Math with DB
 
 * [mathml1](https://www.data2type.de/xml-xslt-xslfo/docbook/block-elemente/gleichungen/docbook-und-mathml/) (in german)
 * [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
+
+#### Other Technology for Math
+
+* [AsciiMath](https://en.m.wikipedia.org/wiki/AsciiMath)
+  + [AsciiMath home page](http://asciimath.org/)
+  + [MathJax Implementation](https://www.mathjax.org/)
+  
+### DB to ePub
+
+* The xslt10 stylesheets have a epub pipeline
+
+#### Other Technology for ePub
+
+* [XQuery to ePub converter](https://en.m.wikibooks.org/wiki/XQuery/DocBook_to_ePub)
+  + [XQuery DB Implementation](http://exist-db.org/exist/apps/homepage/index.html)
 
 ### (Source) Code Syntax Highlighting in DB
 

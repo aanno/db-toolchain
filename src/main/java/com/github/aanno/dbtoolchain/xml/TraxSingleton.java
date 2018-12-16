@@ -8,6 +8,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.Source;
 import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.stream.StreamSource;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,6 +58,12 @@ public class TraxSingleton {
         } catch (SAXException e) {
             throw new IOException(e);
         }
+    }
+
+    public StreamSource getStreamSource(Path path) throws IOException {
+        StreamSource result = new StreamSource(Files.newInputStream(path));
+        result.setSystemId(path.toFile());
+        return result;
     }
 
     public InputSource getSAXInputSource(Path path) throws IOException {

@@ -1,6 +1,8 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.xml.TraxSingleton;
+import com.helger.schematron.ISchematronResource;
+import com.helger.schematron.pure.SchematronResourcePure;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xmlresolver.Catalog;
 import org.xmlresolver.CatalogSource;
@@ -43,5 +45,13 @@ public class Validation {
 
         Validator validator = dbRelax.newValidator();
         validator.validate(traxSingleton.getSource(dbPath, false));
+
+        ISchematronResource aResPure = SchematronResourcePure.fromFile(dbSchematronPath.toFile());
+        if (!aResPure.isValidSchematron()) {
+            throw new IllegalArgumentException("Invalid Schematron!");
+        }
+        if (!aResPure.getSchematronValidity(traxSingleton.getStreamSource(dbPath)).isValid ()) {
+            throw new IllegalArgumentException("Validation against Schematron failed: " + dbPath);
+        }
     }
 }

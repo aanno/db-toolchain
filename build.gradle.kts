@@ -33,7 +33,7 @@ dependencies {
     implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
     implementation("org.apache.xmlgraphics", "fop", "2.3")
     implementation("org.apache.xmlgraphics", "batik-all", "1.10")
-
+    implementation("com.helger", "ph-schematron", "5.0.8")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
