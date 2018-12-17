@@ -8,7 +8,6 @@ build
 *.class
 *.jar
 *.hprof
-.idea/
 
 # gradle
 /gradle/
@@ -27,5 +26,8 @@ gradlew.bat
 *.fo.xml
 
 # idea
-.idea
+.idea/workspace.xml
+.idea/xtextAutoBuilderState.xml
+.idea/dbnavigator.xml
+.idea/markdown-doclet.xml
 *.iml

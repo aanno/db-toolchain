@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/asciidoctor-fopub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/asciidoctor.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xslt20-java" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xslt20-resources" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xslt20-stylesheets" vcs="Git" />
+  </component>
+</project>
