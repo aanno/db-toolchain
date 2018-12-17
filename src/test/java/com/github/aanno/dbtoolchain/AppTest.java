@@ -5,6 +5,7 @@ package com.github.aanno.dbtoolchain;
 
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
+import com.github.aanno.dbtoolchain.App;
 
 public class AppTest {
     @Test public void appHasAGreeting() {

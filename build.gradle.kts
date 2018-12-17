@@ -15,29 +15,50 @@ plugins {
 }
 
 repositories {
-    // Use jcenter for resolving your dependencies.
+    mavenLocal()
+    mavenCentral()
+
+    // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+}
+
+
+ext {
+}
+
+data class Jaxb(val version: String)
+val jaxb = Jaxb("2.2.11")
+project.ext.set("jaxb.version", "2.2.11")
+project.ext.set("jaxb", jaxb)
+
+configurations.all {
+    // https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.ResolutionStrategy.html
+    resolutionStrategy {
+        preferProjectModules()
+    }
+    resolutionStrategy.setForcedModules("net.sf.saxon:Saxon-HE:9.8.0-14")
 }
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:26.0-jre")
-    // implementation("net.sf.saxon:Saxon-HE:9.9.0-2")
     implementation("org.docbook", "docbook-xslt2", "2.3.8") {
-        exclude("org.xmlresolver:xmlresolver")
-        exclude("org.apache.xmlgraphics")
-        exclude("org.apache.xmlgraphics:fop")
-        exclude("org.apache.xmlgraphics:batik-all")
-        exclude("org.apache.xmlgraphics:batik-xml")
+        exclude("org.xmlresolver", "xmlresolver")
+        exclude("org.apache.xmlgraphics", "fop")
+        exclude("org.apache.xmlgraphics", "batik-all")
+        exclude("org.apache.xmlgraphics", "batik-xml")
+        exclude("net.sf.saxon", "saxon")
+        exclude("net.sf.saxon", "Saxon-HE")
     }
+    implementation("net.sf.saxon", "Saxon-HE", "9.8.0-14")
     implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
     implementation("org.apache.xmlgraphics", "fop", "2.3")
     implementation("org.apache.xmlgraphics", "batik-all", "1.10")
     implementation("com.helger", "ph-schematron", "5.0.8") {
-        exclude("com.helger:ph-jaxb")
-        exclude("com.helger:ph-jaxb-pom")
-        exclude("org.glassfish.jaxb:jaxb-bom")
+        exclude("com.helger", "ph-jaxb")
+        exclude("com.helger", "ph-jaxb-pom")
+        exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     implementation("org.xmlresolver", "xmlresolver", "0.14.0")
 
