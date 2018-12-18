@@ -19,6 +19,8 @@ gradlew.bat
 /schema/
 /tmp/
 /out/
+/lib/
+!/lib/.keep
 *.log
 *.out
 *.pdf
@@ -30,4 +32,5 @@ gradlew.bat
 .idea/xtextAutoBuilderState.xml
 .idea/dbnavigator.xml
 .idea/markdown-doclet.xml
+.idea/uiDesigner.xml
 *.iml

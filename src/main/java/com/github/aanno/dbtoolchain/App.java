@@ -5,8 +5,13 @@ package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.xml.S9ApiSingleton;
 import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
+import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 
 public class App {
+
+    // Don't delete. Needed to start xml processing early (tp)
+    private static final XmlSingleton XML_SINGLETON = XmlSingleton.getInstance();
+
     public String getGreeting() {
         return "Hello world.";
     }
@@ -35,8 +40,9 @@ usage: java -jar docbook-xslt2-2.3.8.jar [options] dbdoc.xml [param=value [param
 
          */
         // Main.main(new String[] {"-h"});
-        // org.docbook.Main.main(("-f cssprint -o out.fo.xml --css ./" +
-        //         css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        org.docbook.Main.main(("-f cssprint -o out.fo.xml --css ./" +
+                css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        System.exit(0);
         org.docbook.Main.main("-f fo -o out.fo.xml examples/db/transition/howto.xml".split("[ \t]+"));
 
         /*

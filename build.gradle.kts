@@ -15,6 +15,10 @@ plugins {
 }
 
 repositories {
+    flatDir {
+        dirs("lib/prince-java/lib")
+    }
+
     mavenLocal()
     mavenCentral()
 
@@ -67,6 +71,18 @@ dependencies {
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
 }
+
+/*
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+            srcDirs 'src1'
+            srcDirs 'src2'
+        }
+    }
+}
+ */
 
 /*
 application {

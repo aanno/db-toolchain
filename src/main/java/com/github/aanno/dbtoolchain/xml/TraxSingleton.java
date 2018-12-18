@@ -26,12 +26,16 @@ public class TraxSingleton {
         // TODO tp:
         System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
                 XMLSyntaxSchemaFactory.class.getName());
+
         System.setProperty("xml.catalog.files",
                 "schema/5.1/schemas/catalog.xml" +
                 ";schema/5.0/docbook-5.0/catalog.xml"
         );
         System.setProperty("xml.catalog.cacheUnderHome", "true");
         System.setProperty("xml.catalog.prefer", "true");
+
+        System.setProperty("com.xmlcalabash.css-processor", "com.xmlcalabash.util.CssPrince");
+        System.setProperty("com.xmlcalabash.css.prince.exepath", "/usr/bin/prince");
     }
 
     private static TraxSingleton INSTANCE = new TraxSingleton();
