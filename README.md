@@ -84,6 +84,7 @@
 * [AsciiMath](https://en.m.wikipedia.org/wiki/AsciiMath)
   + [AsciiMath home page](http://asciimath.org/)
   + [MathJax Implementation](https://www.mathjax.org/)
+    + [mathjax-node](https://github.com/mathjax/MathJax-node)
   
 ### DB to ePub
 
@@ -104,6 +105,12 @@
 * [Apache FOP Images Plugin](https://xmlgraphics.apache.org/fop/fop-pdf-images.html)
 * [XSL-FO Input](https://xmlgraphics.apache.org/fop/fo.html)
 * [XSL-FO Reference](https://www.data2type.de/xml-xslt-xslfo/xsl-fo/xslfo-referenz/) (in german)
+
+### FOP and SVG
+
+* [Apache FOP image support](https://xmlgraphics.apache.org/fop/0.95/graphics.html)
+* [Examples of SVG inside Apache FOP](https://xmlgraphics.apache.org/fop/dev/svg.html)
+  + [instream-foreign-object fo example](https://xmlgraphics.apache.org/fop/dev/fo/embedding.fo.pdf)
 
 ## dblatex
 
