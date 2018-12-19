@@ -50,7 +50,7 @@
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
 * [EXProc](http://exproc.org/): XProc extensions
 
-### Validation DB
+### Validating DB
 
 #### Technology used for DB Validation
 
@@ -114,8 +114,33 @@
 * [Installing the Toolchain](https://asciidoctor.org/docs/install-toolchain/)
 * [AsciidoctorJ](https://asciidoctor.org/docs/asciidoctorj/)
 * [Syntax Highlighting](https://asciidoctor.org/docs/user-manual/#source-code-blocks)
+* [Antora](https://antora.org/): Site generation for asciidoc
+  + [Example site](https://asciidoctor-docs.netlify.com/asciidoctor/1.5/converters/)
+* [Additional Backends](https://github.com/asciidoctor/asciidoctor-backends)
 
-## Alternativen
+## CSS Print
+
+* [print-css.rocks](https://print-css.rocks/)
+* [PagedMedia](https://www.pagedmedia.org/)
+* [State of print stylesheets in 2018](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/)
+* [Printer friendly pages](https://www.sitepoint.com/css-printer-friendly-pages/)
+* [Prepostprint Blog](https://prepostprint.org/doku.php/en/showcase)
+
+### Implementations
+
+* [WeasyPrint](https://weasyprint.readthedocs.io/en/stable/)
+
+### CSS for print overview
+
+* [CSS for print tutorial](http://edutechwiki.unige.ch/en/CSS_for_print_tutorial)
+
+### CSS details
+
+### CSS drafts
+
+* [Multi-column Layout](https://www.chromium.org/developers/design-documents/multi-column-layout)
+
+## Alternative Technology
 
 * [DITA](https://www.dita-ot.org/)
   + [Converter Manual](http://www.xmlmind.com/ditac/_distrib/doc/manual/index.html)
