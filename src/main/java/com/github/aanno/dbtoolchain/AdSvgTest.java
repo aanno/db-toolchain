@@ -52,7 +52,8 @@ options.put(Options.BACKEND, "docbook5");
     }
 
     public static void main(String[] args) throws Exception {
-        Path ad = Paths.get("src/test/resources/ad-svg/ad-svg.ad");
+        // Path ad = Paths.get("src/test/resources/ad-svg/ad-svg-inline.ad");
+        Path ad = Paths.get("src/test/resources/ad-svg/ad-svg-ref.ad");
         Path dbOut = Paths.get("out.db.xml");
         Path foOut = Paths.get("out.fo.xml");
         Path pdfOut = Paths.get("out.pdf");

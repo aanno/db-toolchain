@@ -65,8 +65,8 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     implementation("org.xmlresolver", "xmlresolver", "0.14.0")
-
     implementation("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2")
+    implementation("net.sf.xslthl", "xslthl", "2.1.3")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")

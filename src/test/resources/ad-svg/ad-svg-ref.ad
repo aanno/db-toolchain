@@ -1,0 +1,19 @@
+== Included Section
+
+Look, I came from out of the [blue]#blue#!
+
+--
+I'm keepin' it open.
+
+An 'open block', like this one, can contain other blocks.
+
+It can also act as any other block. (TODO)
+--
+
+++++
+<mediaobject id="svg">
+<imageobject>
+<imagedata format="SVG" fileref="examples/svg/mathjax.svg"/>
+</imageobject>
+</mediaobject>
+++++
