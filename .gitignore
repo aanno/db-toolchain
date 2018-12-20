@@ -15,6 +15,7 @@ gradlew
 gradlew.bat
 
 # misc
+node_modules/
 /examples/
 /schema/
 /tmp/

@@ -1,0 +1,29 @@
+{
+  "name": "db-toolchain",
+  "version": "1.0.0",
+  "description": "### Resources",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aanno/db-toolchain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aanno/db-toolchain/issues"
+  },
+  "homepage": "https://github.com/aanno/db-toolchain#readme",
+  "devDependencies": {
+    "mathjax-node": "^2.1.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  }
+}

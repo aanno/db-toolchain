@@ -14,6 +14,7 @@
   + [DocBook Source](https://github.com/FirebirdSQL/firebird-documentation/blob/1ec7b44f5e527198ca79a7ef40ff63fce73c56ff/src/docs/firebirddocs/docwriting-howto.xml)
 * [DocBook Demystification](http://en.tldp.org/HOWTO/DocBook-Demystification-HOWTO/x128.html)
 * [Einführung in XML/XSLT Docbook](http://www.usegroup.de/software/xmltutorial/docbook.html)
+* [Doc as Code Blog (in german)](https://jaxenter.de/tag/hhgdc)
 * [How to generate PDF](https://stackoverflow.com/questions/2615002/how-to-generate-pdf-from-docbook-5-0) (in german)
 * [Using DocBook toolchain](http://xpt.sourceforge.net/techdocs/nix/tool/asciidoc-usg/ascu04-UsingDocBooktoolchain/)
 * [Recommended toolchain](https://stackoverflow.com/questions/122752/what-is-the-recommended-toolchain-for-formatting-xml-docbook)
@@ -28,7 +29,9 @@
 
 #### Tools with DB *output*
 
-* [docToolchain](https://doctoolchain.github.io/docToolchain/#_generatedocbook)
+* [docToolchain](https://github.com/docToolchain/docToolchain)
+  + [docToolchain Docs](https://doctoolchain.github.io/docToolchain/#_generatedeck)
+  + [docToolchain Blog](https://rdmueller.github.io/)
 * [from asciidoctor](https://asciidoctor.org/docs/convert-documents/#converting-a-document-to-docbook)
 
 ### Docbook Stylesheets
@@ -79,12 +82,22 @@
 * [mathml1](https://www.data2type.de/xml-xslt-xslfo/docbook/block-elemente/gleichungen/docbook-und-mathml/) (in german)
 * [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
 
+#### MathML Implementations
+
+* [modern JEuclid Fork](https://github.com/rototor/jeuclid)
+  + [JEuclid home page](http://jeuclid.sourceforge.net/)
+  + [Calabash extension step](https://xmlcalabash.com/docs/reference/cx-mathml-to-svg.html)
+
 #### Other Technology for Math
 
 * [AsciiMath](https://en.m.wikipedia.org/wiki/AsciiMath)
   + [AsciiMath home page](http://asciimath.org/)
   + [MathJax Implementation](https://www.mathjax.org/)
     + [mathjax-node](https://github.com/mathjax/MathJax-node)
+    
+### Diagrams
+
+* [Diagrams](https://jaxenter.de/hitchhikers-guide-docs-code-diagramme-66357)
   
 ### DB to ePub
 
@@ -136,6 +149,8 @@
 ### Implementations
 
 * [WeasyPrint](https://weasyprint.readthedocs.io/en/stable/)
+* [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) based on
+  + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer)
 
 ### CSS for print overview
 
