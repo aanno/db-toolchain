@@ -2,6 +2,7 @@
 
 /* -- /// <reference path="typings/myModules.d.ts" /> */
 import * as mjAPI from "mathjax-node"
+import {outputFile} from "fs-extra"
 
 // --- <reference path="mathjax/index.d.ts" />
 // import {} from "mathjax"
@@ -42,9 +43,12 @@ mjAPI.typeset({
     mml: true,      // mml:true or svg:true, or html:true
     svg: true,
     html: true,
-}, (data: any) => {
+}).then((data: any) => {
     if (!data.errors) {
         console.log("mml\n" + data.mml + "\nsvg:\n" + data.svg + "\nhtml:\n" + data.html)
+        if (data.svg) {
+outputFile("examples/svg/mathjax.svg", data.svg)
+        }
     } else {
         console.log("error: " + data)
     }

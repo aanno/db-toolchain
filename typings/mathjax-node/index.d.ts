@@ -18,6 +18,8 @@
 
 declare module "mathjax-node" {
 
+    import "mathjax"
+
     interface Config {
         displayMessages: boolean,
         displayErrors: boolean,
@@ -25,14 +27,14 @@ declare module "mathjax-node" {
         extensions: any,
         paths: any,
         fontURL: any,
-        MathJax: mj.MathJax.Config,
+        MathJax: MathJax.Config,
     }
 
     // export = {} as any
     export const config: (conf: Partial<Config>) => Config,
         start: () => void,
         typeset: any,
-        MathJax: mj.MathJax,
+        MathJax: any,
 }
 
 
