@@ -20,17 +20,17 @@ declare module "mathjax-node" {
     import * as mj from "mathjax"
 
     interface Config {
-        displayMessages: any,
-        displayErrors: any,
-        undefinedCharError: any,
+        displayMessages: boolean,
+        displayErrors: boolean,
+        undefinedCharError: boolean,
         extensions: any,
         paths: any,
         fontURL: any,
-        MathJax: mj.MathJax,
+        MathJax: mj.MathJax.Config,
     }
 
     // export = {} as any
-    export const config: Partial<Config>, start: () => void, typeset: any
+    export const config: (conf: Partial<Config>) => Config, start: () => void, typeset: any
 }
 
 

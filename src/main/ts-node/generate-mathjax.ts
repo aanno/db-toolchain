@@ -4,9 +4,28 @@
 import * as mjAPI from "mathjax-node"
 
 mjAPI.config({
+    // determines whether Message.Set() calls are logged
+    displayMessages: false,
+
+    // determines whether error messages are shown on the console
+    displayErrors:   true,
+
+    // determines whether "unknown characters" (i.e., no glyph in the configured fonts) are saved in the error array
+    undefinedCharError: false,
+
+    // a convenience option to add MathJax extensions
+    extensions: '',
+
+    // for webfont urls in the CSS for HTML output
+    // fontURL: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS',
+
+    // configures custom path variables (e.g., for third party extensions, cf. test/config-third-party-extensions.js)
+    paths: {},
+
+    // standard MathJax configuration options, see https://docs.mathjax.org for more detail.
     MathJax: {
         // traditional MathJax configuration
-    }
+    },
 })
 mjAPI.start()
 
