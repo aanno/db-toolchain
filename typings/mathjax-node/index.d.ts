@@ -17,7 +17,6 @@
  */
 
 declare module "mathjax-node" {
-    import * as mj from "mathjax"
 
     interface Config {
         displayMessages: boolean,
@@ -30,7 +29,10 @@ declare module "mathjax-node" {
     }
 
     // export = {} as any
-    export const config: (conf: Partial<Config>) => Config, start: () => void, typeset: any
+    export const config: (conf: Partial<Config>) => Config,
+        start: () => void,
+        typeset: any,
+        MathJax: mj.MathJax,
 }
 
 

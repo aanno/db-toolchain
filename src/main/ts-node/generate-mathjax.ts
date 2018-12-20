@@ -3,6 +3,10 @@
 /* -- /// <reference path="typings/myModules.d.ts" /> */
 import * as mjAPI from "mathjax-node"
 
+// --- <reference path="mathjax/index.d.ts" />
+// import {} from "mathjax"
+// import "mathjax.d"
+
 mjAPI.config({
     // determines whether Message.Set() calls are logged
     displayMessages: false,
@@ -14,7 +18,7 @@ mjAPI.config({
     undefinedCharError: false,
 
     // a convenience option to add MathJax extensions
-    extensions: '',
+    extensions: "",
 
     // for webfont urls in the CSS for HTML output
     // fontURL: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/fonts/HTML-CSS',
@@ -29,14 +33,19 @@ mjAPI.config({
 })
 mjAPI.start()
 
-var yourMath = 'E = mc^2'
+const yourMath = "E = mc^2"
 
+// http://docs.mathjax.org/en/latest/output.html
 mjAPI.typeset({
     math: yourMath,
     format: "TeX", // or "inline-TeX", "MathML"
-    mml:true,      // mml:true or svg:true, or html:true
+    mml: true,      // mml:true or svg:true, or html:true
+    svg: true,
+    html: true,
 }, (data: any) => {
     if (!data.errors) {
-        console.log(data.mml)
+        console.log("mml\n" + data.mml + "\nsvg:\n" + data.svg + "\nhtml:\n" + data.html)
+    } else {
+        console.log("error: " + data)
     }
 })
