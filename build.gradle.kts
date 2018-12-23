@@ -110,6 +110,7 @@ tasks {
 
     withType<JavaCompile> {
         options.compilerArgs.addAll(listOf("--release", "11"))
+
         /*
         compileOptions {
             sourceCompatibility = 11
