@@ -9,6 +9,7 @@
 plugins {
     // Apply the java plugin to add support for Java
     java
+    // `java-library`
 
     // Apply the application plugin to add support for building an application
     // application
@@ -30,6 +31,15 @@ repositories {
 
 ext {
 }
+
+/*
+allprojects {
+    plugins {
+        java
+        // `java-library`
+    }
+}
+ */
 
 data class Jaxb(val version: String)
 val jaxb = Jaxb("2.2.11")
@@ -97,7 +107,19 @@ val test by tasks.getting(Test::class) {
 }
 
 tasks {
+
+    withType<JavaCompile> {
+        options.compilerArgs.addAll(listOf("--release", "11"))
+        /*
+        compileOptions {
+            sourceCompatibility = 11
+            targetCompatibility = 11
+        }
+         */
+    }
+
     withType<Jar> {
+
         manifest {
             attributes(
                     mapOf(
