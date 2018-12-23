@@ -50,16 +50,29 @@ configurations.all {
     // https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.ResolutionStrategy.html
     resolutionStrategy {
         preferProjectModules()
+
+        // add dependency substitution rules
+        dependencySubstitution {
+            // substitute(module("com.thaiopensource:jing")).with(project(":jing"))
+            // substitute(module("org.gradle:api")).with(project(":api"))
+            // substitute project(':util') with module('org.gradle:util:3.0')
+        }
+        // cache dynamic versions for 10 minutes
+        cacheDynamicVersionsFor(10*60, "seconds")
+        // don't cache changing modules at all
+        cacheChangingModulesFor(10*60, "seconds")
     }
-    resolutionStrategy.setForcedModules("net.sf.saxon:Saxon-HE:9.8.0-14")
+    resolutionStrategy.setForcedModules(
+            "net.sf.saxon:Saxon-HE:9.8.0-14"
+    )
 }
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
-    implementation("", "prince", "")
+    api("", "prince", "")
     // This dependency is found on compile classpath of this component and consumers.
-    implementation("com.google.guava:guava:26.0-jre")
-    implementation("org.docbook", "docbook-xslt2", "2.3.8") {
+    api("com.google.guava:guava:26.0-jre")
+    api("org.docbook", "docbook-xslt2", "2.3.8") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         exclude("org.apache.xmlgraphics", "batik-all")
@@ -69,19 +82,28 @@ dependencies {
         exclude("com.thaiopensource", "jing")
     }
     // build from submodule 'jing-trang'
-    implementation("", "jing", "")
-    implementation("net.sf.saxon", "Saxon-HE", "9.8.0-14")
-    implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
-    implementation("org.apache.xmlgraphics", "fop", "2.3")
-    implementation("org.apache.xmlgraphics", "batik-all", "1.10")
-    implementation("com.helger", "ph-schematron", "5.0.8") {
+    api("", "jing", "")
+    api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
+    api("org.apache.xmlgraphics", "fop-pdf-images", "2.3") {
+        exclude("xml-apis", "xml-apis")
+        exclude("xml-apis", "xml-apis-ext")
+    }
+    api("org.apache.xmlgraphics", "fop", "2.3") {
+        exclude("xml-apis", "xml-apis")
+        exclude("xml-apis", "xml-apis-ext")q
+
+
+
+    }
+    api("org.apache.xmlgraphics", "batik-all", "1.10")
+    api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
-    implementation("org.xmlresolver", "xmlresolver", "0.14.0")
-    implementation("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2")
-    implementation("net.sf.xslthl", "xslthl", "2.1.3")
+    api("org.xmlresolver", "xmlresolver", "0.14.0")
+    api("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2")
+    api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
