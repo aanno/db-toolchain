@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/ant-nodeps.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/xalan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/isorelax.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/ant-trax.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/saxon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/serializer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/maven-ant-tasks-2.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/testng.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/ant-googlecode.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/doccheck.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/saxon9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/javacc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/resolver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jing-trang/lib/ant-launcher.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
