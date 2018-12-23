@@ -55,6 +55,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation("", "prince", "")
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:26.0-jre")
     implementation("org.docbook", "docbook-xslt2", "2.3.8") {

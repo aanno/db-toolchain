@@ -14,3 +14,6 @@
 [submodule "asciidoctor.org"]
 	path = asciidoctor.org
 	url = https://github.com/asciidoctor/asciidoctor.org.git
+[submodule "jing-trang"]
+	path = jing-trang
+	url = https://github.com/relaxng/jing-trang.git

@@ -3,6 +3,34 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/asciidoctor.org/asciidoctor.org.iml" filepath="$PROJECT_DIR$/asciidoctor.org/asciidoctor.org.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/catalog/src/catalog.iml" filepath="$PROJECT_DIR$/jing-trang/mod/catalog/src/catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/convert-from-dtd/src/convert-from-dtd.iml" filepath="$PROJECT_DIR$/jing-trang/mod/convert-from-dtd/src/convert-from-dtd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/convert-from-xml/src/convert-from-xml.iml" filepath="$PROJECT_DIR$/jing-trang/mod/convert-from-xml/src/convert-from-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/convert-to-dtd/src/convert-to-dtd.iml" filepath="$PROJECT_DIR$/jing-trang/mod/convert-to-dtd/src/convert-to-dtd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/convert-to-xsd/src/convert-to-xsd.iml" filepath="$PROJECT_DIR$/jing-trang/mod/convert-to-xsd/src/convert-to-xsd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/datatype/src/datatype.iml" filepath="$PROJECT_DIR$/jing-trang/mod/datatype/src/datatype.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/datatype-sample/datatype-sample.iml" filepath="$PROJECT_DIR$/jing-trang/datatype-sample/datatype-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/dtd-parse/src/dtd-parse.iml" filepath="$PROJECT_DIR$/jing-trang/mod/dtd-parse/src/dtd-parse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/dtdinst/src/dtdinst.iml" filepath="$PROJECT_DIR$/jing-trang/mod/dtdinst/src/dtdinst.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/infer/src/infer.iml" filepath="$PROJECT_DIR$/jing-trang/mod/infer/src/infer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/jaxp/src/jaxp.iml" filepath="$PROJECT_DIR$/jing-trang/mod/jaxp/src/jaxp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/nvdl/src/nvdl.iml" filepath="$PROJECT_DIR$/jing-trang/mod/nvdl/src/nvdl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/pattern/src/pattern.iml" filepath="$PROJECT_DIR$/jing-trang/mod/pattern/src/pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/picl/src/picl.iml" filepath="$PROJECT_DIR$/jing-trang/mod/picl/src/picl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/regex/src/regex.iml" filepath="$PROJECT_DIR$/jing-trang/mod/regex/src/regex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/regex-gen/src/regex-gen.iml" filepath="$PROJECT_DIR$/jing-trang/mod/regex-gen/src/regex-gen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/resolver/src/resolver.iml" filepath="$PROJECT_DIR$/jing-trang/mod/resolver/src/resolver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/rng-jarv/src/rng-jarv.iml" filepath="$PROJECT_DIR$/jing-trang/mod/rng-jarv/src/rng-jarv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/rng-jaxp/src/rng-jaxp.iml" filepath="$PROJECT_DIR$/jing-trang/mod/rng-jaxp/src/rng-jaxp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/rng-parse/src/rng-parse.iml" filepath="$PROJECT_DIR$/jing-trang/mod/rng-parse/src/rng-parse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/rng-schema/src/rng-schema.iml" filepath="$PROJECT_DIR$/jing-trang/mod/rng-schema/src/rng-schema.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/rng-validate/src/rng-validate.iml" filepath="$PROJECT_DIR$/jing-trang/mod/rng-validate/src/rng-validate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/schematron/src/schematron.iml" filepath="$PROJECT_DIR$/jing-trang/mod/schematron/src/schematron.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/trang/src/trang.iml" filepath="$PROJECT_DIR$/jing-trang/mod/trang/src/trang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/util/src/util.iml" filepath="$PROJECT_DIR$/jing-trang/mod/util/src/util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/validate/src/validate.iml" filepath="$PROJECT_DIR$/jing-trang/mod/validate/src/validate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/xerces/src/xerces.iml" filepath="$PROJECT_DIR$/jing-trang/mod/xerces/src/xerces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jing-trang/mod/xsd-datatype/src/xsd-datatype.iml" filepath="$PROJECT_DIR$/jing-trang/mod/xsd-datatype/src/xsd-datatype.iml" />
     </modules>
   </component>
 </project>
