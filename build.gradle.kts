@@ -17,7 +17,7 @@ plugins {
 
 repositories {
     flatDir {
-        dirs("lib/prince-java/lib")
+        dirs("lib/prince-java/lib", "jing-trang/build")
     }
 
     mavenLocal()
@@ -55,6 +55,7 @@ configurations.all {
 }
 
 dependencies {
+    // taken from prince-java download at 'lib/prince-java/lib'
     implementation("", "prince", "")
     // This dependency is found on compile classpath of this component and consumers.
     implementation("com.google.guava:guava:26.0-jre")
@@ -65,7 +66,10 @@ dependencies {
         exclude("org.apache.xmlgraphics", "batik-xml")
         exclude("net.sf.saxon", "saxon")
         exclude("net.sf.saxon", "Saxon-HE")
+        exclude("com.thaiopensource", "jing")
     }
+    // build from submodule 'jing-trang'
+    implementation("", "jing", "")
     implementation("net.sf.saxon", "Saxon-HE", "9.8.0-14")
     implementation("org.apache.xmlgraphics", "fop-pdf-images", "2.3")
     implementation("org.apache.xmlgraphics", "fop", "2.3")
