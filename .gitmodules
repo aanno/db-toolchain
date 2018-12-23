@@ -16,4 +16,5 @@
 	url = https://github.com/asciidoctor/asciidoctor.org.git
 [submodule "jing-trang"]
 	path = jing-trang
-	url = https://github.com/relaxng/jing-trang.git
+	url = git@github.com:aanno/jing-trang.git
+	branch = feature/tp-saxon
