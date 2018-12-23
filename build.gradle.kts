@@ -8,8 +8,8 @@
 
 plugins {
     // Apply the java plugin to add support for Java
-    java
-    // `java-library`
+    // java
+    `java-library`
 
     // Apply the application plugin to add support for building an application
     // application
@@ -114,7 +114,11 @@ val test by tasks.getting(Test::class) {
 tasks {
 
     withType<JavaCompile> {
-        options.compilerArgs.addAll(listOf("--release", "11"))
+
+        options.compilerArgs.addAll(listOf(
+                "--release", "11",
+                "--module-path", classpath.asPath
+        ))
 
         /*
         compileOptions {
