@@ -53,6 +53,7 @@ configurations.all {
 
         // add dependency substitution rules
         dependencySubstitution {
+            // substitute(module("com.thaiopensource:jing")).with(module(":jing"))
             // substitute(module("com.thaiopensource:jing")).with(project(":jing"))
             // substitute(module("org.gradle:api")).with(project(":api"))
             // substitute project(':util') with module('org.gradle:util:3.0')
@@ -65,6 +66,10 @@ configurations.all {
     resolutionStrategy.setForcedModules(
             "net.sf.saxon:Saxon-HE:9.8.0-14"
     )
+    exclude("xml-apis", "xml-apis")
+    exclude("xml-apis", "xml-apis-ext")
+    // exclude super jars
+    exclude("org.apache.xmlgraphics", "batik-all")
 }
 
 dependencies {
@@ -90,11 +95,9 @@ dependencies {
     }
     api("org.apache.xmlgraphics", "fop", "2.3") {
         exclude("xml-apis", "xml-apis")
-        exclude("xml-apis", "xml-apis-ext")q
-
-
-
+        exclude("xml-apis", "xml-apis-ext")
     }
+    // pull in all deps (but batik-all will be excuded)
     api("org.apache.xmlgraphics", "batik-all", "1.10")
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
