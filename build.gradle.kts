@@ -165,10 +165,11 @@ configurations.compileClasspath {
     val s2f: MutableMap<ResolvedModuleVersion, File> = mutableMapOf()
     // https://discuss.gradle.org/t/map-dependency-instances-to-file-s-when-iterating-through-a-configuration/7158
     resolvedConfiguration.resolvedArtifacts.forEach({ ra: ResolvedArtifact ->
-        println(ra.moduleVersion.toString() + " -> " + ra.file)
+        // println(ra.moduleVersion.toString() + " -> " + ra.file)
         s2f.put(ra.moduleVersion, ra.file)
     })
     spec2File = s2f.mapKeys({"${it.key.id.group}:${it.key.id.name}"})
+    spec2File.keys.sorted().forEach({ it -> println(it.toString() + " -> " + spec2File.get(it))})
 }
 
 val patchModule = listOf(
@@ -181,10 +182,16 @@ val patchModule = listOf(
         spec2File["org.slf4j:jcl-over-slf4j"].toString(),
 
         "--patch-module", "jcl.over.slf4j=" +
-        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
-        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
+        spec2File["commons-logging:commons-logging"].toString() + ":" +
+        spec2File["org.slf4j:jcl-over-slf4j"].toString(),
 
-        "--patch-module", "q=b"
+        "--patch-module", "avalon.framework.impl=" +
+        spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString() + ":" +
+        spec2File["org.apache.avalon.framework:avalon-framework-api"].toString(),
+
+        "--patch-module", "avalon.framework.api=" +
+        spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString() + ":" +
+        spec2File["org.apache.avalon.framework:avalon-framework-api"].toString()
 )
 
 tasks {
