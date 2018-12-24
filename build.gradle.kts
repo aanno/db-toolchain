@@ -90,8 +90,19 @@ configurations.all {
     exclude("com.thaiopensource", "jing")
     exclude("com.thaiopensource", "trang")
     exclude("net.sf.saxon", "saxon")
+
+    // TODO
+    exclude("relaxngDatatype", "relaxngDatatype")
+    // exclude("org.asciidoctor", "asciidoctorj-api")
+    exclude("commons-logging", "commons-logging")
+    exclude("org.apache.avalon.framework", "avalon-framework-impl")
+    exclude("org.apache.avalon.framework", "avalon-framework-api")
+    exclude("com.github.jnr", "jnr-unixsocket")
+
     // exclude super jars
     exclude("org.apache.xmlgraphics", "batik-all")
+    exclude("org.apache.xmlgraphics", "batik-ext")
+    exclude("org.apache.xmlgraphics", "batik-constants")
 }
 
 dependencies {
@@ -127,7 +138,9 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
-    api("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2")
+    api("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2") {
+        exclude("org.asciidoctor", "asciidoctorj-api")
+    }
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
@@ -174,25 +187,35 @@ configurations.compileClasspath {
 
 val patchModule = listOf(
         "--patch-module", "commons.logging=" +
-        spec2File["commons-logging:commons-logging"].toString() + ":" +
         spec2File["org.slf4j:jcl-over-slf4j"].toString(),
 
         "--patch-module", "org.apache.commons.logging=" +
-        spec2File["commons-logging:commons-logging"].toString() + ":" +
         spec2File["org.slf4j:jcl-over-slf4j"].toString(),
 
         "--patch-module", "jcl.over.slf4j=" +
-        spec2File["commons-logging:commons-logging"].toString() + ":" +
-        spec2File["org.slf4j:jcl-over-slf4j"].toString(),
+        spec2File["commons-logging:commons-logging"].toString(),
+
+        "--patch-module", "asciidoctorj.api=" +
+        spec2File["org.asciidoctor:asciidoctorj"].toString(),
+
+        "--patch-module", "asciidoctorj=" +
+        spec2File["org.asciidoctor:asciidoctorj-api"].toString(),
+
+        "--patch-module", "jnr.enxio=" +
+        spec2File["com.github.jnr:jnr-unixsocket"].toString() +
+        ":" + spec2File["com.github.jnr:jnr-enxio"].toString(),
+
+        "--patch-module", "jnr.unixsocket=" +
+        spec2File["com.github.jnr:jnr-enxio"].toString() +
+        ":" + spec2File["com.github.jnr:jnr-unixsocket"].toString(),
 
         "--patch-module", "avalon.framework.impl=" +
-        spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString() + ":" +
         spec2File["org.apache.avalon.framework:avalon-framework-api"].toString(),
 
         "--patch-module", "avalon.framework.api=" +
-        spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString() + ":" +
-        spec2File["org.apache.avalon.framework:avalon-framework-api"].toString()
+        spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString()
 )
+patchModule.forEach({it -> println(it)})
 
 tasks {
 
@@ -201,9 +224,10 @@ tasks {
             doFirst {
                 options.compilerArgs.addAll(listOf(
                         "--release", "11",
-                        "--add-modules", "ALL-MODULE-PATH",
+                        // "--add-modules", "ALL-MODULE-PATH",
                         "--module-path", classpath.asPath
                 ) + patchModule)
+                // println("Args for for ${name} are ${options.allCompilerArgs}")
             }
 
             /*
