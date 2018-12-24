@@ -205,11 +205,13 @@ val patchModule = listOf(
         "--patch-module", "jcl.over.slf4j=" +
         spec2File["commons-logging:commons-logging"].toString(),
 
+        /*
         "--patch-module", "asciidoctorj.api=" +
         spec2File["org.asciidoctor:asciidoctorj"].toString(),
 
         "--patch-module", "asciidoctorj=" +
         spec2File["org.asciidoctor:asciidoctorj-api"].toString(),
+*/
 
         "--patch-module", "jnr.enxio=" +
         spec2File["com.github.jnr:jnr-unixsocket"].toString() +
