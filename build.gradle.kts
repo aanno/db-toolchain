@@ -17,7 +17,11 @@ plugins {
 
 repositories {
     flatDir {
-        dirs("lib/prince-java/lib", "jing-trang/build")
+        dirs(
+                "lib/prince-java/lib",
+                "jing-trang/build",
+                "lib/ueberjars"
+        )
     }
 
     mavenLocal()
@@ -93,7 +97,8 @@ configurations.all {
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
-    // exclude("org.asciidoctor", "asciidoctorj-api")
+    exclude("org.asciidoctor", "asciidoctorj-api")
+    exclude("org.asciidoctor", "asciidoctorj")
     exclude("commons-logging", "commons-logging")
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
     exclude("org.apache.avalon.framework", "avalon-framework-api")
@@ -108,6 +113,11 @@ configurations.all {
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
     api("", "prince", "")
+    // asciidocj ueber jar
+    api("", "asciidocj", "")
+    // dependency of asciidocj and asciidocj-api
+    api("org.jruby", "jruby", "9.2.4.0")
+
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
     api("org.docbook", "docbook-xslt2", "2.3.8") {
