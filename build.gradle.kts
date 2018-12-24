@@ -153,24 +153,12 @@ application {
 }
  */
 
-val patchModule = listOf(
-        "--patch-module", "commons.logging=" +
-        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
-        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
-
-        "--patch-module", "jcl.over.slf4j=" +
-        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
-        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
-
-        "--patch-module", "q=b"
-)
-
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
 }
 
-var spec2File: Map<ResolvedModuleVersion, File> = emptyMap()
+var spec2File: Map<String, File> = emptyMap()
 configurations.forEach({c -> println(c)})
 // TODO: get name of configuration (gradle dependencies)
 configurations.compileClasspath {
@@ -180,8 +168,24 @@ configurations.compileClasspath {
         println(ra.moduleVersion.toString() + " -> " + ra.file)
         s2f.put(ra.moduleVersion, ra.file)
     })
-    spec2File = s2f.toMap()
+    spec2File = s2f.mapKeys({"${it.key.id.group}:${it.key.id.name}"})
 }
+
+val patchModule = listOf(
+        "--patch-module", "commons.logging=" +
+        spec2File["commons-logging:commons-logging"].toString() + ":" +
+        spec2File["org.slf4j:jcl-over-slf4j"].toString(),
+
+        "--patch-module", "org.apache.commons.logging=" +
+        spec2File["commons-logging:commons-logging"].toString() + ":" +
+        spec2File["org.slf4j:jcl-over-slf4j"].toString(),
+
+        "--patch-module", "jcl.over.slf4j=" +
+        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
+        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
+
+        "--patch-module", "q=b"
+)
 
 tasks {
 
