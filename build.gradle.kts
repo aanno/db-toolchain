@@ -66,7 +66,7 @@ configurations.all {
             // substitute project(':util') with module('org.gradle:util:3.0')
         }
         componentSelection {
-            all(ShowSelection())
+            // all(ShowSelection())
         }
 
         // cache dynamic versions for 10 minutes
@@ -170,58 +170,67 @@ val test by tasks.getting(Test::class) {
     useTestNG()
 }
 
+var spec2File: Map<ResolvedModuleVersion, File> = emptyMap()
+configurations.forEach({c -> println(c)})
+// TODO: get name of configuration (gradle dependencies)
+configurations.compileClasspath {
+    val s2f: MutableMap<ResolvedModuleVersion, File> = mutableMapOf()
+    // https://discuss.gradle.org/t/map-dependency-instances-to-file-s-when-iterating-through-a-configuration/7158
+    resolvedConfiguration.resolvedArtifacts.forEach({ ra: ResolvedArtifact ->
+        println(ra.moduleVersion.toString() + " -> " + ra.file)
+        s2f.put(ra.moduleVersion, ra.file)
+    })
+    spec2File = s2f.toMap()
+}
+
 tasks {
 
-    withType<JavaCompile> {
+        withType<JavaCompile> {
 
-doFirst {
-    configurations.compile.resolvedConfiguration.resolvedArtifacts.forEach({ra -> println(ra)})
-    options.compilerArgs.addAll(listOf(
-            "--release", "11",
-            "--add-modules", "ALL-MODULE-PATH",
-            "--module-path", classpath.asPath
-    ) + patchModule)
-}
-        /*
-        options.compilerArgs.addAll(listOf(
-                "--release", "11",
-                "--add-modules", "ALL-MODULE-PATH",
-                "--module-path", classpath.asPath
-        ) + patchModule)
-         */
+            doFirst {
+                options.compilerArgs.addAll(listOf(
+                        "--release", "11",
+                        "--add-modules", "ALL-MODULE-PATH",
+                        "--module-path", classpath.asPath
+                ) + patchModule)
+            }
 
-        /*
-        compileOptions {
-            sourceCompatibility = 11
-            targetCompatibility = 11
+            /*
+            options.compilerArgs.addAll(listOf(
+                    "--release", "11",
+                    "--add-modules", "ALL-MODULE-PATH",
+                    "--module-path", classpath.asPath
+            ) + patchModule)
+             */
+
+            /*
+            compileOptions {
+                sourceCompatibility = 11
+                targetCompatibility = 11
+            }
+             */
+
+            // classpath.forEach({it -> println(it)})
+
+            doLast {
+            }
         }
-         */
 
-        classpath.forEach({it -> println(it)})
+        withType<Jar> {
 
-        doLast {
-            // https://discuss.gradle.org/t/map-dependency-instances-to-file-s-when-iterating-through-a-configuration/7158
-            configurations.compile.resolvedConfiguration.resolvedArtifacts.forEach({ra -> println(ra)})
+            manifest {
+                attributes(
+                        mapOf(
+                                "Main-Class" to "com.github.aanno.dbtoolchain.App"
+                                // "Main-Class" to application.mainClassName
+                                // "Class-Path" to configurations.compile.collect { it.getName() }.join(' ')
+                        )
+                )
+            }
+            val version = "1.0-SNAPSHOT"
+
+            // archiveName = "${application.applicationName}-$version.jar"
+            // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
         }
-    }
 
-    withType<Jar> {
-
-        manifest {
-            attributes(
-                    mapOf(
-                            "Main-Class" to "com.github.aanno.dbtoolchain.App"
-                    // "Main-Class" to application.mainClassName
-                    // "Class-Path" to configurations.compile.collect { it.getName() }.join(' ')
-                    )
-            )
-        }
-        val version = "1.0-SNAPSHOT"
-
-        // archiveName = "${application.applicationName}-$version.jar"
-        // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
-    }
-
-    // configurations.all.forEach({it: Configuration -> println(it.toString())})
-    // println(configurations.all(() -> true).toString())
 }
