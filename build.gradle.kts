@@ -46,6 +46,13 @@ val jaxb = Jaxb("2.2.11")
 project.ext.set("jaxb.version", "2.2.11")
 project.ext.set("jaxb", jaxb)
 
+class ShowSelection {
+    @Mutate
+    fun evaluateRule(selection: ComponentSelection) {
+        println("id: " + selection.candidate + " meta: " + selection.metadata?.attributes)
+    }
+}
+
 configurations.all {
     // https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.ResolutionStrategy.html
     resolutionStrategy {
@@ -58,10 +65,14 @@ configurations.all {
             // substitute(module("org.gradle:api")).with(project(":api"))
             // substitute project(':util') with module('org.gradle:util:3.0')
         }
+        componentSelection {
+            all(ShowSelection())
+        }
+
         // cache dynamic versions for 10 minutes
         cacheDynamicVersionsFor(10*60, "seconds")
         // don't cache changing modules at all
-        cacheChangingModulesFor(10*60, "seconds")
+        cacheChangingModulesFor(60, "seconds")
     }
     resolutionStrategy.setForcedModules(
             "net.sf.saxon:Saxon-HE:9.8.0-14"
@@ -164,6 +175,7 @@ tasks {
     withType<JavaCompile> {
 
 doFirst {
+    configurations.compile.resolvedConfiguration.resolvedArtifacts.forEach({ra -> println(ra)})
     options.compilerArgs.addAll(listOf(
             "--release", "11",
             "--add-modules", "ALL-MODULE-PATH",
@@ -184,6 +196,13 @@ doFirst {
             targetCompatibility = 11
         }
          */
+
+        classpath.forEach({it -> println(it)})
+
+        doLast {
+            // https://discuss.gradle.org/t/map-dependency-instances-to-file-s-when-iterating-through-a-configuration/7158
+            configurations.compile.resolvedConfiguration.resolvedArtifacts.forEach({ra -> println(ra)})
+        }
     }
 
     withType<Jar> {
@@ -203,4 +222,6 @@ doFirst {
         // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
     }
 
+    // configurations.all.forEach({it: Configuration -> println(it.toString())})
+    // println(configurations.all(() -> true).toString())
 }
