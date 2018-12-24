@@ -65,9 +65,20 @@ configurations.all {
     }
     resolutionStrategy.setForcedModules(
             "net.sf.saxon:Saxon-HE:9.8.0-14"
+            , "com.beust:jcommander:1.72"
+            , "com.nwalsh:nwalsh-annotations:1.0.1"
+            , "commons-codec:commons-codec:1.11"
+            , "org.apache.httpcomponents:httpclient:4.5.6"
+            , "org.apache.httpcomponents:httpcore:4.4.10"
+            , "org.apache.xmlgraphics:fop:2.3"
+            , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
     )
+    exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
     exclude("xml-apis", "xml-apis-ext")
+    exclude("com.thaiopensource", "jing")
+    exclude("com.thaiopensource", "trang")
+    exclude("net.sf.saxon", "saxon")
     // exclude super jars
     exclude("org.apache.xmlgraphics", "batik-all")
 }
@@ -76,7 +87,7 @@ dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
     api("", "prince", "")
     // This dependency is found on compile classpath of this component and consumers.
-    api("com.google.guava:guava:26.0-jre")
+    // api("com.google.guava:guava:26.0-jre")
     api("org.docbook", "docbook-xslt2", "2.3.8") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
@@ -131,6 +142,18 @@ application {
 }
  */
 
+val patchModule = listOf(
+        "--patch-module", "commons.logging=" +
+        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
+        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
+
+        "--patch-module", "jcl.over.slf4j=" +
+        "/home/tpasch/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:" +
+        "/home/tpasch/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar",
+
+        "--patch-module", "q=b"
+)
+
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
@@ -140,10 +163,20 @@ tasks {
 
     withType<JavaCompile> {
 
+doFirst {
+    options.compilerArgs.addAll(listOf(
+            "--release", "11",
+            "--add-modules", "ALL-MODULE-PATH",
+            "--module-path", classpath.asPath
+    ) + patchModule)
+}
+        /*
         options.compilerArgs.addAll(listOf(
                 "--release", "11",
+                "--add-modules", "ALL-MODULE-PATH",
                 "--module-path", classpath.asPath
-        ))
+        ) + patchModule)
+         */
 
         /*
         compileOptions {
