@@ -18,3 +18,7 @@
 	path = jing-trang
 	url = git@github.com:aanno/jing-trang.git
 	branch = feature/tp-saxon
+[submodule "asciidoctorj"]
+	path = asciidoctorj
+	url = git@github.com:aanno/asciidoctorj.git
+	branch = feature/module-jars

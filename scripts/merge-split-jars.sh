@@ -13,14 +13,15 @@ mkdir -p "$DIR"
 pushd "$DIR"
 
 rm "$ADJUBER"
-cp "$ADJAPI" "$ADJUBER"
+# cp "$ADJAPI" "$ADJUBER"
 
 popd
 
 pushd "$TMP"
 
 unzip -q "$ADJ"
-zip -u9rq "$ADJUBER" .
+unzip -qo "$ADJAPI"
+zip -9rq "$ADJUBER" .
 
 popd
 

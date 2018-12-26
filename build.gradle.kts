@@ -91,6 +91,8 @@ configurations.all {
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
     exclude("xml-apis", "xml-apis-ext")
+    exclude("xalan", "xalan")
+    exclude("xerces", "xercesImpl")
     exclude("com.thaiopensource", "jing")
     exclude("com.thaiopensource", "trang")
     exclude("net.sf.saxon", "saxon")

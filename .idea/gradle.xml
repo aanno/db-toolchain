@@ -3,12 +3,51 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/xslt20-stylesheets">
+                <projects>
+                  <project path="$PROJECT_DIR$/xslt20-stylesheets" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/xslt20-resources">
+                <projects>
+                  <project path="$PROJECT_DIR$/xslt20-resources" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/asciidoctorj">
+                <projects>
+                  <project path="$PROJECT_DIR$/asciidoctorj" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-api" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-arquillian-extension" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-core" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-distribution" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-documentation" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-test-support" />
+                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-wildfly-integration-test" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/asciidoctorj" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-api" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-arquillian-extension" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-core" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-distribution" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-documentation" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-test-support" />
+            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-wildfly-integration-test" />
+            <option value="$PROJECT_DIR$/xslt20-resources" />
+            <option value="$PROJECT_DIR$/xslt20-stylesheets" />
+            <option value="$PROJECT_DIR$/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

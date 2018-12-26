@@ -4,6 +4,7 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/asciidoctor-fopub" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/asciidoctor.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/asciidoctorj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jing-trang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jing-trang/relaxng.org" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/xslt20-java" vcs="Git" />
