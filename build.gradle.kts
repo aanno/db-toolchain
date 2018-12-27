@@ -155,9 +155,10 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
-    api("org.asciidoctor", "asciidoctorj", "1.6.0-SNAPSHOT") {
+    api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
+    api("", "asciidoctorj-api", "1.6.0-SNAPSHOT")
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // Use TestNG framework, also requires calling test.useTestNG() below

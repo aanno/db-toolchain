@@ -3,7 +3,7 @@ module com.github.aanno.dbtoolchain {
     requires org.jruby;
     requires com.helger.schematron;
     requires prince;
-    // requires asciidoctorj.api;
+    requires asciidoctorj.api;
     requires asciidoctorj;
     /*
     requires prince;
