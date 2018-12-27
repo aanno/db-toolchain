@@ -92,8 +92,6 @@ configurations.all {
             , "org.apache.httpcomponents:httpcore:4.4.10"
             , "org.apache.xmlgraphics:fop:2.3"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
-            , "org.jruby:jruby:9.2.5.0"
-            // , "org.jruby.jcodings:jcodings:1.0.41"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
@@ -130,6 +128,8 @@ dependencies {
     // api("", "asciidocj", "")
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
+    // missing dep from jruby -> joni
+    api("org.ow2.asm", "asm", "7.0")
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
