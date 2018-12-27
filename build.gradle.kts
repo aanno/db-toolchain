@@ -92,6 +92,8 @@ configurations.all {
             , "org.apache.httpcomponents:httpcore:4.4.10"
             , "org.apache.xmlgraphics:fop:2.3"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
+            , "org.jruby:jruby:9.2.5.0"
+            // , "org.jruby.jcodings:jcodings:1.0.41"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
@@ -110,6 +112,8 @@ configurations.all {
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
     exclude("org.apache.avalon.framework", "avalon-framework-api")
     exclude("com.github.jnr", "jnr-unixsocket")
+    exclude("com.xmlcalabash", "xmlcalabash1-gradle")
+    exclude("com.xmlcalabash", "xmlcalabash1-print")
 
     // exclude super jars
     exclude("org.apache.xmlgraphics", "batik-all")
@@ -125,7 +129,7 @@ dependencies {
     // asciidocj ueber jar
     // api("", "asciidocj", "")
     // dependency of asciidocj and asciidocj-api
-    api("org.jruby", "jruby", "9.2.4.0")
+    api("org.jruby", "jruby", "9.2.5.0")
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
@@ -222,6 +226,14 @@ val patchModule = listOf(
         "--patch-module", "asciidoctorj=" +
         spec2File["org.asciidoctor:asciidoctorj-api"].toString(),
 */
+
+        "--patch-module", "xmlcalabash=" +
+        spec2File["com.xmlcalabash:xmlcalabash"].toString() +
+        ":" + spec2File["com.xmlcalabash:xmlcalabash1-gradle"].toString(),
+
+        "--patch-module", "xmlcalabash1.print=" +
+        spec2File["com.xmlcalabash:xmlcalabash"].toString() +
+        ":" + spec2File["com.xmlcalabash:xmlcalabash1-gradle"].toString(),
 
         "--patch-module", "jnr.enxio=" +
         spec2File["com.github.jnr:jnr-unixsocket"].toString() +
