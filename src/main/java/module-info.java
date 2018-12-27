@@ -13,6 +13,9 @@ module com.github.aanno.dbtoolchain {
     requires commons.io;
     // requires avalon.framework.impl;
     requires avalon.framework.api;
+    // fop -> batik
+    requires batik.anim;
+    requires xml.apis.ext;
 
     // jruby stuff
     requires org.jruby;

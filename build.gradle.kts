@@ -92,10 +92,11 @@ configurations.all {
             , "org.apache.httpcomponents:httpcore:4.4.10"
             , "org.apache.xmlgraphics:fop:2.3"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
+            // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
-    exclude("xml-apis", "xml-apis-ext")
+    // exclude("xml-apis", "xml-apis-ext")
     exclude("xalan", "xalan")
     exclude("xerces", "xercesImpl")
     exclude("com.thaiopensource", "jing")
@@ -147,11 +148,11 @@ dependencies {
     api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.3") {
         exclude("xml-apis", "xml-apis")
-        exclude("xml-apis", "xml-apis-ext")
+        // exclude("xml-apis", "xml-apis-ext")
     }
     api("org.apache.xmlgraphics", "fop", "2.3") {
         exclude("xml-apis", "xml-apis")
-        exclude("xml-apis", "xml-apis-ext")
+        // exclude("xml-apis", "xml-apis-ext")
     }
     // pull in all deps (but batik-all will be excuded)
     api("org.apache.xmlgraphics", "batik-all", "1.10")
