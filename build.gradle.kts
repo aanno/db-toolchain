@@ -114,6 +114,8 @@ configurations.all {
     // exclude super jars
     exclude("org.apache.xmlgraphics", "batik-all")
     exclude("org.apache.xmlgraphics", "batik-ext")
+    // depends on rhino (not in java 11 any more)
+    exclude("org.apache.xmlgraphics", "batik-script")
     exclude("org.apache.xmlgraphics", "batik-constants")
 }
 
