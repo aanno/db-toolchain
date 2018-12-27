@@ -108,7 +108,7 @@ configurations.all {
     // exclude("org.asciidoctor", "asciidoctorj")
     exclude("commons-logging", "commons-logging")
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
-    exclude("org.apache.avalon.framework", "avalon-framework-api")
+    // exclude("org.apache.avalon.framework", "avalon-framework-api")
     exclude("com.github.jnr", "jnr-unixsocket")
     exclude("com.xmlcalabash", "xmlcalabash1-gradle")
     exclude("com.xmlcalabash", "xmlcalabash1-print")
