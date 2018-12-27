@@ -21,6 +21,7 @@ repositories {
                 "lib/prince-java/lib",
                 "jing-trang/build",
                 // lib/ueberjars",
+                "lib/stripped",
                 "asciidoctorj/asciidoctorj-core/build/libs",
                 "asciidoctorj/asciidoctorj-api/build/libs"
         )
@@ -127,6 +128,14 @@ dependencies {
     api("", "prince", "")
     // asciidocj ueber jar
     // api("", "asciidocj", "")
+    // build from submodule 'jing-trang'
+    api("", "jing", "")
+    api("", "xml-apis-stripped", "")
+    api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
+        // exclude("org.asciidoctor", "asciidoctorj-api")
+    }
+    api("", "asciidoctorj-api", "1.6.0-SNAPSHOT")
+
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
     // missing dep from jruby -> joni
@@ -143,8 +152,6 @@ dependencies {
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
     }
-    // build from submodule 'jing-trang'
-    api("", "jing", "")
     api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.3") {
         exclude("xml-apis", "xml-apis")
@@ -162,10 +169,6 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
-    api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
-        // exclude("org.asciidoctor", "asciidoctorj-api")
-    }
-    api("", "asciidoctorj-api", "1.6.0-SNAPSHOT")
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // Use TestNG framework, also requires calling test.useTestNG() below

@@ -16,6 +16,7 @@ module com.github.aanno.dbtoolchain {
     // fop -> batik
     requires batik.anim;
     requires xml.apis.ext;
+    requires xml.apis.stripped;
 
     // jruby stuff
     requires org.jruby;
