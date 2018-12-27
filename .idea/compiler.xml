@@ -15,5 +15,21 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
+    <bytecodeTargetLevel>
+      <module name="org.asciidoctor.asciidoctorj-api.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-api.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-arquillian-extension.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-distribution.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-distribution.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-documentation.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-documentation.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-test-support.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-test-support.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-wildfly-integration-test.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-wildfly-integration-test.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

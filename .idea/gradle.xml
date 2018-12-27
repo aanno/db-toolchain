@@ -16,16 +16,9 @@
                   <project path="$PROJECT_DIR$/xslt20-resources" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/asciidoctorj">
+              <build path="$PROJECT_DIR$/jing-trang">
                 <projects>
-                  <project path="$PROJECT_DIR$/asciidoctorj" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-api" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-arquillian-extension" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-core" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-distribution" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-documentation" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-test-support" />
-                  <project path="$PROJECT_DIR$/asciidoctorj/asciidoctorj-wildfly-integration-test" />
+                  <project path="$PROJECT_DIR$/jing-trang" />
                 </projects>
               </build>
             </builds>
@@ -37,14 +30,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/asciidoctorj" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-api" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-arquillian-extension" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-core" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-distribution" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-documentation" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-test-support" />
-            <option value="$PROJECT_DIR$/asciidoctorj/asciidoctorj-wildfly-integration-test" />
+            <option value="$PROJECT_DIR$/jing-trang" />
             <option value="$PROJECT_DIR$/xslt20-resources" />
             <option value="$PROJECT_DIR$/xslt20-stylesheets" />
             <option value="$PROJECT_DIR$/xslt20-stylesheets/buildSrc" />

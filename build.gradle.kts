@@ -20,7 +20,9 @@ repositories {
         dirs(
                 "lib/prince-java/lib",
                 "jing-trang/build",
-                "lib/ueberjars"
+                // lib/ueberjars",
+                "asciidoctorj/asciidoctorj-core/build/libs",
+                "asciidoctorj/asciidoctorj-api/build/libs"
         )
     }
 
@@ -64,6 +66,9 @@ configurations.all {
 
         // add dependency substitution rules
         dependencySubstitution {
+            // fails with 'Project :asciidoctorj not found.'
+            // substitute(module("org.asciidoctor:asciidoctorj")).with(project(":asciidoctorj"))
+
             // substitute(module("com.thaiopensource:jing")).with(module(":jing"))
             // substitute(module("com.thaiopensource:jing")).with(project(":jing"))
             // substitute(module("org.gradle:api")).with(project(":api"))
@@ -99,8 +104,8 @@ configurations.all {
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
-    exclude("org.asciidoctor", "asciidoctorj-api")
-    exclude("org.asciidoctor", "asciidoctorj")
+    // exclude("org.asciidoctor", "asciidoctorj-api")
+    // exclude("org.asciidoctor", "asciidoctorj")
     exclude("commons-logging", "commons-logging")
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
     exclude("org.apache.avalon.framework", "avalon-framework-api")
@@ -116,7 +121,7 @@ dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
     api("", "prince", "")
     // asciidocj ueber jar
-    api("", "asciidocj", "")
+    // api("", "asciidocj", "")
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.4.0")
 
@@ -150,8 +155,8 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
-    api("org.asciidoctor", "asciidoctorj", "1.6.0-RC.2") {
-        exclude("org.asciidoctor", "asciidoctorj-api")
+    api("org.asciidoctor", "asciidoctorj", "1.6.0-SNAPSHOT") {
+        // exclude("org.asciidoctor", "asciidoctorj-api")
     }
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
