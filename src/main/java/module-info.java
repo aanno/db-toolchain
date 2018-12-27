@@ -4,6 +4,9 @@ module com.github.aanno.dbtoolchain {
     requires prince;
     requires asciidoctorj.api;
     requires asciidoctorj;
+    requires fop;
+    requires fop.pdf.images;
+    requires commons.io;
 
     // jruby stuff
     requires org.jruby;
@@ -13,12 +16,4 @@ module com.github.aanno.dbtoolchain {
     requires jdk.unsupported;
     // more jruby
     requires com.headius.invokebinder;
-
-    /*
-    requires prince;
-    requires com.helger.schematron;
-    requires org.xml.sax;
-    requires net.sf.saxon;
-    requires org.asciidoctor;
-     */
 }
