@@ -83,6 +83,25 @@ configurations.all {
         cacheDynamicVersionsFor(10*60, "seconds")
         // don't cache changing modules at all
         cacheChangingModulesFor(60, "seconds")
+
+        // https://docs.gradle.org/current/userguide/customizing_dependency_resolution_behavior.html
+        resolutionStrategy.eachDependency {
+            if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
+                useTarget(mapOf("group" to "", "name" to "batik-all-stripped", "version" to ""))
+                // useTarget(mapOf("group" to requested.group, "name" to "batik-all", "version" to requested.version))
+                because("""prefer "batik-all" over "${requested.name}"""")
+            }
+            /*
+            if (requested.name == "groovy-all") {
+                useTarget(mapOf("group" to requested.group, "name" to "groovy", "version" to requested.version))
+                because("""prefer "groovy" over "groovy-all"""")
+            }
+            if (requested.name == "log4j") {
+                useTarget("org.slf4j:log4j-over-slf4j:1.7.10")
+                because("""prefer "log4j-over-slf4j" 1.7.10 over any version of "log4j"""")
+            }
+             */
+        }
     }
     resolutionStrategy.setForcedModules(
             "net.sf.saxon:Saxon-HE:9.8.0-14"
@@ -146,8 +165,8 @@ dependencies {
     api("org.docbook", "docbook-xslt2", "2.3.8") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
-        exclude("org.apache.xmlgraphics", "batik-all")
-        exclude("org.apache.xmlgraphics", "batik-xml")
+        // exclude("org.apache.xmlgraphics", "batik-all")
+        // exclude("org.apache.xmlgraphics", "batik-xml")
         exclude("net.sf.saxon", "saxon")
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
