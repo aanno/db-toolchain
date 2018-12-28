@@ -87,9 +87,13 @@ configurations.all {
         // https://docs.gradle.org/current/userguide/customizing_dependency_resolution_behavior.html
         resolutionStrategy.eachDependency {
             if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
-                useTarget(mapOf("group" to "", "name" to "batik-all-stripped", "version" to ""))
+                useTarget(mapOf(
+                        "group" to requested.group,
+                        "name" to "batik-all-stripped",
+                        "version" to requested.version
+                ))
                 // useTarget(mapOf("group" to requested.group, "name" to "batik-all", "version" to requested.version))
-                because("""prefer "batik-all" over "${requested.name}"""")
+                because("""prefer "batik-all-stripped" over "${requested.name}"""")
             }
             /*
             if (requested.name == "groovy-all") {
