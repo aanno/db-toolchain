@@ -153,7 +153,7 @@ dependencies {
     // api("", "asciidocj", "")
     // build from submodule 'jing-trang'
     api("", "jing", "")
-    api("", "xml-apis-stripped", "")
+    // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
@@ -186,6 +186,8 @@ dependencies {
     }
     // pull in all deps (but batik-all will be excuded)
     api("org.apache.xmlgraphics", "batik-all", "1.10")
+    api("xml-apis", "xml-apis-ext", "1.3.04")
+
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
