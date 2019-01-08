@@ -22,3 +22,7 @@
 	path = asciidoctorj
 	url = git@github.com:aanno/asciidoctorj.git
 	branch = feature/module-jars
+[submodule "fop"]
+	path = fop
+	url = git@github.com:aanno/fop.git
+	branch = feature/pr-remove-avalon-1

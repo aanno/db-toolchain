@@ -20,6 +20,7 @@ repositories {
         dirs(
                 "lib/prince-java/lib",
                 "jing-trang/build",
+                "fop/fop/target",
                 // lib/ueberjars",
                 "lib/stripped",
                 "asciidoctorj/asciidoctorj-core/build/libs",
@@ -114,7 +115,8 @@ configurations.all {
             , "commons-codec:commons-codec:1.11"
             , "org.apache.httpcomponents:httpclient:4.5.6"
             , "org.apache.httpcomponents:httpcore:4.4.10"
-            , "org.apache.xmlgraphics:fop:2.3"
+            // , "org.apache.xmlgraphics:fop:2.3"
+            , "org.apache.xmlgraphics:fop:2.4.0-SNAPSHOT"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
             // , "xml-apis:xml-apis:1.4.01"
     )

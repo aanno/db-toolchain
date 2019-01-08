@@ -12,9 +12,9 @@ module com.github.aanno.dbtoolchain {
     requires fop.pdf.images;
     requires commons.io;
     // requires avalon.framework.impl;
-    requires avalon.framework.api;
+    // requires avalon.framework.api;
     // fop -> batik
-    requires batik.all.stripped;
+    // requires batik.all.stripped;
     // requires xml.apis.ext;
     // requires xml.apis.stripped;
     requires jdk.xml.dom;
