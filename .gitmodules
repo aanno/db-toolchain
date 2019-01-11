@@ -27,3 +27,7 @@
 	path = submodules/fop
 	url = git@github.com:aanno/fop.git
 	branch = feature/pr-remove-avalon-1
+[submodule "submodules/batik"]
+	path = submodules/batik
+	url = git@github.com:aanno/batik.git
+	branch = feature/pr-batik-1249-1
