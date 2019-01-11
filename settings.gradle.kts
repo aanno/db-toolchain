@@ -9,10 +9,10 @@ project :
 > Module version 'org.asciidoctor:asciidoctorj:1.6.0-SNAPSHOT' is not unique in composite:
 can be provided by [project :asciidoctorj, project :asciidoctorj:asciidoctorj].
  */
-// includeBuild("asciidoctorj")
-// includeBuild("asciidoctorj/asciidoctorj-api")
-// includeBuild("asciidoctorj/asciidoctorj-core")
+// includeBuild("submodules/asciidoctorj")
+// includeBuild("submodules/asciidoctorj/asciidoctorj-api")
+// includeBuild("submodules/asciidoctorj/asciidoctorj-core")
 
-includeBuild("xslt20-stylesheets")
-includeBuild("xslt20-resources")
-includeBuild("jing-trang")
+includeBuild("submodules/xslt20-stylesheets")
+includeBuild("submodules/xslt20-resources")
+includeBuild("submodules/jing-trang")

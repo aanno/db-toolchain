@@ -19,12 +19,12 @@ repositories {
     flatDir {
         dirs(
                 "lib/prince-java/lib",
-                "jing-trang/build",
-                "fop/fop/target",
+                "submodules/jing-trang/build",
+                "submodules/fop/fop/target",
                 // lib/ueberjars",
                 "lib/stripped",
-                "asciidoctorj/asciidoctorj-core/build/libs",
-                "asciidoctorj/asciidoctorj-api/build/libs"
+                "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+                "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
     }
 

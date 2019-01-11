@@ -1,28 +1,28 @@
 [submodule "xslt20-stylesheets"]
-	path = xslt20-stylesheets
+	path = submodules/xslt20-stylesheets
 	url = https://github.com/docbook/xslt20-stylesheets.git
 [submodule "asciidoctor-fopub"]
-	path = asciidoctor-fopub
+	path = submodules/asciidoctor-fopub
 	url = https://github.com/asciidoctor/asciidoctor-fopub.git
 [submodule "xslt20-resources"]
-	path = xslt20-resources
+	path = submodules/xslt20-resources
 	url = https://github.com/docbook/xslt20-resources
 [submodule "xslt20-java"]
-	path = xslt20-java
+	path = submodules/xslt20-java
 	url = https://github.com/docbook/xslt20-java.git
 	branch = saxon95
 [submodule "asciidoctor.org"]
-	path = asciidoctor.org
+	path = submodules/asciidoctor.org
 	url = https://github.com/asciidoctor/asciidoctor.org.git
 [submodule "jing-trang"]
-	path = jing-trang
+	path = submodules/jing-trang
 	url = git@github.com:aanno/jing-trang.git
 	branch = feature/tp-saxon
 [submodule "asciidoctorj"]
-	path = asciidoctorj
+	path = submodules/asciidoctorj
 	url = git@github.com:aanno/asciidoctorj.git
 	branch = feature/module-jars
 [submodule "fop"]
-	path = fop
+	path = submodules/fop
 	url = git@github.com:aanno/fop.git
 	branch = feature/pr-remove-avalon-1
