@@ -2,14 +2,14 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/asciidoctor-fopub" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/asciidoctor.org" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/asciidoctorj" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/fop" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/jing-trang" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/jing-trang/relaxng.org" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/xslt20-java" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/xslt20-resources" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/xslt20-stylesheets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/asciidoctor-fopub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/asciidoctor.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/asciidoctorj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/fop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/jing-trang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/jing-trang/relaxng.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/xslt20-java" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/xslt20-resources" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/xslt20-stylesheets" vcs="Git" />
   </component>
 </project>

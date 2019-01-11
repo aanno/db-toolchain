@@ -6,19 +6,19 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/xslt20-stylesheets">
+              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets">
                 <projects>
-                  <project path="$PROJECT_DIR$/xslt20-stylesheets" />
+                  <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/xslt20-resources">
+              <build path="$PROJECT_DIR$/submodules/xslt20-resources">
                 <projects>
-                  <project path="$PROJECT_DIR$/xslt20-resources" />
+                  <project path="$PROJECT_DIR$/submodules/xslt20-resources" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/jing-trang">
+              <build path="$PROJECT_DIR$/submodules/jing-trang">
                 <projects>
-                  <project path="$PROJECT_DIR$/jing-trang" />
+                  <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
               </build>
             </builds>
@@ -30,10 +30,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/jing-trang" />
-            <option value="$PROJECT_DIR$/xslt20-resources" />
-            <option value="$PROJECT_DIR$/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/xslt20-stylesheets/buildSrc" />
+            <option value="$PROJECT_DIR$/submodules/jing-trang" />
+            <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
+            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
+            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />

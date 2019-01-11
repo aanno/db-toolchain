@@ -21,7 +21,8 @@
 [submodule "asciidoctorj"]
 	path = submodules/asciidoctorj
 	url = git@github.com:aanno/asciidoctorj.git
-	branch = feature/module-jars
+	# branch = feature/module-jars
+	branch = feature/pr-java11-module-jars
 [submodule "fop"]
 	path = submodules/fop
 	url = git@github.com:aanno/fop.git

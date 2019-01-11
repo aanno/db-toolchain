@@ -16,6 +16,8 @@
       <entry name="!*.model" />
     </wildcardResourcePatterns>
     <bytecodeTargetLevel>
+      <module name="jing-trang.main" target="11" />
+      <module name="jing-trang.test" target="11" />
       <module name="org.asciidoctor.asciidoctorj-api.main" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-api.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-arquillian-extension.main" target="1.8" />
@@ -30,6 +32,12 @@
       <module name="org.asciidoctor.asciidoctorj-wildfly-integration-test.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj.main" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj.test" target="1.8" />
+      <module name="org.docbook.buildSrc.main" target="11" />
+      <module name="org.docbook.buildSrc.test" target="11" />
+      <module name="org.docbook.xslt20-stylesheets.main" target="11" />
+      <module name="org.docbook.xslt20-stylesheets.test" target="11" />
+      <module name="xslt20-resources.main" target="11" />
+      <module name="xslt20-resources.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
