@@ -334,4 +334,14 @@ tasks {
             // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
         }
 
+
+        // https://stackoverflow.com/questions/51810254/execute-javaexec-task-using-gradle-kotlin-dsl
+        // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
+        // https://stackoverflow.com/questions/11696521/how-to-pass-arguments-from-command-line-to-gradle
+        task("runApp1", JavaExec::class) {
+            main = "com.github.aanno.dbtoolchain.App"
+            classpath = sourceSets["main"].runtimeClasspath
+            // classpath = sourceSets["main"].defaultClasspath
+        }
+
 }
