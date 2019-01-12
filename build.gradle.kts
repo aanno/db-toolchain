@@ -23,6 +23,7 @@ repositories {
                 "submodules/fop/fop/target",
                 // lib/ueberjars",
                 "lib/stripped",
+                "submodules/batik/batik-all/target",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
@@ -90,11 +91,11 @@ configurations.all {
             if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
                 useTarget(mapOf(
                         "group" to requested.group,
-                        "name" to "batik-all-stripped",
+                        "name" to "batik-all",
                         "version" to requested.version
                 ))
                 // useTarget(mapOf("group" to requested.group, "name" to "batik-all", "version" to requested.version))
-                because("""prefer "batik-all-stripped" over "${requested.name}"""")
+                because("""prefer "batik-all (stripped)" over "${requested.name}"""")
             }
             /*
             if (requested.name == "groovy-all") {
