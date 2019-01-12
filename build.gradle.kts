@@ -188,7 +188,7 @@ dependencies {
         // exclude("xml-apis", "xml-apis-ext")
     }
     // pull in all deps (but batik-all will be excuded)
-    api("org.apache.xmlgraphics", "batik-all", "1.10")
+    api("org.apache.xmlgraphics", "batik-all", "1.11-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
 
     api("com.helger", "ph-schematron", "5.0.8") {
