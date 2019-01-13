@@ -90,7 +90,8 @@ configurations.all {
         resolutionStrategy.eachDependency {
             if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
                 useTarget(mapOf(
-                        "group" to requested.group,
+                        // "group" to requested.group,
+			"group" to "",
                         "name" to "batik-all",
                         // "version" to requested.version
                         "version" to "1.11.0-SNAPSHOT"
@@ -193,7 +194,7 @@ dependencies {
     }
     api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0-SNAPSHOT")
     // pull in all deps (but batik-all will be excuded)
-    api("org.apache.xmlgraphics", "batik-all", "1.11.0-SNAPSHOT")
+    api("", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
 
     api("com.helger", "ph-schematron", "5.0.8") {
