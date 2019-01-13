@@ -18,6 +18,7 @@ module com.github.aanno.dbtoolchain {
     requires commons.io;
 
     // requires batik.all;
+    requires batik.all;
     requires xml.apis.ext;
 
     // requires avalon.framework.impl;
