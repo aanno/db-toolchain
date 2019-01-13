@@ -67,10 +67,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="db-toolchain.main" target="11" />
-      <module name="db-toolchain.test" target="11" />
-      <module name="jing-trang.main" target="11" />
-      <module name="jing-trang.test" target="11" />
       <module name="maven-archiver (1)" target="1.5" />
       <module name="maven-archiver (2)" target="1.5" />
       <module name="maven-archiver (3)" target="1.5" />
@@ -101,8 +97,6 @@
       <module name="submodules.jing-trang.test" target="11" />
       <module name="submodules.xslt20-resources.main" target="11" />
       <module name="submodules.xslt20-resources.test" target="11" />
-      <module name="xslt20-resources.main" target="11" />
-      <module name="xslt20-resources.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -117,7 +117,7 @@ configurations.all {
             , "org.apache.httpcomponents:httpclient:4.5.6"
             , "org.apache.httpcomponents:httpcore:4.4.10"
             , "org.apache.xmlgraphics:fop:2.4.0-SNAPSHOT"
-            , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
+            , "org.apache.xmlgraphics:xmlgraphics-commons:2.4.0-SNAPSHOT"
             // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
@@ -190,6 +190,7 @@ dependencies {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
+    api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0-SNAPSHOT")
     // pull in all deps (but batik-all will be excuded)
     api("org.apache.xmlgraphics", "batik-all", "1.11-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
