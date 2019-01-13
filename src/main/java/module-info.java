@@ -6,6 +6,7 @@ module com.github.aanno.dbtoolchain {
 
     requires asciidoctorj.api;
     requires asciidoctorj;
+    requires docbook.xslt2;
 
     // fop stuff
     requires fop;

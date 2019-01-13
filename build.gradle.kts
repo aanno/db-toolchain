@@ -151,7 +151,12 @@ configurations.all {
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
+
     api("", "prince", "")
+    compileClasspath("", "prince", "")
+    runtimeClasspath("", "prince", "")
+    // api("", "prince", "")
+
     // asciidocj ueber jar
     // api("", "asciidocj", "")
     // build from submodule 'jing-trang'
