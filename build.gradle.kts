@@ -92,7 +92,8 @@ configurations.all {
                 useTarget(mapOf(
                         "group" to requested.group,
                         "name" to "batik-all",
-                        "version" to requested.version
+                        // "version" to requested.version
+                        "version" to "1.11.0-SNAPSHOT"
                 ))
                 // useTarget(mapOf("group" to requested.group, "name" to "batik-all", "version" to requested.version))
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
@@ -141,7 +142,7 @@ configurations.all {
     // exclude("com.xmlcalabash", "xmlcalabash1-print")
 
     // exclude super jars
-    exclude("org.apache.xmlgraphics", "batik-all")
+    // exclude("org.apache.xmlgraphics", "batik-all")
     exclude("org.apache.xmlgraphics", "batik-ext")
     // depends on rhino (not in java 11 any more)
     exclude("org.apache.xmlgraphics", "batik-script")
@@ -192,7 +193,7 @@ dependencies {
     }
     api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0-SNAPSHOT")
     // pull in all deps (but batik-all will be excuded)
-    api("org.apache.xmlgraphics", "batik-all", "1.11-SNAPSHOT")
+    api("org.apache.xmlgraphics", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
 
     api("com.helger", "ph-schematron", "5.0.8") {

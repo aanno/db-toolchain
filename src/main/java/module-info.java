@@ -1,6 +1,10 @@
 module com.github.aanno.dbtoolchain {
 
+    // needed for awt
+    requires java.desktop;
     requires java.xml;
+    requires jdk.xml.dom;
+
     requires com.helger.schematron;
     requires prince;
 
@@ -12,13 +16,16 @@ module com.github.aanno.dbtoolchain {
     requires fop;
     requires fop.pdf.images;
     requires commons.io;
+
+    // requires batik.all;
+    requires xml.apis.ext;
+
     // requires avalon.framework.impl;
     // requires avalon.framework.api;
     // fop -> batik
     // requires batik.all.stripped;
     // requires xml.apis.ext;
     // requires xml.apis.stripped;
-    requires jdk.xml.dom;
 
     // jruby stuff
     requires org.jruby;
