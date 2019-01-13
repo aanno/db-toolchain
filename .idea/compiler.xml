@@ -15,9 +15,68 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="asciidoctor" />
+        <module name="asciidoctor-pdf" />
+        <module name="batik-anim" />
+        <module name="batik-awt-util" />
+        <module name="batik-bridge" />
+        <module name="batik-codec" />
+        <module name="batik-constants" />
+        <module name="batik-css" />
+        <module name="batik-dom" />
+        <module name="batik-ext" />
+        <module name="batik-extension" />
+        <module name="batik-gui-util" />
+        <module name="batik-gvt" />
+        <module name="batik-i18n" />
+        <module name="batik-parser" />
+        <module name="batik-rasterizer" />
+        <module name="batik-rasterizer-ext" />
+        <module name="batik-script" />
+        <module name="batik-slideshow" />
+        <module name="batik-squiggle" />
+        <module name="batik-squiggle-ext" />
+        <module name="batik-svg-dom" />
+        <module name="batik-svgbrowser" />
+        <module name="batik-svggen" />
+        <module name="batik-svgpp" />
+        <module name="batik-svgrasterizer" />
+        <module name="batik-swing" />
+        <module name="batik-test" />
+        <module name="batik-test-old" />
+        <module name="batik-test-svg" />
+        <module name="batik-test-swing" />
+        <module name="batik-test-util" />
+        <module name="batik-transcoder" />
+        <module name="batik-ttf2svg" />
+        <module name="batik-util" />
+        <module name="batik-xml" />
+        <module name="fop" />
+        <module name="fop-core" />
+        <module name="fop-events" />
+        <module name="fop-sandbox" />
+        <module name="fop-servlet" />
+        <module name="fop-transcoder" />
+        <module name="fop-transcoder-allinone" />
+        <module name="fop-util" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="db-toolchain.main" target="11" />
+      <module name="db-toolchain.test" target="11" />
       <module name="jing-trang.main" target="11" />
       <module name="jing-trang.test" target="11" />
+      <module name="maven-archiver (1)" target="1.5" />
+      <module name="maven-archiver (2)" target="1.5" />
+      <module name="maven-archiver (3)" target="1.5" />
+      <module name="maven-archiver (4)" target="1.5" />
+      <module name="maven-archiver (5)" target="1.5" />
+      <module name="maven-archiver (6)" target="1.5" />
       <module name="org.asciidoctor.asciidoctorj-api.main" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-api.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-arquillian-extension.main" target="1.8" />
@@ -34,8 +93,14 @@
       <module name="org.asciidoctor.asciidoctorj.test" target="1.8" />
       <module name="org.docbook.buildSrc.main" target="11" />
       <module name="org.docbook.buildSrc.test" target="11" />
+      <module name="org.docbook.xslt20-java.main" target="1.8" />
+      <module name="org.docbook.xslt20-java.test" target="1.8" />
       <module name="org.docbook.xslt20-stylesheets.main" target="11" />
       <module name="org.docbook.xslt20-stylesheets.test" target="11" />
+      <module name="submodules.jing-trang.main" target="11" />
+      <module name="submodules.jing-trang.test" target="11" />
+      <module name="submodules.xslt20-resources.main" target="11" />
+      <module name="submodules.xslt20-resources.test" target="11" />
       <module name="xslt20-resources.main" target="11" />
       <module name="xslt20-resources.test" target="11" />
     </bytecodeTargetLevel>

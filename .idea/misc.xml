@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" />
+    <file type="web" url="file://$PROJECT_DIR$/../github/fop/fop-servlet" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../github/fop/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/pom.xml" />
+        <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-gem-installer.pom" />
+        <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-pdf-gem-installer.pom" />
+        <option value="$PROJECT_DIR$/submodules/batik/pom.xml" />
+        <option value="$PROJECT_DIR$/submodules/batik/batik-test-util/pom.xml" />
+        <option value="$PROJECT_DIR$/submodules/fop/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../github/batik/batik-all/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-anim/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-awt-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-bridge/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-codec/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-constants/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-css/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-dom/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-ext/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-extension/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-gui-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-gvt/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-i18n/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-parser/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-rasterizer-ext/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-rasterizer/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-script/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-slideshow/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-squiggle-ext/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-squiggle/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-svg-dom/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-svgbrowser/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-svggen/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-svgpp/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-svgrasterizer/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-swing/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-test-old/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-test-svg/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-test-swing/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-test/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-transcoder/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-ttf2svg/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/batik-xml/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/batik/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-core/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-events/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-sandbox/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-transcoder-allinone/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-transcoder/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/fop/pom.xml" />
+        <option value="$PROJECT_DIR$/../github/fop/pom.xml" />
+      </set>
+    </option>
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
