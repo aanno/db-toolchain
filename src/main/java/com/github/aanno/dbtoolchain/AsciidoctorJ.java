@@ -47,7 +47,7 @@ options.put(Options.BACKEND, "docbook5");
     }
 
     public static void main(String[] args) throws Exception {
-        Path test = Paths.get("asciidoctor.org/README.adoc");
+        Path test = Paths.get("submodules/asciidoctor.org/README.adoc");
         Path out = Paths.get("out.fo.xml");
 
         AsciidoctorJ adj = new AsciidoctorJ();

@@ -116,7 +116,6 @@ configurations.all {
             , "commons-codec:commons-codec:1.11"
             , "org.apache.httpcomponents:httpclient:4.5.6"
             , "org.apache.httpcomponents:httpcore:4.4.10"
-            // , "org.apache.xmlgraphics:fop:2.3"
             , "org.apache.xmlgraphics:fop:2.4.0-SNAPSHOT"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.3"
             // , "xml-apis:xml-apis:1.4.01"
@@ -139,7 +138,7 @@ configurations.all {
     // exclude("org.apache.avalon.framework", "avalon-framework-api")
     exclude("com.github.jnr", "jnr-unixsocket")
     exclude("com.xmlcalabash", "xmlcalabash1-gradle")
-    exclude("com.xmlcalabash", "xmlcalabash1-print")
+    // exclude("com.xmlcalabash", "xmlcalabash1-print")
 
     // exclude super jars
     exclude("org.apache.xmlgraphics", "batik-all")
@@ -153,9 +152,8 @@ dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
 
     api("", "prince", "")
-    compileClasspath("", "prince", "")
-    runtimeClasspath("", "prince", "")
-    // api("", "prince", "")
+    // compileClasspath("", "prince", "")
+    // runtimeClasspath("", "prince", "")
 
     // asciidocj ueber jar
     // api("", "asciidocj", "")
@@ -188,7 +186,7 @@ dependencies {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
-    api("org.apache.xmlgraphics", "fop", "2.3") {
+    api("org.apache.xmlgraphics", "fop", "2.4.0-SNAPSHOT") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
@@ -346,7 +344,21 @@ tasks {
         task("runApp1", JavaExec::class) {
             main = "com.github.aanno.dbtoolchain.App"
             classpath = sourceSets["main"].runtimeClasspath
-            // classpath = sourceSets["main"].defaultClasspath
+        }
+
+        task("runAsciidoctor", JavaExec::class) {
+            main = "com.github.aanno.dbtoolchain.AsciidoctorJ"
+            classpath = sourceSets["main"].runtimeClasspath
+        }
+
+        task("runAdSvgTest", JavaExec::class) {
+            main = "com.github.aanno.dbtoolchain.AdSvgTest"
+            classpath = sourceSets["main"].runtimeClasspath
+        }
+
+        task("runDbValidation", JavaExec::class) {
+            main = "com.github.aanno.dbtoolchain.DbValidation"
+            classpath = sourceSets["main"].runtimeClasspath
         }
 
 }
