@@ -6,15 +6,6 @@
  * user guide available at https://docs.gradle.org/5.0/userguide/tutorial_java_projects.html
  */
 
-plugins {
-    // Apply the java plugin to add support for Java
-    // java
-    `java-library`
-
-    // Apply the application plugin to add support for building an application
-    // application
-}
-
 repositories {
     flatDir {
         dirs(
@@ -37,18 +28,40 @@ repositories {
     jcenter()
 }
 
+buildscript {
+    repositories {
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+    }
+    dependencies {
+        classpath("org.javamodularity", "moduleplugin", "1.4.0")
+    }
+}
+
 
 ext {
 }
 
-/*
-allprojects {
-    plugins {
-        java
-        // `java-library`
-    }
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
- */
+
+plugins {
+    // Apply the java plugin to add support for Java
+    // java
+    `java-library`
+    // `org.javamodularity.moduleplugin`
+
+    // Apply the application plugin to add support for building an application
+    // application
+}
+
+allprojects {
+    // https://github.com/java9-modularity/gradle-modules-plugin/tree/master/test-project-kotlin
+    apply(plugin = "org.javamodularity.moduleplugin")
+}
 
 data class Jaxb(val version: String)
 val jaxb = Jaxb("2.2.11")
