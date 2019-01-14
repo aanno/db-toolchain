@@ -9,6 +9,7 @@
     <mapping directory="$PROJECT_DIR$/submodules/fop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/jing-trang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/jing-trang/relaxng.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/xmlcalabash1-print" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/xslt20-java" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/xslt20-resources" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/xslt20-stylesheets" vcs="Git" />

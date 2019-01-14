@@ -34,7 +34,7 @@ public class TraxSingleton {
         System.setProperty("xml.catalog.cacheUnderHome", "true");
         System.setProperty("xml.catalog.prefer", "true");
 
-        System.setProperty("com.xmlcalabash.css-processor", "com.xmlcalabash.util.CssPrince");
+        System.setProperty("com.xmlcalabash.css-processor", "com.xmlcalabash.util.print.CssPrince");
         System.setProperty("com.xmlcalabash.css.prince.exepath", "/usr/bin/prince");
     }
 

@@ -31,3 +31,7 @@
 	path = submodules/batik
 	url = git@github.com:aanno/batik.git
 	branch = feature/pr-batik-1249-1
+[submodule "submodules/xmlcalabash1-print"]
+	path = submodules/xmlcalabash1-print
+	url = git@github.com:aanno/xmlcalabash1-print.git
+	branch = feature/pr-java11-module
