@@ -36,4 +36,8 @@ module com.github.aanno.dbtoolchain {
     requires jdk.unsupported;
     // more jruby
     requires com.headius.invokebinder;
+
+    // exports
+
+    exports com.xmlcalabash.util.print;
 }
