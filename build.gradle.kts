@@ -115,19 +115,8 @@ configurations.all {
                         // "version" to requested.version
                         "version" to "1.11.0-SNAPSHOT"
                 ))
-                // useTarget(mapOf("group" to requested.group, "name" to "batik-all", "version" to requested.version))
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
             }
-            /*
-            if (requested.name == "groovy-all") {
-                useTarget(mapOf("group" to requested.group, "name" to "groovy", "version" to requested.version))
-                because("""prefer "groovy" over "groovy-all"""")
-            }
-            if (requested.name == "log4j") {
-                useTarget("org.slf4j:log4j-over-slf4j:1.7.10")
-                because("""prefer "log4j-over-slf4j" 1.7.10 over any version of "log4j"""")
-            }
-             */
         }
     }
     resolutionStrategy.setForcedModules(
@@ -223,6 +212,8 @@ dependencies {
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
     api("net.sf.xslthl", "xslthl", "2.1.3")
+
+    api("info.picocli", "picocli", "3.9.1")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
@@ -322,13 +313,6 @@ tasks {
                 ) /*+ patchModule */)
                 // println("Args for for ${name} are ${options.allCompilerArgs}")
             }
-
-            /*
-            compileOptions {
-                sourceCompatibility = 11
-                targetCompatibility = 11
-            }
-             */
 
             // classpath.forEach({it -> println(it)})
     }
