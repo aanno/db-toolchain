@@ -10,9 +10,9 @@ import java.util.concurrent.Callable;
 import static picocli.CommandLine.*;
 
 @Command(name = "list", aliases = {"show"}, description = "list/show all pipelines")
-public class ListFlags implements Callable<Object> {
+public class ListCommand implements Callable<Object> {
 
-    private static final Logger LOG = LoggerFactory.getLogger("ListFlags");
+    private static final Logger LOG = LoggerFactory.getLogger("ListCommand");
 
     @Override
     public Object call() throws Exception {

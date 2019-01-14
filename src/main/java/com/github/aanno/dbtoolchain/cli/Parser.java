@@ -11,7 +11,7 @@ public class Parser {
 
     public CommandLine build() {
         CommandLine result = new CommandLine(new CommonFlags(), new Factory());
-        // result.addSubcommand("transform", new TransformFlags());
+        // result.addSubcommand("transform", new TransformCommand());
         return result;
     }
 
@@ -19,7 +19,27 @@ public class Parser {
 
         @Override
         public <K> K create(Class<K> cls) throws Exception {
+            /*
+            if (EFileType.class.equals(cls)) {
+
+            }
+             */
             return cls.getDeclaredConstructor().newInstance();
+        }
+    }
+
+    public static class EFileTypeConverter implements ITypeConverter<EFileType> {
+
+        @Override
+        public EFileType convert(String filename) throws Exception {
+            if (filename == null) {
+                return null;
+            }
+            EFileType result = EFileType.getType(filename);
+            if (result == null) {
+                throw new IllegalArgumentException("Not of a known file type: " + filename);
+            }
+            return result;
         }
     }
 }
