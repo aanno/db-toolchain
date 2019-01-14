@@ -1,10 +1,11 @@
 package com.github.aanno.dbtoolchain.cli;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CliUtils {
+
+    private static final Logger LOG = LoggerFactory.getLogger("CliUtils");
 
     private CliUtils() {
         // Never invoked
@@ -17,6 +18,7 @@ public class CliUtils {
         while (i < len) {
             String s = args[i];
             ++i;
+
             if (s.endsWith(classname)) {
                 break;
             }

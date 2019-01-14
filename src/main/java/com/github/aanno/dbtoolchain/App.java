@@ -13,7 +13,6 @@ import static picocli.CommandLine.*;
 
 public class App {
 
-    String name;
     private static final Logger LOG = LoggerFactory.getLogger("App");
 
     public App() {
@@ -21,7 +20,7 @@ public class App {
 
     public void process(List<Object> list) throws Exception {
         if (list != null) {
-            LOG.info(list.toString());
+            LOG.warn("parsed args: " + list.toString());
         }
     }
 
