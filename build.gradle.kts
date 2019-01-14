@@ -46,19 +46,20 @@ plugins {
     // Apply the java plugin to add support for Java
     // java
     `java-library`
-    "org.javamodularity.moduleplugin"
     id("org.javamodularity.moduleplugin") version "1.4.0"
 
     // Apply the application plugin to add support for building an application
     application
-
     distribution
+    idea
 }
 
-data class Jaxb(val version: String)
-val jaxb = Jaxb("2.2.11")
-project.ext.set("jaxb.version", "2.2.11")
-project.ext.set("jaxb", jaxb)
+idea {
+    module {
+        setDownloadJavadoc(true)
+        setDownloadSources(true)
+    }
+}
 
 class ShowSelection {
     @Mutate
@@ -77,9 +78,6 @@ configurations.all {
             // fails with 'Project :asciidoctorj not found.'
             // substitute(module("org.asciidoctor:asciidoctorj")).with(project(":asciidoctorj"))
 
-            // substitute(module("com.thaiopensource:jing")).with(module(":jing"))
-            // substitute(module("com.thaiopensource:jing")).with(project(":jing"))
-            // substitute(module("org.gradle:api")).with(project(":api"))
             // substitute project(':util') with module('org.gradle:util:3.0')
         }
         componentSelection {
@@ -280,11 +278,11 @@ val patchModule = listOf(
         "--patch-module", "avalon.framework.api=" +
         spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString()
 )
-patchModule.forEach({it -> println(it)})
 */
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
 )
+patchModules.config.forEach({it -> println(it)})
 
 tasks {
 
@@ -296,7 +294,7 @@ tasks {
                         // , "--add-modules", "ALL-MODULE-PATH",
                         // , "--module-path", classpath.asPath
                 ) /*+ patchModule */)
-                // println("Args for for ${name} are ${options.allCompilerArgs}")
+                println("Args for for ${name} are ${options.allCompilerArgs}")
             }
 
             // classpath.forEach({it -> println(it)})

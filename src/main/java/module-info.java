@@ -5,7 +5,11 @@ module com.github.aanno.dbtoolchain {
     requires java.xml;
     requires jdk.xml.dom;
 
+    requires xmlresolver;
+    requires Saxon.HE;
+    requires jing;
     requires com.helger.schematron;
+    requires xmlcalabash;
     requires prince;
 
     requires asciidoctorj.api;
@@ -37,7 +41,11 @@ module com.github.aanno.dbtoolchain {
     // more jruby
     requires com.headius.invokebinder;
 
+    requires slf4j.api;
+    requires info.picocli;
+
     // exports
 
+    exports com.github.aanno.dbtoolchain.cli;
     exports com.xmlcalabash.util.print;
 }
