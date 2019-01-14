@@ -19,7 +19,7 @@ public class Parser {
 
         @Override
         public <K> K create(Class<K> cls) throws Exception {
-            return cls.getDeclaredConstructor(null).newInstance();
+            return cls.getDeclaredConstructor().newInstance();
         }
     }
 }
