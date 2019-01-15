@@ -3,11 +3,10 @@
  */
 package com.github.aanno.dbtoolchain;
 
-import com.github.aanno.dbtoolchain.xml.S9ApiSingleton;
 import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
 import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 
-public class Xslt2Test {
+public class Xslt2Example {
 
     // Don't delete. Needed to start xml processing early (tp)
     private static final XmlSingleton XML_SINGLETON = XmlSingleton.getInstance();
@@ -17,7 +16,7 @@ public class Xslt2Test {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(new Xslt2Test().getGreeting());
+        System.out.println(new Xslt2Example().getGreeting());
 
         String css = S9ApiUtils.getDefaultCss().toString();
 

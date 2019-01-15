@@ -7,7 +7,7 @@ module com.github.aanno.dbtoolchain {
 
     requires xmlresolver;
     requires Saxon.HE;
-    requires jing;
+    requires jingtrang;
     requires com.helger.schematron;
     requires xmlcalabash;
     requires prince;

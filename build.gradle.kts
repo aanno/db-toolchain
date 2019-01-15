@@ -15,7 +15,7 @@ repositories {
     flatDir {
         dirs(
                 "lib/prince-java/lib",
-                "submodules/jing-trang/build",
+                "submodules/jing-trang/build/libs",
                 "submodules/fop/fop/target",
                 // lib/ueberjars",
                 "lib/stripped",
@@ -120,6 +120,7 @@ configurations.all {
     exclude("xalan", "xalan")
     exclude("xerces", "xercesImpl")
     exclude("com.thaiopensource", "jing")
+    exclude("", "jing")
     exclude("com.thaiopensource", "trang")
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
@@ -152,9 +153,12 @@ dependencies {
 
     // asciidocj ueber jar
     // api("", "asciidocj", "")
+
     // build from submodule 'jing-trang'
-    api("", "jing", "")
+    // api("", "jing", "")
     // api("", "trang", "")
+    implementation("", "jingtrang", "")
+
     // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
@@ -370,5 +374,11 @@ tasks {
     installDist {
         finalizedBy(adStart)
     }
+
+    /*
+    build {
+        dependsOn(gradle.includedBuild("jingtrang").task(":jingtrang"))
+    }
+     */
 
 }

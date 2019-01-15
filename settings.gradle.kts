@@ -15,4 +15,7 @@ can be provided by [project :asciidoctorj, project :asciidoctorj:asciidoctorj].
 
 includeBuild("submodules/xslt20-stylesheets")
 includeBuild("submodules/xslt20-resources")
-includeBuild("submodules/jing-trang")
+
+// if jing-trang is a composite, merged jar resolution
+// does not work (tp)
+// includeBuild("submodules/jing-trang")

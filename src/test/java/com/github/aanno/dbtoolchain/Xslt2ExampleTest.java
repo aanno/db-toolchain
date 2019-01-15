@@ -7,9 +7,9 @@ import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import com.github.aanno.dbtoolchain.App;
 
-public class AppTest {
+public class Xslt2ExampleTest {
     @Test public void appHasAGreeting() {
-        App classUnderTest = new App();
+        Xslt2Example classUnderTest = new Xslt2Example();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 }
