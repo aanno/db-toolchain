@@ -34,9 +34,15 @@ public class TransformCommand implements Callable<Object> {
     @Option(names = {"-c", "--check", "--validate"})
     public boolean validate = true;
 
+    // derived
+    public Path workDir;
+
+    public String inBasename;
+
     @Override
     public Object call() throws Exception {
         in = in.toAbsolutePath();
+        workDir = in.getParent();
         String inName = in.getFileName().toString();
         LOG.warn("call");
         if (inFormat == null) {
@@ -45,13 +51,13 @@ public class TransformCommand implements Callable<Object> {
         if (inFormat == null) {
             throw new IllegalArgumentException("informat unknown");
         }
-        String inBasename = EFileType.getBasename(inName);
+        inBasename = EFileType.getBasename(inName);
         if (out == null) {
             if (outFormat == null) {
                 // default out format
                 outFormat = EFileType.PDF;
             }
-            out = in.getParent().resolve(inBasename + "." + outFormat.getDefaultExtension());
+            out = workDir.resolve(inBasename + "." + outFormat.getDefaultExtension());
         }
         if (outFormat == null) {
             outFormat = EFileType.getType(out.getFileName().toString());
@@ -72,6 +78,8 @@ public class TransformCommand implements Callable<Object> {
                 .add("outFormat=" + outFormat)
                 .add("pipeline='" + pipeline + "'")
                 .add("validate=" + validate)
+                .add("workDir=" + workDir)
+                .add("inBasename='" + inBasename + "'")
                 .toString();
     }
 }

@@ -2,6 +2,7 @@ package com.github.aanno.dbtoolchain;
 
 import static org.asciidoctor.Asciidoctor.Factory.create;
 import static org.asciidoctor.api.OptionsBuilder.options;
+
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.api.Options;
 import org.asciidoctor.api.SafeMode;
@@ -23,8 +24,8 @@ public class AsciidoctorJ {
     private Map<String, Object> options;
 
     public AsciidoctorJ() {
-options = options().safe(SafeMode.SAFE).toFile(new File("out.fo.xml")).asMap();
-options.put(Options.BACKEND, "docbook5");
+        options = options().safe(SafeMode.SAFE).toFile(new File("out.fo.xml")).asMap();
+        options.put(Options.BACKEND, "docbook5");
     }
 
     /**
@@ -32,7 +33,7 @@ options.put(Options.BACKEND, "docbook5");
      */
     public void convert(Path in, Path out) throws IOException {
         try (Reader reader = Files.newBufferedReader(in);
-        Writer writer = Files.newBufferedWriter(out)) {
+             Writer writer = Files.newBufferedWriter(out)) {
             asciidoctor.convert(reader, writer, options);
         }
     }

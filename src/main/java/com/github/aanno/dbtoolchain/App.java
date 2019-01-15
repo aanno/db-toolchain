@@ -42,7 +42,7 @@ public class App {
     }
 
     private void transform(TransformCommand transform) throws Exception {
-        
+
     }
 
     private void list(ListCommand list) throws Exception {
