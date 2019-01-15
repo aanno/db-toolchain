@@ -48,11 +48,15 @@ public class DbXslt20 implements IPipeline {
     public IStage process(TransformCommand command, IStage current, IStage finish) throws IOException {
         try {
             while (current.getType() != finish.getType()) {
+                IStage old = current;
                 if (EFileType.DB == current.getType()) {
                     current = processDbXml(command, current);
                 }
                 if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
+                }
+                if (old.getType() == current.getType()) {
+                    throw new IllegalArgumentException("get stocked on " + old + " and " + current);
                 }
             }
             return current;
@@ -65,11 +69,12 @@ public class DbXslt20 implements IPipeline {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
-        IStage result = Stage.from(command, EFileType.FO);
+        IStage result;
         List<String> args = new ArrayList<>();
 
         if ("css".equals(variant)) {
             String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+            result = Stage.from(command, EFileType.XHTML);
 
             args.add("-f");
             args.add("cssprint");
@@ -79,11 +84,15 @@ public class DbXslt20 implements IPipeline {
             args.add(css);
             args.add(current.getPath().toString());
         } else if ("fo".equals(variant)) {
+            result = Stage.from(command, EFileType.FO);
+
             args.add("-f");
             args.add("fo");
             args.add("-o");
             args.add(result.getPath().toString());
             args.add(current.getPath().toString());
+        } else {
+            throw new IllegalStateException("unknown variant: " + variant);
         }
         LOG.warn("xslt20 args: " + args);
         org.docbook.Main.main(args.toArray(EMPTY_STRING_ARRAY));

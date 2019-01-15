@@ -4,6 +4,7 @@ import com.github.aanno.dbtoolchain.cli.*;
 import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
 import com.github.aanno.dbtoolchain.pipeline.Fo;
 import com.github.aanno.dbtoolchain.pipeline.IStage;
+import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
@@ -17,6 +18,9 @@ import static picocli.CommandLine.*;
 public class App {
 
     private static final Logger LOG = LoggerFactory.getLogger("App");
+
+    // site effect for set system properties (tp)
+    private XmlSingleton xmlSingleton = XmlSingleton.getInstance();
 
     private CommonFlags commonFlags;
 
