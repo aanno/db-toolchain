@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class DbXslt20 implements IPipeline {
 
@@ -99,5 +100,13 @@ public class DbXslt20 implements IPipeline {
             fo = new Fo();
         }
         return fo;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", DbXslt20.class.getSimpleName() + "[", "]")
+                .add("variant='" + variant + "'")
+                .add("fo=" + fo)
+                .toString();
     }
 }

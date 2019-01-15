@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public enum EFileType {
 
     AD(new String[] {"adoc", "ad", "asciidoc", "asiciidoctor"}),
-    DB(new String[] {"db.xml", "db", "docbook"}),
+    DB(new String[] {"db.xml", "db", "docbook", "xml"}),
     FO(new String[] {"fo.xml", "fo", "xsl-fo"}),
     PDF(new String[] {"pdf"});
 

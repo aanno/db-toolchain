@@ -1,6 +1,9 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.cli.*;
+import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
+import com.github.aanno.dbtoolchain.pipeline.Fo;
+import com.github.aanno.dbtoolchain.pipeline.IStage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
@@ -42,7 +45,27 @@ public class App {
     }
 
     private void transform(TransformCommand transform) throws Exception {
-
+        String pipeline = transform.pipeline;
+        IStage result;
+        if (pipeline.startsWith("xsl")) {
+            DbXslt20 p;
+            if (pipeline.contains("css")) {
+                p = new DbXslt20("css");
+            } else {
+                p = new DbXslt20("fo");
+            }
+            LOG.warn("pipeline: " + p);
+            result = p.process(transform);
+        } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
+            throw new UnsupportedOperationException();
+        } else if (pipeline.startsWith("fo")) {
+            Fo p = new Fo();
+            LOG.warn("pipeline: " + p);
+            result = p.process(transform);
+        } else {
+            throw new IllegalArgumentException("unknown pipeline: " + pipeline);
+        }
+        LOG.warn("result stage: " + result);
     }
 
     private void list(ListCommand list) throws Exception {

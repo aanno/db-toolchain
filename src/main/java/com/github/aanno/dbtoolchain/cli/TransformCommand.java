@@ -34,15 +34,21 @@ public class TransformCommand implements Callable<Object> {
     @Option(names = {"-c", "--check", "--validate"})
     public boolean validate = true;
 
-    // derived
+    @Option(names = {"-w", "--workdir"})
     public Path workDir;
+
+    ///////////////////////////
+    // derived
+    ///////////////////////////
 
     public String inBasename;
 
     @Override
     public Object call() throws Exception {
         in = in.toAbsolutePath();
-        workDir = in.getParent();
+        if (workDir == null) {
+            workDir = in.getParent();
+        }
         String inName = in.getFileName().toString();
         LOG.warn("call");
         if (inFormat == null) {
