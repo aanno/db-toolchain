@@ -19,7 +19,7 @@ public class TransformCommand implements Callable<Object> {
     @Option(names = {"-i", "--in"}, required = true)
     public Path in;
 
-    @Option(names = {"-o", "--out"}, required = true)
+    @Option(names = {"-o", "--out"})
     public Path out;
 
     @Option(names = {"-if", "--informat"})
@@ -36,12 +36,22 @@ public class TransformCommand implements Callable<Object> {
 
     @Override
     public Object call() throws Exception {
+        in = in.toAbsolutePath();
+        String inName = in.getFileName().toString();
         LOG.warn("call");
         if (inFormat == null) {
-            inFormat = EFileType.getType(in.getFileName().toString());
+            inFormat = EFileType.getType(inName);
         }
         if (inFormat == null) {
             throw new IllegalArgumentException("informat unknown");
+        }
+        String inBasename = EFileType.getBasename(inName);
+        if (out == null) {
+            if (outFormat == null) {
+                // default out format
+                outFormat = EFileType.PDF;
+            }
+            out = in.getParent().resolve(inBasename + "." + outFormat.getDefaultExtension());
         }
         if (outFormat == null) {
             outFormat = EFileType.getType(out.getFileName().toString());
@@ -49,6 +59,7 @@ public class TransformCommand implements Callable<Object> {
         if (outFormat == null) {
             throw new IllegalArgumentException("outformat unknown");
         }
+        out = out.toAbsolutePath();
         return this;
     }
 

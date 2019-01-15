@@ -2,6 +2,8 @@ package com.github.aanno.dbtoolchain.cli;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public enum EFileType {
 
@@ -36,5 +38,15 @@ public enum EFileType {
             }
         }
         return null;
+    }
+
+    private static final Pattern BASE_RE = Pattern.compile("(.*)\\.(.+(\\.xml)?)");
+
+    public static String getBasename(String filename) {
+        Matcher m = BASE_RE.matcher(filename);
+        if (m.matches()) {
+            return m.group(1);
+        }
+        return filename;
     }
 }
