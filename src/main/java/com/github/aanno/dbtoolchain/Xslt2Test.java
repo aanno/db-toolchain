@@ -40,8 +40,10 @@ usage: java -jar docbook-xslt2-2.3.8.jar [options] dbdoc.xml [param=value [param
 
          */
         // Main.main(new String[] {"-h"});
-        org.docbook.Main.main(("-f cssprint -o out.fo.xml --css ./" +
-                css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        // org.docbook.Main.main(("-f cssprint -o out.fo.xml --css ./" + css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        org.docbook.Main.main(("-f cssprint --css ./" + css + " examples/db/transition/howto.xml").split("[ \t]+"));
+        System.exit(0);
+        org.docbook.Main.main(("-f xhtml -o out.xhtml --css ./" + css + " examples/db/transition/howto.xml").split("[ \t]+"));
         System.exit(0);
         org.docbook.Main.main("-f fo -o out.fo.xml examples/db/transition/howto.xml".split("[ \t]+"));
 

@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -50,10 +51,13 @@ public class DbXslt20 implements IPipeline {
             while (current.getType() != finish.getType()) {
                 IStage old = current;
                 if (EFileType.DB == current.getType()) {
-                    current = processDbXml(command, current);
+                    current = processDbXml(command, current, finish);
                 }
                 if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
+                }
+                if (EFileType.XHTML == current.getType()) {
+                    current = processXhtml(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
                     throw new IllegalArgumentException("get stocked on " + old + " and " + current);
@@ -62,10 +66,12 @@ public class DbXslt20 implements IPipeline {
             return current;
         } catch (SaxonApiException e) {
             throw new IOException(e);
+        } catch (InterruptedException e) {
+            throw new IOException(e);
         }
     }
 
-    private IStage processDbXml(TransformCommand command, IStage current) throws IOException, SaxonApiException {
+    private IStage processDbXml(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
@@ -73,8 +79,8 @@ public class DbXslt20 implements IPipeline {
         List<String> args = new ArrayList<>();
 
         if ("css".equals(variant)) {
-            String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
-            result = Stage.from(command, EFileType.XHTML);
+            /* NOT working
+            result = Stage.from(command, EFileType.PDF);
 
             args.add("-f");
             args.add("cssprint");
@@ -82,6 +88,14 @@ public class DbXslt20 implements IPipeline {
             args.add(result.getPath().toString());
             args.add("--css");
             args.add(css);
+            args.add(current.getPath().toString());
+             */
+            result = Stage.from(command, EFileType.XHTML);
+
+            args.add("-f");
+            args.add("xhtml");
+            args.add("-o");
+            args.add(result.getPath().toString());
             args.add(current.getPath().toString());
         } else if ("fo".equals(variant)) {
             result = Stage.from(command, EFileType.FO);
@@ -97,6 +111,35 @@ public class DbXslt20 implements IPipeline {
         LOG.warn("xslt20 args: " + args);
         org.docbook.Main.main(args.toArray(EMPTY_STRING_ARRAY));
 
+        return result;
+    }
+
+    private IStage processXhtml(TransformCommand command, IStage current, IStage finish)
+            throws IOException, InterruptedException {
+        IStage result = Stage.from(command, EFileType.PDF);
+        Path log = command.workDir.resolve("prince.log");
+        String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+        List<String> args = new ArrayList<>();
+
+        args.add("prince");
+        args.add("-s");
+        args.add(css);
+        args.add("--page-size");
+        args.add("A4");
+        args.add("-o");
+        args.add(result.getPath().toString());
+        args.add(current.getPath().toString());
+
+        ProcessBuilder pb = new ProcessBuilder(args);
+        pb.redirectErrorStream(true);
+        pb.redirectOutput(log.toFile());
+        pb.directory(command.workDir.toFile());
+        LOG.warn("start process: " + args);
+
+        int exitCode = pb.start().waitFor();
+        if (exitCode != 0) {
+            LOG.warn("cssprint with prince terminated with error " + exitCode);
+        }
         return result;
     }
 

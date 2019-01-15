@@ -121,6 +121,7 @@ configurations.all {
     exclude("xerces", "xercesImpl")
     exclude("com.thaiopensource", "jing")
     exclude("com.thaiopensource", "trang")
+    exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
 
     // TODO
@@ -153,6 +154,7 @@ dependencies {
     // api("", "asciidocj", "")
     // build from submodule 'jing-trang'
     api("", "jing", "")
+    // api("", "trang", "")
     // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
@@ -166,7 +168,7 @@ dependencies {
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
-    api("org.docbook", "docbook-xslt2", "2.3.8") {
+    api("org.docbook", "docbook-xslt2", "2.3.9") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
@@ -281,7 +283,9 @@ val patchModule = listOf(
 */
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
+            // , "jing=" + spec2File[":trang"].toString()
 )
+println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
 
 tasks {
