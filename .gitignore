@@ -26,6 +26,7 @@ node_modules/
 *.pdf
 *.fo
 *.fo.xml
+!resources/*.xml
 
 # idea
 .idea/workspace.xml
