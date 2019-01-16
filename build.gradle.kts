@@ -126,7 +126,9 @@ configurations.all {
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
 
-    exclude("org.jruby", "ruby-complete")
+    exclude("org.jruby", "jruby")
+    exclude("org.jruby", "jruby-core")
+    exclude("org.jruby", "jruby-stdlib")
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
@@ -166,16 +168,20 @@ dependencies {
     api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT")
+    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT") {
+        exclude("org.jruby", "jruby")
+        exclude("org.jruby", "jruby-complete")
+    }
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
     api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0-alpha.16") {
-        exclude("org.jruby", "ruby-complete")
+        exclude("org.jruby", "jruby")
+        exclude("org.jruby", "jruby-complete")
     }
 
     // dependency of asciidocj and asciidocj-api
-    api("org.jruby", "jruby", "9.2.5.0")
+    api("org.jruby", "jruby-complete", "9.2.5.0")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 

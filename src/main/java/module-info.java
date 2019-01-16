@@ -14,6 +14,7 @@ module com.github.aanno.dbtoolchain {
 
     requires asciidoctorj.api;
     requires asciidoctorj;
+    requires asciidoctorj.pdf;
     requires docbook.xslt2;
 
     // fop stuff
@@ -33,9 +34,10 @@ module com.github.aanno.dbtoolchain {
     // requires xml.apis.stripped;
 
     // jruby stuff
-    requires org.jruby;
-    requires org.jruby.jcodings;
-    requires org.jruby.joni;
+    // requires org.jruby;
+    // requires org.jruby.jcodings;
+    // requires org.jruby.joni;
+
     // sun.misc.Unsafe (from jruby)
     requires jdk.unsupported;
     // more jruby
