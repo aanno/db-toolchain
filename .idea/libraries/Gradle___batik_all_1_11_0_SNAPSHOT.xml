@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :batik-all:1.11.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/submodules/batik/batik-all/target/batik-all-1.11.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

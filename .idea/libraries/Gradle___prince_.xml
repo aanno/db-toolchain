@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :prince:">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/prince-java/lib/prince.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

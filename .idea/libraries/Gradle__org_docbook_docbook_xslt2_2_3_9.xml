@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.docbook:docbook-xslt2:2.3.9">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.docbook/docbook-xslt2/2.3.9/f79fa0da6f0a0ccfd2fc9ca03aac97f50891de5d/docbook-xslt2-2.3.9.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.docbook/docbook-xslt2/2.3.9/cd70278fa3366dcae054fca3b59523ca29e8bb53/docbook-xslt2-2.3.9-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.docbook/docbook-xslt2/2.3.9/688239300330bd7d8f4d4743e324f500358b880e/docbook-xslt2-2.3.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
