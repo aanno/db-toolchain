@@ -34,14 +34,14 @@ module com.github.aanno.dbtoolchain {
     // requires xml.apis.stripped;
 
     // jruby stuff
-    // requires org.jruby;
-    // requires org.jruby.jcodings;
-    // requires org.jruby.joni;
+    requires org.jruby;
+    requires org.jruby.jcodings;
+    requires org.jruby.joni;
 
     // sun.misc.Unsafe (from jruby)
     requires jdk.unsupported;
     // more jruby
-    requires com.headius.invokebinder;
+    // requires com.headius.invokebinder;
 
     requires slf4j.api;
     requires info.picocli;

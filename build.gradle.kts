@@ -127,8 +127,8 @@ configurations.all {
     exclude("net.sf.saxon", "saxon")
 
     exclude("org.jruby", "jruby")
-    exclude("org.jruby", "jruby-core")
-    exclude("org.jruby", "jruby-stdlib")
+    // exclude("org.jruby", "jruby-core")
+    // exclude("org.jruby", "jruby-stdlib")
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
@@ -182,6 +182,10 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby-complete", "9.2.5.0")
+    api("org.jruby", "jruby-core", "9.2.5.0")
+    api("org.jruby.joni", "joni", "2.1.25")
+    api("org.jruby.jcodings", "jcodings", "1.0.42")
+    api("com.headius", "invokebinder", "1.11")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 
@@ -318,6 +322,7 @@ val patchModule = listOf(
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
             // , "jing=" + spec2File[":trang"].toString()
+            , "org.jruby=" + spec2File["com.headius:invokebinder"].toString()
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
