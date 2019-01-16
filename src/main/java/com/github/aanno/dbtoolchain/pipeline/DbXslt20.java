@@ -54,14 +54,14 @@ public class DbXslt20 implements IPipeline {
                     if (command.princeApi) {
                         current = processDbXmlByApi(command, current, finish);
                     } else {
-                        current = processDbXmlByProcess(command, current, finish);
+                        current = processDbXmlByXhmtl(command, current, finish);
                     }
                 }
                 if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
                 }
                 if (EFileType.XHTML == current.getType()) {
-                    current = processXhtml(command, current, finish);
+                    current = processXhtmlByPrinceProcess(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
                     throw new IllegalArgumentException("get stocked on " + old + " and " + current);
@@ -75,7 +75,7 @@ public class DbXslt20 implements IPipeline {
         }
     }
 
-    private IStage processDbXmlByProcess(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
+    private IStage processDbXmlByXhmtl(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
@@ -147,7 +147,7 @@ public class DbXslt20 implements IPipeline {
         return result;
     }
 
-    private IStage processXhtml(TransformCommand command, IStage current, IStage finish)
+    private IStage processXhtmlByPrinceProcess(TransformCommand command, IStage current, IStage finish)
             throws IOException, InterruptedException {
         IStage result = Stage.from(command, EFileType.PDF);
         Path log = command.workDir.resolve("prince.log");
