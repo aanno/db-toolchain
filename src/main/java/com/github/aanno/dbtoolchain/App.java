@@ -1,6 +1,7 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.cli.*;
+import com.github.aanno.dbtoolchain.pipeline.AsciidoctorJ;
 import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
 import com.github.aanno.dbtoolchain.pipeline.Fo;
 import com.github.aanno.dbtoolchain.pipeline.IStage;
@@ -61,7 +62,9 @@ public class App {
             LOG.warn("pipeline: " + p);
             result = p.process(transform);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
-            throw new UnsupportedOperationException();
+            AsciidoctorJ ad = new AsciidoctorJ();
+            LOG.warn("pipeline: " + ad);
+            result = ad.process(transform);
         } else if (pipeline.startsWith("fo")) {
             Fo p = new Fo();
             LOG.warn("pipeline: " + p);

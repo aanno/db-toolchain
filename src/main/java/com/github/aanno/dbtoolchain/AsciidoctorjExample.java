@@ -17,13 +17,13 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AsciidoctorJ {
+public class AsciidoctorjExample {
 
     private Asciidoctor asciidoctor = create();
 
     private Map<String, Object> options;
 
-    public AsciidoctorJ() {
+    public AsciidoctorjExample() {
         options = options().safe(SafeMode.SAFE).toFile(new File("out.fo.xml")).asMap();
         options.put(Options.BACKEND, "docbook5");
     }
@@ -51,7 +51,7 @@ public class AsciidoctorJ {
         Path test = Paths.get("submodules/asciidoctor.org/README.adoc");
         Path out = Paths.get("out.fo.xml");
 
-        AsciidoctorJ adj = new AsciidoctorJ();
+        AsciidoctorjExample adj = new AsciidoctorjExample();
         adj.convert2(test, out);
         System.out.println("asciidoctorj from " + test + " to " + out);
     }

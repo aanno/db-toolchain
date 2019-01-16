@@ -64,7 +64,7 @@ public class DbXslt20 implements IPipeline {
                     current = processXhtmlByPrinceProcess(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
-                    throw new IllegalArgumentException("get stocked on " + old + " and " + current);
+                    throw new IllegalArgumentException("get stuck on " + old + " and " + current);
                 }
             }
             return current;
