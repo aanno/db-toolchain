@@ -136,7 +136,6 @@ public class DbXslt20 implements IPipeline {
             args.add("--css");
             args.add(css);
             args.add(current.getPath().toString());
-            result = Stage.from(command, EFileType.XHTML);
         } else if ("fo".equals(variant)) {
             throw new IllegalStateException("processDbXmlByApi not available for  variant: " + variant);
         } else {
