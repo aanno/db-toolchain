@@ -37,6 +37,9 @@ public class TransformCommand implements Callable<Object> {
     @Option(names = {"-w", "--workdir"})
     public Path workDir;
 
+    @Option(names = {"--princeapi"}, description = "use the prince API for cssprint (nop for fo pipeline)")
+    public boolean princeApi = false;
+
     ///////////////////////////
     // derived
     ///////////////////////////

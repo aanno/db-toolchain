@@ -2,7 +2,69 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor.iml" filepath="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-pdf.iml" filepath="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-pdf.iml" />
       <module fileurl="file://$PROJECT_DIR$/asciidoctor.org/asciidoctor.org.iml" filepath="$PROJECT_DIR$/asciidoctor.org/asciidoctor.org.iml" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik.iml" filepath="$PROJECT_DIR$/submodules/batik/batik.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-all/batik-all.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-all/batik-all.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-anim/batik-anim.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-anim/batik-anim.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-awt-util/batik-awt-util.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-awt-util/batik-awt-util.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-bridge/batik-bridge.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-bridge/batik-bridge.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-codec/batik-codec.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-codec/batik-codec.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-constants/batik-constants.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-constants/batik-constants.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-css/batik-css.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-css/batik-css.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-dom/batik-dom.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-dom/batik-dom.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-ext/batik-ext.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-ext/batik-ext.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-extension/batik-extension.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-extension/batik-extension.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-gui-util/batik-gui-util.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-gui-util/batik-gui-util.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-gvt/batik-gvt.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-gvt/batik-gvt.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-i18n/batik-i18n.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-i18n/batik-i18n.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-parser/batik-parser.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-parser/batik-parser.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-rasterizer/batik-rasterizer.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-rasterizer/batik-rasterizer.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-rasterizer-ext/batik-rasterizer-ext.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-rasterizer-ext/batik-rasterizer-ext.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-script/batik-script.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-script/batik-script.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-slideshow/batik-slideshow.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-slideshow/batik-slideshow.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-squiggle/batik-squiggle.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-squiggle/batik-squiggle.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-squiggle-ext/batik-squiggle-ext.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-squiggle-ext/batik-squiggle-ext.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-svg-dom/batik-svg-dom.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-svg-dom/batik-svg-dom.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-svgbrowser/batik-svgbrowser.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-svgbrowser/batik-svgbrowser.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-svggen/batik-svggen.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-svggen/batik-svggen.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-svgpp/batik-svgpp.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-svgpp/batik-svgpp.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-svgrasterizer/batik-svgrasterizer.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-svgrasterizer/batik-svgrasterizer.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-swing/batik-swing.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-swing/batik-swing.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-test/batik-test.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-test/batik-test.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-test-old/batik-test-old.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-test-old/batik-test-old.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-test-svg/batik-test-svg.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-test-svg/batik-test-svg.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-test-swing/batik-test-swing.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-test-swing/batik-test-swing.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-test-util/batik-test-util.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-test-util/batik-test-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-transcoder/batik-transcoder.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-transcoder/batik-transcoder.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-ttf2svg/batik-ttf2svg.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-ttf2svg/batik-ttf2svg.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-util/batik-util.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-util/batik-util.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-xml/batik-xml.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-xml/batik-xml.iml" group="batik and modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db-toolchain.iml" filepath="$PROJECT_DIR$/db-toolchain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop/fop.iml" filepath="$PROJECT_DIR$/submodules/fop/fop/fop.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-core/fop-core.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-core/fop-core.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-events/fop-events.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-events/fop-events.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-parent.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-parent.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-sandbox/fop-sandbox.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-sandbox/fop-sandbox.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-servlet/fop-servlet.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-servlet/fop-servlet.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-transcoder/fop-transcoder.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-transcoder/fop-transcoder.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-transcoder-allinone/fop-transcoder-allinone.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-transcoder-allinone/fop-transcoder-allinone.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-util/fop-util.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-util/fop-util.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-stylesheets/org.docbook.xslt20-stylesheets.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/xslt20-resources.test.iml" />
     </modules>
   </component>
 </project>

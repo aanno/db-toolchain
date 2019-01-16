@@ -51,7 +51,11 @@ public class DbXslt20 implements IPipeline {
             while (current.getType() != finish.getType()) {
                 IStage old = current;
                 if (EFileType.DB == current.getType()) {
-                    current = processDbXml(command, current, finish);
+                    if (command.princeApi) {
+                        current = processDbXmlByApi(command, current, finish);
+                    } else {
+                        current = processDbXmlByProcess(command, current, finish);
+                    }
                 }
                 if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
@@ -71,7 +75,7 @@ public class DbXslt20 implements IPipeline {
         }
     }
 
-    private IStage processDbXml(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
+    private IStage processDbXmlByProcess(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
@@ -105,6 +109,36 @@ public class DbXslt20 implements IPipeline {
             args.add("-o");
             args.add(result.getPath().toString());
             args.add(current.getPath().toString());
+        } else {
+            throw new IllegalStateException("unknown variant: " + variant);
+        }
+        LOG.warn("xslt20 args: " + args);
+        org.docbook.Main.main(args.toArray(EMPTY_STRING_ARRAY));
+
+        return result;
+    }
+
+    private IStage processDbXmlByApi(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
+        if (EFileType.DB != current.getType()) {
+            throw new IllegalArgumentException();
+        }
+        IStage result;
+        List<String> args = new ArrayList<>();
+
+        if ("css".equals(variant)) {
+            result = Stage.from(command, EFileType.PDF);
+            String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+
+            args.add("-f");
+            args.add("cssprint");
+            args.add("-o");
+            args.add(result.getPath().toString());
+            args.add("--css");
+            args.add(css);
+            args.add(current.getPath().toString());
+            result = Stage.from(command, EFileType.XHTML);
+        } else if ("fo".equals(variant)) {
+            throw new IllegalStateException("processDbXmlByApi not available for  variant: " + variant);
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }
