@@ -126,6 +126,8 @@ configurations.all {
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
 
+    exclude("org.jruby", "ruby-complete")
+
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
     // exclude("org.asciidoctor", "asciidoctorj-api")
@@ -161,10 +163,16 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
+    api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "1.6.0-SNAPSHOT")
+    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT")
+
+    // java.lang.module.ResolutionException:
+    // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
+    api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0-alpha.16") {
+        exclude("org.jruby", "ruby-complete")
+    }
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")

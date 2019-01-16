@@ -8,7 +8,6 @@ import org.asciidoctor.api.SafeMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -44,7 +43,13 @@ public class AsciidoctorJ implements IPipeline {
         while (current.getType() != finish.getType()) {
             IStage old = current;
             if (EFileType.DB == finish.getType()) {
-                current = processToDb(command, current, finish);
+                current = processWithBackend(EAsciidoctorBackend.DOCBOOK5, command, current, finish);
+            }
+            if (EFileType.XHTML == finish.getType()) {
+                current = processWithBackend(EAsciidoctorBackend.HTML, command, current, finish);
+            }
+            if (EFileType.PDF == finish.getType()) {
+                current = processWithBackend(EAsciidoctorBackend.PDF, command, current, finish);
             }
             if (old.getType() == current.getType()) {
                 throw new IllegalArgumentException("get stuck on " + old + " and " + current);
@@ -53,9 +58,9 @@ public class AsciidoctorJ implements IPipeline {
         return current;
     }
 
-    private IStage processToDb(TransformCommand command, IStage current, IStage finish) throws IOException {
+    private IStage processWithBackend(EAsciidoctorBackend be, TransformCommand command, IStage current, IStage finish) throws IOException {
         Map<String, Object> opts = new HashMap<>();
-        opts.put(Options.BACKEND, "docbook5");
+        opts.put(Options.BACKEND, be.name().toLowerCase());
         convert2(current.getPath(), finish.getPath(), opts);
         return finish;
     }
