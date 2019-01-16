@@ -20,6 +20,7 @@ repositories {
                 // lib/ueberjars",
                 "lib/stripped",
                 "submodules/batik/batik-all/target",
+                "submodules/xslt20-stylesheets/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
@@ -172,6 +173,8 @@ dependencies {
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
+
+    /*
     api("org.docbook", "docbook-xslt2", "2.3.9") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
@@ -181,6 +184,19 @@ dependencies {
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
     }
+     */
+    api("", "docbook-xslt2", "2.3.9") {
+        exclude("org.xmlresolver", "xmlresolver")
+        exclude("org.apache.xmlgraphics", "fop")
+        // exclude("org.apache.xmlgraphics", "batik-all")
+        // exclude("org.apache.xmlgraphics", "batik-xml")
+        exclude("net.sf.saxon", "saxon")
+        exclude("net.sf.saxon", "Saxon-HE")
+        exclude("com.thaiopensource", "jing")
+    }
+    api("com.xmlcalabash", "xmlcalabash", "1.1.23-98")
+    api("commons-cli", "commons-cli", "1.4")
+
     api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.3") {
         exclude("xml-apis", "xml-apis")
