@@ -1,0 +1,131 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="BarcodeExample" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.BarcodeExample" />
+    <module name="db-toolchain.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.github.aanno.dbtoolchain.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <extension name="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+      </ENTRIES>
+    </extension>
+    <extension name="recording" autostart="false">
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.sax.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.dtd.parse.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.infer.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.github.aanno.dbtoolchain.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.util.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.relaxng.datatype.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.fop.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.out.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.tok.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.xmlcalabash.util.print.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.dtd.om.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.em.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.docbook.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.datatype.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.relaxng.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.xml.util.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.validate.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.batik.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.resolver.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.asciidoctor.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.thaiopensource.validation.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

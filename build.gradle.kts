@@ -205,6 +205,12 @@ dependencies {
 
     api("info.picocli", "picocli", "3.9.1")
 
+    // barcode4j issue
+    api("net.sf.barcode4j", "barcode4j", "2.1")
+    api("net.sf.barcode4j", "barcode4j-fop-ext", "2.1")
+    api("org.apache.avalon.framework", "avalon-framework-api", "4.3.1")
+    api("org.apache.avalon.framework", "avalon-framework-impl", "4.3.1")
+
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
 }
@@ -285,12 +291,14 @@ val patchModule = listOf(
         spec2File["org.apache.avalon.framework:avalon-framework-impl"].toString()
 )
 */
+/*
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
             // , "jing=" + spec2File[":trang"].toString()
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
+*/
 
 tasks {
 
@@ -298,7 +306,7 @@ tasks {
 
             doFirst {
                 options.compilerArgs.addAll(listOf(
-                        "--release", "11"
+                        "--release", "8"
                         // , "--add-modules", "ALL-MODULE-PATH",
                         // , "--module-path", classpath.asPath
                 ) /*+ patchModule */)
