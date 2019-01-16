@@ -6,6 +6,8 @@ import static org.asciidoctor.api.OptionsBuilder.options;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.api.Options;
 import org.asciidoctor.api.SafeMode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AsciidoctorjExample {
+
+    private static final Logger LOG = LoggerFactory.getLogger("AsciidoctorjExample");
 
     private Asciidoctor asciidoctor = create();
 
@@ -43,8 +47,9 @@ public class AsciidoctorjExample {
         // opts.put(Options.TO_FILE, "false");
         // opts.put(Options.TO_DIR, ".");
         // opts.put(Options.BASEDIR, ".");
-        String result = asciidoctor.convertFile(in.toFile(), options);
-        System.out.println(result);
+        String result = asciidoctor.convertFile(in.toFile(), opts);
+        LOG.warn("ad options: ", opts);
+        LOG.warn("ad convertFile result: ", result);
     }
 
     public static void main(String[] args) throws Exception {
@@ -53,7 +58,7 @@ public class AsciidoctorjExample {
 
         AsciidoctorjExample adj = new AsciidoctorjExample();
         adj.convert2(test, out);
-        System.out.println("asciidoctorj from " + test + " to " + out);
+        LOG.warn("asciidoctorj from " + test + " to " + out);
     }
 
 }

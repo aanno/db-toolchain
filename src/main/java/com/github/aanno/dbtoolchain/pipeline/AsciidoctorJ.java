@@ -66,8 +66,9 @@ public class AsciidoctorJ implements IPipeline {
         // opts.put(Options.TO_FILE, "false");
         // opts.put(Options.TO_DIR, ".");
         // opts.put(Options.BASEDIR, ".");
-        String result = asciidoctor.convertFile(in.toFile(), options);
+        String result = asciidoctor.convertFile(in.toFile(), opts);
         LOG.warn("ad output to file " + out);
+        LOG.warn("ad options: ", opts);
         LOG.warn("ad convertFile result: " + result);
     }
 
