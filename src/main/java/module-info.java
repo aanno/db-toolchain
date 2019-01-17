@@ -14,7 +14,7 @@ module com.github.aanno.dbtoolchain {
 
     requires asciidoctorj.api;
     requires asciidoctorj;
-    requires asciidoctorj.pdf;
+    // requires asciidoctorj.pdf;
     requires docbook.xslt2;
 
     // fop stuff
@@ -41,7 +41,7 @@ module com.github.aanno.dbtoolchain {
     // sun.misc.Unsafe (from jruby)
     requires jdk.unsupported;
     // more jruby
-    // requires com.headius.invokebinder;
+    requires com.headius.invokebinder;
 
     requires slf4j.api;
     requires info.picocli;
