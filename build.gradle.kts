@@ -168,15 +168,14 @@ dependencies {
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
-    /*
     api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0-alpha.16") {
         exclude("org.jruby", "jruby")
         exclude("org.jruby", "jruby-complete")
     }
-     */
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
+    api("com.github.jnr", "jnr-unixsocket", "0.2.1")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 

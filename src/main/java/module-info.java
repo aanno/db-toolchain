@@ -42,6 +42,9 @@ module com.github.aanno.dbtoolchain {
     requires jdk.unsupported;
     // more jruby
     requires com.headius.invokebinder;
+    requires jnr.posix;
+    requires jnr.enxio;
+    requires jnr.constants;
 
     requires slf4j.api;
     requires info.picocli;
