@@ -126,10 +126,6 @@ configurations.all {
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
 
-    exclude("org.jruby", "jruby")
-    // exclude("org.jruby", "jruby-core")
-    // exclude("org.jruby", "jruby-stdlib")
-
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
     // exclude("org.asciidoctor", "asciidoctorj-api")
@@ -168,10 +164,7 @@ dependencies {
     api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT") {
-        exclude("org.jruby", "jruby")
-        exclude("org.jruby", "jruby-complete")
-    }
+    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT")
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
@@ -183,11 +176,7 @@ dependencies {
      */
 
     // dependency of asciidocj and asciidocj-api
-    // api("org.jruby", "jruby-complete", "9.2.5.0")
-    api("org.jruby", "jruby-core", "9.2.5.0")
-    api("org.jruby.joni", "joni", "2.1.25")
-    api("org.jruby.jcodings", "jcodings", "1.0.42")
-    api("com.headius", "invokebinder", "1.11")
+    api("org.jruby", "jruby", "9.2.5.0")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 
@@ -324,7 +313,6 @@ val patchModule = listOf(
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
             // , "jing=" + spec2File[":trang"].toString()
-            , "org.jruby=" + spec2File["com.headius:invokebinder"].toString()
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
