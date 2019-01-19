@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.picketbox:picketbox:5.0.2.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.picketbox/picketbox/5.0.2.Final/5615cfb8eb3dbc21a344be3ba8346ab0eabf62ed/picketbox-5.0.2.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.picketbox/picketbox/5.0.2.Final/4cd4190bfc79969f6a5de94f3d2bd29daa68e34a/picketbox-5.0.2.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

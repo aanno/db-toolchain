@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.arquillian.spock:arquillian-spock-core:1.0.0.Beta3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-core/1.0.0.Beta3/36dd8a811092e2403421bc300bc97bbe74a46bb8/arquillian-spock-core-1.0.0.Beta3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-core/1.0.0.Beta3/91173d2be0e49ae52eac7cae6fd184de9b089cfe/arquillian-spock-core-1.0.0.Beta3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

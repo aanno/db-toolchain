@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.logmanager:jboss-logmanager:2.0.7.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logmanager/jboss-logmanager/2.0.7.Final/6d172fb405e1fbec0f3b63a9cf03bd39c5337795/jboss-logmanager-2.0.7.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logmanager/jboss-logmanager/2.0.7.Final/4c10ce7f7fad189445014f84a4d19c3238caf511/jboss-logmanager-2.0.7.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

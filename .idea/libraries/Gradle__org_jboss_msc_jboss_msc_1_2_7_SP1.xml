@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.msc:jboss-msc:1.2.7.SP1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.msc/jboss-msc/1.2.7.SP1/5d1f6217560ca2d55f97cbfaf3316cec0a1d7524/jboss-msc-1.2.7.SP1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.msc/jboss-msc/1.2.7.SP1/5fbe054f985e337272a89c7c75c517a2778a2b53/jboss-msc-1.2.7.SP1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

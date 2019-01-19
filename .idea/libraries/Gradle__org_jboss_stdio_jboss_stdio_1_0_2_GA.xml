@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.stdio:jboss-stdio:1.0.2.GA">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.stdio/jboss-stdio/1.0.2.GA/709a076a3c74bc93809138b691dbd0e90cbc67a7/jboss-stdio-1.0.2.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.stdio/jboss-stdio/1.0.2.GA/7aa6221eee5503e65c860ca3b5844be0f7a83b7e/jboss-stdio-1.0.2.GA-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

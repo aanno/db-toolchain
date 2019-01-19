@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.wildfly.core:wildfly-process-controller:3.0.0.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-process-controller/3.0.0.Final/11f4485045f80742005e77b29a972f0934ae2dbb/wildfly-process-controller-3.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-process-controller/3.0.0.Final/607dd8811c6b0386f86723778f59d0e0ee8c74e4/wildfly-process-controller-3.0.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

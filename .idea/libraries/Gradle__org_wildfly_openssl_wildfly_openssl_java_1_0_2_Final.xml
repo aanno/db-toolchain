@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.wildfly.openssl:wildfly-openssl-java:1.0.2.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.openssl/wildfly-openssl-java/1.0.2.Final/ff3c3074ac499540edc68455fbd4d9020a83ef36/wildfly-openssl-java-1.0.2.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.openssl/wildfly-openssl-java/1.0.2.Final/d2fec98e6007a159035c031591cc89a293f4c9d9/wildfly-openssl-java-1.0.2.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

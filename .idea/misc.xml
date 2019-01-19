@@ -9,7 +9,6 @@
       <list>
         <option value="$PROJECT_DIR$/../github/fop/pom.xml" />
         <option value="$PROJECT_DIR$/../github/batik/pom.xml" />
-        <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-gem-installer.pom" />
         <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-pdf-gem-installer.pom" />
         <option value="$PROJECT_DIR$/submodules/batik/pom.xml" />
         <option value="$PROJECT_DIR$/submodules/batik/batik-test-util/pom.xml" />
@@ -71,7 +70,7 @@
   <component name="PantsSettings">
     <option name="resolverVersion" value="15" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11 (2)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11.0.2 (oracle)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RustProjectSettings">

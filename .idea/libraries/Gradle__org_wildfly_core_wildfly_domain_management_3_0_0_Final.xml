@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.wildfly.core:wildfly-domain-management:3.0.0.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-domain-management/3.0.0.Final/73f4891366d3ffb70d78837684e4e52e932b5819/wildfly-domain-management-3.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-domain-management/3.0.0.Final/fa198734515c34441a4417ce0f5c8980c664a770/wildfly-domain-management-3.0.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

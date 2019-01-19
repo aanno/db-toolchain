@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss.arquillian.junit:arquillian-junit-core:1.1.10.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.junit/arquillian-junit-core/1.1.10.Final/aef50fd39ab33a4d3abae48e20bc2d310a236922/arquillian-junit-core-1.1.10.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.junit/arquillian-junit-core/1.1.10.Final/f65e714d1ad1c1a658cc1ba338e79634de52018a/arquillian-junit-core-1.1.10.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

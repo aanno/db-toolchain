@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jboss:staxmapper:1.3.0.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss/staxmapper/1.3.0.Final/61c6f36255b014db28dac8e399b6c9e40c93b1d6/staxmapper-1.3.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss/staxmapper/1.3.0.Final/e859a5c3b29091e699ae98277612057ada636b23/staxmapper-1.3.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

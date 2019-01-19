@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.wildfly.security.elytron-web:undertow-server:1.0.0.Final">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.security.elytron-web/undertow-server/1.0.0.Final/aa36456919b46971046721bccc24845f1d33bd26/undertow-server-1.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.security.elytron-web/undertow-server/1.0.0.Final/645432cc2f4a4166f90f3d4d7a1e9a67670f4ad2/undertow-server-1.0.0.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

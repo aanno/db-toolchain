@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.projectodd.vdx:vdx-wildfly:1.1.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-wildfly/1.1.6/2dac020b2e9b17f2d2ecba8d1b96f102624c07ab/vdx-wildfly-1.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-wildfly/1.1.6/4266d2a69f0d1175f43456f1de21c42362351be6/vdx-wildfly-1.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -21,6 +21,7 @@ public class AsciidoctorJ implements IPipeline {
     private static final Logger LOG = LoggerFactory.getLogger("AsciidoctorJ");
 
     private Asciidoctor asciidoctor = create();
+    // private Asciidoctor asciidoctor = create("submodules/asciidoctorj/asciidoctorj-core/build/gems");
 
     public AsciidoctorJ() {
     }

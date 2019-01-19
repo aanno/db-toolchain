@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.projectodd.vdx:vdx-core:1.1.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-core/1.1.6/f685489cc2abe5882eb139840589be2ab6e322b8/vdx-core-1.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-core/1.1.6/e9fcaadb1079ebbb2869dfc9d3bfe1ed24cf1155/vdx-core-1.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
