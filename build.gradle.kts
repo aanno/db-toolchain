@@ -161,10 +161,10 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "1.6.0-SNAPSHOT") {
+    api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "1.6.0-SNAPSHOT")
+    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT")
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
