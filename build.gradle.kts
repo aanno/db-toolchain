@@ -133,7 +133,30 @@ configurations.all {
     exclude("commons-logging", "commons-logging")
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
     // exclude("org.apache.avalon.framework", "avalon-framework-api")
-    exclude("com.github.jnr", "jnr-unixsocket")
+
+    // if I add jnr-unixsocket, the world collapses:
+    /*
+error: the unnamed module reads package jnr.ffi from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.byref from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.annotations from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.solaris from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.windows from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.darwin from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.openbsd from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.linux from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.x86_64.freebsd from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.sparc.solaris from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.aarch64.linux from both org.jruby and jnr.ffi
+error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux from both org.jruby and jnr.ffi
+...
+     */
+    // exclude("com.github.jnr", "jnr-unixsocket")
+    // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
+    exclude("com.github.jnr", "jnr-ffi")
+    exclude("com.github.jnr", "jnr-enxio")
+
     exclude("com.xmlcalabash", "xmlcalabash1-gradle")
     exclude("com.xmlcalabash", "xmlcalabash1-print")
 
@@ -312,6 +335,7 @@ val patchModule = listOf(
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
             // , "jing=" + spec2File[":trang"].toString()
+            , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
@@ -323,6 +347,7 @@ tasks {
             doFirst {
                 options.compilerArgs.addAll(listOf(
                         "--release", "11"
+                        // , "-cp", "jnr-enxio-0.19.jar"
                         // , "--add-modules", "ALL-MODULE-PATH",
                         // , "--module-path", classpath.asPath
                 ) /*+ patchModule */)

@@ -43,7 +43,8 @@ module com.github.aanno.dbtoolchain {
     // more jruby
     requires com.headius.invokebinder;
     requires jnr.posix;
-    requires jnr.enxio;
+    // requires jnr.enxio;
+    requires jnr.unixsocket;
     requires jnr.constants;
 
     requires slf4j.api;
