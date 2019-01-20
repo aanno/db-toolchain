@@ -347,6 +347,7 @@ tasks {
             doFirst {
                 options.compilerArgs.addAll(listOf(
                         "--release", "11"
+                        // , "--add-modules jnr.enxio"
                         // , "-cp", "jnr-enxio-0.19.jar"
                         // , "--add-modules", "ALL-MODULE-PATH",
                         // , "--module-path", classpath.asPath
@@ -355,6 +356,10 @@ tasks {
             }
 
             // classpath.forEach({it -> println(it)})
+
+            doLast {
+                println("Args for for ${name} are ${options.allCompilerArgs}")
+            }
     }
 
     withType<Jar> {
@@ -378,8 +383,20 @@ tasks {
     // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
     // https://stackoverflow.com/questions/11696521/how-to-pass-arguments-from-command-line-to-gradle
     task("runApp1", ModularJavaExec::class) {
+        doFirst {
+            jvmArgs = (getJvmArgs() ?: emptyList()) + (
+                    "--show-module-resolution --add-module jnr.enxio --patch-modules jnr.unixsocket=jnr-enxio-0.19.jar".split(" "))
+            println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+        }
+
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
+        args = "transform -w . --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc".split(" ")
         // classpath = sourceSets["main"].runtimeClasspath
+
+        doLast {
+            println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+        }
+
     }
 
     val ad = task("runAsciidoctor", ModularJavaExec::class) {
