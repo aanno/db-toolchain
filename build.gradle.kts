@@ -153,7 +153,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // exclude("com.github.jnr", "jnr-unixsocket")
     // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
     exclude("com.github.jnr", "jnr-ffi")
-    
+
     if (!name.equals("ueberjars")) {
         exclude("com.github.jnr", "jnr-enxio")
         exclude("com.github.jnr", "jnr-unixsocket")
@@ -437,6 +437,15 @@ tasks {
     task("runDbValidation", ModularJavaExec::class) {
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.DbValidation"
         // classpath = sourceSets["main"].runtimeClasspath
+    }
+
+    task("copyJarsForUeberJars", Copy::class) {
+        val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
+        println("ueberBaseFiles: " + ueberBaseFiles)
+        from(ueberBaseFiles) {
+            rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1.jar")
+        }
+        into("./lib/tmp")
     }
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl

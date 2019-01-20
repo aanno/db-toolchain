@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ROOT=`git rev-parse --show-toplevel`
-DOWNLOAD="$ROOT/examples/db"
-TMP=`mktemp -d`
+DOWNLOAD_TARGET="$ROOT/examples/db"
+# TMP=`mktemp -d`
+DOWNLOAD_TMP="$ROOT/downloads"
 
 download() {
     local url="$1"
@@ -10,7 +11,13 @@ download() {
     local cut="$1"
     shift
 
-    wget -nH -x -r --cut-dirs=$cut --no-parent -k $url
+    local filename=`basename "$url"`
+
+    pushd "$DOWNLOAD_TMP"
+        if [ ! -f "$filename" ]; then
+            wget -nH -x -r --cut-dirs=$cut --no-parent -k $url
+        fi
+    popd
 }
 
 TRANSITION=( \
@@ -21,8 +28,8 @@ TRANSITION=( \
   https://docbook.org/docs/howto/images/xxe.png \
 )
 
-mkdir -p "$DOWNLOAD/transition"
-pushd "$DOWNLOAD/transition"
+mkdir -p "$DOWNLOAD_TARGET/transition" "$DOWNLOAD_TMP"
+pushd "$DOWNLOAD_TARGET/transition"
 
 for i in "${TRANSITION[@]}"; do
     download $i 2
@@ -30,21 +37,17 @@ done
 
 popd
 
-pushd "$TMP"
-
 download https://docbook.org/xml/5.1/docbook-v5.1-os.zip 2
 download https://docbook.org/xml/5.0/docbook-5.0.zip 2
 
-popd
-
 mkdir -p "schema/5.1"
 pushd "schema/5.1"
-unzip "$TMP/docbook-v5.1-os.zip"
+unzip -o "$DOWNLOAD_TMP/docbook-v5.1-os.zip"
 popd
 
 mkdir -p "schema/5.0"
 pushd "schema/5.0"
-unzip "$TMP/docbook-5.0.zip"
+unzip -o "$DOWNLOAD_TMP/docbook-5.0.zip"
 popd
 
-rm -r "$TMP"
+# rm -r $TMP
