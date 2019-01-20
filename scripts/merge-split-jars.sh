@@ -2,26 +2,26 @@
 
 ROOT=`git rev-parse --show-toplevel`
 DIR="$ROOT/lib/ueberjars"
-ADJUBER="$DIR/asciidocj.jar"
+UEBERJAR="$DIR/jnrchannels.jar"
 
-ADJ="/home/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj/1.6.0-RC.2/58a312abba8fe47d3a4e7e1b10f40cda6fcad740/asciidoctorj-1.6.0-RC.2.jar"
-ADJAPI="/home/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-api/1.6.0-RC.2/cddb879b9ff205212eddcda62992816710553315/asciidoctorj-api-1.6.0-RC.2-sources.jar"
+JAR1="$HOME/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-unixsocket/0.20/b683f10dded734c662c418160e314e6db936fdee/jnr-unixsocket-0.20.jar"
+JAR2="/home/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.19/c7664aa74f424748b513619d71141a249fb74e3e/jnr-enxio-0.19.jar"
 
 TMP=`mktemp -d`
 
 mkdir -p "$DIR"
 pushd "$DIR"
 
-rm "$ADJUBER"
-# cp "$ADJAPI" "$ADJUBER"
+rm "$UEBERJAR"
+# cp "$JAR2" "$UEBERJAR"
 
 popd
 
 pushd "$TMP"
 
-unzip -q "$ADJ"
-unzip -qo "$ADJAPI"
-zip -9rq "$ADJUBER" .
+unzip -q "$JAR1"
+unzip -qo "$JAR2"
+zip -9rq "$UEBERJAR" .
 
 popd
 

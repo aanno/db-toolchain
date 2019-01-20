@@ -17,7 +17,7 @@ repositories {
                 "lib/prince-java/lib",
                 "submodules/jing-trang/build/libs",
                 "submodules/fop/fop/target",
-                // lib/ueberjars",
+                "lib/ueberjars",
                 "lib/stripped",
                 "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
@@ -156,6 +156,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
     exclude("com.github.jnr", "jnr-ffi")
     exclude("com.github.jnr", "jnr-enxio")
+    exclude("com.github.jnr", "jnr-unixsocket")
 
     exclude("org.jruby", "jruby-complete")
 
@@ -201,6 +202,8 @@ dependencies {
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
     api("com.github.jnr", "jnr-unixsocket", "0.2.1")
+    api("com.github.jnr", "jnr-enxio", "0.1.9")
+    implementation("", "jnrchannels", "")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 
@@ -337,7 +340,7 @@ val patchModule = listOf(
 patchModules.config = listOf(
             "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
             // , "jing=" + spec2File[":trang"].toString()
-            , "jnr.unixsocket=jnr-enxio-0.19.jar"
+            // , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({it -> println(it)})
@@ -387,7 +390,7 @@ tasks {
     task("runApp1", ModularJavaExec::class) {
         doFirst {
             jvmArgs(
-                    "--show-module-resolution --patch-modules jnr.unixsocket=jnr-enxio-0.19.jar"
+                    "--show-module-resolution"
                             .split(" ")
             )
             println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")

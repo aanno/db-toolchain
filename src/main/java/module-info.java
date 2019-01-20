@@ -43,9 +43,10 @@ module com.github.aanno.dbtoolchain {
     // more jruby
     requires com.headius.invokebinder;
     requires jnr.posix;
+    requires jnrchannels;
     // requires jnr.enxio;
-    requires jnr.unixsocket;
-    requires jnr.constants;
+    // requires jnr.unixsocket;
+    // requires jnr.constants;
 
     requires slf4j.api;
     requires info.picocli;
