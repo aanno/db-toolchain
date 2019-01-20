@@ -55,7 +55,9 @@ pushd "$ROOT"
     git submodule foreach git gc
 
     // HACK to get empty jar
-    touch lib/ueberjars/jnrchannels.jar
+    mkdir -p "lib/ueberjars"
+    mkdir -p "lib/tmp"
+    touch "lib/ueberjars/jnrchannels.jar"
 
     ./gradlew copyJarsForUeberJars
     ./scripts/merge-split-jars.sh

@@ -13,6 +13,7 @@ JAR2="$ROOT/jnr-enxio.jar"
 
 # TMP=`mktemp -d`
 
+mkdir -p "$TMP"
 mkdir -p "$DIR"
 pushd "$DIR"
 
