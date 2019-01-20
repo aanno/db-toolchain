@@ -19,6 +19,7 @@ node_modules/
 /tmp/
 /out/
 /lib/
+/downloads/
 !/lib/.keep
 /myModules.d.ts
 *.log

@@ -27,11 +27,17 @@ So far the following pipelines are implemented:
 * **xsl-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook Xslt 2.0 Stylesheets
   (2.3.9) and [Prince 12](https://www.princexml.com/)
-* **ad**: <br/>  
+* **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the acsiidoctorj port of asciidoctor
-* **fo**: <br/>  
+* **fo**: <br/>
   PDF conversion of XSLT-FO (i.e. FO) using Apache FOP (1.11-SNAPSHOT)
-  
+
+## Prerequisite
+
+* Java 11 JDK installed and set as JAVA_HOME environment.
+* Apache Maven (`mvn`) in PATH.
+* Some Linux tools (e.g. `zip`, `unzip`, `bash`, `wget`) in PATH.
+
 ## Quick start
 
 1. Check out the project from github.

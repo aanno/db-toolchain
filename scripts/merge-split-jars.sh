@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ROOT=`git rev-parse --show-toplevel`
-FROM="$ROOT/lib/tmp"
+TMP="$ROOT/lib/tmp"
 DIR="$ROOT/lib/ueberjars"
 UEBERJAR="$DIR/jnrchannels.jar"
 
@@ -11,7 +11,7 @@ UEBERJAR="$DIR/jnrchannels.jar"
 JAR1="$ROOT/jnr-unixsocket.jar"
 JAR2="$ROOT/jnr-enxio.jar"
 
-TMP=`mktemp -d`
+# TMP=`mktemp -d`
 
 mkdir -p "$DIR"
 pushd "$DIR"
