@@ -157,6 +157,8 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("com.github.jnr", "jnr-ffi")
     exclude("com.github.jnr", "jnr-enxio")
 
+    exclude("org.jruby", "jruby-complete")
+
     exclude("com.xmlcalabash", "xmlcalabash1-gradle")
     exclude("com.xmlcalabash", "xmlcalabash1-print")
 
@@ -384,13 +386,17 @@ tasks {
     // https://stackoverflow.com/questions/11696521/how-to-pass-arguments-from-command-line-to-gradle
     task("runApp1", ModularJavaExec::class) {
         doFirst {
-            jvmArgs = (getJvmArgs() ?: emptyList()) + (
-                    "--show-module-resolution --add-module jnr.enxio --patch-modules jnr.unixsocket=jnr-enxio-0.19.jar".split(" "))
+            jvmArgs(
+                    "--show-module-resolution --patch-modules jnr.unixsocket=jnr-enxio-0.19.jar"
+                            .split(" ")
+            )
             println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
         }
 
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
-        args = "transform -w . --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc".split(" ")
+        args("transform -w . --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
+                .split(" ")
+        )
         // classpath = sourceSets["main"].runtimeClasspath
 
         doLast {

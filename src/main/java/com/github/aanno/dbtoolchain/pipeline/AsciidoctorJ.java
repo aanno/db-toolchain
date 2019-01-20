@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,10 +21,26 @@ public class AsciidoctorJ implements IPipeline {
 
     private static final Logger LOG = LoggerFactory.getLogger("AsciidoctorJ");
 
-    private Asciidoctor asciidoctor = create();
+    private final Asciidoctor asciidoctor;
     // private Asciidoctor asciidoctor = create("submodules/asciidoctorj/asciidoctorj-core/build/gems");
 
-    public AsciidoctorJ() {
+    public AsciidoctorJ() throws MalformedURLException, ClassNotFoundException, ReflectiveOperationException {
+        asciidoctor = create();
+
+        /*
+        ClassLoader cl = Thread.currentThread().getContextClassLoader();
+        ClassLoader ncl = new URLClassLoader(new URL[]{
+                new URL("file:///home/tpasch/scm/db-toolchain/jnr-enxio-0.19.jar"),
+        }, cl);
+        // test ncl
+        Class<?> clazz = ncl.loadClass("jnr.enxio.channels.NativeSelectableChannel");
+        LOG.warn("loaded class: " + clazz);
+
+        // asciidoctor = create(ncl);
+
+        Class<?> ad = ncl.loadClass("org.asciidoctor.Asciidoctor$Factory");
+        asciidoctor = (Asciidoctor) ad.getDeclaredMethod("create").invoke(null);
+         */
     }
 
     @Override
