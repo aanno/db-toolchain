@@ -23,7 +23,7 @@ pushd "$ROOT"
             touch settings.gradle.kts
         popd
 
-        pushd xslt20-resoures
+        pushd xslt20-resources
             touch settings.gradle.kts
         popd
 
