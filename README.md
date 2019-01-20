@@ -1,3 +1,46 @@
+# db-toolchain
+
+Asciidoc and DocBook to PDF (or FO, HTML, ...) conversion made easy! 
+
+This project has similiar aims as [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub):
+Make using Asciidoc(tor) (or DocBook) convertion tools as easy as it can be.
+
+In detail:
+
+* Provide several processing pipelines for conversion.
+* Provide the most up-to-date pipelines possible.
+* Provide an unified CLI access to the different pipelines.
+* Only depend on an installed Java JDK 11 (and some standard Linux tools).
+
+## State
+
+This project is in its early stages, but the most basic things work now: Using pipelines to convert Asciidoc(tor)
+or DocBook to PDF.
+
+## Pipelines
+
+So far the following pipelines are implemented:
+
+* **xsl-fo**: <br/>
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook Xslt 2.0 Stylesheets
+  (2.3.9) and Apache FOP (1.11-SNAPSHOT)
+* **xsl-css**: <br/>
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook Xslt 2.0 Stylesheets
+  (2.3.9) and [Prince 12](https://www.princexml.com/)
+* **ad**: <br/>  
+  PDF (or intermediate) conversion of Asciidoc(tor) using the acsiidoctorj port of asciidoctor
+* **fo**: <br/>  
+  PDF conversion of XSLT-FO (i.e. FO) using Apache FOP (1.11-SNAPSHOT)
+  
+## Quick start
+
+1. Check out the project from github.
+2. `cd db-toolchain`
+3. `./script/bootstrap.sh`
+4. `./gradle runApp1` to run an example convertion.
+5. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
+   independent of the build process.
+
 ## Docbook
 
 ### Resources
