@@ -46,7 +46,7 @@ module com.github.aanno.dbtoolchain {
     requires jnrchannels;
     // requires jnr.enxio;
     // requires jnr.unixsocket;
-    // requires jnr.constants;
+    requires jnr.constants;
 
     requires slf4j.api;
     requires info.picocli;

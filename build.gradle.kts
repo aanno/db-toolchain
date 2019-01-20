@@ -34,10 +34,6 @@ repositories {
     jcenter()
 }
 
-
-ext {
-}
-
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
@@ -61,6 +57,8 @@ idea {
         setDownloadSources(true)
     }
 }
+
+val debugModulePath = false
 
 class ShowSelection {
     @Mutate
@@ -155,8 +153,11 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // exclude("com.github.jnr", "jnr-unixsocket")
     // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
     exclude("com.github.jnr", "jnr-ffi")
-    exclude("com.github.jnr", "jnr-enxio")
-    exclude("com.github.jnr", "jnr-unixsocket")
+    
+    if (!name.equals("ueberjars")) {
+        exclude("com.github.jnr", "jnr-enxio")
+        exclude("com.github.jnr", "jnr-unixsocket")
+    }
 
     exclude("org.jruby", "jruby-complete")
 
@@ -170,6 +171,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.xmlgraphics", "batik-script")
     exclude("org.apache.xmlgraphics", "batik-constants")
 }
+val ueberjars = configurations.create("ueberjars")
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
@@ -256,6 +258,9 @@ dependencies {
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     api("info.picocli", "picocli", "3.9.1")
+
+    ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
+    ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
@@ -363,7 +368,9 @@ tasks {
             // classpath.forEach({it -> println(it)})
 
             doLast {
-                println("Args for for ${name} are ${options.allCompilerArgs}")
+                if (debugModulePath) {
+                    println("Args for for ${name} are ${options.allCompilerArgs}")
+                }
             }
     }
 
@@ -393,7 +400,9 @@ tasks {
                     "--show-module-resolution"
                             .split(" ")
             )
-            println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+            if (debugModulePath) {
+                println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+            }
         }
 
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
@@ -403,7 +412,9 @@ tasks {
         // classpath = sourceSets["main"].runtimeClasspath
 
         doLast {
-            println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+            if (debugModulePath) {
+                println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
+            }
         }
 
     }
