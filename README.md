@@ -22,22 +22,26 @@ or DocBook to PDF.
 So far the following pipelines are implemented:
 
 * **xsl-fo**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook Xslt 2.0 Stylesheets
-  (2.3.9) and Apache FOP (1.11-SNAPSHOT)
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.3.9) and Apache FOP (2.4.0-SNAPSHOT)
 * **xsl-css**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook Xslt 2.0 Stylesheets
-  (2.3.9) and [Prince 12](https://www.princexml.com/)
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.3.9) and 
+  [Prince 12](https://www.princexml.com/)
 * **ad**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) using the acsiidoctorj port of asciidoctor
+  PDF (or intermediate) conversion of Asciidoc(tor) using the 
+  [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
+  [asciidoctor](https://github.com/asciidoctor/asciidoctor)
 * **fo**: <br/>
-  PDF conversion of XSLT-FO (i.e. FO) using Apache FOP (1.11-SNAPSHOT)
+  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4.0-SNAPSHOT)
 
 ## Prerequisite
 
 * Java 11 JDK installed and set as JAVA_HOME environment.
-* Apache Maven (`mvn`) in PATH.
-* Apache Ant (`ant`) in PATH.
+* [Apache Maven](https://maven.apache.org/) (`mvn`) in PATH.
+* [Apache Ant](https://ant.apache.org/) (`ant`) in PATH.
 * Some Linux tools (e.g. `zip`, `unzip`, `bash`, `wget`) in PATH.
+* A github account, with an associated SSH certificate (so that you _clone with SSH_) 
 
 ## Quick start
 

@@ -54,7 +54,7 @@ pushd "$ROOT"
 
     git submodule foreach git gc
 
-    // HACK to get empty jar
+    # HACK to get empty jar
     mkdir -p "lib/ueberjars"
     mkdir -p "lib/tmp"
     touch "lib/ueberjars/jnrchannels.jar"
