@@ -213,7 +213,7 @@ dependencies {
     // api("com.google.guava:guava:26.0-jre")
 
     /*
-    api("org.docbook", "docbook-xslt2", "2.3.9") {
+    api("org.docbook", "docbook-xslt2", "2.3.10") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
@@ -223,7 +223,7 @@ dependencies {
         exclude("com.thaiopensource", "jing")
     }
      */
-    api("", "docbook-xslt2", "2.3.9") {
+    api("", "docbook-xslt2", "2.3.10") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
