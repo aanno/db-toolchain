@@ -16,6 +16,11 @@
                   <project path="$PROJECT_DIR$/submodules/xslt20-resources" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/submodules/asciidoctor-fopub">
+                <projects>
+                  <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -25,6 +30,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
@@ -33,7 +39,7 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/asciidoctorj" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
@@ -48,43 +54,6 @@
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/xslt20-resources" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/xslt20-resources" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
-        <option name="useQualifiedModuleNames" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/xslt20-stylesheets" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/xslt20-stylesheets/buildSrc" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>

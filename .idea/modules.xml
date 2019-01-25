@@ -41,9 +41,6 @@
       <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-ttf2svg/batik-ttf2svg.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-ttf2svg/batik-ttf2svg.iml" group="batik and modules" />
       <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-util/batik-util.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-util/batik-util.iml" group="batik and modules" />
       <module fileurl="file://$PROJECT_DIR$/submodules/batik/batik-xml/batik-xml.iml" filepath="$PROJECT_DIR$/submodules/batik/batik-xml/batik-xml.iml" group="batik and modules" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.xmlcalabash.xmlcalabash1-print.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/db-toolchain.iml" filepath="$PROJECT_DIR$/db-toolchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" />
@@ -77,6 +74,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-wildfly-integration-test/org.asciidoctor.asciidoctorj-wildfly-integration-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-wildfly-integration-test/org.asciidoctor.asciidoctorj-wildfly-integration-test.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-core/org.asciidoctor.asciidoctorj.main.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-core/org.asciidoctor.asciidoctorj.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-core/org.asciidoctor.asciidoctorj.test.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-core/org.asciidoctor.asciidoctorj.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/asciidoctor-fopub/org.asciidoctor.fopub.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/org.docbook.buildSrc.test.iml" />
