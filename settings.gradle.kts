@@ -19,4 +19,4 @@ includeBuild("submodules/asciidoctor-fopub")
 
 // if jing-trang is a composite, merged jar resolution
 // does not work (tp)
-// includeBuild("submodules/jing-trang")
+includeBuild("submodules/jing-trang")

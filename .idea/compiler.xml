@@ -70,6 +70,8 @@
       <module name="db-toolchain.test" target="11" />
       <module name="jing-trang.main" target="11" />
       <module name="jing-trang.test" target="11" />
+      <module name="jingtrang.main" target="11" />
+      <module name="jingtrang.test" target="11" />
       <module name="maven-archiver (1)" target="1.5" />
       <module name="maven-archiver (2)" target="1.5" />
       <module name="maven-archiver (3)" target="1.5" />

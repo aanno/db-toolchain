@@ -53,6 +53,9 @@
       <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-transcoder/fop-transcoder.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-transcoder/fop-transcoder.iml" group="fop-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-transcoder-allinone/fop-transcoder-allinone.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-transcoder-allinone/fop-transcoder-allinone.iml" group="fop-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-util/fop-util.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-util/fop-util.iml" group="fop-parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.asciidoctor.asciidoctorj.iml" filepath="$PROJECT_DIR$/.idea/modules/org.asciidoctor.asciidoctorj.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-api/org.asciidoctor.asciidoctorj-api.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-api/org.asciidoctor.asciidoctorj-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-api/org.asciidoctor.asciidoctorj-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-api/org.asciidoctor.asciidoctorj-api.main.iml" />

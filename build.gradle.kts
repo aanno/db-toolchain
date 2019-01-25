@@ -364,6 +364,9 @@ tasks {
                 ) /*+ patchModule */)
                 println("Args for for ${name} are ${options.allCompilerArgs}")
             }
+            // HACK: adding 'submodules/jing-trang' as composite results in 
+            //       java 11 module resolution error for 'requires jingtrang;'
+            classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
 
             // classpath.forEach({it -> println(it)})
 
@@ -483,5 +486,5 @@ tasks.named("build") {
 }
 
 tasks.named("compileJava") {
-	// dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+	dependsOn(gradle.includedBuild("jingtrang").task(":build"))
 }

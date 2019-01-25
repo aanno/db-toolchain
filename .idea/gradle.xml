@@ -33,6 +33,11 @@
                   <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/submodules/jing-trang">
+                <projects>
+                  <project path="$PROJECT_DIR$/submodules/jing-trang" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -51,6 +56,7 @@
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
+            <option value="$PROJECT_DIR$/submodules/jing-trang" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
