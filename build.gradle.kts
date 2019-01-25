@@ -470,10 +470,11 @@ tasks {
         finalizedBy(adStart)
     }
 
-    /*
-    build {
-        dependsOn(gradle.includedBuild("jingtrang").task(":jingtrang"))
-    }
-     */
-
 }
+
+/*
+build {
+    dependsOn(gradle.includedBuild("jingtrang").task(":jingtrang"))
+}
+ */
+build.dependsOn(":copyJarsForUeberJars")
