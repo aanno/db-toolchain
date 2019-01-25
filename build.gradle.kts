@@ -481,3 +481,7 @@ build {
 tasks.named("build") {
     dependsOn(":copyJarsForUeberJars")
 }
+
+tasks.named("compileJava") {
+	// dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+}
