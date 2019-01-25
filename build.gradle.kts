@@ -477,4 +477,7 @@ build {
     dependsOn(gradle.includedBuild("jingtrang").task(":jingtrang"))
 }
  */
-build.dependsOn(":copyJarsForUeberJars")
+// https://docs.gradle.org/current/userguide/kotlin_dsl.html#using_the_container_api
+tasks.named("build") {
+    dependsOn(":copyJarsForUeberJars")
+}
