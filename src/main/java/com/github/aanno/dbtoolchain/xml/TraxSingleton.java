@@ -25,8 +25,10 @@ public class TraxSingleton {
 
     static {
         // full XInclude support, see 'DocBook V5.0 Transition Guide FAQ 6.6.1.4'
+        /*
         System.setProperty("org.apache.xerces.xni.parser.XMLParserConfiguration",
                 XIncludeParserConfiguration.class.getName());
+                */
 
         // TODO tp:
         System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,

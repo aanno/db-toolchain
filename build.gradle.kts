@@ -59,6 +59,7 @@ idea {
     }
 }
 
+val xercesVersion = "2.11.0"
 val debugModulePath = false
 val moduleJvmArgs = listOf(
 	"--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
@@ -260,7 +261,7 @@ dependencies {
     // pull in all deps (but batik-all will be excuded)
     api("", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
-    api("xerces", "xercesImpl", "2.12.0")
+    api("xerces", "xercesImpl", xercesVersion)
 
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
@@ -274,7 +275,7 @@ dependencies {
 
     ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
-    ueberjars("xerces", "xercesImpl", "2.12.0")
+    ueberjars("xerces", "xercesImpl", xercesVersion)
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
