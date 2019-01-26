@@ -3,7 +3,10 @@ module com.github.aanno.dbtoolchain {
     // needed for awt
     requires java.desktop;
     requires java.xml;
-    requires jdk.xml.dom;
+
+    // requires jdk.xml.dom;
+    // requires xercesImpl;
+    requires xerces.stripped;
 
     requires xmlresolver;
     requires Saxon.HE;

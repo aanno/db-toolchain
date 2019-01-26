@@ -1,6 +1,6 @@
 package com.github.aanno.dbtoolchain.xml;
 
-import com.sun.org.apache.xerces.internal.parsers.XIncludeParserConfiguration;
+import org.apache.xerces.parsers.XIncludeParserConfiguration;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;

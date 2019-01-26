@@ -18,6 +18,7 @@ repositories {
                 "submodules/jing-trang/build/libs",
                 "submodules/fop/fop/target",
                 "lib/ueberjars",
+	        "build/libs",
                 "lib/stripped",
                 "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
@@ -120,7 +121,8 @@ configurations.all {
     exclude("xml-apis", "xml-apis")
     // exclude("xml-apis", "xml-apis-ext")
     exclude("xalan", "xalan")
-    exclude("xerces", "xercesImpl")
+    exclude("xalan", "serializer")
+    // exclude("xerces", "xercesImpl")
     exclude("com.thaiopensource", "jing")
     exclude("", "jing")
     exclude("com.thaiopensource", "trang")
@@ -133,7 +135,7 @@ configurations.all {
     // exclude("org.asciidoctor", "asciidoctorj")
     exclude("commons-logging", "commons-logging")
     exclude("org.apache.avalon.framework", "avalon-framework-impl")
-    // exclude("org.apache.avalon.framework", "avalon-framework-api")
+    exclude("org.apache.avalon.framework", "avalon-framework-api")
 
     // if I add jnr-unixsocket, the world collapses:
     /*
@@ -160,6 +162,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     if (!name.equals("ueberjars")) {
         exclude("com.github.jnr", "jnr-enxio")
         exclude("com.github.jnr", "jnr-unixsocket")
+	exclude("xerces", "xercesImpl")
     }
 
     exclude("org.jruby", "jruby-complete")
@@ -180,6 +183,12 @@ dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
 
     api("", "prince", "")
+
+    // TODO: This is hacky as it trashes the first build after clean
+    if (file("build/libs/xerces-stripped.jar").exists()) {
+	api("", "xerces-stripped", "")
+    }
+    
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
 
@@ -251,6 +260,7 @@ dependencies {
     // pull in all deps (but batik-all will be excuded)
     api("", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
+    api("xerces", "xercesImpl", "2.12.0")
 
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
@@ -264,6 +274,7 @@ dependencies {
 
     ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
+    ueberjars("xerces", "xercesImpl", "2.12.0")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
@@ -398,6 +409,15 @@ tasks {
         // archiveName = "${application.applicationName}-$version.jar"
         // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
     }
+    
+    task("moreClean", Delete::class) {
+	delete("lib/tmp/")
+	doLast {
+		File("lib/tmp").mkdirs()
+		// File("build/libs").mkdirs()
+		// File("build/libs/xerces-stripped.jar").createNewFile()
+	}
+    }
 
     // https://stackoverflow.com/questions/51810254/execute-javaexec-task-using-gradle-kotlin-dsl
     // https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html
@@ -447,13 +467,28 @@ tasks {
         // classpath = sourceSets["main"].runtimeClasspath
     }
 
-    task("copyJarsForUeberJars", Copy::class) {
+    val copyJarsForUeberJars = task("copyJarsForUeberJars", Copy::class) {
         val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
         println("ueberBaseFiles: " + ueberBaseFiles)
         from(ueberBaseFiles) {
             rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1.jar")
         }
         into("./lib/tmp")
+    }
+
+    val unzipXerces = task("unzipXerces", Copy::class) {
+	from(zipTree(file("lib/tmp/xercesImpl.jar"))) {
+		exclude("org/w3c/**/*")
+	}
+	into("./lib/tmp/xercesImpl")
+	dependsOn(copyJarsForUeberJars)
+    }
+
+    val rezipStrippedXerces = task("rezipStrippedXerces", Jar::class) {
+	baseName = "xerces-stripped"
+	from(files("./lib/tmp/xercesImpl")) {
+	}
+	dependsOn(unzipXerces)
     }
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
@@ -490,6 +525,11 @@ tasks.named("build") {
     dependsOn(":copyJarsForUeberJars")
 }
 
+tasks.named("clean") {
+	dependsOn(":moreClean")
+}
+
 tasks.named("compileJava") {
 	dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+	dependsOn(":rezipStrippedXerces")
 }
