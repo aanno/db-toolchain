@@ -59,6 +59,9 @@ idea {
 }
 
 val debugModulePath = false
+val moduleJvmArgs = listOf(
+	"--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+)
 
 class ShowSelection {
     @Mutate
@@ -286,7 +289,7 @@ application {
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
-    jvmArgs("--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain")
+    jvmArgs(moduleJvmArgs)
 }
 
 var spec2File: Map<String, File> = emptyMap()
@@ -363,7 +366,7 @@ tasks {
                         // , "-cp", "jnr-enxio-0.19.jar"
                         // , "--add-modules", "ALL-MODULE-PATH",
                         // , "--module-path", classpath.asPath
-                ) /*+ patchModule */)
+                ) + moduleJvmArgs /*+ patchModule */)
                 println("Args for for ${name} are ${options.allCompilerArgs}")
             }
             // HACK: adding 'submodules/jing-trang' as composite results in 
