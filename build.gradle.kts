@@ -286,6 +286,7 @@ application {
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
+    jvmArgs("--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain")
 }
 
 var spec2File: Map<String, File> = emptyMap()
@@ -356,7 +357,8 @@ tasks {
 
             doFirst {
                 options.compilerArgs.addAll(listOf(
-                        "--release", "11"
+                        // "--release", "11"
+                        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
                         // , "--add-modules jnr.enxio"
                         // , "-cp", "jnr-enxio-0.19.jar"
                         // , "--add-modules", "ALL-MODULE-PATH",

@@ -108,4 +108,9 @@
       <module name="xslt20-resources.test" target="11" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="db-toolchain.main" options="--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain" />
+    </option>
+  </component>
 </project>

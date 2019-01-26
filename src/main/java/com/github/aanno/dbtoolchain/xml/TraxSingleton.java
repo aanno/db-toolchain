@@ -1,5 +1,6 @@
 package com.github.aanno.dbtoolchain.xml;
 
+import com.sun.org.apache.xerces.internal.parsers.XIncludeParserConfiguration;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -23,6 +24,10 @@ import java.nio.file.Paths;
 public class TraxSingleton {
 
     static {
+        // full XInclude support, see 'DocBook V5.0 Transition Guide FAQ 6.6.1.4'
+        System.setProperty("org.apache.xerces.xni.parser.XMLParserConfiguration",
+                XIncludeParserConfiguration.class.getName());
+
         // TODO tp:
         System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
                 XMLSyntaxSchemaFactory.class.getName());
