@@ -50,6 +50,12 @@ pushd "$ROOT"
             mvn -DskipTests clean package
         popd
 
+        pushd xerces2-j
+            git remote add upstream git@github.com:apache/xerces2-j.git
+            git checkout feature/xerces-java11
+            ant -v -Dant.java.version=1.8 clean jar
+        popd
+
     popd
 
     git submodule foreach git gc
