@@ -11,28 +11,30 @@ import org.javamodularity.moduleplugin.tasks.ModuleOptions
  * user guide available at https://docs.gradle.org/5.0/userguide/tutorial_java_projects.html
  */
 
-repositories {
-    flatDir {
-        dirs(
-                "lib/prince-java/lib",
-                "submodules/jing-trang/build/libs",
-                "submodules/fop/fop/target",
-                "lib/ueberjars",
-	        "build/libs",
-                "lib/stripped",
-                "submodules/batik/batik-all/target",
-                "submodules/xslt20-stylesheets/build/libs",
-                "submodules/asciidoctorj/asciidoctorj-core/build/libs",
-                "submodules/asciidoctorj/asciidoctorj-api/build/libs"
-        )
+allprojects {
+    repositories {
+        flatDir {
+            dirs(
+                    "lib/prince-java/lib",
+                    "submodules/jing-trang/build/libs",
+                    "submodules/fop/fop/target",
+                    "lib/ueberjars",
+                    "build/libs",
+                    "lib/stripped",
+                    "submodules/batik/batik-all/target",
+                    "submodules/xslt20-stylesheets/build/libs",
+                    "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+                    "submodules/asciidoctorj/asciidoctorj-api/build/libs"
+            )
+        }
+
+        mavenLocal()
+        mavenCentral()
+
+        // Use jcenter for resolving your dependenes.
+        // You can declare any Maven/Ivy/file repository here.
+        jcenter()
     }
-
-    mavenLocal()
-    mavenCentral()
-
-    // Use jcenter for resolving your dependenes.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
 }
 
 java {
@@ -59,10 +61,9 @@ idea {
     }
 }
 
-val xercesVersion = "2.11.0"
 val debugModulePath = false
 val moduleJvmArgs = listOf(
-	"--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
 )
 
 class ShowSelection {
@@ -89,7 +90,7 @@ configurations.all {
         }
 
         // cache dynamic versions for 10 minutes
-        cacheDynamicVersionsFor(10*60, "seconds")
+        cacheDynamicVersionsFor(10 * 60, "seconds")
         // don't cache changing modules at all
         cacheChangingModulesFor(60, "seconds")
 
@@ -163,7 +164,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     if (!name.equals("ueberjars")) {
         exclude("com.github.jnr", "jnr-enxio")
         exclude("com.github.jnr", "jnr-unixsocket")
-	exclude("xerces", "xercesImpl")
+        exclude("xerces", "xercesImpl")
     }
 
     exclude("org.jruby", "jruby-complete")
@@ -178,7 +179,6 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.xmlgraphics", "batik-script")
     exclude("org.apache.xmlgraphics", "batik-constants")
 }
-val ueberjars = configurations.create("ueberjars")
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
@@ -187,9 +187,9 @@ dependencies {
 
     // TODO: This is hacky as it trashes the first build after clean
     if (file("build/libs/xerces-stripped.jar").exists()) {
-	api("", "xerces-stripped", "")
+        api("", "xerces-stripped", "")
     }
-    
+
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
 
@@ -261,7 +261,7 @@ dependencies {
     // pull in all deps (but batik-all will be excuded)
     api("", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
-    api("xerces", "xercesImpl", xercesVersion)
+    // api("xerces", "xercesImpl", xercesVersion)
 
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
@@ -272,10 +272,6 @@ dependencies {
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     api("info.picocli", "picocli", "3.9.1")
-
-    ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
-    ueberjars("xerces", "xercesImpl", xercesVersion)
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     testImplementation("org.testng:testng:6.14.3")
@@ -305,7 +301,7 @@ val test by tasks.getting(Test::class) {
 }
 
 var spec2File: Map<String, File> = emptyMap()
-configurations.forEach({c -> println(c)})
+configurations.forEach({ c -> println(c) })
 // TODO: get name of configuration (gradle dependencies)
 configurations.compileClasspath {
     val s2f: MutableMap<ResolvedModuleVersion, File> = mutableMapOf()
@@ -314,8 +310,8 @@ configurations.compileClasspath {
         // println(ra.moduleVersion.toString() + " -> " + ra.file)
         s2f.put(ra.moduleVersion, ra.file)
     })
-    spec2File = s2f.mapKeys({"${it.key.id.group}:${it.key.id.name}"})
-    spec2File.keys.sorted().forEach({ it -> println(it.toString() + " -> " + spec2File.get(it))})
+    spec2File = s2f.mapKeys({ "${it.key.id.group}:${it.key.id.name}" })
+    spec2File.keys.sorted().forEach({ it -> println(it.toString() + " -> " + spec2File.get(it)) })
 }
 
 /*
@@ -359,39 +355,39 @@ val patchModule = listOf(
 )
 */
 patchModules.config = listOf(
-            "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
-            // , "jing=" + spec2File[":trang"].toString()
-            // , "jnr.unixsocket=jnr-enxio-0.19.jar"
+        "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
+        // , "jing=" + spec2File[":trang"].toString()
+        // , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )
 println("\npatchModules.config:\n")
-patchModules.config.forEach({it -> println(it)})
+patchModules.config.forEach({ it -> println(it) })
 
 tasks {
 
     withType<JavaCompile> {
 
-            doFirst {
-                options.compilerArgs.addAll(listOf(
-                        // "--release", "11"
-                        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
-                        // , "--add-modules jnr.enxio"
-                        // , "-cp", "jnr-enxio-0.19.jar"
-                        // , "--add-modules", "ALL-MODULE-PATH",
-                        // , "--module-path", classpath.asPath
-                ) + moduleJvmArgs /*+ patchModule */)
+        doFirst {
+            options.compilerArgs.addAll(listOf(
+                    // "--release", "11"
+                    "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+                    // , "--add-modules jnr.enxio"
+                    // , "-cp", "jnr-enxio-0.19.jar"
+                    // , "--add-modules", "ALL-MODULE-PATH",
+                    // , "--module-path", classpath.asPath
+            ) + moduleJvmArgs /*+ patchModule */)
+            println("Args for for ${name} are ${options.allCompilerArgs}")
+        }
+        // HACK: adding 'submodules/jing-trang' as composite results in 
+        //       java 11 module resolution error for 'requires jingtrang;'
+        classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
+
+        // classpath.forEach({it -> println(it)})
+
+        doLast {
+            if (debugModulePath) {
                 println("Args for for ${name} are ${options.allCompilerArgs}")
             }
-            // HACK: adding 'submodules/jing-trang' as composite results in 
-            //       java 11 module resolution error for 'requires jingtrang;'
-            classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
-
-            // classpath.forEach({it -> println(it)})
-
-            doLast {
-                if (debugModulePath) {
-                    println("Args for for ${name} are ${options.allCompilerArgs}")
-                }
-            }
+        }
     }
 
     withType<Jar> {
@@ -410,14 +406,14 @@ tasks {
         // archiveName = "${application.applicationName}-$version.jar"
         // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
     }
-    
+
     task("moreClean", Delete::class) {
-	delete("lib/tmp/")
-	doLast {
-		File("lib/tmp").mkdirs()
-		// File("build/libs").mkdirs()
-		// File("build/libs/xerces-stripped.jar").createNewFile()
-	}
+        delete("lib/tmp/")
+        doLast {
+            File("lib/tmp").mkdirs()
+            // File("build/libs").mkdirs()
+            // File("build/libs/xerces-stripped.jar").createNewFile()
+        }
     }
 
     // https://stackoverflow.com/questions/51810254/execute-javaexec-task-using-gradle-kotlin-dsl
@@ -468,30 +464,6 @@ tasks {
         // classpath = sourceSets["main"].runtimeClasspath
     }
 
-    val copyJarsForUeberJars = task("copyJarsForUeberJars", Copy::class) {
-        val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
-        println("ueberBaseFiles: " + ueberBaseFiles)
-        from(ueberBaseFiles) {
-            rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1.jar")
-        }
-        into("./lib/tmp")
-    }
-
-    val unzipXerces = task("unzipXerces", Copy::class) {
-	from(zipTree(file("lib/tmp/xercesImpl.jar"))) {
-		exclude("org/w3c/**/*")
-	}
-	into("./lib/tmp/xercesImpl")
-	dependsOn(copyJarsForUeberJars)
-    }
-
-    val rezipStrippedXerces = task("rezipStrippedXerces", Jar::class) {
-	baseName = "xerces-stripped"
-	from(files("./lib/tmp/xercesImpl")) {
-	}
-	dependsOn(unzipXerces)
-    }
-
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
     val sourcesJar by registering(Jar::class) {
         classifier = "sources"
@@ -523,14 +495,14 @@ build {
  */
 // https://docs.gradle.org/current/userguide/kotlin_dsl.html#using_the_container_api
 tasks.named("build") {
-    dependsOn(":copyJarsForUeberJars")
+    dependsOn(":splitjars:copyJarsForUeberJars")
 }
 
 tasks.named("clean") {
-	dependsOn(":moreClean")
+    dependsOn(":moreClean")
 }
 
 tasks.named("compileJava") {
-	dependsOn(gradle.includedBuild("jingtrang").task(":build"))
-	dependsOn(":rezipStrippedXerces")
+    dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+    dependsOn(":splitjars:rezipStrippedXerces")
 }

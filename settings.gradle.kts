@@ -1,5 +1,6 @@
 rootProject.name = "db-toolchain"
 
+include(":splitjars")
 /*
 I would like to include asciidoctorj as composite project, however this fails with:
 Could not resolve all dependencies for configuration ':compileClasspath'.

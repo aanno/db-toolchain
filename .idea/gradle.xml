@@ -47,6 +47,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/splitjars" />
             <option value="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
