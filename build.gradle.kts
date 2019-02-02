@@ -361,6 +361,12 @@ patchModules.config = listOf(
 println("\npatchModules.config:\n")
 patchModules.config.forEach({ it -> println(it) })
 
+// HACK: adding 'submodules/jing-trang' as composite results in
+//       java 11 module resolution error for 'requires jingtrang;'
+val additionalClasspath =
+    layout.files("submodules/jing-trang/build/libs/jingtrang.jar") +
+    layout.files("splitjars/build/libs/xerces-stripped.jar")
+
 tasks {
 
     withType<JavaCompile> {
@@ -376,10 +382,8 @@ tasks {
             ) + moduleJvmArgs /*+ patchModule */)
             println("Args for for ${name} are ${options.allCompilerArgs}")
         }
-        // HACK: adding 'submodules/jing-trang' as composite results in
-        //       java 11 module resolution error for 'requires jingtrang;'
-        classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
-        classpath += layout.files("splitjars/build/libs/xerces-stripped.jar")
+
+        classpath += additionalClasspath
 
         // classpath.forEach({it -> println(it)})
 
@@ -388,6 +392,10 @@ tasks {
                 println("Args for for ${name} are ${options.allCompilerArgs}")
             }
         }
+    }
+
+    test {
+        classpath += additionalClasspath
     }
 
     withType<Jar> {
