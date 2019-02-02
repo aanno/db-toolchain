@@ -15,16 +15,17 @@ repositories {
     flatDir {
         dirs(
             "lib/prince-java/lib",
-             "submodules/jing-trang/build/libs",
-             "submodules/fop/fop/target",
-             "lib/ueberjars",
-             "build/libs",
-             "splitjars/build/libs",
-             "lib/stripped",
-             "submodules/batik/batik-all/target",
-             "submodules/xslt20-stylesheets/build/libs",
-             "submodules/asciidoctorj/asciidoctorj-core/build/libs",
-             "submodules/asciidoctorj/asciidoctorj-api/build/libs"
+            "splitjars/build/libs",
+            "submodules/jing-trang/build/libs",
+            "submodules/fop/fop/target",
+            // "lib/ueberjars",
+            // "build/libs",
+            // "splitjars/build/libs",
+            // "lib/stripped",
+            "submodules/batik/batik-all/target",
+            "submodules/xslt20-stylesheets/build/libs",
+            "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+            "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
     }
 
