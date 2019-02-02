@@ -62,7 +62,7 @@ idea {
 
 val debugModulePath = false
 val moduleJvmArgs = listOf(
-        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+        // "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
 )
 
 class ShowSelection {
@@ -367,8 +367,8 @@ tasks {
 
         doFirst {
             options.compilerArgs.addAll(listOf(
-                    // "--release", "11"
-                    "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+                    "--release", "11"
+                    // "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
                     // , "--add-modules jnr.enxio"
                     // , "-cp", "jnr-enxio-0.19.jar"
                     // , "--add-modules", "ALL-MODULE-PATH",
@@ -379,6 +379,7 @@ tasks {
         // HACK: adding 'submodules/jing-trang' as composite results in
         //       java 11 module resolution error for 'requires jingtrang;'
         classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
+        classpath += layout.files("splitjars/build/libs/xerces-stripped.jar")
 
         // classpath.forEach({it -> println(it)})
 
