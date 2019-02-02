@@ -213,8 +213,8 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
-    api("com.github.jnr", "jnr-unixsocket", "0.2.1")
-    api("com.github.jnr", "jnr-enxio", "0.1.9")
+    api("com.github.jnr", "jnr-unixsocket", "0.21")
+    api("com.github.jnr", "jnr-enxio", "0.19")
     implementation("", "jnrchannels", "")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
@@ -510,5 +510,5 @@ tasks.named("clean") {
 
 tasks.named("compileJava") {
     dependsOn(gradle.includedBuild("jingtrang").task(":build"))
-    dependsOn(":splitjars:rezipStrippedXerces")
+    dependsOn(":splitjars:build")
 }

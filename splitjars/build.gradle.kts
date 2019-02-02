@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
+    ueberjars("com.github.jnr", "jnr-enxio", "0.19")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
     ueberjars("xerces", "xercesImpl", xercesVersion)
 }
