@@ -198,7 +198,7 @@ dependencies {
     // build from submodule 'jing-trang'
     // api("", "jing", "")
     // api("", "trang", "")
-    implementation("", "jingtrang", "")
+    api("com.thaiopensource ","jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
@@ -364,7 +364,7 @@ patchModules.config.forEach({ it -> println(it) })
 // HACK: adding 'submodules/jing-trang' as composite results in
 //       java 11 module resolution error for 'requires jingtrang;'
 val additionalClasspath =
-    layout.files("submodules/jing-trang/build/libs/jingtrang.jar") +
+    // layout.files("submodules/jing-trang/build/libs/jingtrang.jar") +
     layout.files("splitjars/build/libs/xerces-stripped.jar")
 
 tasks {

@@ -18,6 +18,10 @@ includeBuild("submodules/xslt20-stylesheets")
 includeBuild("submodules/xslt20-resources")
 includeBuild("submodules/asciidoctor-fopub")
 
-// if jing-trang is a composite, merged jar resolution
-// does not work (tp)
-includeBuild("submodules/jing-trang")
+// if jing-trang is a composite, merged jar resolution now works (tp)
+// https://docs.gradle.org/current/userguide/composite_builds.html
+includeBuild("submodules/jing-trang") {
+    dependencySubstitution {
+        substitute(module("com.thaiopensource:jingtrang")).with(project(":"))
+    }
+}
