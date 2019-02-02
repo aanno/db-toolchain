@@ -66,8 +66,56 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="asciidoctor-pdf" target="1.5" />
+      <module name="batik" target="1.5" />
+      <module name="batik-all" target="1.5" />
+      <module name="batik-anim" target="1.6" />
+      <module name="batik-awt-util" target="1.6" />
+      <module name="batik-bridge" target="1.6" />
+      <module name="batik-codec" target="1.6" />
+      <module name="batik-constants" target="1.6" />
+      <module name="batik-css" target="1.6" />
+      <module name="batik-dom" target="1.6" />
+      <module name="batik-ext" target="1.6" />
+      <module name="batik-extension" target="1.6" />
+      <module name="batik-gui-util" target="1.6" />
+      <module name="batik-gvt" target="1.6" />
+      <module name="batik-i18n" target="1.6" />
+      <module name="batik-parser" target="1.6" />
+      <module name="batik-rasterizer" target="1.6" />
+      <module name="batik-rasterizer-ext" target="1.6" />
+      <module name="batik-script" target="1.6" />
+      <module name="batik-slideshow" target="1.6" />
+      <module name="batik-squiggle" target="1.6" />
+      <module name="batik-squiggle-ext" target="1.6" />
+      <module name="batik-svg-dom" target="1.6" />
+      <module name="batik-svgbrowser" target="1.6" />
+      <module name="batik-svggen" target="1.6" />
+      <module name="batik-svgpp" target="1.6" />
+      <module name="batik-svgrasterizer" target="1.6" />
+      <module name="batik-swing" target="1.6" />
+      <module name="batik-test" target="1.6" />
+      <module name="batik-test-old" target="1.6" />
+      <module name="batik-test-svg" target="1.6" />
+      <module name="batik-test-swing" target="1.6" />
+      <module name="batik-test-util" target="1.6" />
+      <module name="batik-transcoder" target="1.6" />
+      <module name="batik-ttf2svg" target="1.6" />
+      <module name="batik-util" target="1.6" />
+      <module name="batik-xml" target="1.6" />
       <module name="db-toolchain.main" target="11" />
+      <module name="db-toolchain.splitjars.main" target="11" />
+      <module name="db-toolchain.splitjars.test" target="11" />
       <module name="db-toolchain.test" target="11" />
+      <module name="fop" target="1.6" />
+      <module name="fop-core" target="1.6" />
+      <module name="fop-events" target="1.6" />
+      <module name="fop-parent" target="1.5" />
+      <module name="fop-sandbox" target="1.6" />
+      <module name="fop-servlet" target="1.6" />
+      <module name="fop-transcoder" target="1.6" />
+      <module name="fop-transcoder-allinone" target="1.6" />
+      <module name="fop-util" target="1.6" />
       <module name="jing-trang.main" target="11" />
       <module name="jing-trang.test" target="11" />
       <module name="jingtrang.main" target="11" />

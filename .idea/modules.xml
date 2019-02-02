@@ -44,6 +44,8 @@
       <module fileurl="file://$PROJECT_DIR$/db-toolchain.iml" filepath="$PROJECT_DIR$/db-toolchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.main.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.test.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop/fop.iml" filepath="$PROJECT_DIR$/submodules/fop/fop/fop.iml" group="fop-parent and modules" />
       <module fileurl="file://$PROJECT_DIR$/submodules/fop/fop-core/fop-core.iml" filepath="$PROJECT_DIR$/submodules/fop/fop-core/fop-core.iml" group="fop-parent and modules" />
