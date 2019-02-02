@@ -1,5 +1,6 @@
 val xercesVersion = "2.11.0"
 val ueberjars = configurations.create("ueberjars")
+val xerces = configurations.create("xerces")
 
 plugins {
     `java`
@@ -54,4 +55,14 @@ tasks {
 
 }
 
-defaultTasks(":rezipStrippedXerces")
+artifacts {
+    add("archives", tasks.named("rezipStrippedXerces"))
+    add("default", tasks.named("rezipStrippedXerces"))
+    add("xerces", tasks.named("rezipStrippedXerces"))
+}
+
+tasks.named("build") {
+    dependsOn("rezipStrippedXerces")
+}
+
+defaultTasks("build")

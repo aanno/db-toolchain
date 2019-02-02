@@ -184,10 +184,7 @@ dependencies {
 
     api("", "prince", "")
 
-    // TODO: This is hacky as it trashes the first build after clean
-    if (file("build/libs/xerces-stripped.jar").exists()) {
-        api("", "xerces-stripped", "")
-    }
+    api(project("splitjars", "xerces"))
 
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
@@ -363,9 +360,9 @@ patchModules.config.forEach({ it -> println(it) })
 
 // HACK: adding 'submodules/jing-trang' as composite results in
 //       java 11 module resolution error for 'requires jingtrang;'
-val additionalClasspath =
+val additionalClasspath = layout.files()
     // layout.files("submodules/jing-trang/build/libs/jingtrang.jar") +
-    layout.files("splitjars/build/libs/xerces-stripped.jar")
+    // layout.files("splitjars/build/libs/xerces-stripped.jar")
 
 tasks {
 
