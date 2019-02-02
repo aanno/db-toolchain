@@ -11,30 +11,29 @@ import org.javamodularity.moduleplugin.tasks.ModuleOptions
  * user guide available at https://docs.gradle.org/5.0/userguide/tutorial_java_projects.html
  */
 
-allprojects {
-    repositories {
-        flatDir {
-            dirs(
-                    "lib/prince-java/lib",
-                    "submodules/jing-trang/build/libs",
-                    "submodules/fop/fop/target",
-                    "lib/ueberjars",
-                    "build/libs",
-                    "lib/stripped",
-                    "submodules/batik/batik-all/target",
-                    "submodules/xslt20-stylesheets/build/libs",
-                    "submodules/asciidoctorj/asciidoctorj-core/build/libs",
-                    "submodules/asciidoctorj/asciidoctorj-api/build/libs"
-            )
-        }
-
-        mavenLocal()
-        mavenCentral()
-
-        // Use jcenter for resolving your dependenes.
-        // You can declare any Maven/Ivy/file repository here.
-        jcenter()
+repositories {
+    flatDir {
+        dirs(
+            "lib/prince-java/lib",
+             "submodules/jing-trang/build/libs",
+             "submodules/fop/fop/target",
+             "lib/ueberjars",
+             "build/libs",
+             "splitjars/build/libs",
+             "lib/stripped",
+             "submodules/batik/batik-all/target",
+             "submodules/xslt20-stylesheets/build/libs",
+             "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+             "submodules/asciidoctorj/asciidoctorj-api/build/libs"
+        )
     }
+
+    mavenLocal()
+    mavenCentral()
+
+    // Use jcenter for resolving your dependenes.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
 }
 
 java {
@@ -377,7 +376,7 @@ tasks {
             ) + moduleJvmArgs /*+ patchModule */)
             println("Args for for ${name} are ${options.allCompilerArgs}")
         }
-        // HACK: adding 'submodules/jing-trang' as composite results in 
+        // HACK: adding 'submodules/jing-trang' as composite results in
         //       java 11 module resolution error for 'requires jingtrang;'
         classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
 

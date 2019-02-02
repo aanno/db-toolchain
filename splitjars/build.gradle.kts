@@ -1,6 +1,19 @@
 val xercesVersion = "2.11.0"
 val ueberjars = configurations.create("ueberjars")
 
+plugins {
+    `java`
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    // Use jcenter for resolving your dependenes.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
+
 dependencies {
     ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
@@ -31,4 +44,14 @@ tasks {
         }
         dependsOn(unzipXerces)
     }
+
+    val jar by register("jar1", Jar::class) {
+        archiveName = "foo.jar"
+        into("META-INF") {
+            from("bar")
+        }
+    }
+
 }
+
+defaultTasks(":rezipStrippedXerces")
