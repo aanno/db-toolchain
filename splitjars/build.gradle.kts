@@ -1,6 +1,8 @@
 val xercesVersion = "2.11.0"
+
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
+val jnrchannels = configurations.create("jnrchannels")
 
 plugins {
     `java`
@@ -46,6 +48,22 @@ tasks {
         dependsOn(unzipXerces)
     }
 
+    val unzipJnr = task("unzipJnr", Copy::class) {
+        from(zipTree(file("lib/tmp/jnr-enxio.jar"))) {
+        }
+        from(zipTree(file("lib/tmp/jnr-unixsocket.jar"))) {
+        }
+        into("./lib/tmp/jnrchannels")
+        dependsOn(copyJarsForUeberJars)
+    }
+
+    val rezipStrippedJnr = task("rezipStrippedJnr", Jar::class) {
+        baseName = "jnrchannels"
+        from(files("./lib/tmp/jnrchannels")) {
+        }
+        dependsOn(unzipJnr)
+    }
+
     val jar by register("jar1", Jar::class) {
         archiveName = "foo.jar"
         into("META-INF") {
@@ -56,13 +74,21 @@ tasks {
 }
 
 artifacts {
-    add("archives", tasks.named("rezipStrippedXerces"))
-    add("default", tasks.named("rezipStrippedXerces"))
-    add("xerces", tasks.named("rezipStrippedXerces"))
+    val xerces = tasks.named("rezipStrippedXerces")
+    val jnrchannels = tasks.named("rezipStrippedJnr")
+
+    add("archives", xerces)
+    add("archives", jnrchannels)
+
+    add("default", xerces)
+    add("default", jnrchannels)
+
+    add("xerces", xerces)
+    add("jnrchannels", jnrchannels)
 }
 
 tasks.named("build") {
-    dependsOn("rezipStrippedXerces")
+    dependsOn("rezipStrippedXerces", "rezipStrippedJnr")
 }
 
 defaultTasks("build")
