@@ -15,13 +15,8 @@ repositories {
     flatDir {
         dirs(
             "lib/prince-java/lib",
-            "splitjars/build/libs",
             "submodules/jing-trang/build/libs",
             "submodules/fop/fop/target",
-            // "lib/ueberjars",
-            // "build/libs",
-            // "splitjars/build/libs",
-            // "lib/stripped",
             "submodules/batik/batik-all/target",
             "submodules/xslt20-stylesheets/build/libs",
             "submodules/asciidoctorj/asciidoctorj-core/build/libs",
@@ -60,6 +55,8 @@ idea {
         setDownloadSources(true)
     }
 }
+
+evaluationDependsOnChildren()
 
 val debugModulePath = false
 val moduleJvmArgs = listOf(
@@ -182,21 +179,12 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
-
     api("", "prince", "")
-
     api(project("splitjars", "xerces"))
 
-    // compileClasspath("", "prince", "")
-    // runtimeClasspath("", "prince", "")
-
-    // asciidocj ueber jar
-    // api("", "asciidocj", "")
-
     // build from submodule 'jing-trang'
-    // api("", "jing", "")
-    // api("", "trang", "")
     api("com.thaiopensource ","jingtrang", "")
+    // api(project("jingtrang"))
 
     // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
@@ -215,24 +203,13 @@ dependencies {
     api("org.jruby", "jruby", "9.2.5.0")
     api("com.github.jnr", "jnr-unixsocket", "0.21")
     api("com.github.jnr", "jnr-enxio", "0.19")
-    implementation("", "jnrchannels", "")
+    api(project("splitjars", "jnrchannels"))
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.0")
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
 
-    /*
-    api("org.docbook", "docbook-xslt2", "2.3.10") {
-        exclude("org.xmlresolver", "xmlresolver")
-        exclude("org.apache.xmlgraphics", "fop")
-        // exclude("org.apache.xmlgraphics", "batik-all")
-        // exclude("org.apache.xmlgraphics", "batik-xml")
-        exclude("net.sf.saxon", "saxon")
-        exclude("net.sf.saxon", "Saxon-HE")
-        exclude("com.thaiopensource", "jing")
-    }
-     */
     api("", "docbook-xslt2", "2.3.10") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
@@ -255,10 +232,10 @@ dependencies {
         // exclude("xml-apis", "xml-apis-ext")
     }
     api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0-SNAPSHOT")
+
     // pull in all deps (but batik-all will be excuded)
     api("", "batik-all", "1.11.0-SNAPSHOT")
     api("xml-apis", "xml-apis-ext", "1.3.04")
-    // api("xerces", "xercesImpl", xercesVersion)
 
     api("com.helger", "ph-schematron", "5.0.8") {
         exclude("com.helger", "ph-jaxb")
@@ -494,11 +471,6 @@ tasks {
 
 }
 
-/*
-build {
-    dependsOn(gradle.includedBuild("jingtrang").task(":jingtrang"))
-}
- */
 // https://docs.gradle.org/current/userguide/kotlin_dsl.html#using_the_container_api
 tasks.named("build") {
     dependsOn(":splitjars:copyJarsForUeberJars")
