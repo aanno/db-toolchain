@@ -183,8 +183,9 @@ dependencies {
     api(project("splitjars", "xerces"))
 
     // build from submodule 'jing-trang'
-    api("com.thaiopensource ","jingtrang", "")
-    // api(project("jingtrang"))
+    api("", "jingtrang", "")
+    // api("com.thaiopensource","jingtrang", "")
+    // api(project(":jingtrang"))
 
     // api("", "xml-apis-stripped", "")
     api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
