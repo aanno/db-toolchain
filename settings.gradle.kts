@@ -20,8 +20,11 @@ includeBuild("submodules/asciidoctor-fopub")
 
 // if jing-trang is a composite, merged jar resolution now works (tp)
 // https://docs.gradle.org/current/userguide/composite_builds.html
+includeBuild("submodules/jing-trang")
+/*
 includeBuild("submodules/jing-trang") {
     dependencySubstitution {
         substitute(module("com.thaiopensource:jingtrang")).with(project(":"))
     }
 }
+ */

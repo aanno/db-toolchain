@@ -183,7 +183,7 @@ dependencies {
     api(project("splitjars", "xerces"))
 
     // build from submodule 'jing-trang'
-    api("", "jingtrang", "")
+    implementation("", "jingtrang", "")
     // api("com.thaiopensource","jingtrang", "")
     // api(project(":jingtrang"))
 
@@ -339,8 +339,8 @@ patchModules.config.forEach({ it -> println(it) })
 
 // HACK: adding 'submodules/jing-trang' as composite results in
 //       java 11 module resolution error for 'requires jingtrang;'
-val additionalClasspath = layout.files()
-    // layout.files("submodules/jing-trang/build/libs/jingtrang.jar") +
+val additionalClasspath = layout.files() +
+    layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
     // layout.files("splitjars/build/libs/xerces-stripped.jar")
 
 tasks {
