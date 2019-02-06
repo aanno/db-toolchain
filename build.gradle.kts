@@ -103,6 +103,17 @@ configurations.all {
                 ))
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
             }
+            if (requested.group.equals("com.github.jnr") && requested.name.startsWith("jffi-")) {
+                useTarget(mapOf(
+                        // "group" to requested.group,
+                        "group" to requested.group,
+                        "name" to "jffi",
+                        // "version" to requested.version
+                        "version" to "1.2.18",
+                        "classifier" to "native"
+                ))
+                because("""prefer jffi native over jffi""")
+            }
         }
     }
     resolutionStrategy.setForcedModules(
@@ -127,6 +138,7 @@ configurations.all {
     exclude("com.thaiopensource", "trang")
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
+    exclude("com.github.jnr:jffi:1.2.18:")
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
@@ -202,6 +214,7 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
+    api("com.github.jnr:jffi:1.2.18:native")
     api("com.github.jnr", "jnr-unixsocket", "0.21")
     api("com.github.jnr", "jnr-enxio", "0.19")
     api(project("splitjars", "jnrchannels"))
