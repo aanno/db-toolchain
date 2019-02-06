@@ -138,7 +138,7 @@ configurations.all {
     exclude("com.thaiopensource", "trang")
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
-    exclude("com.github.jnr:jffi:1.2.18:")
+    exclude("com.github.jnr:jffi")
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
@@ -214,7 +214,15 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.5.0")
-    api("com.github.jnr:jffi:1.2.18:native")
+    api("com.github.jnr:jffi:1.2.18") {
+        artifact {
+            setName("jffi")
+            // setGroup("com.github.jnr")
+            // setExtension("jar")
+            setType("jar")
+            setClassifier("native")
+        }
+    }
     api("com.github.jnr", "jnr-unixsocket", "0.21")
     api("com.github.jnr", "jnr-enxio", "0.19")
     api(project("splitjars", "jnrchannels"))
@@ -442,7 +450,7 @@ tasks {
     }
 
     val ad = task("runAsciidoctor", ModularJavaExec::class) {
-        main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.AsciidoctorJ"
+        main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.AsciidoctorjExample"
         // classpath = sourceSets["main"].runtimeClasspath
     }
 

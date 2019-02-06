@@ -1,4 +1,4 @@
-module com.github.aanno.dbtoolchain {
+open module com.github.aanno.dbtoolchain {
 
     // needed for awt
     requires java.desktop;
@@ -57,5 +57,8 @@ module com.github.aanno.dbtoolchain {
     // exports
 
     exports com.github.aanno.dbtoolchain.cli;
+    exports com.github.aanno.dbtoolchain.pipeline;
+    exports com.github.aanno.dbtoolchain;
+
     exports com.xmlcalabash.util.print;
 }
