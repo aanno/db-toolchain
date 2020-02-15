@@ -38,17 +38,17 @@ pushd "$ROOT"
             ../../gradlew -x test clean build
         popd
 
-        pushd fop
-            git remote add upstream git@github.com:apache/fop.git
-            git checkout feature/pr-remove-avalon-1
-            mvn -DskipTests clean package
-        popd
-
-        pushd batik
-            git remote add upstream git@github.com:apache/batik.git
-            git checkout feature/pr-batik-1249-1
-            mvn -DskipTests clean package
-        popd
+#        pushd fop
+#            git remote add upstream git@github.com:apache/fop.git
+#            git checkout feature/pr-remove-avalon-1
+#            mvn -DskipTests clean package
+#        popd
+#
+#        pushd batik
+#            git remote add upstream git@github.com:apache/batik.git
+#            git checkout feature/pr-batik-1249-1
+#            mvn -DskipTests clean package
+#        popd
 
         pushd xerces2-j
             git remote add upstream git@github.com:apache/xerces2-j.git

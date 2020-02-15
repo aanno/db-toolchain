@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.45/29404c013b3d51a8c60fac80409bb3d64dfb816/jcodings-1.0.45.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.45/c0cd33cd44ade8afc54830f96d52acaf16ee4cf/jcodings-1.0.45-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.45/702693ea01e006385f2834ad56dad54b7a4ca248/jcodings-1.0.45-sources.jar!/" />
     </SOURCES>

@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby/jruby-core/9.2.9.0/a037c3fdfb2f364e60d1427773877c9f88e9e2cd/jruby-core-9.2.9.0.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby/jruby-core/9.2.9.0/23e27e9cd18de4ee64b743a041e6f9082545ed33/jruby-core-9.2.9.0-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby/jruby-core/9.2.9.0/8aaa50edb8e0e16fddaee663d0158097314b10b5/jruby-core-9.2.9.0-sources.jar!/" />
     </SOURCES>

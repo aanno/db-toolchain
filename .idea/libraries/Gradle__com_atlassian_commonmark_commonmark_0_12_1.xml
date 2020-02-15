@@ -3,7 +3,9 @@
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.12.1/9e0657f89ab2731f8a7235d926fdae7febf104cb/commonmark-0.12.1.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.12.1/c3a86fe8e73be5851384eb0632033c0690e3f38c/commonmark-0.12.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.12.1/92915353bc647a6cb1a424f21a7f95bb5236f38b/commonmark-0.12.1-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.12.1/92915353bc647a6cb1a424f21a7f95bb5236f38b/commonmark-0.12.1-sources.jar!/" />

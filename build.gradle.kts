@@ -60,7 +60,7 @@ idea {
     }
 }
 
-val xercesVersion = "2.11.0"
+val xercesVersion = "2.12.0"
 val debugModulePath = false
 val moduleJvmArgs = listOf(
 	"--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
@@ -119,12 +119,12 @@ configurations.all {
         }
     }
     resolutionStrategy.setForcedModules(
-            "net.sf.saxon:Saxon-HE:9.8.0-14"
-            , "com.beust:jcommander:1.72"
+            "net.sf.saxon:Saxon-HE:9.9.1-6"
+            , "com.beust:jcommander:1.78"
             , "com.nwalsh:nwalsh-annotations:1.0.1"
-            , "commons-codec:commons-codec:1.11"
-            , "org.apache.httpcomponents:httpclient:4.5.6"
-            , "org.apache.httpcomponents:httpcore:4.4.10"
+            , "commons-codec:commons-codec:1.14"
+            , "org.apache.httpcomponents:httpclient:4.5.11"
+            , "org.apache.httpcomponents:httpcore:4.4.13"
             , "org.apache.xmlgraphics:fop:2.4"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.4"
             // , "xml-apis:xml-apis:1.4.01"
@@ -188,6 +188,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // depends on rhino (not in java 11 any more)
     exclude("org.apache.xmlgraphics", "batik-script")
     exclude("org.apache.xmlgraphics", "batik-constants")
+
+    exclude("org.apache.logging.log4j", "log4j-slf4j-impl")
+    exclude("org.restlet.jee", "org.restlet.ext.slf4j")
 }
 val ueberjars = configurations.create("ueberjars")
 
@@ -227,11 +230,11 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.9.0")
-    api("com.github.jnr", "jnr-unixsocket", "0.2.1")
-    api("com.github.jnr", "jnr-enxio", "0.1.9")
+    api("com.github.jnr", "jnr-unixsocket", "0.26")
+    api("com.github.jnr", "jnr-enxio", "0.24")
     implementation("", "jnrchannels", "")
     // missing dep from jruby -> joni
-    api("org.ow2.asm", "asm", "7.0")
+    api("org.ow2.asm", "asm", "7.3.1")
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
@@ -256,7 +259,7 @@ dependencies {
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
     }
-    api("com.xmlcalabash", "xmlcalabash", "1.1.23-98")
+    api("com.xmlcalabash", "xmlcalabash", "1.1.30-99")
     api("commons-cli", "commons-cli", "1.4")
 
     api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
@@ -274,19 +277,21 @@ dependencies {
     api("xml-apis", "xml-apis-ext", "1.3.04")
     api("xerces", "xercesImpl", xercesVersion)
 
-    api("com.helger", "ph-schematron", "5.0.8") {
+    api("com.helger", "ph-schematron", "5.4.0") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("org.xmlresolver", "xmlresolver", "0.14.0")
+    api("org.xmlresolver", "xmlresolver", "1.0.6")
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
-    api("info.picocli", "picocli", "3.9.1")
+    api("info.picocli", "picocli", "4.2.0")
 
-    ueberjars("com.github.jnr", "jnr-enxio", "0.1.9")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
+    implementation("org.slf4j", "slf4j-api", "1.7.30")
+
+    ueberjars("com.github.jnr", "jnr-enxio", "0.24")
+    ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
     ueberjars("xerces", "xercesImpl", xercesVersion)
 
     // Use TestNG framework, also requires calling test.useTestNG() below
