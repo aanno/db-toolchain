@@ -1,11 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.nwalsh:nwalsh-annotations:1.0.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.0/96462ace40714ffedca05f72d4dcc1ff50b00389/nwalsh-annotations-1.0.0.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.0/96462ace40714ffedca05f72d4dcc1ff50b00389/nwalsh-annotations-1.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.0/ab14bb5efa2413b3fa57a1db7f35b10128c8fd62/nwalsh-annotations-1.0.0-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.0/ab14bb5efa2413b3fa57a1db7f35b10128c8fd62/nwalsh-annotations-1.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

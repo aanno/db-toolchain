@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: com.xmlcalabash:xmlcalabash:1.1.23-98">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/9d795cb0fc05e6017b7c92c52705d90104fe4733/xmlcalabash-1.1.23-98.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/9d795cb0fc05e6017b7c92c52705d90104fe4733/xmlcalabash-1.1.23-98.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/234b65d5faf38d1ee52420ece27f39a9ae5d3c4f/xmlcalabash-1.1.23-98-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/234b65d5faf38d1ee52420ece27f39a9ae5d3c4f/xmlcalabash-1.1.23-98-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/98a380c384e8ae39ebb98e0e4d7b0dcb0c516da2/xmlcalabash-1.1.23-98-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.23-98/98a380c384e8ae39ebb98e0e4d7b0dcb0c516da2/xmlcalabash-1.1.23-98-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

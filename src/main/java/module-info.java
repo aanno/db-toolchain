@@ -22,7 +22,7 @@ module com.github.aanno.dbtoolchain {
 
     // fop stuff
     requires fop;
-    requires fop.pdf.images;
+    // requires fop.pdf.images;
     requires commons.io;
 
     // requires batik.all;

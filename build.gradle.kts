@@ -16,11 +16,11 @@ repositories {
         dirs(
                 "lib/prince-java/lib",
                 "submodules/jing-trang/build/libs",
-                "submodules/fop/fop/target",
+                // "submodules/fop/fop/target",
                 "lib/ueberjars",
-	        "build/libs",
+                "build/libs",
                 "lib/stripped",
-                "submodules/batik/batik-all/target",
+                // "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
@@ -45,6 +45,7 @@ plugins {
     // java
     `java-library`
     id("org.javamodularity.moduleplugin") version "1.4.0"
+    id("com.github.ben-manes.versions") version "0.27.0"
 
     // Apply the application plugin to add support for building an application
     application
@@ -98,12 +99,22 @@ configurations.all {
             if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
                 useTarget(mapOf(
                         // "group" to requested.group,
-                        "group" to "",
+                        "group" to "org.apache.xmlgraphics",
                         "name" to "batik-all",
                         // "version" to requested.version
-                        "version" to "1.11.0-SNAPSHOT"
+                        "version" to "1.12"
                 ))
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
+            }
+            if (requested.name.startsWith("fop-") && requested.name != "fop") {
+                useTarget(mapOf(
+                        // "group" to requested.group,
+                        "group" to "org.apache.xmlgraphics",
+                        "name" to "fop",
+                        // "version" to requested.version
+                        "version" to "2.4"
+                ))
+                because("""prefer "fop (all, stripped)" over "${requested.name}"""")
             }
         }
     }
@@ -114,8 +125,8 @@ configurations.all {
             , "commons-codec:commons-codec:1.11"
             , "org.apache.httpcomponents:httpclient:4.5.6"
             , "org.apache.httpcomponents:httpcore:4.4.10"
-            , "org.apache.xmlgraphics:fop:2.4.0-SNAPSHOT"
-            , "org.apache.xmlgraphics:xmlgraphics-commons:2.4.0-SNAPSHOT"
+            , "org.apache.xmlgraphics:fop:2.4"
+            , "org.apache.xmlgraphics:xmlgraphics-commons:2.4"
             // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
@@ -163,7 +174,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     if (!name.equals("ueberjars")) {
         exclude("com.github.jnr", "jnr-enxio")
         exclude("com.github.jnr", "jnr-unixsocket")
-	exclude("xerces", "xercesImpl")
+        exclude("xerces", "xercesImpl")
     }
 
     exclude("org.jruby", "jruby-complete")
@@ -187,7 +198,7 @@ dependencies {
 
     // TODO: This is hacky as it trashes the first build after clean
     if (file("build/libs/xerces-stripped.jar").exists()) {
-	api("", "xerces-stripped", "")
+        api("", "xerces-stripped", "")
     }
     
     // compileClasspath("", "prince", "")
@@ -249,17 +260,17 @@ dependencies {
     api("commons-cli", "commons-cli", "1.4")
 
     api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
-    api("org.apache.xmlgraphics", "fop-pdf-images", "2.3") {
+    api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
-    api("org.apache.xmlgraphics", "fop", "2.4.0-SNAPSHOT") {
+    api("org.apache.xmlgraphics", "fop-core", "2.4") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
-    api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0-SNAPSHOT")
+    api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0")
     // pull in all deps (but batik-all will be excuded)
-    api("", "batik-all", "1.11.0-SNAPSHOT")
+    api("org.apache.xmlgraphics", "batik-all", "1.12")
     api("xml-apis", "xml-apis-ext", "1.3.04")
     api("xerces", "xercesImpl", xercesVersion)
 

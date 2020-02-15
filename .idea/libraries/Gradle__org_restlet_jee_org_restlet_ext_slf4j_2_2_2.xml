@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: org.restlet.jee:org.restlet.ext.slf4j:2.2.2">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/b5fe67b6c59f790e900217dd63cd7661048f10df/org.restlet.ext.slf4j-2.2.2.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/b5fe67b6c59f790e900217dd63cd7661048f10df/org.restlet.ext.slf4j-2.2.2.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/cd1ad5d133e94326751c588771d503ca6c98babc/org.restlet.ext.slf4j-2.2.2-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/cd1ad5d133e94326751c588771d503ca6c98babc/org.restlet.ext.slf4j-2.2.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/10f13c79de9c90a6cbe5d0ef18ba5ec306c6dc13/org.restlet.ext.slf4j-2.2.2-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/10f13c79de9c90a6cbe5d0ef18ba5ec306c6dc13/org.restlet.ext.slf4j-2.2.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

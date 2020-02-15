@@ -1,11 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.xmlcalabash:xmlcalabash1-print:1.1.5">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash1-print/1.1.5/4cb7509c52d05d7d8e1b56cf9584faa7d8778604/xmlcalabash1-print-1.1.5.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash1-print/1.1.5/4cb7509c52d05d7d8e1b56cf9584faa7d8778604/xmlcalabash1-print-1.1.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash1-print/1.1.5/4750ac26dacb3e9de21e9f61a0e7fb2b87ad25c2/xmlcalabash1-print-1.1.5-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash1-print/1.1.5/4750ac26dacb3e9de21e9f61a0e7fb2b87ad25c2/xmlcalabash1-print-1.1.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

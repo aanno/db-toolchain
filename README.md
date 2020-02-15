@@ -48,8 +48,9 @@ So far the following pipelines are implemented:
 1. Check out the project from github.
 2. `cd db-toolchain`
 3. `./script/bootstrap.sh`
-4. `./gradle runApp1` to run an example convertion.
-5. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
+4. `./gradlew build` and `./scripts/merge-split-jars.sh` (ignoring any errors that may occur)
+5. `./gradlew runApp1` to run an example convertion.
+6. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
    independent of the build process.
 
 ## Docbook

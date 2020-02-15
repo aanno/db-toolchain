@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.apache.xmlgraphics:fop:2.4.0-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/submodules/fop/fop/target/fop-2.4.0-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

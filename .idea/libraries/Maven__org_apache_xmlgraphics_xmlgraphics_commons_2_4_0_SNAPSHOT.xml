@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.xmlgraphics:xmlgraphics-commons:2.4.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20181101.160342-4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20191024.105137-10.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20181101.160342-4-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20191024.105137-10-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20181101.160342-4-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/xmlgraphics/xmlgraphics-commons/2.4.0-SNAPSHOT/xmlgraphics-commons-2.4.0-20191024.105137-10-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

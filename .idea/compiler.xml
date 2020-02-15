@@ -15,59 +15,75 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
-    <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="asciidoctor-pdf" />
-        <module name="batik-anim" />
-        <module name="batik-awt-util" />
-        <module name="batik-bridge" />
-        <module name="batik-codec" />
-        <module name="batik-constants" />
-        <module name="batik-css" />
-        <module name="batik-dom" />
-        <module name="batik-ext" />
-        <module name="batik-extension" />
-        <module name="batik-gui-util" />
-        <module name="batik-gvt" />
-        <module name="batik-i18n" />
-        <module name="batik-parser" />
-        <module name="batik-rasterizer" />
-        <module name="batik-rasterizer-ext" />
-        <module name="batik-script" />
-        <module name="batik-slideshow" />
-        <module name="batik-squiggle" />
-        <module name="batik-squiggle-ext" />
-        <module name="batik-svg-dom" />
-        <module name="batik-svgbrowser" />
-        <module name="batik-svggen" />
-        <module name="batik-svgpp" />
-        <module name="batik-svgrasterizer" />
-        <module name="batik-swing" />
-        <module name="batik-test" />
-        <module name="batik-test-old" />
-        <module name="batik-test-svg" />
-        <module name="batik-test-swing" />
-        <module name="batik-test-util" />
-        <module name="batik-transcoder" />
-        <module name="batik-ttf2svg" />
-        <module name="batik-util" />
-        <module name="batik-xml" />
-        <module name="fop" />
-        <module name="fop-core" />
-        <module name="fop-events" />
-        <module name="fop-sandbox" />
-        <module name="fop-servlet" />
-        <module name="fop-transcoder" />
-        <module name="fop-transcoder-allinone" />
-        <module name="fop-util" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aanno.db-toolchain.main" target="11" />
+      <module name="aanno.db-toolchain.test" target="11" />
+      <module name="asciidoctor-pdf" target="1.5" />
+      <module name="asciidoctorj-parent.asciidoctorj-api.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-api.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-distribution.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-distribution.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-documentation.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-documentation.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-test-support.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-test-support.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj.main" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj.test" target="1.8" />
+      <module name="batik" target="1.5" />
+      <module name="batik-all" target="1.5" />
+      <module name="batik-anim" target="1.6" />
+      <module name="batik-awt-util" target="1.6" />
+      <module name="batik-bridge" target="1.6" />
+      <module name="batik-codec" target="1.6" />
+      <module name="batik-constants" target="1.6" />
+      <module name="batik-css" target="1.6" />
+      <module name="batik-dom" target="1.6" />
+      <module name="batik-ext" target="1.6" />
+      <module name="batik-extension" target="1.6" />
+      <module name="batik-gui-util" target="1.6" />
+      <module name="batik-gvt" target="1.6" />
+      <module name="batik-i18n" target="1.6" />
+      <module name="batik-parser" target="1.6" />
+      <module name="batik-rasterizer" target="1.6" />
+      <module name="batik-rasterizer-ext" target="1.6" />
+      <module name="batik-script" target="1.6" />
+      <module name="batik-slideshow" target="1.6" />
+      <module name="batik-squiggle" target="1.6" />
+      <module name="batik-squiggle-ext" target="1.6" />
+      <module name="batik-svg-dom" target="1.6" />
+      <module name="batik-svgbrowser" target="1.6" />
+      <module name="batik-svggen" target="1.6" />
+      <module name="batik-svgpp" target="1.6" />
+      <module name="batik-svgrasterizer" target="1.6" />
+      <module name="batik-swing" target="1.6" />
+      <module name="batik-test" target="1.6" />
+      <module name="batik-test-old" target="1.6" />
+      <module name="batik-test-svg" target="1.6" />
+      <module name="batik-test-swing" target="1.6" />
+      <module name="batik-test-util" target="1.6" />
+      <module name="batik-transcoder" target="1.6" />
+      <module name="batik-ttf2svg" target="1.6" />
+      <module name="batik-util" target="1.6" />
+      <module name="batik-xml" target="1.6" />
       <module name="db-toolchain.main" target="11" />
       <module name="db-toolchain.test" target="11" />
+      <module name="fop" target="1.6" />
+      <module name="fop-core" target="1.6" />
+      <module name="fop-events" target="1.6" />
+      <module name="fop-parent" target="1.5" />
+      <module name="fop-sandbox" target="1.6" />
+      <module name="fop-servlet" target="1.6" />
+      <module name="fop-transcoder" target="1.6" />
+      <module name="fop-transcoder-allinone" target="1.6" />
+      <module name="fop-util" target="1.6" />
+      <module name="fopub.main" target="11" />
+      <module name="fopub.test" target="11" />
+      <module name="jing-trang.jingtrang.main" target="11" />
+      <module name="jing-trang.jingtrang.test" target="11" />
       <module name="jing-trang.main" target="11" />
       <module name="jing-trang.test" target="11" />
       <module name="jingtrang.main" target="11" />
@@ -106,6 +122,10 @@
       <module name="submodules.xslt20-resources.test" target="11" />
       <module name="xslt20-resources.main" target="11" />
       <module name="xslt20-resources.test" target="11" />
+      <module name="xslt20-stylesheets.buildSrc.main" target="11" />
+      <module name="xslt20-stylesheets.buildSrc.test" target="11" />
+      <module name="xslt20-stylesheets.main" target="11" />
+      <module name="xslt20-stylesheets.test" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: org.jruby.jcodings:jcodings:1.0.41">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/7cdfc30451010e4d6c65af5a3a4f357563289245/jcodings-1.0.41.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/7cdfc30451010e4d6c65af5a3a4f357563289245/jcodings-1.0.41.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/7ba91fe28c1f893ca2e62a56f8afb0de686fed92/jcodings-1.0.41-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/7ba91fe28c1f893ca2e62a56f8afb0de686fed92/jcodings-1.0.41-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/bde4ce9fb09c640980f468dc9ec94aa69c2e63ac/jcodings-1.0.41-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby.jcodings/jcodings/1.0.41/bde4ce9fb09c640980f468dc9ec94aa69c2e63ac/jcodings-1.0.41-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

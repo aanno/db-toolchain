@@ -1,13 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: info.picocli:picocli:3.9.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/f8fcfe5543cb8a3b7e8e2094c871af74cc95be74/picocli-3.9.1.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/f8fcfe5543cb8a3b7e8e2094c871af74cc95be74/picocli-3.9.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/acfe33d58ba436726011bd472968df501c7e7d09/picocli-3.9.1-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/acfe33d58ba436726011bd472968df501c7e7d09/picocli-3.9.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/2f9ec3a38c31a7b6a07d29d62501fad78abb18f8/picocli-3.9.1-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/info.picocli/picocli/3.9.1/2f9ec3a38c31a7b6a07d29d62501fad78abb18f8/picocli-3.9.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-pdf/1.5.0-alpha.16/63c4f64106a00e316f0e9e54182a1c8581eff4b/asciidoctorj-pdf-1.5.0-alpha.16.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-pdf/1.5.0-alpha.16/63c4f64106a00e316f0e9e54182a1c8581eff4b/asciidoctorj-pdf-1.5.0-alpha.16.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

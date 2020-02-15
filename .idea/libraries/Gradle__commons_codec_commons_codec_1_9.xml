@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: commons-codec:commons-codec:1.9">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/submodules/asciidoctorj">
+              <build path="$PROJECT_DIR$/submodules/asciidoctorj" name="asciidoctorj-parent">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
@@ -18,22 +19,22 @@
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets">
+              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets" name="xslt20-stylesheets">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/xslt20-resources">
+              <build path="$PROJECT_DIR$/submodules/xslt20-resources" name="xslt20-resources">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/xslt20-resources" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/asciidoctor-fopub">
+              <build path="$PROJECT_DIR$/submodules/asciidoctor-fopub" name="fopub">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/jing-trang">
+              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jingtrang">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
@@ -41,7 +42,9 @@
             </builds>
           </compositeBuild>
         </compositeConfiguration>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
@@ -65,7 +68,9 @@
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="distributionType" value="LOCAL" />
+        <option name="delegatedBuild" value="true" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/asciidoctorj" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
