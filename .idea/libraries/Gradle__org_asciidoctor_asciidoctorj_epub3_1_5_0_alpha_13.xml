@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.13">
+    <CLASSES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-epub3/1.5.0-alpha.13/263da219a051098288e9fdda732802963998ab23/asciidoctorj-epub3-1.5.0-alpha.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-epub3/1.5.0-alpha.13/c84c95e2179c5417561c045a294b54b9bfe0d82/asciidoctorj-epub3-1.5.0-alpha.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

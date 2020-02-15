@@ -20,15 +20,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fop-core" />
-        <module name="fop-util" />
-        <module name="fop-transcoder" />
-        <module name="fop" />
         <module name="asciidoctor-pdf" />
-        <module name="fop-events" />
-        <module name="fop-servlet" />
-        <module name="fop-sandbox" />
-        <module name="fop-transcoder-allinone" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -49,6 +41,20 @@
       <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-api.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-api.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-distribution.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-distribution.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-documentation.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-documentation.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-test-support.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-test-support.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj.test" target="1.8" />
       <module name="batik" target="1.5" />
       <module name="batik-all" target="1.5" />
       <module name="batik-anim" target="1.6" />

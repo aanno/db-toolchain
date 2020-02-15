@@ -7,7 +7,7 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/submodules/asciidoctorj" name="asciidoctorj-parent">
+              <build path="$PROJECT_DIR$/submodules/asciidoctorj" name="asciidoctorj">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />

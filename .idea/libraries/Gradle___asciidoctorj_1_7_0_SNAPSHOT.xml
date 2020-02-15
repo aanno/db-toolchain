@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :asciidoctorj:1.7.0-SNAPSHOT">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core/build/libs/asciidoctorj-1.7.0-SNAPSHOT.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

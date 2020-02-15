@@ -37,7 +37,7 @@ module com.github.aanno.dbtoolchain {
     // requires xml.apis.stripped;
 
     // jruby stuff
-    requires org.jruby;
+    // requires org.jruby;
     requires org.jruby.jcodings;
     requires org.jruby.joni;
 

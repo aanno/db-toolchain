@@ -213,20 +213,20 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "1.7.0-SNAPSHOT") {
+    api("", "asciidoctorj", "2.3.0-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "1.7.0-SNAPSHOT")
+    api("", "asciidoctorj-api", "2.3.0-SNAPSHOT")
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
-    api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0-alpha.16") {
+    api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0") {
         exclude("org.jruby", "jruby")
         exclude("org.jruby", "jruby-complete")
     }
 
     // dependency of asciidocj and asciidocj-api
-    api("org.jruby", "jruby", "9.2.5.0")
+    api("org.jruby", "jruby", "9.2.9.0")
     api("com.github.jnr", "jnr-unixsocket", "0.2.1")
     api("com.github.jnr", "jnr-enxio", "0.1.9")
     implementation("", "jnrchannels", "")
@@ -278,6 +278,7 @@ dependencies {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
+        exclude("com.google.code.findbugs", "jsr305")
     }
     api("org.xmlresolver", "xmlresolver", "0.14.0")
     api("net.sf.xslthl", "xslthl", "2.1.3")
