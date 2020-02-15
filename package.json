@@ -9,6 +9,7 @@
   },
   "scripts": {
     "mathjax": "ts-node src/main/ts-node/generate-mathjax",
+    "lint": "eslint -c .eslintrc.js --ext .ts src/main/ts-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,10 @@
     "@types/fs-extra": "^8.0.1",
     "@types/mathjax": "0.0.36",
     "@types/node": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
     "fs-extra": "^8.1.0",
     "mathjax-node": "^2.1.1",
     "ts-node": "^8.6.2",

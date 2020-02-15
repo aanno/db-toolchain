@@ -1,5 +1,5 @@
 
-// export as namespace "mathjax-node"
+//export as namespace "mathjax-node"
 
 /*
   if (config.displayMessages != null)    {displayMessages = config.displayMessages}
@@ -30,11 +30,11 @@ declare module "mathjax-node" {
         MathJax: MathJax.Config,
     }
 
-    // export = {} as any
-    export const config: (conf: Partial<Config>) => Config,
-        start: () => void,
-        typeset: any,
-        MathJax: any,
-}
+    //export = {} as any
+    export const config: (conf: Partial<Config>) => Config;
+        const start: () => void;
+        const typeset: any;
+        const MathJax: any;
+const }
 
 
