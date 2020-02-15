@@ -76,7 +76,11 @@ public class App {
     }
 
     private void list(ListCommand list) throws Exception {
-
+        String[] pipelines = new String[] {"xsl-css", "xsl-fo", "ad", "fo"};
+        LOG.warn("implemented pipelines:");
+        for (String p : pipelines) {
+            LOG.warn("\t* " + p);
+        }
     }
 
     public static void main(String[] args) throws Exception {

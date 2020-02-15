@@ -2,7 +2,7 @@
   <configuration default="false" name="App (help)" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
     <module name="aanno.db-toolchain.main" />
-    <option name="PROGRAM_PARAMETERS" value="-h list" />
+    <option name="PROGRAM_PARAMETERS" value="show" />
     <option name="VM_PARAMETERS" value="--illegal-access=warn" />
     <extension name="coverage">
       <pattern>

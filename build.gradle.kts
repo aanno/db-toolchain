@@ -289,7 +289,7 @@ dependencies {
 
     api("info.picocli", "picocli", "4.2.0")
 
-    implementation("org.slf4j", "slf4j-api", "1.7.30")
+    implementation("org.slf4j", "slf4j-jdk14", "1.7.30")
 
     ueberjars("com.github.jnr", "jnr-enxio", "0.24")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")

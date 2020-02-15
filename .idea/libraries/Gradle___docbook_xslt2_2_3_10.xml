@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :docbook-xslt2:2.3.10">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/submodules/xslt20-stylesheets/build/libs/docbook-xslt2-2.3.10.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
