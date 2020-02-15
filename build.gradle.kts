@@ -20,6 +20,7 @@ repositories {
                 "lib/ueberjars",
                 "build/libs",
                 "lib/stripped",
+                "lib",
                 // "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
@@ -250,7 +251,7 @@ dependencies {
         exclude("com.thaiopensource", "jing")
     }
      */
-    api("", "docbook-xslt2", "2.3.10") {
+    api("", "docbook-xslt2", "2.4.3") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
@@ -262,7 +263,7 @@ dependencies {
     api("com.xmlcalabash", "xmlcalabash", "1.1.30-99")
     api("commons-cli", "commons-cli", "1.4")
 
-    api("net.sf.saxon", "Saxon-HE", "9.8.0-14")
+    api("net.sf.saxon", "Saxon-HE", "9.9.1-6")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
