@@ -82,6 +82,16 @@ So far the following pipelines are implemented:
 * [AsciiBook](https://github.com/arnaldorusso/AsciiBook): toolchain from AsciiDoc to PDF (in JS)
 * [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub): toolchain from DB (4.5) to PDF
 
+##### asciidoctor
+
+* [asciidoctor](https://asciidoctor.org/)
+* [list of asciidoctor extensions](https://asciidoctor.org/docs/extensions/)
+* [asciidoctorj integrator guide](https://github.com/asciidoctor/asciidoctorj/blob/v2.1.0/docs/integrator-guide.adoc)
+* [using extensions with asciidoctorj](https://asciidoctor.org/docs/asciidoctorj/#extension-api)
+* [asciidoctor-gradle-plugin](https://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
+* [new asciidoctor-gradle-plugin](https://asciidoctor.github.io/asciidoctor-gradle-plugin/development-3.x/user-guide/)
+* [How can I enable asciimath support](https://github.com/asciidoctor/asciidoctor-fopub/issues/49)
+
 #### Tools with DB *output*
 
 * [docToolchain](https://github.com/docToolchain/docToolchain)
@@ -136,6 +146,9 @@ So far the following pipelines are implemented:
 
 * [mathml1](https://www.data2type.de/xml-xslt-xslfo/docbook/block-elemente/gleichungen/docbook-und-mathml/) (in german)
 * [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
+* [asciidoctor stem](https://asciidoctor.org/docs/user-manual/#activating-stem-support)
+* [asciidoctor alternative math extension](https://github.com/asciidoctor/asciidoctor-mathematical)
+* [extraordinary list of math renderer](https://github.com/gjtorikian/mathematical#history)
 
 #### MathML Implementations
 

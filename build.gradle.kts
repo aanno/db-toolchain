@@ -63,6 +63,7 @@ repositories {
     maven {
         url = uri("http://localhost:8989/caching/maven/releases")
     }
+    // see http://jruby-gradle.org/base/ (but not working)
     // rubygems("https://rubygems.org")
 }
 
