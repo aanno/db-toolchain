@@ -11,6 +11,30 @@ import org.javamodularity.moduleplugin.tasks.ModuleOptions
  * user guide available at https://docs.gradle.org/5.0/userguide/tutorial_java_projects.html
  */
 
+plugins {
+    // Apply the java plugin to add support for Java
+    // java
+    `java-library`
+    id("org.javamodularity.moduleplugin") version "1.4.0"
+    id("com.github.ben-manes.versions") version "0.27.0"
+    id("com.github.jruby-gradle.base") version "2.0.0"
+
+    // Apply the application plugin to add support for building an application
+    application
+    distribution
+    idea
+}
+
+jruby {
+    setDefaultRepositories(false)
+}
+
+apply {
+    // NOT recommended
+    // see https://kotlinlang.org/docs/reference/using-gradle.html#using-gradle-kotlin-dsl
+    plugin("com.github.jruby-gradle.base")
+}
+
 repositories {
     flatDir {
         dirs(
@@ -34,24 +58,12 @@ repositories {
     // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    // rubygems("https://rubygems.org")
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-}
-
-plugins {
-    // Apply the java plugin to add support for Java
-    // java
-    `java-library`
-    id("org.javamodularity.moduleplugin") version "1.4.0"
-    id("com.github.ben-manes.versions") version "0.27.0"
-
-    // Apply the application plugin to add support for building an application
-    application
-    distribution
-    idea
 }
 
 idea {
@@ -64,7 +76,7 @@ idea {
 val xercesVersion = "2.12.0"
 val debugModulePath = false
 val moduleJvmArgs = listOf(
-	"--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
 )
 
 class ShowSelection {
@@ -91,7 +103,7 @@ configurations.all {
         }
 
         // cache dynamic versions for 10 minutes
-        cacheDynamicVersionsFor(10*60, "seconds")
+        cacheDynamicVersionsFor(10 * 60, "seconds")
         // don't cache changing modules at all
         cacheChangingModulesFor(60, "seconds")
 
@@ -192,6 +204,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
     exclude("org.apache.logging.log4j", "log4j-slf4j-impl")
     exclude("org.restlet.jee", "org.restlet.ext.slf4j")
+    exclude("org.slf4j", "jcl-over-slf4j")
+    exclude("org.apache.logging.log4j", "log4j")
+    exclude("org.apache.logging.log4j", "log4j-core")
 }
 val ueberjars = configurations.create("ueberjars")
 
@@ -204,7 +219,7 @@ dependencies {
     if (file("build/libs/xerces-stripped.jar").exists()) {
         api("", "xerces-stripped", "")
     }
-    
+
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
 
@@ -289,14 +304,20 @@ dependencies {
 
     api("info.picocli", "picocli", "4.2.0")
 
-    implementation("org.slf4j", "slf4j-jdk14", "1.7.30")
+    implementation("org.slf4j", "slf4j-simple", "1.7.30")
 
     ueberjars("com.github.jnr", "jnr-enxio", "0.24")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
     ueberjars("xerces", "xercesImpl", xercesVersion)
 
     // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation("org.testng:testng:6.14.3")
+    // testImplementation("org.testng:testng:7.1.0")
+    testImplementation("org.testng:testng:6.14.0")
+
+    gems("rubygems:asciimath:1.0.9")
+    gems("rubygems:asciidoctor-epub3:1.5.0.alpha.13")
+    gems("rubygems:asciidoctor-diagram:2.0.1")
+    gems("rubygems:asciidoctor-latex:1.5.0.17.dev")
 }
 
 /*
@@ -323,7 +344,7 @@ val test by tasks.getting(Test::class) {
 }
 
 var spec2File: Map<String, File> = emptyMap()
-configurations.forEach({c -> println(c)})
+configurations.forEach({ c -> println(c) })
 // TODO: get name of configuration (gradle dependencies)
 configurations.compileClasspath {
     val s2f: MutableMap<ResolvedModuleVersion, File> = mutableMapOf()
@@ -332,8 +353,8 @@ configurations.compileClasspath {
         // println(ra.moduleVersion.toString() + " -> " + ra.file)
         s2f.put(ra.moduleVersion, ra.file)
     })
-    spec2File = s2f.mapKeys({"${it.key.id.group}:${it.key.id.name}"})
-    spec2File.keys.sorted().forEach({ it -> println(it.toString() + " -> " + spec2File.get(it))})
+    spec2File = s2f.mapKeys({ "${it.key.id.group}:${it.key.id.name}" })
+    spec2File.keys.sorted().forEach({ it -> println(it.toString() + " -> " + spec2File.get(it)) })
 }
 
 /*
@@ -377,39 +398,39 @@ val patchModule = listOf(
 )
 */
 patchModules.config = listOf(
-            "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
-            // , "jing=" + spec2File[":trang"].toString()
-            // , "jnr.unixsocket=jnr-enxio-0.19.jar"
+        "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
+        // , "jing=" + spec2File[":trang"].toString()
+        // , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )
 println("\npatchModules.config:\n")
-patchModules.config.forEach({it -> println(it)})
+patchModules.config.forEach({ it -> println(it) })
 
 tasks {
 
     withType<JavaCompile> {
 
-            doFirst {
-                options.compilerArgs.addAll(listOf(
-                        // "--release", "11"
-                        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
-                        // , "--add-modules jnr.enxio"
-                        // , "-cp", "jnr-enxio-0.19.jar"
-                        // , "--add-modules", "ALL-MODULE-PATH",
-                        // , "--module-path", classpath.asPath
-                ) + moduleJvmArgs /*+ patchModule */)
+        doFirst {
+            options.compilerArgs.addAll(listOf(
+                    // "--release", "11"
+                    "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+                    // , "--add-modules jnr.enxio"
+                    // , "-cp", "jnr-enxio-0.19.jar"
+                    // , "--add-modules", "ALL-MODULE-PATH",
+                    // , "--module-path", classpath.asPath
+            ) + moduleJvmArgs /*+ patchModule */)
+            println("Args for for ${name} are ${options.allCompilerArgs}")
+        }
+        // HACK: adding 'submodules/jing-trang' as composite results in
+        //       java 11 module resolution error for 'requires jingtrang;'
+        classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
+
+        // classpath.forEach({it -> println(it)})
+
+        doLast {
+            if (debugModulePath) {
                 println("Args for for ${name} are ${options.allCompilerArgs}")
             }
-            // HACK: adding 'submodules/jing-trang' as composite results in 
-            //       java 11 module resolution error for 'requires jingtrang;'
-            classpath += layout.files("submodules/jing-trang/build/libs/jingtrang.jar")
-
-            // classpath.forEach({it -> println(it)})
-
-            doLast {
-                if (debugModulePath) {
-                    println("Args for for ${name} are ${options.allCompilerArgs}")
-                }
-            }
+        }
     }
 
     withType<Jar> {
@@ -428,14 +449,14 @@ tasks {
         // archiveName = "${application.applicationName}-$version.jar"
         // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })
     }
-    
+
     task("moreClean", Delete::class) {
-	delete("lib/tmp/")
-	doLast {
-		File("lib/tmp").mkdirs()
-		// File("build/libs").mkdirs()
-		// File("build/libs/xerces-stripped.jar").createNewFile()
-	}
+        delete("lib/tmp/")
+        doLast {
+            File("lib/tmp").mkdirs()
+            // File("build/libs").mkdirs()
+            // File("build/libs/xerces-stripped.jar").createNewFile()
+        }
     }
 
     // https://stackoverflow.com/questions/51810254/execute-javaexec-task-using-gradle-kotlin-dsl
@@ -496,18 +517,18 @@ tasks {
     }
 
     val unzipXerces = task("unzipXerces", Copy::class) {
-	from(zipTree(file("lib/tmp/xercesImpl.jar"))) {
-		exclude("org/w3c/**/*")
-	}
-	into("./lib/tmp/xercesImpl")
-	dependsOn(copyJarsForUeberJars)
+        from(zipTree(file("lib/tmp/xercesImpl.jar"))) {
+            exclude("org/w3c/**/*")
+        }
+        into("./lib/tmp/xercesImpl")
+        dependsOn(copyJarsForUeberJars)
     }
 
     val rezipStrippedXerces = task("rezipStrippedXerces", Jar::class) {
-	baseName = "xerces-stripped"
-	from(files("./lib/tmp/xercesImpl")) {
-	}
-	dependsOn(unzipXerces)
+        baseName = "xerces-stripped"
+        from(files("./lib/tmp/xercesImpl")) {
+        }
+        dependsOn(unzipXerces)
     }
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
@@ -545,10 +566,10 @@ tasks.named("build") {
 }
 
 tasks.named("clean") {
-	dependsOn(":moreClean")
+    dependsOn(":moreClean")
 }
 
 tasks.named("compileJava") {
-	dependsOn(gradle.includedBuild("jingtrang").task(":build"))
-	dependsOn(":rezipStrippedXerces")
+    dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+    dependsOn(":rezipStrippedXerces")
 }
