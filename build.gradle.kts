@@ -58,6 +58,11 @@ repositories {
     // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    // for use with https://github.com/jruby/rubygems-servlets
+    // (as rubygems("https://rubygems.org") does NOT work)
+    maven {
+        url = uri("http://localhost:8989/caching/maven/releases")
+    }
     // rubygems("https://rubygems.org")
 }
 
