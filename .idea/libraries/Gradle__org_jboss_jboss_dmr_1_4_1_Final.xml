@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss/jboss-dmr/1.4.1.Final/2484886b6107a0403955dd28a2aab720151d798d/jboss-dmr-1.4.1.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss/jboss-dmr/1.4.1.Final/2484886b6107a0403955dd28a2aab720151d798d/jboss-dmr-1.4.1.Final-sources.jar!/" />
     </SOURCES>
   </library>

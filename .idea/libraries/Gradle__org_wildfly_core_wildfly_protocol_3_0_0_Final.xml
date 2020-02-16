@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-protocol/3.0.0.Final/5d1e48a74af1eba8610e6bc94e59acbda0506b6e/wildfly-protocol-3.0.0.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-protocol/3.0.0.Final/5d1e48a74af1eba8610e6bc94e59acbda0506b6e/wildfly-protocol-3.0.0.Final-sources.jar!/" />
     </SOURCES>
   </library>

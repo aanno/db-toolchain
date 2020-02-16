@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.testenricher/arquillian-testenricher-initialcontext/1.1.13.Final/e7d3150cb32bedb0b69cc9da509a057ffb983b09/arquillian-testenricher-initialcontext-1.1.13.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.testenricher/arquillian-testenricher-initialcontext/1.1.13.Final/e7d3150cb32bedb0b69cc9da509a057ffb983b09/arquillian-testenricher-initialcontext-1.1.13.Final-sources.jar!/" />
     </SOURCES>
   </library>

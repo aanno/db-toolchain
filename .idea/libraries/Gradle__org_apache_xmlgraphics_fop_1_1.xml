@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop/1.1/8375cb0f3cce6ddd373165225e2c7b070d793302/fop-1.1-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop/1.1/8375cb0f3cce6ddd373165225e2c7b070d793302/fop-1.1-sources.jar!/" />
     </SOURCES>
   </library>

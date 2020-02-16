@@ -4,11 +4,9 @@
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/499b77056f070b2dbd18e08ef7984cf82be2e251/msv-core-2013.6.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/bc857138294dcb087ceb7efaeeda5b3d4a799f5e/msv-core-2013.6.1-javadoc.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/bc857138294dcb087ceb7efaeeda5b3d4a799f5e/msv-core-2013.6.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/db5a5bf5e7a1a56ad930bc6f9a5c0479776e6f4f/msv-core-2013.6.1-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/db5a5bf5e7a1a56ad930bc6f9a5c0479776e6f4f/msv-core-2013.6.1-sources.jar!/" />
     </SOURCES>
   </library>

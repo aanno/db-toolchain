@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.openssl/wildfly-openssl-java/1.0.2.Final/d2fec98e6007a159035c031591cc89a293f4c9d9/wildfly-openssl-java-1.0.2.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.wildfly.openssl/wildfly-openssl-java/1.0.2.Final/d2fec98e6007a159035c031591cc89a293f4c9d9/wildfly-openssl-java-1.0.2.Final-sources.jar!/" />
     </SOURCES>
   </library>

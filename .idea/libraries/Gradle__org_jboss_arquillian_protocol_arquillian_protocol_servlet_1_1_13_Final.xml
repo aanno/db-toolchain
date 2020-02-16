@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.protocol/arquillian-protocol-servlet/1.1.13.Final/b4175e6a4159796803fb1fd15ad557282fb0fe22/arquillian-protocol-servlet-1.1.13.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.protocol/arquillian-protocol-servlet/1.1.13.Final/b4175e6a4159796803fb1fd15ad557282fb0fe22/arquillian-protocol-servlet-1.1.13.Final-sources.jar!/" />
     </SOURCES>
   </library>

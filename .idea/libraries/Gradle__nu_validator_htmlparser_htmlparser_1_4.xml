@@ -4,11 +4,9 @@
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/70573d780fa08271499e201bbd86caa3c62f20e1/htmlparser-1.4.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/2c310985684a928ad7ce9e66d81a3690bbe5a80e/htmlparser-1.4-javadoc.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/2c310985684a928ad7ce9e66d81a3690bbe5a80e/htmlparser-1.4-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/7703abdb7fba3ed993330e5d3aac163268f69e15/htmlparser-1.4-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/7703abdb7fba3ed993330e5d3aac163268f69e15/htmlparser-1.4-sources.jar!/" />
     </SOURCES>
   </library>

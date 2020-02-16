@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-wildfly/1.1.6/4266d2a69f0d1175f43456f1de21c42362351be6/vdx-wildfly-1.1.6-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.projectodd.vdx/vdx-wildfly/1.1.6/4266d2a69f0d1175f43456f1de21c42362351be6/vdx-wildfly-1.1.6-sources.jar!/" />
     </SOURCES>
   </library>

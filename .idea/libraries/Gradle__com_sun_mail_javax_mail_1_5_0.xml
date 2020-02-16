@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.0/6f759537630bbaad0f80781c0a2ebebf91125991/javax.mail-1.5.0-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.0/6f759537630bbaad0f80781c0a2ebebf91125991/javax.mail-1.5.0-sources.jar!/" />
     </SOURCES>
   </library>

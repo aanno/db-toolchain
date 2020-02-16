@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-spi/2.0.0-alpha-8/ed9ba1a2a40e8eef96216876c617dccc50c1e8de/shrinkwrap-descriptors-spi-2.0.0-alpha-8-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-spi/2.0.0-alpha-8/ed9ba1a2a40e8eef96216876c617dccc50c1e8de/shrinkwrap-descriptors-spi-2.0.0-alpha-8-sources.jar!/" />
     </SOURCES>
   </library>

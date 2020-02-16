@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.xnio/xnio-api/3.5.1.Final/ca20a78d326220a22e0cbafb9d63e76a2b108193/xnio-api-3.5.1.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.xnio/xnio-api/3.5.1.Final/ca20a78d326220a22e0cbafb9d63e76a2b108193/xnio-api-3.5.1.Final-sources.jar!/" />
     </SOURCES>
   </library>

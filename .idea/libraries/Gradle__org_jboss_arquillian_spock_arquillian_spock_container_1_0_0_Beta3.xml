@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/acaed26efdd373f293dccd67b893a7c70313ddb3/arquillian-spock-container-1.0.0.Beta3-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/acaed26efdd373f293dccd67b893a7c70313ddb3/arquillian-spock-container-1.0.0.Beta3-sources.jar!/" />
     </SOURCES>
   </library>

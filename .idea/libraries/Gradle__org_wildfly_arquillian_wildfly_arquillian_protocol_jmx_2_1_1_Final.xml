@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.arquillian/wildfly-arquillian-protocol-jmx/2.1.1.Final/49a292f71b7c402dacadac04c124b8ae890917c7/wildfly-arquillian-protocol-jmx-2.1.1.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.wildfly.arquillian/wildfly-arquillian-protocol-jmx/2.1.1.Final/49a292f71b7c402dacadac04c124b8ae890917c7/wildfly-arquillian-protocol-jmx-2.1.1.Final-sources.jar!/" />
     </SOURCES>
   </library>

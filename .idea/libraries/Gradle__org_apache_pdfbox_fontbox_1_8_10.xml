@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/1.8.10/f38910abc950a87bf6e3ed8869802ded41c059e0/fontbox-1.8.10-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/1.8.10/f38910abc950a87bf6e3ed8869802ded41c059e0/fontbox-1.8.10-sources.jar!/" />
     </SOURCES>
   </library>

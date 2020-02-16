@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.container/arquillian-container-test-api/1.1.13.Final/5594f0fe5d0c499ec5d17d2f8cb5da0dbaf65861/arquillian-container-test-api-1.1.13.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.container/arquillian-container-test-api/1.1.13.Final/5594f0fe5d0c499ec5d17d2f8cb5da0dbaf65861/arquillian-container-test-api-1.1.13.Final-sources.jar!/" />
     </SOURCES>
   </library>

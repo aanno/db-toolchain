@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.7/2751d8094c99ebea4d50ff1212e3c1a969419686/batik-awt-util-1.7-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.7/2751d8094c99ebea4d50ff1212e3c1a969419686/batik-awt-util-1.7-sources.jar!/" />
     </SOURCES>
   </library>

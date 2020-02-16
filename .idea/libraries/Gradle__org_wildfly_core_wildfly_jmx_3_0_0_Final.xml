@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-jmx/3.0.0.Final/bb4e0f78309b4e7fa4ffeb4ac7f781fdc2b876b6/wildfly-jmx-3.0.0.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.wildfly.core/wildfly-jmx/3.0.0.Final/bb4e0f78309b4e7fa4ffeb4ac7f781fdc2b876b6/wildfly-jmx-3.0.0.Final-sources.jar!/" />
     </SOURCES>
   </library>

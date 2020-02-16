@@ -6,7 +6,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/relaxngDatatype/relaxngDatatype/20020414/863be85fb568c771ce2f59a5ff48e1cd3f3ad587/relaxngDatatype-20020414-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/relaxngDatatype/relaxngDatatype/20020414/863be85fb568c771ce2f59a5ff48e1cd3f3ad587/relaxngDatatype-20020414-sources.jar!/" />
     </SOURCES>
   </library>

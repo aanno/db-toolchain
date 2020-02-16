@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.7/bded7f9534af5c38942cf121dbe8eb94e057dff8/batik-ext-1.7-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.7/bded7f9534af5c38942cf121dbe8eb94e057dff8/batik-ext-1.7-sources.jar!/" />
     </SOURCES>
   </library>

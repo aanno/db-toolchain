@@ -7,7 +7,6 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/trang/20181222/bf4c429db93a42c8a86d48d2551e67b234db7658/trang-20181222-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/trang/20181222/c6cecce804c36e88463b39bc840944b850a5c869/trang-20181222-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.relaxng/trang/20181222/c6cecce804c36e88463b39bc840944b850a5c869/trang-20181222-sources.jar!/" />
     </SOURCES>
   </library>

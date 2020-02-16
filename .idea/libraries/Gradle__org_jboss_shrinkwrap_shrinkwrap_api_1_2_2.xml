@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap/shrinkwrap-api/1.2.2/47cdf324d104f5360393cee89e0bef2f212a5cb4/shrinkwrap-api-1.2.2-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap/shrinkwrap-api/1.2.2/47cdf324d104f5360393cee89e0bef2f212a5cb4/shrinkwrap-api-1.2.2-sources.jar!/" />
     </SOURCES>
   </library>

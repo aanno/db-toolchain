@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.picketbox/picketbox/5.0.2.Final/4cd4190bfc79969f6a5de94f3d2bd29daa68e34a/picketbox-5.0.2.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.picketbox/picketbox/5.0.2.Final/4cd4190bfc79969f6a5de94f3d2bd29daa68e34a/picketbox-5.0.2.Final-sources.jar!/" />
     </SOURCES>
   </library>

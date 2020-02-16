@@ -4,11 +4,9 @@
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.1/22c692bcf698657397d877f32e94c99a7762a3e2/nwalsh-annotations-1.0.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.1/8830559b9e62979f8753e710ee21dc23023a693f/nwalsh-annotations-1.0.1-javadoc.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.1/8830559b9e62979f8753e710ee21dc23023a693f/nwalsh-annotations-1.0.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.1/612d7784face3cc8ba990fed20f3de3b34c0bf0d/nwalsh-annotations-1.0.1-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.1/612d7784face3cc8ba990fed20f3de3b34c0bf0d/nwalsh-annotations-1.0.1-sources.jar!/" />
     </SOURCES>
   </library>

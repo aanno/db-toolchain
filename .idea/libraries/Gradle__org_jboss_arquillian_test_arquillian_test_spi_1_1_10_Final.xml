@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.test/arquillian-test-spi/1.1.10.Final/855568ed0adb291289d4072f5709d45a8de375b8/arquillian-test-spi-1.1.10.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.test/arquillian-test-spi/1.1.10.Final/855568ed0adb291289d4072f5709d45a8de375b8/arquillian-test-spi-1.1.10.Final-sources.jar!/" />
     </SOURCES>
   </library>

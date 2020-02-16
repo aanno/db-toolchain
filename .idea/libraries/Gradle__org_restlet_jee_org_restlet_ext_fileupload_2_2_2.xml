@@ -4,11 +4,9 @@
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/52ca19a810a275149d513bd75ef61a69da7d5aa7/org.restlet.ext.fileupload-2.2.2.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/37ca66517f676b3b3588f339e717efb4880031d5/org.restlet.ext.fileupload-2.2.2-javadoc.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/37ca66517f676b3b3588f339e717efb4880031d5/org.restlet.ext.fileupload-2.2.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/185bc0f5ade1fc4d84a2a984fe3059276081a8ee/org.restlet.ext.fileupload-2.2.2-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/185bc0f5ade1fc4d84a2a984fe3059276081a8ee/org.restlet.ext.fileupload-2.2.2-sources.jar!/" />
     </SOURCES>
   </library>

@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.marshalling/jboss-marshalling/2.0.0.Final/ccf8a060b427d353923bd0617d6a657640144dac/jboss-marshalling-2.0.0.Final-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.marshalling/jboss-marshalling/2.0.0.Final/ccf8a060b427d353923bd0617d6a657640144dac/jboss-marshalling-2.0.0.Final-sources.jar!/" />
     </SOURCES>
   </library>

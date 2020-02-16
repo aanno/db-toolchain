@@ -5,7 +5,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.7/df8eb3213cbaadc2b3e83f4895d25ffa8d506559/batik-svg-dom-1.7-sources.jar!/" />
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.7/df8eb3213cbaadc2b3e83f4895d25ffa8d506559/batik-svg-dom-1.7-sources.jar!/" />
     </SOURCES>
   </library>
