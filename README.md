@@ -23,17 +23,17 @@ So far the following pipelines are implemented:
 
 * **xsl-fo**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.3.9) and Apache FOP (2.4.0-SNAPSHOT)
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and Apache FOP (2.4)
 * **xsl-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.3.9) and 
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and 
   [Prince 12](https://www.princexml.com/)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
   [asciidoctor](https://github.com/asciidoctor/asciidoctor)
 * **fo**: <br/>
-  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4.0-SNAPSHOT)
+  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4)
 
 ## Prerequisite
 
@@ -107,7 +107,7 @@ So far the following pipelines are implemented:
 #### XSLT 2.0
 
 * [XSLT 2.0](https://github.com/docbook/xslt20-stylesheets)
-* [Saxon 9.6 documentation](https://saxonica.com/html/documentation9.6/about/index.html)
+* [Saxon 9.9 documentation](https://saxonica.com/documentation/index.html)
 * [XSLT 2.0 java implementations](https://stackoverflow.com/questions/529309/open-source-java-xslt-2-0-implementation)
 
 ##### Technology used with DB XSLT 2.0
@@ -169,7 +169,7 @@ So far the following pipelines are implemented:
   
 ### DB to ePub
 
-* The xslt10 stylesheets have a epub pipeline
+* The [xslt10](https://github.com/docbook/xslt10-stylesheets) stylesheets have a epub pipeline
 
 #### Other Technology for ePub
 
@@ -206,25 +206,36 @@ So far the following pipelines are implemented:
   + [Example site](https://asciidoctor-docs.netlify.com/asciidoctor/1.5/converters/)
 * [Additional Backends](https://github.com/asciidoctor/asciidoctor-backends)
 
-## CSS Print
+## Print-CSS 
 
+* [CSS for print tutorial](http://edutechwiki.unige.ch/en/CSS_for_print_tutorial)
 * [print-css.rocks](https://print-css.rocks/)
 * [PagedMedia](https://www.pagedmedia.org/)
 * [State of print stylesheets in 2018](https://www.smashingmagazine.com/2018/05/print-stylesheets-in-2018/)
 * [Printer friendly pages](https://www.sitepoint.com/css-printer-friendly-pages/)
 * [Prepostprint Blog](https://prepostprint.org/doku.php/en/showcase)
 
-### Implementations
+### CSS Print Stylesheets
 
-* [WeasyPrint](https://weasyprint.readthedocs.io/en/stable/)
-* [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) based on
+* [SelfHTML PrintCSS](https://wiki.selfhtml.org/wiki/CSS/Tutorials/Print-CSS)
+* [PrintCSS friendly pages](https://www.sitepoint.com/css-printer-friendly-pages/)
+
+### Print-CSS Renderer
+
+* [Satz mit PrintCSS](https://print-css.de/) (in German)
+* [PrintCSS in Verlagen](https://www.pagina.gmbh/slides/2015-11-20_PrintCSS_Markupforum_Tobias-Fischer.html)
+
+#### Open Source Implementations
+
+* [vivliostyle](https://vivliostyle.org/) (JS)
+  + [vivliostyle github](https://github.com/vivliostyle/vivliostyle)
+  + [vivliostyle MathJAX](https://github.com/vivliostyle/vivliostyle/issues/523)
+  + [vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
+* [weasyprint](https://weasyprint.org/) (python)
+  + [weasyprint github](https://github.com/Kozea/WeasyPrint)
+  + [weasyprint docs](https://weasyprint.readthedocs.io/en/stable/tutorial.html)
+* [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) (java) based on
   + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer)
-
-### CSS for print overview
-
-* [CSS for print tutorial](http://edutechwiki.unige.ch/en/CSS_for_print_tutorial)
-
-### CSS details
 
 ### CSS drafts
 
@@ -237,3 +248,4 @@ So far the following pipelines are implemented:
 * [CommonMark](https://commonmark.org/): Unify Markdown
 * [Lyx Editor](https://www.lyx.org/)
 * [Context](https://wiki.contextgarden.net/Main_Page)
+* [parsX](https://www.parsx.de/)
