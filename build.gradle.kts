@@ -210,7 +210,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
     exclude("org.apache.logging.log4j", "log4j-slf4j-impl")
     exclude("org.restlet.jee", "org.restlet.ext.slf4j")
-    exclude("org.slf4j", "jcl-over-slf4j")
+    // exclude("org.slf4j", "jcl-over-slf4j")
     exclude("org.apache.logging.log4j", "log4j")
     exclude("org.apache.logging.log4j", "log4j-core")
 }

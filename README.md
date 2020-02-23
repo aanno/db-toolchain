@@ -27,7 +27,7 @@ So far the following pipelines are implemented:
 * **xsl-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
   [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and 
-  [Prince 12](https://www.princexml.com/)
+  [Prince 13](https://www.princexml.com/)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
