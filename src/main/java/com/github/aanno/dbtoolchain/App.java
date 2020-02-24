@@ -5,6 +5,7 @@ import com.github.aanno.dbtoolchain.pipeline.AsciidoctorJ;
 import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
 import com.github.aanno.dbtoolchain.pipeline.Fo;
 import com.github.aanno.dbtoolchain.pipeline.IStage;
+import com.github.aanno.dbtoolchain.pipeline.Stage;
 import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,9 +74,15 @@ public class App {
             }
             LOG.warn("pipeline: " + p);
             if (EFileType.AD == transform.inFormat) {
-                // TODO
+                // If input is asciidoc(tor), first convert it to docbook ...
+                AsciidoctorJ aPipeline = new AsciidoctorJ();
+                result = aPipeline.process(transform, Stage.fromIn(transform),
+                        Stage.from(transform, EFileType.DB));
+                // ... and then proceed as normal
+                result = p.process(transform, result, Stage.fromOut(transform));
+            } else {
+                result = p.process(transform);
             }
-            result = p.process(transform);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
             AsciidoctorJ ad = new AsciidoctorJ();
             LOG.warn("pipeline: " + ad);
