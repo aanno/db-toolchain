@@ -41,6 +41,7 @@ download https://docbook.org/xml/5.1/docbook-v5.1-os.zip 2
 download https://docbook.org/xml/5.0/docbook-5.0.zip 2
 download https://www.princexml.com/download/prince-java-20180929.zip 1
 download https://github.com/docbook/xslt20-stylesheets/releases/download/2.4.3/docbook-xslt2-2.4.3.jar 5
+download  https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-1.79.2.zip 6
 
 mkdir -p "schema/5.1"
 pushd "schema/5.1"
@@ -54,9 +55,15 @@ popd
 
 mkdir -p "lib"
 pushd "lib"
+
 unzip -o "$DOWNLOAD_TMP/prince-java-20180929.zip"
 ln -s "prince-java-20180929" "prince-java"
+
 cp "$DOWNLOAD_TMP/docbook-xslt2-2.4.3.jar" .
+
+unzip -o "$DOWNLOAD_TMP/docbook-xsl-1.79.2.zip"
+ln -s "docbook-xsl-1.79.2" "docbook-xsl"
+
 popd
 
 # rm -r $TMP
