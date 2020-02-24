@@ -2,13 +2,13 @@ package com.github.aanno.dbtoolchain.cli;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import picocli.CommandLine;
 
 import java.nio.file.Path;
 import java.util.StringJoiner;
 import java.util.concurrent.Callable;
 
-import static picocli.CommandLine.*;
+import static picocli.CommandLine.Command;
+import static picocli.CommandLine.Option;
 
 
 @Command(name = "transform", aliases = {"build", "convert"}, description = "transform input file to output file")

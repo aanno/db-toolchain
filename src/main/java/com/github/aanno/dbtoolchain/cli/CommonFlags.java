@@ -6,7 +6,8 @@ import org.slf4j.LoggerFactory;
 import java.util.StringJoiner;
 import java.util.concurrent.Callable;
 
-import static picocli.CommandLine.*;
+import static picocli.CommandLine.Command;
+import static picocli.CommandLine.Option;
 
 @Command(description = "common flags",
         subcommands = {TransformCommand.class, ListCommand.class})

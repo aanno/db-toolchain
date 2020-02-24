@@ -1,6 +1,5 @@
 package com.github.aanno.dbtoolchain.xml;
 
-import org.apache.xerces.parsers.XIncludeParserConfiguration;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -36,7 +35,7 @@ public class TraxSingleton {
 
         System.setProperty("xml.catalog.files",
                 "schema/5.1/schemas/catalog.xml" +
-                ";schema/5.0/docbook-5.0/catalog.xml"
+                        ";schema/5.0/docbook-5.0/catalog.xml"
         );
         System.setProperty("xml.catalog.cacheUnderHome", "true");
         System.setProperty("xml.catalog.prefer", "true");

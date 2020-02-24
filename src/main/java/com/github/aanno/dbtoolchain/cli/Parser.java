@@ -2,7 +2,8 @@ package com.github.aanno.dbtoolchain.cli;
 
 import picocli.CommandLine;
 
-import static picocli.CommandLine.*;
+import static picocli.CommandLine.IFactory;
+import static picocli.CommandLine.ITypeConverter;
 
 public class Parser {
 

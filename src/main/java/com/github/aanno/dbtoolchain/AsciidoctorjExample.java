@@ -1,8 +1,5 @@
 package com.github.aanno.dbtoolchain;
 
-import static org.asciidoctor.Asciidoctor.Factory.create;
-import static org.asciidoctor.api.OptionsBuilder.options;
-
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.api.Options;
 import org.asciidoctor.api.SafeMode;
@@ -18,6 +15,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.asciidoctor.Asciidoctor.Factory.create;
+import static org.asciidoctor.api.OptionsBuilder.options;
 
 public class AsciidoctorjExample {
 

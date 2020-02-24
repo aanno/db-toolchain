@@ -7,11 +7,11 @@ import java.util.regex.Pattern;
 
 public enum EFileType {
 
-    AD(new String[] {"adoc", "ad", "asciidoc", "asiciidoctor"}),
-    DB(new String[] {"db.xml", "db", "docbook", "xml"}),
-    FO(new String[] {"fo.xml", "fo", "xsl-fo"}),
-    XHTML(new String[] {"xhtml", "html.xml"}),
-    PDF(new String[] {"pdf"});
+    AD(new String[]{"adoc", "ad", "asciidoc", "asiciidoctor"}),
+    DB(new String[]{"db.xml", "db", "docbook", "xml"}),
+    FO(new String[]{"fo.xml", "fo", "xsl-fo"}),
+    XHTML(new String[]{"xhtml", "html.xml"}),
+    PDF(new String[]{"pdf"});
 
     private final List<String> extensions;
 
@@ -31,8 +31,8 @@ public enum EFileType {
         if (filename == null) {
             return null;
         }
-        for (EFileType t: values()) {
-            for (String ext: t.extensions) {
+        for (EFileType t : values()) {
+            for (String ext : t.extensions) {
                 if (filename.endsWith("." + ext)) {
                     return t;
                 }

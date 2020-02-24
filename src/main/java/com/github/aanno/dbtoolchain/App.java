@@ -8,13 +8,14 @@ import com.github.aanno.dbtoolchain.pipeline.IStage;
 import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.w3c.dom.css.DOMImplementationCSS;
 import picocli.CommandLine;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import static picocli.CommandLine.*;
+import static picocli.CommandLine.RunAll;
 
 public class App {
 
@@ -76,7 +77,7 @@ public class App {
     }
 
     private void list(ListCommand list) throws Exception {
-        String[] pipelines = new String[] {"xsl-css", "xsl-fo", "ad", "fo"};
+        String[] pipelines = new String[]{"xsl-css", "xsl-fo", "ad", "fo"};
         LOG.warn("implemented pipelines:");
         for (String p : pipelines) {
             LOG.warn("\t* " + p);
@@ -84,6 +85,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
+        DOMImplementationCSS dummy = null;
         LOG.warn("raw args: " + Arrays.asList(args));
         App dut = new App();
         CommandLine cl = new Parser().build();

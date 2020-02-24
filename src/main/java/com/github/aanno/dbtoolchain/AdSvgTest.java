@@ -1,10 +1,8 @@
 package com.github.aanno.dbtoolchain;
 
-import org.asciidoctor.Asciidoctor;
-import org.asciidoctor.api.Options;
-import org.asciidoctor.api.SafeMode;
+import static org.asciidoctor.Asciidoctor.Factory.create;
+import static org.asciidoctor.api.OptionsBuilder.options;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
@@ -14,8 +12,9 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.asciidoctor.Asciidoctor.Factory.create;
-import static org.asciidoctor.api.OptionsBuilder.options;
+import org.asciidoctor.Asciidoctor;
+import org.asciidoctor.api.Options;
+import org.asciidoctor.api.SafeMode;
 
 public class AdSvgTest {
 
