@@ -65,15 +65,31 @@ So far the following pipelines are implemented:
 ### Instructions
 
 * [Introduction to DocBook](https://opensource.com/article/17/9/docbook)
-* [Firebird DocBook XML introduction](https://www.firebirdsql.org/pdfmanual/html/docwritehowto-docbook-intro.html)
-  + [DocBook Source](https://github.com/FirebirdSQL/firebird-documentation/blob/1ec7b44f5e527198ca79a7ef40ff63fce73c56ff/src/docs/firebirddocs/docwriting-howto.xml)
+* [Giurca's DocBook Tutorial](https://www.informatik.tu-cottbus.de/~giurca/tutorials/DocBook/index.htm)
+* [Introduction to DocBook](https://opensource.com/article/17/9/docbook)
 * [DocBook Demystification](http://en.tldp.org/HOWTO/DocBook-Demystification-HOWTO/x128.html)
+* [DocBook Wiki](https://github.com/docbook/wiki/wiki/LearningDocBook)
 * [Einführung in XML/XSLT Docbook](http://www.usegroup.de/software/xmltutorial/docbook.html)
 * [Doc as Code Blog (in german)](https://jaxenter.de/tag/hhgdc)
 * [How to generate PDF](https://stackoverflow.com/questions/2615002/how-to-generate-pdf-from-docbook-5-0) (in german)
 * [Using DocBook toolchain](http://xpt.sourceforge.net/techdocs/nix/tool/asciidoc-usg/ascu04-UsingDocBooktoolchain/)
 * [Recommended toolchain](https://stackoverflow.com/questions/122752/what-is-the-recommended-toolchain-for-formatting-xml-docbook)
+* [Eclipse help from Docbook](https://wiki.eclipse.org/Authoring_Eclipse_Help_Using_DocBook)
+
+### References
+
+* [DocBook: The Definitive Guide](https://tdg.docbook.org/tdg/5.2/)
+  + [Definitive Guide sources](https://github.com/docbook/defguide/tree/master/en)
 * [DocBook XSL: The Complete Guide](http://www.sagehill.net/docbookxsl/) (from 2007)
+* [DoCookBook](http://doccookbook.sourceforge.net/html/en/DoCookBook.html)
+  + [DoCookBook source](https://github.com/tomschr/dbcookbook)
+
+### Big Examples
+
+* [Firebird DocBook XML introduction](https://www.firebirdsql.org/pdfmanual/html/docwritehowto-docbook-intro.html)
+  + [DocBook Source](https://github.com/FirebirdSQL/firebird-documentation/blob/1ec7b44f5e527198ca79a7ef40ff63fce73c56ff/src/docs/firebirddocs/docwriting-howto.xml)
+* [elastic search definitive guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html)
+  + [elastic search definitive guide sources](https://github.com/elastic/elasticsearch-definitive-guide)
 
 #### DB Tools
 
@@ -117,6 +133,11 @@ So far the following pipelines are implemented:
   + [Calabash: XProc Implementation](http://xmlcalabash.com/)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
 * [EXProc](http://exproc.org/): XProc extensions
+
+#### XSLT 1.0
+
+* [xslt10](https://github.com/docbook/xslt10-stylesheets)
+* [design of xslt10](https://nwalsh.com/docs/articles/dbdesign/)
 
 ### Validating DB
 
@@ -169,7 +190,7 @@ So far the following pipelines are implemented:
   
 ### DB to ePub
 
-* The [xslt10](https://github.com/docbook/xslt10-stylesheets) stylesheets have a epub pipeline
+* The [xslt10](https://github.com/docbook/xslt10-stylesheets) stylesheets have a epub pipeline (see README)
 
 #### Other Technology for ePub
 
@@ -227,15 +248,15 @@ So far the following pipelines are implemented:
 
 #### Open Source Implementations
 
-* [vivliostyle](https://vivliostyle.org/) (JS)
+* [vivliostyle](https://vivliostyle.org/) (JS, renderer: chromium)
   + [vivliostyle github](https://github.com/vivliostyle/vivliostyle)
   + [vivliostyle MathJAX](https://github.com/vivliostyle/vivliostyle/issues/523)
   + [vivliostyle CLI](https://github.com/vivliostyle/vivliostyle-cli)
-* [weasyprint](https://weasyprint.org/) (python)
+* [weasyprint](https://weasyprint.org/) (python, renderer: gnome/pango/cairo/gdk)
   + [weasyprint github](https://github.com/Kozea/WeasyPrint)
   + [weasyprint docs](https://weasyprint.readthedocs.io/en/stable/tutorial.html)
 * [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) (java) based on
-  + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer)
+  + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer) renderer
 
 ### CSS drafts
 
@@ -249,3 +270,5 @@ So far the following pipelines are implemented:
 * [Lyx Editor](https://www.lyx.org/)
 * [Context](https://wiki.contextgarden.net/Main_Page)
 * [parsX](https://www.parsx.de/)
+* [pretextbook markup](https://pretextbook.org/) (formerly 'MathBook XML')
+  + [pretextbook github](https://github.com/rbeezer/mathbook)
