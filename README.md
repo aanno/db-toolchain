@@ -131,7 +131,28 @@ So far the following pipelines are implemented:
 * [XProc](https://de.wikipedia.org/wiki/XProc)
   + [XProc Spec](https://www.w3.org/TR/xproc/)
   + [Calabash: XProc Implementation](http://xmlcalabash.com/)
+  + [Calabash Docs](https://github.com/ndw/xmlcalabash1-docs)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
+    - [JEuclid extension step](https://xmlcalabash.com/docs/reference/cx-mathml-to-svg.html)
+    - [XSLT Highlighter extension step](https://github.com/ndw/xmlcalabash1-xslthl)
+    - [Pygments extension step](https://github.com/ndw/xmlcalabash1-pygments)
+    - [MathML to SVG converter extension step](https://github.com/ndw/xmlcalabash1-mathml-to-svg) -
+      uses JEuclid
+    - [AsciiDoctor extension step](https://github.com/ndw/xmlcalabash1-asciidoctor)
+    - [PlantUML extension step](https://github.com/ndw/xmlcalabash1-plantuml)
+    - [IDPF epubcheck extension step](https://github.com/transpect/epubcheck-extension)
+    - [MathType OLE extension step](https://github.com/transpect/mathtype-extension)
+    - [DiTAA diagrams Step](https://github.com/ndw/xmlcalabash1-ditaa) -
+      uses [DiTAA diagrams](http://ditaa.sourceforge.net/)
+    - [image metadata extraction extension step](https://github.com/ndw/xmlcalabash1-metadata-extractor)
+      uses [metadata-extractor](https://drewnoakes.com/code/exif/)
+    - [Delta XML extension step](https://github.com/ndw/xmlcalabash1-deltaxml)
+    - [2.x XSpec step](https://github.com/ndw/xmlcalabash2-xspec)
+    - [RDF extension steps](https://github.com/ndw/xmlcalabash1-rdf)
+    - [XMLUnit extension step](https://github.com/ndw/xmlcalabash1-xmlunit)
+    - [pegdown Step](https://github.com/ndw/xmlcalabash1-pegdown) - but pegdown is _deprecated_
+      (use [flexmark-java](https://github.com/vsch/flexmark-java)
+
 * [EXProc](http://exproc.org/): XProc extensions
 
 #### XSLT 1.0
@@ -169,6 +190,7 @@ So far the following pipelines are implemented:
 * [mathml2](https://www.data2type.de/xml-xslt-xslfo/docbook/anpassen-von-docbook/docbook-5-erweitern/erweitern-von-docbook-mit-math/) (in german)
 * [asciidoctor stem](https://asciidoctor.org/docs/user-manual/#activating-stem-support)
 * [asciidoctor alternative math extension](https://github.com/asciidoctor/asciidoctor-mathematical)
+  renderer: gnome/pango/cairo/gdk
 * [extraordinary list of math renderer](https://github.com/gjtorikian/mathematical#history)
 
 #### MathML Implementations
@@ -183,6 +205,7 @@ So far the following pipelines are implemented:
   + [AsciiMath home page](http://asciimath.org/)
   + [MathJax Implementation](https://www.mathjax.org/)
     + [mathjax-node](https://github.com/mathjax/MathJax-node)
+* [mml2tex](https://github.com/transpect/mml2tex) MathML to Latex
     
 ### Diagrams
 
@@ -191,6 +214,8 @@ So far the following pipelines are implemented:
 ### DB to ePub
 
 * The [xslt10](https://github.com/docbook/xslt10-stylesheets) stylesheets have a epub pipeline (see README)
+* [epubtools-frontend](https://github.com/transpect/epubtools-frontend) xhtml to epub
+  + [epubtools](https://transpect.github.io/modules-epubtools.html)
 
 #### Other Technology for ePub
 
@@ -199,7 +224,9 @@ So far the following pipelines are implemented:
 
 ### (Source) Code Syntax Highlighting in DB
 
-* [xslthl](http://xslthl.sourceforge.net/) (old)
+* [xslthl](http://xslthl.sourceforge.net/) (old but maintained)
+  + [xslthl github](https://github.com/innovimax/xslthl)
+  + [XSLT Highlighter extension step](https://github.com/ndw/xmlcalabash1-xslthl)
 
 ## FOP
 
