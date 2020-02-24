@@ -35,6 +35,9 @@ public class App {
             Iterator<Object> it = list.iterator();
             if (it.hasNext()) {
                 commonFlags = (CommonFlags) it.next();
+                if (!it.hasNext()) {
+                    handleNoSubcommand();
+                }
                 while (it.hasNext()) {
                     Object command = it.next();
                     if (command != null) {
@@ -44,10 +47,18 @@ public class App {
                         } else if (ListCommand.class.equals(clazz)) {
                             list((ListCommand) command);
                         }
+                    } else {
+                        handleNoSubcommand();
                     }
                 }
+            } else {
+                handleNoSubcommand();
             }
         }
+    }
+
+    private void handleNoSubcommand() {
+        LOG.error("No subcommand given. Examples: list, transform");
     }
 
     private void transform(TransformCommand transform) throws Exception {
@@ -61,6 +72,9 @@ public class App {
                 p = new DbXslt20("fo");
             }
             LOG.warn("pipeline: " + p);
+            if (EFileType.AD == transform.inFormat) {
+                // TODO
+            }
             result = p.process(transform);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
             AsciidoctorJ ad = new AsciidoctorJ();

@@ -139,7 +139,6 @@ configurations.all {
     }
     resolutionStrategy.setForcedModules(
             "net.sf.saxon:Saxon-HE:9.9.1-6"
-            , "com.beust:jcommander:1.78"
             , "com.nwalsh:nwalsh-annotations:1.0.1"
             , "commons-codec:commons-codec:1.14"
             , "org.apache.httpcomponents:httpclient:4.5.11"

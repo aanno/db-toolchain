@@ -16,6 +16,9 @@ public class TransformCommand implements Callable<Object> {
 
     private static final Logger LOG = LoggerFactory.getLogger("TransformCommand");
 
+    @Option(names = {"-h", "--help"}, usageHelp = true)
+    public boolean help;
+
     @Option(names = {"-i", "--in"}, required = true)
     public Path in;
 
@@ -81,6 +84,7 @@ public class TransformCommand implements Callable<Object> {
     @Override
     public String toString() {
         return new StringJoiner(", ", TransformCommand.class.getSimpleName() + "[", "]")
+                .add("help=" + help)
                 .add("in=" + in)
                 .add("out=" + out)
                 .add("inFormat=" + inFormat)
