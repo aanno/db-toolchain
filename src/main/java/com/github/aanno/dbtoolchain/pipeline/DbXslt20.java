@@ -56,11 +56,9 @@ public class DbXslt20 implements IPipeline {
                     } else {
                         current = processDbXmlByXhmtl(command, current, finish);
                     }
-                }
-                if (EFileType.FO == current.getType()) {
+                } else if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
-                }
-                if (EFileType.XHTML == current.getType()) {
+                } else if (EFileType.XHTML == current.getType()) {
                     current = processXhtmlByPrinceProcess(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
@@ -82,7 +80,7 @@ public class DbXslt20 implements IPipeline {
         IStage result;
         List<String> args = new ArrayList<>();
 
-        if ("css".equals(variant)) {
+        if ("css".equals(variant) || EFileType.XHTML == finish.getType()) {
             /* NOT working
             result = Stage.from(command, EFileType.PDF);
 
