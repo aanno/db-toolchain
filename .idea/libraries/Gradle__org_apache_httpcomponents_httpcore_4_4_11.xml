@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.httpcomponents:httpcore:4.4.11">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

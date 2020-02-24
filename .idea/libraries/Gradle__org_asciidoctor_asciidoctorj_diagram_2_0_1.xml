@@ -2,12 +2,10 @@
   <library name="Gradle: org.asciidoctor:asciidoctorj-diagram:2.0.1">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-diagram/2.0.1/fcc21a110fb0dbbed7baf46fce71cef3c5e9b17b/asciidoctorj-diagram-2.0.1.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-diagram/2.0.1/fcc21a110fb0dbbed7baf46fce71cef3c5e9b17b/asciidoctorj-diagram-2.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-diagram/2.0.1/2c5ccc55a10862c25fd811158a99e231392df0dd/asciidoctorj-diagram-2.0.1-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-diagram/2.0.1/2c5ccc55a10862c25fd811158a99e231392df0dd/asciidoctorj-diagram-2.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

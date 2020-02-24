@@ -2,12 +2,10 @@
   <library name="Gradle: org.jboss.shrinkwrap.descriptors:shrinkwrap-descriptors-impl-base:2.0.0-alpha-10">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-10/f779e57258996044056d68c1705ad86e5580ada/shrinkwrap-descriptors-impl-base-2.0.0-alpha-10.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-10/f779e57258996044056d68c1705ad86e5580ada/shrinkwrap-descriptors-impl-base-2.0.0-alpha-10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-10/ad78043dfbe8be18bb9061c6fa4d7e41c2641967/shrinkwrap-descriptors-impl-base-2.0.0-alpha-10-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.shrinkwrap.descriptors/shrinkwrap-descriptors-impl-base/2.0.0-alpha-10/ad78043dfbe8be18bb9061c6fa4d7e41c2641967/shrinkwrap-descriptors-impl-base-2.0.0-alpha-10-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

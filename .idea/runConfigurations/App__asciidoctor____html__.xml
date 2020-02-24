@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="App (asciidoctor -&gt; html) " type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
-    <module name="aanno2.db-toolchain.main" />
+    <module name="aanno.db-toolchain.main" />
     <option name="PROGRAM_PARAMETERS" value="transform -w . -p ad -of XHTML -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc" />
     <option name="VM_PARAMETERS" value="-cp jnr-enxio-0.24.jar --illegal-access=warn" />
     <extension name="coverage">

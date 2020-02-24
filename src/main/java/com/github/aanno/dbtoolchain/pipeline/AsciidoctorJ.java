@@ -62,11 +62,9 @@ public class AsciidoctorJ implements IPipeline {
             IStage old = current;
             if (EFileType.DB == finish.getType()) {
                 current = processWithBackend(EAsciidoctorBackend.DOCBOOK5, command, current, finish);
-            }
-            if (EFileType.XHTML == finish.getType()) {
+            } else if (EFileType.XHTML == finish.getType()) {
                 current = processWithBackend(EAsciidoctorBackend.HTML, command, current, finish);
-            }
-            if (EFileType.PDF == finish.getType()) {
+            } else if (EFileType.PDF == finish.getType()) {
                 current = processWithBackend(EAsciidoctorBackend.PDF, command, current, finish);
             }
             if (old.getType() == current.getType()) {

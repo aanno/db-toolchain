@@ -2,12 +2,10 @@
   <library name="Gradle: org.jboss.arquillian.spock:arquillian-spock-container:1.0.0.Beta3">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/91b398aabb6c34686e301257569f6d5d65b2595a/arquillian-spock-container-1.0.0.Beta3.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/91b398aabb6c34686e301257569f6d5d65b2595a/arquillian-spock-container-1.0.0.Beta3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/acaed26efdd373f293dccd67b893a7c70313ddb3/arquillian-spock-container-1.0.0.Beta3-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.arquillian.spock/arquillian-spock-container/1.0.0.Beta3/acaed26efdd373f293dccd67b893a7c70313ddb3/arquillian-spock-container-1.0.0.Beta3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

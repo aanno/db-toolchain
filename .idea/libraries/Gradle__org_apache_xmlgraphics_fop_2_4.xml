@@ -2,7 +2,6 @@
   <library name="Gradle: org.apache.xmlgraphics:fop:2.4">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop/2.4/bfcf10f262a9ddfb6ee30a37dcbee3e569f15e81/fop-2.4.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop/2.4/bfcf10f262a9ddfb6ee30a37dcbee3e569f15e81/fop-2.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

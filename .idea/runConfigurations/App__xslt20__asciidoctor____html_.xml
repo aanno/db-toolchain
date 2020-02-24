@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="DbValidation" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.DbValidation" />
+  <configuration default="false" name="App (xslt20: asciidoctor -&gt; html)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
     <module name="aanno.db-toolchain.main" />
+    <option name="PROGRAM_PARAMETERS" value="transform -w . -p xsl-fo -of XHTML -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc" />
     <option name="VM_PARAMETERS" value="--illegal-access=warn" />
     <extension name="coverage">
       <pattern>

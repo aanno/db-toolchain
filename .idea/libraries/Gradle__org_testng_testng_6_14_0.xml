@@ -2,15 +2,12 @@
   <library name="Gradle: org.testng:testng:6.14.0">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/c8510ff05e565419a519fd5c310f4d1f1f7064e4/testng-6.14.0.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/c8510ff05e565419a519fd5c310f4d1f1f7064e4/testng-6.14.0.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/2ec4f3dffd4cea895c9b41137b7e1402a8065cf3/testng-6.14.0-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/2ec4f3dffd4cea895c9b41137b7e1402a8065cf3/testng-6.14.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/f23916e91aae3eafb64167dddbdc53bd6436b8e8/testng-6.14.0-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.0/f23916e91aae3eafb64167dddbdc53bd6436b8e8/testng-6.14.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.helger:ph-schematron:5.4.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/ae3d8e41d00a1a13cb054acbca16e1d2147bd2e9/ph-schematron-5.4.0.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/ae3d8e41d00a1a13cb054acbca16e1d2147bd2e9/ph-schematron-5.4.0.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/72b6f37837fa8674b65a4a00492ba26dc16f193/ph-schematron-5.4.0-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/72b6f37837fa8674b65a4a00492ba26dc16f193/ph-schematron-5.4.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/fe90622986420ec0272bd94daabb5eaee5c539fe/ph-schematron-5.4.0-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-schematron/5.4.0/fe90622986420ec0272bd94daabb5eaee5c539fe/ph-schematron-5.4.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
