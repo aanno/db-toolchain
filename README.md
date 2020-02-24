@@ -58,7 +58,9 @@ So far the following pipelines are implemented:
 ### Resources
 
 * [References](https://tdg.docbook.org/)
-* [Big Example](https://docbook.org/docs/howto/howto.html) (with xml and pdf)
+* [Big Example](https://docbook.org/docs/howto/howto.html) (from 2009)
+  (with [xml](https://docbook.org/docs/howto/howto.xml) and 
+  [pdf](https://docbook.org/docs/howto/howto.pdf))
 * [DocBook XML Schema](https://docbook.org/xml/5.1/)
 * [Docbook Wiki](https://github.com/docbook/wiki/wiki)
 
@@ -97,6 +99,9 @@ So far the following pipelines are implemented:
 * [fopub (java based)](https://github.com/asciidoctor/asciidoctor-fopub)
 * [AsciiBook](https://github.com/arnaldorusso/AsciiBook): toolchain from AsciiDoc to PDF (in JS)
 * [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub): toolchain from DB (4.5) to PDF
+* [publican (old)](https://jfearn.fedorapeople.org/en-US/Publican/4.3/html/Users_Guide/index.html)
+  + [article](http://dtsden.eu/article/XMLDocBookPublishingUsingPublican)
+  + [asciidoc for publican](https://github.com/asciidoctor/asciidoctor/wiki/Convert-Asciidoc-to-Docbook-for-use-with-Publican)
 
 ##### asciidoctor
 
@@ -107,6 +112,12 @@ So far the following pipelines are implemented:
 * [asciidoctor-gradle-plugin](https://asciidoctor.org/docs/asciidoctor-gradle-plugin/)
 * [new asciidoctor-gradle-plugin](https://asciidoctor.github.io/asciidoctor-gradle-plugin/development-3.x/user-guide/)
 * [How can I enable asciimath support](https://github.com/asciidoctor/asciidoctor-fopub/issues/49)
+
+###### Convert _to_ asciidoctor
+
+* [Overview article](https://blogs.gnome.org/pmkovar/2015/10/27/converting-docbook-into-asciidoc/)
+* [pandoc](https://pandoc.org/): `pandoc --wrap=none -f docbook -t asciidoc DocbookFile.xml > AsciiDocFile.adoc`
+* [docbookrx](https://github.com/asciidoctor/docbookrx)
 
 #### Tools with DB *output*
 
@@ -159,6 +170,15 @@ So far the following pipelines are implemented:
 
 * [xslt10](https://github.com/docbook/xslt10-stylesheets)
 * [design of xslt10](https://nwalsh.com/docs/articles/dbdesign/)
+
+### Html, xHtml, Html5
+
+* [convert html to xhtml](https://stackoverflow.com/questions/29087077/is-it-possible-to-convert-html-into-xhtml-with-jsoup-1-8-1)
+
+#### Parser
+
+* [jsoup](https://jsoup.org/) (java)
+* [htmlcleaner](http://htmlcleaner.sourceforge.net/)
 
 ### Validating DB
 
@@ -221,6 +241,7 @@ So far the following pipelines are implemented:
 
 * [XQuery to ePub converter](https://en.m.wikibooks.org/wiki/XQuery/DocBook_to_ePub)
   + [XQuery DB Implementation](http://exist-db.org/exist/apps/homepage/index.html)
+* [epublib](http://www.siegmann.nl/epublib) (java)
 
 ### (Source) Code Syntax Highlighting in DB
 
@@ -234,6 +255,7 @@ So far the following pipelines are implemented:
 * [Apache FOP Images Plugin](https://xmlgraphics.apache.org/fop/fop-pdf-images.html)
 * [XSL-FO Input](https://xmlgraphics.apache.org/fop/fo.html)
 * [XSL-FO Reference](https://www.data2type.de/xml-xslt-xslfo/xsl-fo/xslfo-referenz/) (in german)
+* [State of XSL-FO 2019](https://www.rockweb.co.uk/blog/2019/04/xsl-fo-is-alive-and-kicking/)
 
 ### FOP and SVG
 
@@ -299,3 +321,13 @@ So far the following pipelines are implemented:
 * [parsX](https://www.parsx.de/)
 * [pretextbook markup](https://pretextbook.org/) (formerly 'MathBook XML')
   + [pretextbook github](https://github.com/rbeezer/mathbook)
+* [markua](https://leanpub.com/markua/read)
+  + [spec](http://markua.com/)
+  
+### Markdown to Book (mostly pandoc)
+
+* [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
+* [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
+* [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
+* [gaiden](http://kobo.github.io/gaiden/getting-started.html)
+  + [gaiden github](https://github.com/kobo/gaiden)
