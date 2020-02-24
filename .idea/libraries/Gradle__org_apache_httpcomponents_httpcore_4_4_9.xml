@@ -2,6 +2,7 @@
   <library name="Gradle: org.apache.httpcomponents:httpcore:4.4.9">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.9/a86ce739e5a7175b4b234c290a00a5fdb80957a0/httpcore-4.4.9.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

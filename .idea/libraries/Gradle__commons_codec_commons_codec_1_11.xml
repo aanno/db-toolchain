@@ -1,13 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: commons-codec:commons-codec:1.11">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.11/978245f8bd06d70703fa3180554c62891500f97a/commons-codec-1.11-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.11/bce4ba84fd527950e35040b20a991c63e90e2850/commons-codec-1.11-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

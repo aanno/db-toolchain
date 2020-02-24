@@ -2,6 +2,7 @@
   <library name="Gradle: org.asciidoctor:asciidoctorj-pdf:1.5.0">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-pdf/1.5.0/dc5a62c4affbf9642ce9ac8eada07b830f3e4269/asciidoctorj-pdf-1.5.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj-pdf/1.5.0/dc5a62c4affbf9642ce9ac8eada07b830f3e4269/asciidoctorj-pdf-1.5.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

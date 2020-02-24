@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: com.helger:ph-collection:9.3.8">
     <CLASSES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/671529c6d12bdceca60dd9325e53c9b71da03557/ph-collection-9.3.8.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/671529c6d12bdceca60dd9325e53c9b71da03557/ph-collection-9.3.8.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/a1921ff00217bb42c84ebe711f53aea8b4041ea3/ph-collection-9.3.8-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/a1921ff00217bb42c84ebe711f53aea8b4041ea3/ph-collection-9.3.8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/c1b035f324ac2b8057161807c2d334a30e7b6f51/ph-collection-9.3.8-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.helger/ph-collection/9.3.8/c1b035f324ac2b8057161807c2d334a30e7b6f51/ph-collection-9.3.8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

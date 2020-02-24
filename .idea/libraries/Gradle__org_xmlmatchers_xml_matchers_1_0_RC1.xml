@@ -2,10 +2,12 @@
   <library name="Gradle: org.xmlmatchers:xml-matchers:1.0-RC1">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.xmlmatchers/xml-matchers/1.0-RC1/8c488af4d0d7819471759207cfbf89ac4d62cb8d/xml-matchers-1.0-RC1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlmatchers/xml-matchers/1.0-RC1/8c488af4d0d7819471759207cfbf89ac4d62cb8d/xml-matchers-1.0-RC1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.xmlmatchers/xml-matchers/1.0-RC1/36691fe5a4b3c09aae5237d938eb9aa89a10251b/xml-matchers-1.0-RC1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlmatchers/xml-matchers/1.0-RC1/36691fe5a4b3c09aae5237d938eb9aa89a10251b/xml-matchers-1.0-RC1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

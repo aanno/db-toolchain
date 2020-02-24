@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.xmlcalabash:xmlcalabash:1.1.28-99">
     <CLASSES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.28-99/2f1430523fcbe28aa2292a716b15314207acac03/xmlcalabash-1.1.28-99.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.28-99/2f1430523fcbe28aa2292a716b15314207acac03/xmlcalabash-1.1.28-99.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.28-99/2d12a11c31e7ea781b56c00292b08222659b652/xmlcalabash-1.1.28-99-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.28-99/2d12a11c31e7ea781b56c00292b08222659b652/xmlcalabash-1.1.28-99-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

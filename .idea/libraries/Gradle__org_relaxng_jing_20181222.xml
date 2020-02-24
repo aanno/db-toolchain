@@ -2,12 +2,14 @@
   <library name="Gradle: org.relaxng:jing:20181222">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/d847e7f2685866a0a3783508669a881313a959ab/jing-20181222.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/d847e7f2685866a0a3783508669a881313a959ab/jing-20181222.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/99c43fd0a5eaa1ccef41855418a8e4e4d5dcc6c3/jing-20181222-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/c80333d99fa5701c338a94f400cdc17f4a132d59/jing-20181222-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/c80333d99fa5701c338a94f400cdc17f4a132d59/jing-20181222-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

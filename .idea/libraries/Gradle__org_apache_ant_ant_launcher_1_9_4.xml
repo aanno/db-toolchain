@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.ant:ant-launcher:1.9.4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.m2/repository/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.9.4/b7ae945463dece0e58f3ebbf6d3d4c773277e1b2/ant-launcher-1.9.4-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

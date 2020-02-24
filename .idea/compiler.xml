@@ -18,6 +18,10 @@
     <bytecodeTargetLevel>
       <module name="aanno.db-toolchain.main" target="11" />
       <module name="aanno.db-toolchain.test" target="11" />
+      <module name="aanno2.db-toolchain.main" target="11" />
+      <module name="aanno2.db-toolchain.test" target="11" />
+      <module name="asciidoctor-fopub.fopub.main" target="11" />
+      <module name="asciidoctor-fopub.fopub.test" target="11" />
       <module name="asciidoctor-pdf" target="1.5" />
       <module name="asciidoctorj-parent.asciidoctorj-api.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-api.test" target="1.8" />
@@ -84,6 +88,8 @@
       <module name="batik-util" target="1.6" />
       <module name="batik-xml" target="1.6" />
       <module name="db-toolchain.main" target="11" />
+      <module name="db-toolchain.submodules.xslt20-resources.main" target="11" />
+      <module name="db-toolchain.submodules.xslt20-resources.test" target="11" />
       <module name="db-toolchain.test" target="11" />
       <module name="fop" target="1.6" />
       <module name="fop-core" target="1.6" />
@@ -116,6 +122,20 @@
       <module name="org.asciidoctor.asciidoctorj-distribution.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-documentation.main" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-documentation.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-api.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-api.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-arquillian-extension.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-distribution.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-distribution.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-documentation.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-documentation.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-test-support.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-test-support.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-wildfly-integration-test.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj.main" target="1.8" />
+      <module name="org.asciidoctor.asciidoctorj-parent.asciidoctorj.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-test-support.main" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-test-support.test" target="1.8" />
       <module name="org.asciidoctor.asciidoctorj-wildfly-integration-test.main" target="1.8" />
@@ -130,10 +150,16 @@
       <module name="org.docbook.xslt20-java.test" target="1.8" />
       <module name="org.docbook.xslt20-stylesheets.main" target="11" />
       <module name="org.docbook.xslt20-stylesheets.test" target="11" />
+      <module name="submodules.jing-trang.jingtrang.main" target="11" />
+      <module name="submodules.jing-trang.jingtrang.test" target="11" />
       <module name="submodules.jing-trang.main" target="11" />
       <module name="submodules.jing-trang.test" target="11" />
       <module name="submodules.xslt20-resources.main" target="11" />
       <module name="submodules.xslt20-resources.test" target="11" />
+      <module name="submodules.xslt20-stylesheets.buildSrc.main" target="11" />
+      <module name="submodules.xslt20-stylesheets.buildSrc.test" target="11" />
+      <module name="submodules.xslt20-stylesheets.main" target="11" />
+      <module name="submodules.xslt20-stylesheets.test" target="11" />
       <module name="xslt20-resources.main" target="11" />
       <module name="xslt20-resources.test" target="11" />
       <module name="xslt20-stylesheets.buildSrc.main" target="11" />
