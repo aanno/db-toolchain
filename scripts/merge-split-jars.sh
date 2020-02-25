@@ -15,6 +15,8 @@ JAR2="$TMP/jnr-enxio.jar"
 
 mkdir -p "$TMP"
 mkdir -p "$DIR"
+rm -rf "$UEBERJAR" "$TMP/jnr" "$TMP/META-INF" "$TMP/xercesImpl"
+
 pushd "$DIR"
 
 rm "$UEBERJAR"
@@ -26,7 +28,7 @@ pushd "$TMP"
 
 unzip -q "$JAR1"
 unzip -qo "$JAR2"
-zip -9rq "$UEBERJAR" .
+zip -9rq "$UEBERJAR" . -x \*.jar
 
 popd
 
