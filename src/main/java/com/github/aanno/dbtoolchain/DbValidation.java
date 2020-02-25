@@ -32,7 +32,8 @@ public class DbValidation {
         Path dbRelaxPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng");
         // TODO tp: invalid url?
         // Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/sch/docbook.sch");
-        Path dbSchematronPath = traxSingleton.pathFromUri("https://docbook.org/xml/5.0/sch/docbook.sch");
+        // https will fail...
+        Path dbSchematronPath = traxSingleton.pathFromUri("http://docbook.org/xml/5.0/sch/docbook.sch");
         // Path dbSchematronPath = null;
 
         Schema dbRelax = xmlSingleton.getRelaxNgSchema(dbRelaxPath);

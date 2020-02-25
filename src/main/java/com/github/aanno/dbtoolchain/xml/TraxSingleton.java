@@ -1,8 +1,6 @@
 package com.github.aanno.dbtoolchain.xml;
 
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
-import org.apache.xml.resolver.Catalog;
-import org.apache.xml.resolver.CatalogEntry;
 import org.apache.xml.resolver.CatalogManager;
 import org.apache.xml.resolver.Resolver;
 import org.xml.sax.EntityResolver;
