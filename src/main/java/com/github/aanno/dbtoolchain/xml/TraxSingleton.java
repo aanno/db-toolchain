@@ -3,6 +3,8 @@ package com.github.aanno.dbtoolchain.xml;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.apache.xml.resolver.CatalogManager;
 import org.apache.xml.resolver.Resolver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -23,6 +25,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class TraxSingleton {
+
+    // see https://xerces.apache.org/xerces2-j/features.html
+    // from XIncludeAwareParserConfiguration
+    public static final String XINCLUDE_FEATURE = "http://apache.org/xml/features/xinclude";
+
+    private static final Logger LOG = LoggerFactory.getLogger(TraxSingleton.class);
 
     static {
         // full XInclude support, see 'DocBook V5.0 Transition Guide FAQ 6.6.1.4'
@@ -82,6 +90,13 @@ public class TraxSingleton {
         simpleSaxParserFactory.setNamespaceAware(true);
         simpleSaxParserFactory.setValidating(false);
         simpleSaxParserFactory.setXIncludeAware(true);
+
+        try {
+            saxParserFactory.setFeature(XINCLUDE_FEATURE, true);
+            simpleSaxParserFactory.setFeature(XINCLUDE_FEATURE, true);
+        } catch (Exception e) {
+            LOG.error("xinclude failed", e);
+        }
 
         entityResolver = new EntityResolver() {
             @Override
