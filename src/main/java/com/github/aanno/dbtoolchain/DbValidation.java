@@ -26,14 +26,17 @@ public class DbValidation {
         // Path dbRelaxPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.1CR4/rng/docbookxi.rng");
         // Path dbSchematronPath = Paths.get("schema/5.1/schemas/sch/docbookxi.sch");
         // TODO tp: no public uri in catalog!
-        // String dbSchematronUri = traxSingleton.uriFromUri("http://www.docbook.org/xml/5.1CR4/xsd/docbookxi.xsd");
+        String dbSchematronUri = traxSingleton.uriFromUri("http://www.docbook.org/xml/5.1CR4/xsd/docbookxi.xsd");
 
         // DB 5.0
         Path dbRelaxPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng");
         // TODO tp: invalid url?
         // Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/sch/docbook.sch");
         // https will fail...
-        Path dbSchematronPath = traxSingleton.pathFromUri("http://docbook.org/xml/5.0/sch/docbook.sch");
+        // Schematron will fail as ns http://purl.oclc.org/dsdl/schematron is expected
+        // (This Schematron is too old)
+        // Path dbSchematronPath = traxSingleton.pathFromUri("http://docbook.org/xml/5.0/sch/docbook.sch");
+        Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.1CR4/sch/docbook.sch");
         // Path dbSchematronPath = null;
 
         Schema dbRelax = xmlSingleton.getRelaxNgSchema(dbRelaxPath);
