@@ -72,7 +72,8 @@ public class TraxSingleton {
         catalog = CatalogManager.getStaticManager();
         catalog.setCatalogFiles("schema/5.1/schemas/catalog.xml" +
                 ";schema/5.0/docbook-5.0/catalog.xml");
-        catalog.setVerbosity(99);
+        // for debug, set to 99
+        catalog.setVerbosity(1);
         catalog.setRelativeCatalogs(true);
         catalog.setUseStaticCatalog(true);
         catalog.setCatalogClassName("org.apache.xml.resolver.Resolver");
