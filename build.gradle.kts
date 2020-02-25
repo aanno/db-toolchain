@@ -212,6 +212,16 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.logging.log4j", "log4j-core")
 
     exclude("org.xmlresolver", "xmlresolver")
+
+    // from xmlcalabash
+    exclude("net.java.dev.msv", "msv-core")
+    exclude("com.ibm.icu", "icu4j")
+    exclude("org.apache.ant", "ant")
+    exclude("org.atteo.classindex", "classindex")
+    exclude("org.ccil.cowan.tagsoup", "tagsoup")
+    exclude("org.restlet.jee")
+    exclude("commons-fileupload", "commons-fileupload")
+    exclude("com.atlassian.commonmark", "commonmark")
 }
 val ueberjars = configurations.create("ueberjars")
 
@@ -280,8 +290,11 @@ dependencies {
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
     }
-    api("com.xmlcalabash", "xmlcalabash", "1.1.30-99")
-    api("commons-cli", "commons-cli", "1.4")
+    api("com.xmlcalabash", "xmlcalabash", "1.1.30-99") {
+        exclude("junit", "junit")
+        exclude("nu.validator.htmlparser", "htmlparser")
+    }
+    // api("commons-cli", "commons-cli", "1.4")
 
     api("net.sf.saxon", "Saxon-HE", "9.9.1-6")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
