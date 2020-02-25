@@ -1,6 +1,7 @@
 package com.github.aanno.dbtoolchain.xml;
 
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
+import net.sf.saxon.TransformerFactoryImpl;
 import org.apache.xml.resolver.CatalogManager;
 import org.apache.xml.resolver.Resolver;
 import org.slf4j.Logger;
@@ -20,7 +21,9 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.URIResolver;
 import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
 import java.io.FileInputStream;
@@ -121,7 +124,22 @@ public class TraxSingleton {
             }
         };
 
-        transformerFactory = TransformerFactory.newInstance();
+        // transformerFactory = TransformerFactory.newInstance();
+        /*
+        try {
+            transformerFactory = ((TransformerFactory)
+                    Class.forName("com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl"
+                    ).newInstance()
+            );
+        } catch (ClassNotFoundException e) {
+            throw new ExceptionInInitializerError(e);
+        } catch (IllegalAccessException e) {
+            throw new ExceptionInInitializerError(e);
+        } catch (InstantiationException e) {
+            throw new ExceptionInInitializerError(e);
+        }
+         */
+        transformerFactory = SAXTransformerFactory.newInstance();
         transformerFactory.setErrorListener(new ErrorListener() {
             @Override
             public void warning(TransformerException exception) throws TransformerException {
@@ -237,6 +255,12 @@ public class TraxSingleton {
             LOG.error("creating transformer failed: " + e.toString(), e);
         }
         if (transformer != null) {
+            transformer.setURIResolver(new URIResolver() {
+                @Override
+                public Source resolve(String href, String base) throws TransformerException {
+                    return null;
+                }
+            });
             transformer.transform(input, output);
         }
     }
