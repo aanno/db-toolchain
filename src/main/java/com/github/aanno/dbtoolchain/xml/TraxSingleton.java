@@ -13,7 +13,13 @@ import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.ErrorListener;
+import javax.xml.transform.Result;
 import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
@@ -61,6 +67,8 @@ public class TraxSingleton {
     private final SAXParserFactory saxParserFactory;
 
     private final SAXParserFactory simpleSaxParserFactory;
+
+    private final TransformerFactory transformerFactory;
 
     private final CatalogManager catalog;
 
@@ -112,6 +120,24 @@ public class TraxSingleton {
                 return result;
             }
         };
+
+        transformerFactory = TransformerFactory.newInstance();
+        transformerFactory.setErrorListener(new ErrorListener() {
+            @Override
+            public void warning(TransformerException exception) throws TransformerException {
+                LOG.warn("transformer warn: " + exception.toString(), exception);
+            }
+
+            @Override
+            public void error(TransformerException exception) throws TransformerException {
+                LOG.error("transformer error: " + exception.toString(), exception);
+            }
+
+            @Override
+            public void fatalError(TransformerException exception) throws TransformerException {
+                LOG.error("transformer fatal error: " + exception.toString(), exception);
+            }
+        });
     }
 
     public static TraxSingleton getInstance() {
@@ -201,5 +227,17 @@ public class TraxSingleton {
     public InputSource getSAXInputSource(Path path) throws IOException {
         InputSource result = new InputSource(Files.newInputStream(path));
         return result;
+    }
+
+    public void transform(Source template, Source input, Result output) throws TransformerException {
+        Transformer transformer = null;
+        try {
+            transformer = transformerFactory.newTransformer(template);
+        } catch (TransformerConfigurationException e) {
+            LOG.error("creating transformer failed: " + e.toString(), e);
+        }
+        if (transformer != null) {
+            transformer.transform(input, output);
+        }
     }
 }

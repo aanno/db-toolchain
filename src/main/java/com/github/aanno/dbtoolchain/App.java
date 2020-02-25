@@ -2,6 +2,7 @@ package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.cli.*;
 import com.github.aanno.dbtoolchain.pipeline.AsciidoctorJ;
+import com.github.aanno.dbtoolchain.pipeline.DbXslt10;
 import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
 import com.github.aanno.dbtoolchain.pipeline.Fo;
 import com.github.aanno.dbtoolchain.pipeline.IStage;
@@ -65,12 +66,22 @@ public class App {
     private void transform(TransformCommand transform) throws Exception {
         String pipeline = transform.pipeline;
         IStage result;
-        if (pipeline.startsWith("xsl")) {
+        if (pipeline.startsWith("xsl10")) {
+            DbXslt10 p;
+            if (pipeline.contains("html")) {
+                p = new DbXslt10("html");
+            } else {
+                throw new IllegalArgumentException();
+            }
+            result = p.process(transform);
+        } else if (pipeline.startsWith("xsl")) {
             DbXslt20 p;
             if (pipeline.contains("css")) {
                 p = new DbXslt20("css");
-            } else {
+            } else if (pipeline.contains("fo")){
                 p = new DbXslt20("fo");
+            } else {
+                throw new IllegalArgumentException();
             }
             LOG.warn("pipeline: " + p);
             if (EFileType.AD == transform.inFormat) {
