@@ -9,7 +9,8 @@ module com.github.aanno.dbtoolchain {
     // requires xercesImpl;
     requires xerces.stripped;
 
-    requires xmlresolver;
+    // requires xmlresolver;
+    requires xml.resolver;
     requires Saxon.HE;
     requires jingtrang;
     requires com.helger.schematron;

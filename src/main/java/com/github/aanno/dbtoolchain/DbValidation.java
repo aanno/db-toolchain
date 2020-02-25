@@ -19,7 +19,8 @@ public class DbValidation {
         TraxSingleton traxSingleton = TraxSingleton.getInstance();
         XmlSingleton xmlSingleton = XmlSingleton.getInstance();
 
-        Path dbPath = Paths.get("examples/db/transition/howto.xml");
+        // Path dbPath = Paths.get("examples/db/transition/howto.xml");
+        Path dbPath = Paths.get("schema/5.0/docbook-5.0/docs/howto.xml");
 
         // DB 5.1
         // Path dbRelaxPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.1CR4/rng/docbookxi.rng");
@@ -29,9 +30,10 @@ public class DbValidation {
 
         // DB 5.0
         Path dbRelaxPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/rng/docbookxi.rng");
-        // TODO tp: schematron invalid?
+        // TODO tp: invalid url?
         // Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.0/sch/docbook.sch");
-        Path dbSchematronPath = null;
+        Path dbSchematronPath = traxSingleton.pathFromUri("https://docbook.org/xml/5.0/sch/docbook.sch");
+        // Path dbSchematronPath = null;
 
         Schema dbRelax = xmlSingleton.getRelaxNgSchema(dbRelaxPath);
 

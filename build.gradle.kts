@@ -212,6 +212,8 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // exclude("org.slf4j", "jcl-over-slf4j")
     exclude("org.apache.logging.log4j", "log4j")
     exclude("org.apache.logging.log4j", "log4j-core")
+
+    exclude("org.xmlresolver", "xmlresolver")
 }
 val ueberjars = configurations.create("ueberjars")
 
@@ -304,7 +306,8 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("org.xmlresolver", "xmlresolver", "1.0.6")
+    // api("org.xmlresolver", "xmlresolver", "1.0.6")
+    api("xml-resolver", "xml-resolver", "1.2")
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     api("info.picocli", "picocli", "4.2.0")

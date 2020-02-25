@@ -1,10 +1,13 @@
 package com.github.aanno.dbtoolchain.xml;
 
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
+import org.apache.xml.resolver.Catalog;
+import org.apache.xml.resolver.CatalogEntry;
+import org.apache.xml.resolver.CatalogManager;
+import org.apache.xml.resolver.Resolver;
+import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.xmlresolver.Catalog;
-import org.xmlresolver.Resolver;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
@@ -14,6 +17,7 @@ import javax.xml.transform.Source;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -33,6 +37,8 @@ public class TraxSingleton {
         System.setProperty(SchemaFactory.class.getName() + ":" + XMLConstants.RELAXNG_NS_URI,
                 XMLSyntaxSchemaFactory.class.getName());
 
+        // see https://xerces.apache.org/xml-commons/components/resolver/resolver-article.html
+        // but does not work (setup is now in constructor)
         System.setProperty("xml.catalog.files",
                 "schema/5.1/schemas/catalog.xml" +
                         ";schema/5.0/docbook-5.0/catalog.xml"
@@ -50,13 +56,24 @@ public class TraxSingleton {
 
     private final SAXParserFactory simpleSaxParserFactory;
 
-    private final Catalog catalog;
+    private final CatalogManager catalog;
 
     private final Resolver resolver;
 
+    private final EntityResolver entityResolver;
+
     private TraxSingleton() {
-        catalog = new Catalog();
-        resolver = new Resolver(catalog);
+        catalog = CatalogManager.getStaticManager();
+        catalog.setCatalogFiles("schema/5.1/schemas/catalog.xml" +
+                ";schema/5.0/docbook-5.0/catalog.xml");
+        catalog.setVerbosity(99);
+        catalog.setRelativeCatalogs(true);
+        catalog.setUseStaticCatalog(true);
+        catalog.setCatalogClassName("org.apache.xml.resolver.Resolver");
+        resolver = (Resolver) catalog.getCatalog();
+        // resolver.setCatalogManager(catalog);
+        // resolver.setupReaders();
+        // resolver.addEntry(new CatalogEntry());
 
         saxParserFactory = SAXParserFactory.newInstance();
         saxParserFactory.setNamespaceAware(true);
@@ -67,6 +84,20 @@ public class TraxSingleton {
         simpleSaxParserFactory.setNamespaceAware(true);
         simpleSaxParserFactory.setValidating(false);
         simpleSaxParserFactory.setXIncludeAware(true);
+
+        entityResolver = new EntityResolver() {
+            @Override
+            public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
+                String uri = resolver.resolvePublic(publicId, systemId);
+                if (uri == null) {
+                    uri = resolver.resolveSystem(systemId);
+                }
+                InputSource result = new InputSource(new FileInputStream(uri));
+                result.setPublicId(publicId);
+                result.setSystemId(systemId);
+                return result;
+            }
+        };
     }
 
     public static TraxSingleton getInstance() {
@@ -75,6 +106,10 @@ public class TraxSingleton {
 
     public Resolver getResolver() {
         return resolver;
+    }
+
+    public EntityResolver getEntityResolver() {
+        return entityResolver;
     }
 
     public SAXParser getSAXParser(boolean validating) throws SAXException {
@@ -88,16 +123,17 @@ public class TraxSingleton {
         } catch (ParserConfigurationException e) {
             throw new IllegalStateException(e);
         }
-        result.getXMLReader().setEntityResolver(resolver);
+        result.getXMLReader().setEntityResolver(entityResolver);
         return result;
     }
 
     public Source sourceFromUri(String uri, boolean validating) throws IOException {
-        return getSource(catalog.lookupURI(uri).body(), validating);
+        return getSource(lookup(uri), validating);
     }
 
     public Path pathFromUri(String uri) throws IOException {
-        String result = catalog.lookupURI(uri).uri();
+        // String result = catalog.lookupURI(uri).uri();
+        String result = lookup(uri);
         if (!result.startsWith("file:/")) {
             throw new IllegalStateException(result);
         }
@@ -105,8 +141,23 @@ public class TraxSingleton {
         return Paths.get(result);
     }
 
+    private String lookup(String identifier) throws IOException {
+        String result = resolver.resolveURI(identifier);
+        if (result == null) {
+            result = resolver.resolveSystem(identifier);
+        }
+        if (result == null) {
+            result = resolver.resolvePublic(identifier, null);
+        }
+        return result;
+    }
+
     public String uriFromUri(String uri) throws IOException {
-        return catalog.lookupURI(uri).uri();
+        return resolver.resolveURI(uri);
+    }
+
+    public Source getSource(String path, boolean validating) throws IOException {
+        return getSource(Paths.get(path), validating);
     }
 
     public Source getSource(Path path, boolean validating) throws IOException {
