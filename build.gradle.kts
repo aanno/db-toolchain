@@ -197,6 +197,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
     exclude("com.xmlcalabash", "xmlcalabash1-gradle")
     exclude("com.xmlcalabash", "xmlcalabash1-print")
+    // don't do!!!
+    // exclude("com.xmlcalabash", "xmlcalabash1-mathml-to-svg")
+    // exclude("com.xmlcalabash", "xmlcalabash1-xslthl")
 
     // exclude super jars
     // exclude("org.apache.xmlgraphics", "batik-all")
@@ -211,13 +214,10 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.logging.log4j", "log4j")
     exclude("org.apache.logging.log4j", "log4j-core")
 
-    exclude("org.xmlresolver", "xmlresolver")
-
     // from xmlcalabash
     exclude("net.java.dev.msv", "msv-core")
     exclude("com.ibm.icu", "icu4j")
     exclude("org.apache.ant", "ant")
-    exclude("org.atteo.classindex", "classindex")
     exclude("org.ccil.cowan.tagsoup", "tagsoup")
     exclude("org.restlet.jee")
     exclude("commons-fileupload", "commons-fileupload")
@@ -282,7 +282,7 @@ dependencies {
     }
      */
     api("", "docbook-xslt2", "2.4.3") {
-        exclude("org.xmlresolver", "xmlresolver")
+        // exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
         // exclude("org.apache.xmlgraphics", "batik-xml")
@@ -294,7 +294,8 @@ dependencies {
         exclude("junit", "junit")
         exclude("nu.validator.htmlparser", "htmlparser")
     }
-    // api("commons-cli", "commons-cli", "1.4")
+    // Needed for docbook-xslt20 Main.main (tp)
+    api("commons-cli", "commons-cli", "1.4")
 
     api("net.sf.saxon", "Saxon-HE", "9.9.1-6")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
@@ -319,7 +320,6 @@ dependencies {
     }
     // api("org.xmlresolver", "xmlresolver", "1.0.6")
     api("xml-resolver", "xml-resolver", "1.2")
-    api("net.sf.xslthl", "xslthl", "2.1.3")
 
     api("info.picocli", "picocli", "4.2.0")
 
@@ -329,18 +329,19 @@ dependencies {
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
     ueberjars("xerces", "xercesImpl", xercesVersion)
 
+    ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
+    api("net.sourceforge.jeuclid:jeuclid-core:3.1.9")
+    // TODO tp: Is this needed?
+    api("net.sourceforge.jeuclid:jeuclid-fop:3.1.9")
+
+    ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
+    api("net.sf.xslthl", "xslthl", "2.1.3")
+
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")
     testImplementation("org.testng:testng:6.14.0")
 
-    // TODO (tp): Not in use
-    api("com.xmlcalabash:xmlcalabash1-mathml-to-svg:1.1.3")
-    api("com.xmlcalabash:xmlcalabash1-xslthl:1.0.0")
-
-    // TODO (tp): Not in use
-    // api()
-
-    // TODO (tp): Not in use
+    // TODO tp: Not in use
     gems("rubygems:asciimath:1.0.9")
     gems("rubygems:asciidoctor-epub3:1.5.0.alpha.13")
     gems("rubygems:asciidoctor-diagram:2.0.1")
