@@ -334,6 +334,13 @@ dependencies {
     testImplementation("org.testng:testng:6.14.0")
 
     // TODO (tp): Not in use
+    api("com.xmlcalabash:xmlcalabash1-mathml-to-svg:1.1.3")
+    api("com.xmlcalabash:xmlcalabash1-xslthl:1.0.0")
+
+    // TODO (tp): Not in use
+    // api()
+
+    // TODO (tp): Not in use
     gems("rubygems:asciimath:1.0.9")
     gems("rubygems:asciidoctor-epub3:1.5.0.alpha.13")
     gems("rubygems:asciidoctor-diagram:2.0.1")

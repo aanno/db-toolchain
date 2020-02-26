@@ -331,3 +331,17 @@ So far the following pipelines are implemented:
 * [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
 * [gaiden](http://kobo.github.io/gaiden/getting-started.html)
   + [gaiden github](https://github.com/kobo/gaiden)
+  
+## IPC
+
+### Java to Java
+
+* [mappedbus](https://github.com/caplogic/mappedbus)
+
+### Java to JS
+
+* [j2v8](https://github.com/eclipsesource/j2v8)
+  + [article: running js on jvm](https://eclipsesource.com/blogs/2016/07/20/running-node-js-on-the-jvm/)
+* [trireme](https://github.com/apigee/trireme)
+* [GraalVM](https://www.graalvm.org)
+  + [plolyglot JS](https://www.graalvm.org/docs/examples/polyglot-javascript-java-r/)
