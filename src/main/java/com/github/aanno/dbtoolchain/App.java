@@ -1,12 +1,7 @@
 package com.github.aanno.dbtoolchain;
 
 import com.github.aanno.dbtoolchain.cli.*;
-import com.github.aanno.dbtoolchain.pipeline.AsciidoctorJ;
-import com.github.aanno.dbtoolchain.pipeline.DbXslt10;
-import com.github.aanno.dbtoolchain.pipeline.DbXslt20;
-import com.github.aanno.dbtoolchain.pipeline.Fo;
-import com.github.aanno.dbtoolchain.pipeline.IStage;
-import com.github.aanno.dbtoolchain.pipeline.Stage;
+import com.github.aanno.dbtoolchain.pipeline.*;
 import com.github.aanno.dbtoolchain.xml.XmlSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,6 +62,7 @@ public class App {
         String pipeline = transform.pipeline;
         IStage result;
         if (pipeline.startsWith("xsl10")) {
+            result = null;
             DbXslt10 p;
             if (pipeline.contains("html")) {
                 p = new DbXslt10("html");

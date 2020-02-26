@@ -3,7 +3,7 @@
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
     <module name="aanno.db-toolchain.main" />
     <option name="PROGRAM_PARAMETERS" value="transform -w . -p xsl10-html -if DB -of XHTML -i ./integrator-guide.db.xml" />
-    <option name="VM_PARAMETERS" value="--illegal-access=warn -Djavax.xml.transform.TransformerFactory=com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl" />
+    <option name="VM_PARAMETERS" value="--illegal-access=warn -Djavax.xml.transform.TransformerFactor=com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.github.aanno.dbtoolchain.*" />

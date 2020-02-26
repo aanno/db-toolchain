@@ -453,6 +453,16 @@ tasks {
         }
     }
 
+    withType<JavaExec> {
+        doFirst {
+            val myArgs = listOf(
+                    "-Duser.country=US", "-Duser.language=en",
+                    "--show-module-resolution", "--add-opens java.base/sun.nio.ch=org.jruby.core"
+            )
+            jvmArgs!!.addAll(myArgs)
+        }
+    }
+
     withType<Jar> {
 
         manifest {

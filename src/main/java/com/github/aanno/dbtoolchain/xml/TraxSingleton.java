@@ -124,7 +124,6 @@ public class TraxSingleton {
             }
         };
 
-        // transformerFactory = TransformerFactory.newInstance();
         /*
         try {
             transformerFactory = ((TransformerFactory)
@@ -139,11 +138,12 @@ public class TraxSingleton {
             throw new ExceptionInInitializerError(e);
         }
          */
-        transformerFactory = SAXTransformerFactory.newInstance();
+        transformerFactory = TransformerFactory.newInstance();
+        // transformerFactory = SAXTransformerFactory.newInstance();
         transformerFactory.setErrorListener(new ErrorListener() {
             @Override
             public void warning(TransformerException exception) throws TransformerException {
-                LOG.warn("transformer warn: " + exception.toString(), exception);
+                LOG.warn("transformer warn: " + exception.toString());
             }
 
             @Override
