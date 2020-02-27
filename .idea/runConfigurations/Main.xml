@@ -1,0 +1,137 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="org.docbook.Main" />
+    <module name="xslt20-stylesheets.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="org.docbook.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <extension name="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+      </ENTRIES>
+    </extension>
+    <extension name="recording" autostart="false">
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.xni.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.util.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.docbook.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="unusual.extension.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.dom.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.wml.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.github.aanno.dbtoolchain.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.parsers.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.impl.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="jnr.enxio.channels.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="jnr.unixsocket.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.dom3.as.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="com.xmlcalabash.util.print.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.stax.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.xinclude.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xml.serialize.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.fop.cli.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.jaxp.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.xpointer.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.html.dom.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.asciidoctor.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+      <include_pattern>
+        <option name="PATTERN" value="org.apache.xerces.xs.*" />
+        <option name="ENABLED" value="true" />
+        <option name="INCLUDE" value="true" />
+      </include_pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

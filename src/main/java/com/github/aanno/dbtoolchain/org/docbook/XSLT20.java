@@ -73,6 +73,10 @@ public class XSLT20 {
         }
     }
 
+    public String getJarLoc() {
+        return jarLoc;
+    }
+
     public void setParam(String param, String value) {
         if (param.contains(":")) {
             int pos = param.indexOf(":");
@@ -245,17 +249,18 @@ public class XSLT20 {
         }
     }
 
-    public void run(String sourcefn) throws IOException, SaxonApiException {
+    public XProcRuntime newDefaultXProcRuntime() {
         XProcConfiguration config = new XProcConfiguration(proctype, schemaAware);
         XProcRuntime runtime = new XProcRuntime(config);
+        return runtime;
+    }
 
+    public void run(String sourcefn) throws IOException, SaxonApiException {
         File cwdFile = new File(System.getProperty("user.dir"));
         String baseURI = cwdFile.toURI().toASCIIString();
         if (!baseURI.endsWith("/")) {
             baseURI = baseURI + "/";
         }
-
-        XdmNode source = runtime.parse(sourcefn, baseURI);
 
         String format = "html";
         if (options.containsKey(_format)) {
@@ -272,6 +277,16 @@ public class XSLT20 {
         }
 
         xpl = jarLoc + "/xslt/base/pipelines/" + xpl;
+
+        runXpl(sourcefn, xpl, baseURI);
+    }
+
+    public void runXpl(String sourcefn, String xpl, String baseURI) throws IOException, SaxonApiException {
+        if (!baseURI.endsWith("/")) {
+            baseURI = baseURI + "/";
+        }
+        XProcRuntime runtime = newDefaultXProcRuntime();
+        XdmNode source = runtime.parse(sourcefn, baseURI);
 
         // String catalogFn = createCatalog();
         // Catalog catalog = new Catalog(catalogFn);
