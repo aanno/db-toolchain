@@ -37,8 +37,11 @@ public class TransformCommand implements Callable<Object> {
     @Option(names = {"-c", "--check", "--validate"})
     public boolean validate = true;
 
-    @Option(names = {"-w", "--workdir"})
+    @Option(names = {"-w", "--workdir", "-b", "--basedir"}, description = "basedir of relative paths")
     public Path workDir;
+
+    @Option(names = {"--outdir", "--cwd", "-d"}, description = "output directory (and current working directory)")
+    public Path outDir;
 
     @Option(names = {"--princeapi"}, description = "use the prince API for cssprint (nop for fo pipeline)")
     public boolean princeApi = false;
@@ -69,7 +72,21 @@ public class TransformCommand implements Callable<Object> {
                 // default out format
                 outFormat = EFileType.PDF;
             }
-            out = workDir.resolve(inBasename + "." + outFormat.getDefaultExtension());
+            if (outDir != null) {
+                out = outDir.resolve(inBasename + "." + outFormat.getDefaultExtension());
+            } else {
+                out = workDir.resolve(inBasename + "." + outFormat.getDefaultExtension());
+                outDir = out.getParent();
+            }
+        } else {
+            boolean warn = (outDir != null);
+            outDir = out.getParent();
+            if (warn) {
+                LOG.warn("--outdir will be ignored and set to ");
+            }
+        }
+        if (!outDir.toFile().isDirectory()) {
+            LOG.error("--outdir " + outDir + " is not a directory");
         }
         if (outFormat == null) {
             outFormat = EFileType.getType(out.getFileName().toString());
@@ -77,7 +94,13 @@ public class TransformCommand implements Callable<Object> {
         if (outFormat == null) {
             throw new IllegalArgumentException("outformat unknown");
         }
+        in = in.toAbsolutePath();
+
+        // We can't rely on relative paths - as 'user.dir' could change
+        workDir = workDir.toAbsolutePath();
+        outDir = outDir.toAbsolutePath();
         out = out.toAbsolutePath();
+
         return this;
     }
 
@@ -92,6 +115,7 @@ public class TransformCommand implements Callable<Object> {
                 .add("pipeline='" + pipeline + "'")
                 .add("validate=" + validate)
                 .add("workDir=" + workDir)
+                .add("outDir=" + outDir)
                 .add("inBasename='" + inBasename + "'")
                 .toString();
     }

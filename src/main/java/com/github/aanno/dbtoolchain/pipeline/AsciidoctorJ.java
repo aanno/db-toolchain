@@ -95,7 +95,8 @@ public class AsciidoctorJ implements IPipeline {
     }
 
     private Map<String, Object> baseOptions(Path output) {
-        return options().safe(SafeMode.SAFE).toFile(output.toFile()).asMap();
+        // unsafe: don't restrict output path
+        return options().safe(SafeMode.UNSAFE).toFile(output.toFile()).asMap();
     }
 
 }
