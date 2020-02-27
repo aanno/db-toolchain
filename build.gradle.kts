@@ -214,6 +214,11 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.logging.log4j", "log4j")
     exclude("org.apache.logging.log4j", "log4j-core")
 
+    // exclude old resolvers (use java 11 resolver)
+    exclude("xml-resolver", "xml-resolver")
+    // can't be excluded because it is used by xmlcalabash
+    // exclude("org.xmlresolver", "xmlresolver")
+
     // from xmlcalabash
     exclude("net.java.dev.msv", "msv-core")
     exclude("com.ibm.icu", "icu4j")
@@ -264,6 +269,7 @@ dependencies {
     api("com.github.jnr", "jnr-unixsocket", "0.26")
     api("com.github.jnr", "jnr-enxio", "0.24")
     implementation("", "jnrchannels", "")
+    implementation("", "xmlcalabash-extensions", "")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.3.1")
 
@@ -282,7 +288,7 @@ dependencies {
     }
      */
     api("", "docbook-xslt2", "2.4.3") {
-        // exclude("org.xmlresolver", "xmlresolver")
+        exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
         // exclude("org.apache.xmlgraphics", "batik-xml")
@@ -294,8 +300,12 @@ dependencies {
         exclude("junit", "junit")
         exclude("nu.validator.htmlparser", "htmlparser")
     }
+
     // Needed for docbook-xslt20 Main.main (tp)
     api("commons-cli", "commons-cli", "1.4")
+
+    // Needed for xmlcalabash (and original docbook-xslt20 Main.main) (tp)
+    api("org.xmlresolver", "xmlresolver", "1.0.6")
 
     api("net.sf.saxon", "Saxon-HE", "9.9.1-6")
     api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
@@ -318,8 +328,7 @@ dependencies {
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    // api("org.xmlresolver", "xmlresolver", "1.0.6")
-    api("xml-resolver", "xml-resolver", "1.2")
+    // api("xml-resolver", "xml-resolver", "1.2")
 
     api("info.picocli", "picocli", "4.2.0")
 

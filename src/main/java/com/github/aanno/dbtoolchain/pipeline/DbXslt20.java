@@ -2,6 +2,7 @@ package com.github.aanno.dbtoolchain.pipeline;
 
 import com.github.aanno.dbtoolchain.cli.EFileType;
 import com.github.aanno.dbtoolchain.cli.TransformCommand;
+import com.github.aanno.dbtoolchain.org.docbook.Main;
 import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
 import net.sf.saxon.s9api.SaxonApiException;
 import org.slf4j.Logger;
@@ -111,7 +112,7 @@ public class DbXslt20 implements IPipeline {
             throw new IllegalStateException("unknown variant: " + variant);
         }
         LOG.warn("xslt20 args: " + args);
-        org.docbook.Main.main(args.toArray(EMPTY_STRING_ARRAY));
+        Main.main(args.toArray(EMPTY_STRING_ARRAY));
 
         return result;
     }
@@ -140,7 +141,7 @@ public class DbXslt20 implements IPipeline {
             throw new IllegalStateException("unknown variant: " + variant);
         }
         LOG.warn("xslt20 args: " + args);
-        org.docbook.Main.main(args.toArray(EMPTY_STRING_ARRAY));
+        Main.main(args.toArray(EMPTY_STRING_ARRAY));
 
         return result;
     }

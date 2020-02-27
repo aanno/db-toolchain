@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :xmlcalabash-extensions:">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ueberjars/xmlcalabash-extensions.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="AdSvgTest (1)" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.AdSvgTest" />
-    <module name="aanno2.db-toolchain.main" />
+    <module name="aanno.db-toolchain.main" />
     <option name="VM_PARAMETERS" value="--illegal-access=warn" />
     <extension name="coverage">
       <pattern>

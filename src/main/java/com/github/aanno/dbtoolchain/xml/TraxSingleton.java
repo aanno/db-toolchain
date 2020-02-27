@@ -1,9 +1,7 @@
 package com.github.aanno.dbtoolchain.xml;
 
+import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
-import net.sf.saxon.TransformerFactoryImpl;
-import org.apache.xml.resolver.CatalogManager;
-import org.apache.xml.resolver.Resolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
@@ -11,24 +9,22 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
+import javax.xml.catalog.Catalog;
+import javax.xml.catalog.CatalogFeatures;
+import javax.xml.catalog.CatalogManager;
+import javax.xml.catalog.CatalogResolver;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.transform.ErrorListener;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.URIResolver;
+import javax.xml.transform.*;
 import javax.xml.transform.sax.SAXSource;
-import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -73,25 +69,42 @@ public class TraxSingleton {
 
     private final TransformerFactory transformerFactory;
 
-    private final CatalogManager catalog;
+    private final Catalog catalog;
 
-    private final Resolver resolver;
+    private final CatalogResolver resolver;
 
     private final EntityResolver entityResolver;
 
+    private final XSLT20 xslt20;
+
     private TraxSingleton() {
-        catalog = CatalogManager.getStaticManager();
-        catalog.setCatalogFiles("schema/5.1/schemas/catalog.xml" +
-                ";schema/5.0/docbook-5.0/catalog.xml");
-        // for debug, set to 99
-        catalog.setVerbosity(1);
-        catalog.setRelativeCatalogs(true);
-        catalog.setUseStaticCatalog(true);
-        catalog.setCatalogClassName("org.apache.xml.resolver.Resolver");
-        resolver = (Resolver) catalog.getCatalog();
-        // resolver.setCatalogManager(catalog);
-        // resolver.setupReaders();
-        // resolver.addEntry(new CatalogEntry());
+        xslt20 = new XSLT20();
+        try {
+            File current = new File(System.getProperty("user.dir")).getCanonicalFile();
+            String currentURI = current.toURI().toASCIIString();
+
+            File xslt20Catalog = new File(current, "schema/docbook-xslt20/catalog.xml");
+            xslt20Catalog.getParentFile().mkdirs();
+            String xslt20CatalogUri = xslt20Catalog.toURI().toASCIIString();
+            xslt20.createCatalog(xslt20Catalog.toString());
+
+            CatalogFeatures catalogFeatures = CatalogFeatures.builder()
+                    // .with(CatalogFeatures.Feature.FILES, current.toURI().toASCIIString())
+                    .build();
+            catalog = CatalogManager.catalog(catalogFeatures,
+                    new URI(currentURI + "/schema/5.1/schemas/catalog.xml"),
+                    new URI(currentURI + "/schema/5.0/docbook-5.0/catalog.xml"),
+                    new URI(currentURI + "/lib/docbook-xsl/catalog.xml"),
+                    new URI(currentURI + "/submodules/asciidoctor-fopub/src/dist/catalog.xml"),
+                    new URI(xslt20CatalogUri)
+                    );
+        } catch (URISyntaxException e) {
+            throw new ExceptionInInitializerError(e);
+        } catch (IOException e) {
+            throw new ExceptionInInitializerError(e);
+        }
+
+        resolver = CatalogManager.catalogResolver(catalog);
 
         saxParserFactory = SAXParserFactory.newInstance();
         saxParserFactory.setNamespaceAware(true);
@@ -110,19 +123,7 @@ public class TraxSingleton {
             LOG.error("xinclude failed", e);
         }
 
-        entityResolver = new EntityResolver() {
-            @Override
-            public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
-                String uri = resolver.resolvePublic(publicId, systemId);
-                if (uri == null) {
-                    uri = resolver.resolveSystem(systemId);
-                }
-                InputSource result = new InputSource(new FileInputStream(uri));
-                result.setPublicId(publicId);
-                result.setSystemId(systemId);
-                return result;
-            }
-        };
+        entityResolver = resolver;
 
         /*
         try {
@@ -162,7 +163,15 @@ public class TraxSingleton {
         return INSTANCE;
     }
 
-    public Resolver getResolver() {
+    public XSLT20 getXslt20() {
+        return xslt20;
+    }
+
+    public Catalog getCatalog() {
+        return catalog;
+    }
+
+    public CatalogResolver getCatalogResolver() {
         return resolver;
     }
 
@@ -200,18 +209,44 @@ public class TraxSingleton {
     }
 
     private String lookup(String identifier) throws IOException {
-        String result = resolver.resolveURI(identifier);
+        String result = catalog.matchURI(identifier);
         if (result == null) {
-            result = resolver.resolveSystem(identifier);
+            result = catalog.catalogs()
+                    .map(c -> c.matchURI(identifier))
+                    .filter(s -> s != null)
+                    .findFirst().orElse(null);
         }
         if (result == null) {
-            result = resolver.resolvePublic(identifier, null);
+            result = catalog.matchSystem(identifier);
+        }
+        if (result == null) {
+            result = catalog.catalogs()
+                    .map(c -> c.matchSystem(identifier))
+                    .filter(s -> s != null)
+                    .findFirst().orElse(null);
+        }
+        if (result == null) {
+            result = catalog.matchPublic(identifier);
+        }
+        if (result == null) {
+            result = catalog.catalogs()
+                    .map(c -> c.matchPublic(identifier))
+                    .filter(s -> s != null)
+                    .findFirst().orElse(null);
         }
         return result;
     }
 
     public String uriFromUri(String uri) throws IOException {
-        return resolver.resolveURI(uri);
+        // TODO tp: Better use lookup(..)?
+        String result = catalog.matchURI(uri);
+        if (result == null) {
+            result = catalog.catalogs()
+                    .map(c -> c.matchSystem(uri))
+                    .filter(s -> s != null)
+                    .findFirst().orElse(null);
+        }
+        return  result;
     }
 
     public Source getSource(String path, boolean validating) throws IOException {

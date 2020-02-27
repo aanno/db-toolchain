@@ -4,31 +4,27 @@ ROOT=`git rev-parse --show-toplevel`
 TMP="$ROOT/lib/tmp"
 DIR="$ROOT/lib/ueberjars"
 UEBERJAR1="$DIR/jnrchannels.jar"
-
-# JNR_JAR1="$HOME/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-unixsocket/0.20/b683f10dded734c662c418160e314e6db936fdee/jnr-unixsocket-0.20.jar"
-# JNR_JAR2="$HOME/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.19/c7664aa74f424748b513619d71141a249fb74e3e/jnr-enxio-0.19.jar"
+UEBERJAR2="$DIR/xmlcalabash-extensions.jar"
 
 JNR_JAR1="$TMP/jnr-unixsocket.jar"
 JNR_JAR2="$TMP/jnr-enxio.jar"
-
-# TMP=`mktemp -d`
+CALAB_JAR1="$TMP/xmlcalabash1-mathml-to-svg.jar"
+CALAB_JAR2="$TMP/xmlcalabash1-xslthl.jar"
 
 mkdir -p "$TMP"
 mkdir -p "$DIR"
-rm -rf "$UEBERJAR1" "$TMP/jnr" "$TMP/META-INF" "$TMP/xercesImpl"
-
-pushd "$DIR"
-
-rm "$UEBERJAR1"
-
-popd
+rm -rf "$UEBERJAR1" "$UEBERJAR2" "$TMP/jnr" "$TMP/com" "$TMP/scm" "$TMP/META-INF" "$TMP/xercesImpl"
 
 pushd "$TMP"
 
 unzip -q "$JNR_JAR1"
 unzip -qo "$JNR_JAR2"
-zip -9rq "$UEBERJAR1" . -x \*.jar
+zip -9rq "$UEBERJAR1" jnr "META-INF" -x \*.jar
+
+rm -rf "$TMP/jnr" "META-INF"
+unzip -q "$CALAB_JAR1"
+unzip -qo "$CALAB_JAR2"
+rm com/xmlcalabash/extensions/*.class
+zip -9rq "$UEBERJAR2" com "META-INF" -x \*.jar
 
 popd
-
-# rm -r "$TMP"

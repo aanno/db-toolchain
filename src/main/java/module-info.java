@@ -9,8 +9,6 @@ module com.github.aanno.dbtoolchain {
     // requires xercesImpl;
     requires xerces.stripped;
 
-    // requires xmlresolver;
-    requires xml.resolver;
     requires Saxon.HE;
     requires jingtrang;
     requires com.helger.schematron;
@@ -61,4 +59,7 @@ module com.github.aanno.dbtoolchain {
 
     exports com.github.aanno.dbtoolchain.cli;
     exports com.xmlcalabash.util.print;
+
+    // temporary (for original version of org.docbook.Main)
+    requires commons.cli;
 }
