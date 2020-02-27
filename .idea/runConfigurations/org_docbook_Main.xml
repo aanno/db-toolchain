@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="org.docbook.Main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.docbook.Main" />
     <module name="xslt20-stylesheets.main" />
     <extension name="coverage">

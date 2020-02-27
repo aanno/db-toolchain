@@ -2,8 +2,8 @@
   <configuration default="false" name="App (asciidoctor -&gt; DB) " type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
     <module name="aanno.db-toolchain.main" />
-    <option name="PROGRAM_PARAMETERS" value="transform -w . -p ad -of DB -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc" />
-    <option name="VM_PARAMETERS" value="-cp jnr-enxio-0.24.jar --illegal-access=warn" />
+    <option name="PROGRAM_PARAMETERS" value="transform -w submodules/asciidoctorj/asciidoctorj-documentation -p ad -of DB -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc" />
+    <option name="VM_PARAMETERS" value="--illegal-access=warn" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.github.aanno.dbtoolchain.*" />

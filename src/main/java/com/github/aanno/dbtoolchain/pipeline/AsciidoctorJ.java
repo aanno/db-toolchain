@@ -77,6 +77,7 @@ public class AsciidoctorJ implements IPipeline {
     private IStage processWithBackend(EAsciidoctorBackend be, TransformCommand command, IStage current, IStage finish) throws IOException {
         Map<String, Object> opts = new HashMap<>();
         opts.put(Options.BACKEND, be.name().toLowerCase());
+        opts.put(Options.BASEDIR, command.workDir.toAbsolutePath().toString());
         convert2(current.getPath(), finish.getPath(), opts);
         return finish;
     }
