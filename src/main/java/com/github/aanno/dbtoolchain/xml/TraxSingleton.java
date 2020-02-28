@@ -18,6 +18,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.transform.*;
 import javax.xml.transform.sax.SAXSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
@@ -296,4 +297,53 @@ public class TraxSingleton {
             transformer.transform(input, output);
         }
     }
+
+    public void transform(Source input, Result output) throws TransformerException {
+        Transformer transformer = null;
+        try {
+            transformer = transformerFactory.newTransformer();
+        } catch (TransformerConfigurationException e) {
+            LOG.error("creating transformer failed: " + e.toString(), e);
+        }
+        if (transformer != null) {
+            transformer.setURIResolver(new URIResolver() {
+                @Override
+                public Source resolve(String href, String base) throws TransformerException {
+                    return null;
+                }
+            });
+            transformer.transform(input, output);
+        }
+    }
+
+    public void close(StreamSource source) {
+        if (source != null) {
+            try {
+                if (source.getInputStream() != null) {
+                    source.getInputStream().close();
+                }
+                if (source.getReader() != null) {
+                    source.getReader().close();
+                }
+            } catch (IOException e) {
+                LOG.warn("close failed: " + e);
+            }
+        }
+    }
+
+    public void close(StreamResult result) {
+        if (result != null) {
+            try {
+                if (result.getOutputStream() != null) {
+                    result.getOutputStream().close();
+                }
+                if (result.getWriter() != null) {
+                    result.getWriter().close();
+                }
+            } catch (IOException e) {
+                LOG.warn("close failed: " + e);
+            }
+        }
+    }
+
 }

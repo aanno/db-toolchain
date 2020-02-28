@@ -95,7 +95,7 @@ public class App {
             LOG.warn("pipeline: " + ad);
             result = ad.process(transform);
         } else if (pipeline.startsWith("fo")) {
-            Fo p = new Fo();
+            FoNg p = new FoNg();
             LOG.warn("pipeline: " + p);
             result = p.process(transform);
         } else {

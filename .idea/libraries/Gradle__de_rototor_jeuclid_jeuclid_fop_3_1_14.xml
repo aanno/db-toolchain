@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: de.rototor.jeuclid:jeuclid-fop:3.1.14">
+    <CLASSES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-fop/3.1.14/aa83841dd2e037c7a478d387c30b5a1646e3871c/jeuclid-fop-3.1.14.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-fop/3.1.14/8d5513496786dc61e28d42e17d9ff595dda4487a/jeuclid-fop-3.1.14-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-fop/3.1.14/c1ce3e1d1eb73845fe67c842b9e49cdacd5a8a68/jeuclid-fop-3.1.14-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

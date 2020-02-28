@@ -32,7 +32,7 @@ public class DbXslt20Ng implements IPipeline {
 
     private final String variant;
 
-    private Fo fo;
+    private FoNg fo;
 
     public DbXslt20Ng(String variant) {
         this.variant = variant;
@@ -173,13 +173,13 @@ public class DbXslt20Ng implements IPipeline {
         return result;
     }
 
-    private IStage processFo(TransformCommand command, IStage current, IStage finish) {
+    private IStage processFo(TransformCommand command, IStage current, IStage finish) throws IOException {
         return getFo().process(command, current, finish);
     }
 
-    private Fo getFo() {
+    private FoNg getFo() {
         if (fo == null) {
-            fo = new Fo();
+            fo = new FoNg();
         }
         return fo;
     }

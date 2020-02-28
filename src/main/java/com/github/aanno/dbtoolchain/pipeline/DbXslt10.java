@@ -60,7 +60,7 @@ public class DbXslt10 implements IPipeline {
 
     private final String variant;
 
-    private Fo fo;
+    private FoNg fo;
 
     public DbXslt10(String variant) {
         this.variant = variant;
@@ -89,9 +89,9 @@ public class DbXslt10 implements IPipeline {
                     try {
                         traxSingleton.transform(inStyle, inStage, out);
                     } finally {
-                        close(out);
-                        close(inStyle);
-                        close(inStage);
+                        traxSingleton.close(out);
+                        traxSingleton.close(inStyle);
+                        traxSingleton.close(inStage);
                     }
                     current = Stage.from(command, EFileType.XHTML);
                 } else {
@@ -107,39 +107,13 @@ public class DbXslt10 implements IPipeline {
         }
     }
 
-    private void close(StreamSource source) {
-        try {
-            if (source.getInputStream() != null) {
-                source.getInputStream().close();
-            }
-            if (source.getReader() != null) {
-                source.getReader().close();
-            }
-        } catch (IOException e) {
-            LOG.warn("close failed: " + e);
-        }
-    }
-
-    private void close(StreamResult result) {
-        try {
-            if (result.getOutputStream() != null) {
-                result.getOutputStream().close();
-            }
-            if (result.getWriter() != null) {
-                result.getWriter().close();
-            }
-        } catch (IOException e) {
-            LOG.warn("close failed: " + e);
-        }
-    }
-
-    private IStage processFo(TransformCommand command, IStage current, IStage finish) {
+    private IStage processFo(TransformCommand command, IStage current, IStage finish) throws IOException {
         return getFo().process(command, current, finish);
     }
 
-    private Fo getFo() {
+    private FoNg getFo() {
         if (fo == null) {
-            fo = new Fo();
+            fo = new FoNg();
         }
         return fo;
     }
