@@ -52,8 +52,9 @@ public class XSLT20 {
     private Properties configProperties = null;
 
     public XSLT20() {
-        logger = LoggerFactory.getLogger(org.docbook.XSLT20.class);
+        logger = LoggerFactory.getLogger(com.github.aanno.dbtoolchain.org.docbook.XSLT20.class);
         // Where am I?
+        // TODO tp
         CodeSource src = org.docbook.XSLT20.class.getProtectionDomain().getCodeSource();
         classLoc = src.getLocation().toString();
         logger.debug("classLoc=" + classLoc);

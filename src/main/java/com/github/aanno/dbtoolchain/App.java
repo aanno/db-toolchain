@@ -71,11 +71,11 @@ public class App {
             }
             result = p.process(transform);
         } else if (pipeline.startsWith("xsl")) {
-            DbXslt20 p;
+            DbXslt20Ng p;
             if (pipeline.contains("css")) {
-                p = new DbXslt20("css");
+                p = new DbXslt20Ng("css");
             } else if (pipeline.contains("fo")){
-                p = new DbXslt20("fo");
+                p = new DbXslt20Ng("fo");
             } else {
                 throw new IllegalArgumentException();
             }

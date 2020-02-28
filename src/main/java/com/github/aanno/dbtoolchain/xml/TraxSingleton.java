@@ -75,6 +75,7 @@ public class TraxSingleton {
 
     private final EntityResolver entityResolver;
 
+    // We need an instance of XSLT20 (for getting the catalog), but it could _NOT_ be shared
     private final XSLT20 xslt20;
 
     private TraxSingleton() {
@@ -161,10 +162,6 @@ public class TraxSingleton {
 
     public static TraxSingleton getInstance() {
         return INSTANCE;
-    }
-
-    public XSLT20 getXslt20() {
-        return xslt20;
     }
 
     public Catalog getCatalog() {

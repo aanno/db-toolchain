@@ -13,7 +13,7 @@ import java.util.List;
 public class Main {
     @SuppressWarnings("static-access")
     public static void main(String[] args) throws IOException, SaxonApiException {
-        XSLT20 docbook = TraxSingleton.getInstance().getXslt20();
+        XSLT20 docbook = new XSLT20();
         String usage = "java -jar docbook-xslt2-" + docbook.version() + ".jar [options] dbdoc.xml [param=value [param=value] ...] ";
 
         // N.B. This is explicitly using Commons-CLI 1.2 because that's the dependency that gradle has
