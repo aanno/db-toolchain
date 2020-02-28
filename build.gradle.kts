@@ -58,9 +58,11 @@ repositories {
     jcenter()
     // for use with https://github.com/jruby/rubygems-servlets
     // (as rubygems("https://rubygems.org") does NOT work)
+    /*
     maven {
         url = uri("http://localhost:8989/caching/maven/releases")
     }
+     */
     // see http://jruby-gradle.org/base/ (but not working)
     // rubygems("https://rubygems.org")
 }
@@ -345,6 +347,10 @@ dependencies {
 
     ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
     api("net.sf.xslthl", "xslthl", "2.1.3")
+
+    // needed to find xmlcalabash extension steps _in our code_
+    api("org.atteo.classindex", "classindex", "3.4")
+    annotationProcessor("org.atteo.classindex", "classindex", "3.4")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")

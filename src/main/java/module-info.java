@@ -59,6 +59,8 @@ module com.github.aanno.dbtoolchain {
 
     exports com.github.aanno.dbtoolchain.cli;
     exports com.xmlcalabash.util.print;
+    exports com.xmlcalabash.extensions.math_to_svg;
+    exports com.xmlcalabash.extensions.xslthl;
 
     // temporary (for original version of org.docbook.Main)
     requires commons.cli;
