@@ -90,7 +90,8 @@ public class DbXslt20Ng implements IPipeline {
             output = result.getPath().toString();
             // ???
             // xpl = "db2xhtml.xpl";
-            xpl = "db2html.xpl";
+            // xpl = "db2html.xpl";
+            xpl = "/mnt/home/tpasch/scm/aanno/db-toolchain/src/main/resources/docbook-xsl20/db2html-db-toolchain.xpl";
         } else if ("fo".equals(variant)) {
             result = Stage.from(command, EFileType.FO);
 
@@ -101,7 +102,10 @@ public class DbXslt20Ng implements IPipeline {
             throw new IllegalStateException("unknown variant: " + variant);
         }
         XSLT20 xslt20 = new XSLT20();
-        xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
+        if (!Path.of(xpl).isAbsolute()) {
+            // resolve relative stuff on db xslt20
+            xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
+        }
         LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl);
         xslt20.setOption("format", format);
         xslt20.setOption("output", output);
