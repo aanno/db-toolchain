@@ -229,6 +229,11 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.restlet.jee")
     exclude("commons-fileupload", "commons-fileupload")
     exclude("com.atlassian.commonmark", "commonmark")
+
+    // exclude this for new jeuclid fork
+    exclude("net.sourceforge.jeuclid", "jeuclid-core")
+    // TODO tp: Is this needed?
+    exclude("net.sourceforge.jeuclid", "jeuclid-fop")
 }
 val ueberjars = configurations.create("ueberjars")
 
@@ -341,9 +346,9 @@ dependencies {
     ueberjars("xerces", "xercesImpl", xercesVersion)
 
     ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
-    api("net.sourceforge.jeuclid:jeuclid-core:3.1.9")
+    api("de.rototor.jeuclid:jeuclid-core:3.1.14")
     // TODO tp: Is this needed?
-    api("net.sourceforge.jeuclid:jeuclid-fop:3.1.9")
+    api("de.rototor.jeuclid:jeuclid-fop:3.1.14")
 
     ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
     api("net.sf.xslthl", "xslthl", "2.1.3")
