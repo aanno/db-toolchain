@@ -2,20 +2,27 @@
 
 Asciidoc and DocBook to PDF (or FO, HTML, ...) conversion made easy! 
 
-This project has similiar aims as [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub):
-Make using Asciidoc(tor) (or DocBook) convertion tools as easy as it can be.
+This project has similiar aims as the following tools:
+
+* [asciidoctor](https://asciidoctor.org/)
+* [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub)
+* [daps](https://opensuse.github.io/daps/) (on [github](https://github.com/openSUSE/daps))
+
+Make using Asciidoc(tor) and DocBook convertion tools as easy as it can be.
 
 In detail:
 
 * Provide several processing pipelines for conversion.
 * Provide the most up-to-date pipelines possible.
-* Provide an unified CLI access to the different pipelines.
-* Only depend on an installed Java JDK 11 (and some standard Linux tools).
+* Provide an _unified CLI access_ to the different pipelines.
+* Only depend on an installed _Java JDK 11_ (and some standard Linux tools).
+* Support for _MathML_ (work-in-progress, depending on the pipeline).
+* Support for (code) _syntax highlighting_ (work-in-progress, depending on the pipeline).
 
 ## State
 
-This project is in its early stages, but the most basic things work now: Using pipelines to convert Asciidoc(tor)
-or DocBook to PDF.
+This project is a work-in-progress, but most things work now: Using pipelines to convert Asciidoc(tor)
+or DocBook to PDF, HTML and/or FO. 
 
 ## Pipelines
 
@@ -32,6 +39,13 @@ So far the following pipelines are implemented:
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
   [asciidoctor](https://github.com/asciidoctor/asciidoctor)
+* **xsl10-fo**: <br/>
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and Apache FOP (2.4)
+* **xsl10-css**: <br/>
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and 
+  [Prince 13](https://www.princexml.com/)
 * **fo**: <br/>
   PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4)
 
@@ -52,6 +66,49 @@ So far the following pipelines are implemented:
 5. `./gradlew runApp1` to run an example convertion.
 6. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
    independent of the build process.
+   
+## Usage
+
+The most important (sub-)command is `transform` and the help gives you:
+
+```bash
+> ./bin/db-toolchain transform -h
+Usage: <main class> transform [-ch] [--princeapi] [-d=<outDir>] -i=<in>
+                              [-if=<inFormat>] [-o=<out>] [-of=<outFormat>]
+                              [-p=<pipeline>] [-w=<workDir>]
+transform input file to output file
+  -c, --check, --validate
+  -d, --cwd, --outdir=<outDir>
+                            output directory (and current working directory)
+  -h, --help
+  -i, --in=<in>
+      -if, --informat=<inFormat>
+
+  -o, --out=<out>
+      -of, --outformat=<outFormat>
+
+  -p, --pipeline=<pipeline>
+      --princeapi           use the prince API for cssprint (nop for fo
+                              pipeline)
+  -w, -b, --workdir, --basedir=<workDir>
+                            basedir of relative paths
+```
+
+Hence, a conversion from `*.adoc` to `*.pdf` using the `xsl-fo` pipeline (see above) would be:
+
+```bash
+> ./bin/db-toolchain transform --outdir . -p xsl-fo -if AD -of PDF \
+  -w submodules/asciidoctorj/asciidoctorj-documentation \
+  -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc
+```
+
+Currently supported formats are:
+
+* AD asciidoctor text file format (extension: `*.adoc`)
+* DB docbook (5.1) XML format (extension `*.db.xml`)
+* FO XSL formatting objects XML format (extension `*.fo.xml`)
+* XHTML XHTML/HTML5 markup (extensions: `*.xhtml` and `*.html`)
+* PDF document format (extension: `*.pdf`)
 
 ## Docbook
 
@@ -144,6 +201,9 @@ So far the following pipelines are implemented:
   + [Calabash: XProc Implementation](http://xmlcalabash.com/)
   + [Calabash Docs](https://github.com/ndw/xmlcalabash1-docs)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
+  + [extension steps](https://xmlcalabash.com/docs/reference/extsteps.html)
+    - [implementation specific extension steps](https://xmlcalabash.com/docs/reference/cx-steps.html)
+    - [EXProc specific extension steps](https://xmlcalabash.com/docs/reference/pxp-steps.html)
     - [JEuclid extension step](https://xmlcalabash.com/docs/reference/cx-mathml-to-svg.html)
     - [XSLT Highlighter extension step](https://github.com/ndw/xmlcalabash1-xslthl)
     - [Pygments extension step](https://github.com/ndw/xmlcalabash1-pygments)
@@ -323,9 +383,11 @@ So far the following pipelines are implemented:
   + [pretextbook github](https://github.com/rbeezer/mathbook)
 * [markua](https://leanpub.com/markua/read)
   + [spec](http://markua.com/)
+* [mallard](http://projectmallard.org/) markup
   
-### Markdown to Book (mostly pandoc)
+### Markdown to Book (e.g. pandoc)
 
+* [Overview](https://www.linux-magazin.de/ausgaben/2015/12/bitparade/5/)
 * [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
 * [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
 * [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
