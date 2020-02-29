@@ -159,6 +159,7 @@ Currently supported formats are:
 * [publican (old)](https://jfearn.fedorapeople.org/en-US/Publican/4.3/html/Users_Guide/index.html)
   + [article](http://dtsden.eu/article/XMLDocBookPublishingUsingPublican)
   + [asciidoc for publican](https://github.com/asciidoctor/asciidoctor/wiki/Convert-Asciidoc-to-Docbook-for-use-with-Publican)
+* [doctribute](https://github.com/doctribute) additional stylesheets for xslt10 convertion
 
 ##### asciidoctor
 
@@ -196,9 +197,14 @@ Currently supported formats are:
 
 ##### Technology used with DB XSLT 2.0
 
+* XSLT
+  + [xslt 2.0 features](https://www.oio.de/public/xml/xslt-2-features-update.htm) (german)
+  + [xslt 3.0 features](https://www.data2type.de/xml-xslt-xslfo/xslt/xslt3/)
 * [XProc](https://de.wikipedia.org/wiki/XProc)
   + [XProc Spec](https://www.w3.org/TR/xproc/)
+  + [Introduction to XProc 3.0](https://www.xml.com/articles/2019/11/05/introduction-xproc-30/)
   + [Calabash: XProc Implementation](http://xmlcalabash.com/)
+  + [MorganaXProc-III](https://www.xml-project.com/morganaxproc-iii/) (work-in-progress)
   + [Calabash Docs](https://github.com/ndw/xmlcalabash1-docs)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
   + [extension steps](https://xmlcalabash.com/docs/reference/extsteps.html)
@@ -237,8 +243,11 @@ Currently supported formats are:
 
 #### Parser
 
+* [overview](https://tomassetti.me/parsing-html/)
 * [jsoup](https://jsoup.org/) (java)
 * [htmlcleaner](http://htmlcleaner.sourceforge.net/)
+* [htmlparser](https://github.com/peteroupc/HtmlParser)
+* [jfiveparse](https://github.com/digitalfondue/jfiveparse)
 
 ### Validating DB
 
@@ -384,6 +393,15 @@ Currently supported formats are:
 * [markua](https://leanpub.com/markua/read)
   + [spec](http://markua.com/)
 * [mallard](http://projectmallard.org/) markup
+* [speedata publisher](https://www.speedata.de/de/entwickler/handbuch/)
+  + [github](https://github.com/speedata/publisher)
+
+### Tex based
+
+* Modern font engine
+  + [luaotfload](https://github.com/latex3/luaotfload)
+    - [documentation](http://ctan.math.illinois.edu/macros/luatex/generic/luaotfload/luaotfload-latex.pdf)
+  + [luatex/luajittex](https://github.com/speedata/LuaTeX)
   
 ### Markdown to Book (e.g. pandoc)
 
@@ -393,7 +411,8 @@ Currently supported formats are:
 * [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
 * [gaiden](http://kobo.github.io/gaiden/getting-started.html)
   + [gaiden github](https://github.com/kobo/gaiden)
-  
+* [toolchain manual publisher](https://blog.speedata.de/2018/03/27/handbuchschema/)
+  (german)
 ## IPC
 
 ### Java to Java
