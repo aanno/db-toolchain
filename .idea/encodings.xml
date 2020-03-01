@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/submodules/batik" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-core" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-core/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-events" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-events/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-events/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-sandbox" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-sandbox/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-sandbox/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-transcoder" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-transcoder-allinone" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-util" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/submodules/fop/fop-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-ant-task/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-ant-task/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-maven-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-maven-plugin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron/src/main/resources" charset="UTF-8" />
   </component>
 </project>

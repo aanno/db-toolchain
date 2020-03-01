@@ -159,6 +159,12 @@
       <module name="org.docbook.xslt20-java.test" target="1.8" />
       <module name="org.docbook.xslt20-stylesheets.main" target="11" />
       <module name="org.docbook.xslt20-stylesheets.test" target="11" />
+      <module name="ph-schematron" target="1.8" />
+      <module name="ph-schematron-ant-task" target="1.8" />
+      <module name="ph-schematron-maven-plugin" target="1.8" />
+      <module name="ph-schematron-parent-pom" target="1.8" />
+      <module name="ph-schematron-testfiles" target="1.8" />
+      <module name="ph-schematron-validator" target="1.8" />
       <module name="submodules.jing-trang.jingtrang.main" target="11" />
       <module name="submodules.jing-trang.jingtrang.test" target="11" />
       <module name="submodules.jing-trang.main" target="11" />

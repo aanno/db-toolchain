@@ -5,6 +5,9 @@
     <groovy codeStyle="LEGACY" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator" />
     <file type="web" url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/../github/fop/fop-servlet" />
   </component>
@@ -17,6 +20,7 @@
         <option value="$PROJECT_DIR$/submodules/batik/pom.xml" />
         <option value="$PROJECT_DIR$/submodules/batik/batik-test-util/pom.xml" />
         <option value="$PROJECT_DIR$/submodules/fop/pom.xml" />
+        <option value="$PROJECT_DIR$/submodules/ph-schematron/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

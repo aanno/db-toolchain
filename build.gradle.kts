@@ -45,6 +45,7 @@ repositories {
                 "lib",
                 // "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
+                "submodules/ph-schematron/ph-schematron/target",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
@@ -329,10 +330,13 @@ dependencies {
     api("xml-apis", "xml-apis-ext", "1.3.04")
     api("xerces", "xercesImpl", xercesVersion)
 
-    api("com.helger", "ph-schematron", "5.4.0") {
+    api("com.helger", "ph-schematron", "5.4.1-SNAPSHOT") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
+        exclude("com.google.code.findbugs", "jsr305")
+    }
+    api("com.helger", "ph-commons", "9.3.9") {
         exclude("com.google.code.findbugs", "jsr305")
     }
     // api("xml-resolver", "xml-resolver", "1.2")

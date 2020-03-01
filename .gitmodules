@@ -31,3 +31,6 @@
 	path = submodules/xerces2-j
 	url = git@github.com:aanno/xerces2-j.git
 	branch = feature/xerces-java11
+[submodule "submodules/ph-schematron"]
+	path = submodules/ph-schematron
+	url = git@github.com:phax/ph-schematron.git

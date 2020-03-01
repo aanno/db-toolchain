@@ -1,8 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: relaxngDatatype:relaxngDatatype:20020414">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/relaxngDatatype/relaxngDatatype/20020414/relaxngDatatype-20020414.jar!/" />
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/relaxngDatatype/relaxngDatatype/20020414/de7952cecd05b65e0e4370cc93fc03035175eef5/relaxngDatatype-20020414.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/relaxngDatatype/relaxngDatatype/20020414/relaxngDatatype-20020414.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
