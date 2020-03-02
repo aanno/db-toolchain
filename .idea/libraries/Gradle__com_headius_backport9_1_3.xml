@@ -2,12 +2,15 @@
   <library name="Gradle: com.headius:backport9:1.3">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/e2ec48f07930edf14593a07d47abe7266bc66a73/backport9-1.3.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/e2ec48f07930edf14593a07d47abe7266bc66a73/backport9-1.3.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/17b32c49268a11e6228fb61618d54ac6f09ed8e3/backport9-1.3-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/17b32c49268a11e6228fb61618d54ac6f09ed8e3/backport9-1.3-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/5ad3554407e9c12fd2b410982e8eec09cb5f1566/backport9-1.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.headius/backport9/1.3/5ad3554407e9c12fd2b410982e8eec09cb5f1566/backport9-1.3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

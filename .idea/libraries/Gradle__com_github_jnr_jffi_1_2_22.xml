@@ -2,12 +2,15 @@
   <library name="Gradle: com.github.jnr:jffi:1.2.22">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/cfc9113a94a1945b2dde426fdf77dd2730fc3615/jffi-1.2.22.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/cfc9113a94a1945b2dde426fdf77dd2730fc3615/jffi-1.2.22.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/40567f33f4e23838dd8f1d00490aa8c0848bbaf4/jffi-1.2.22-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/40567f33f4e23838dd8f1d00490aa8c0848bbaf4/jffi-1.2.22-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/21f4a42969ab527df4e44a87de6d9dd923d9cea2/jffi-1.2.22-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jnr/jffi/1.2.22/21f4a42969ab527df4e44a87de6d9dd923d9cea2/jffi-1.2.22-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

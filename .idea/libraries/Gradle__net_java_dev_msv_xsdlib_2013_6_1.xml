@@ -2,12 +2,15 @@
   <library name="Gradle: net.java.dev.msv:xsdlib:2013.6.1">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/280f7c45aaec5102cc756d1afdb416b7775f2ef4/xsdlib-2013.6.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/280f7c45aaec5102cc756d1afdb416b7775f2ef4/xsdlib-2013.6.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/56c874766dca5532e59467d0c88b6b72f87a7074/xsdlib-2013.6.1-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/56c874766dca5532e59467d0c88b6b72f87a7074/xsdlib-2013.6.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/fea8f00c642593075155570bd3e2c72bcc2262c1/xsdlib-2013.6.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/fea8f00c642593075155570bd3e2c72bcc2262c1/xsdlib-2013.6.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

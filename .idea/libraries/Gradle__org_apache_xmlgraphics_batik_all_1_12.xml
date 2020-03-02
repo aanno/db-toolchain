@@ -2,6 +2,7 @@
   <library name="Gradle: org.apache.xmlgraphics:batik-all:1.12">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-all/1.12/4df3c69c7851a45dfe46c124b495051301418431/batik-all-1.12.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-all/1.12/4df3c69c7851a45dfe46c124b495051301418431/batik-all-1.12.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

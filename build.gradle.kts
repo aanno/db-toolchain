@@ -339,6 +339,9 @@ dependencies {
     api("com.helger", "ph-commons", "9.3.9") {
         exclude("com.google.code.findbugs", "jsr305")
     }
+    api("com.helger", "ph-xml", "9.3.9") {
+        exclude("com.google.code.findbugs", "jsr305")
+    }
     // api("xml-resolver", "xml-resolver", "1.2")
 
     api("info.picocli", "picocli", "4.2.0")
