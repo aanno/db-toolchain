@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="App (xslt20: db -&gt; pdf)" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
-    <module name="aanno.db-toolchain.main" />
+    <module name="aanno2.db-toolchain.main" />
     <option name="PROGRAM_PARAMETERS" value="transform -w . -p xsl-fo -if DB -of PDF -i ./integrator-guide.db.xml" />
     <option name="VM_PARAMETERS" value="-cp jnr-enxio-0.24.jar --illegal-access=warn" />
     <extension name="coverage">

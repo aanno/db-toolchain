@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="fop.jar: Main.main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.apache.fop.cli.Main" />
-    <module name="aanno.db-toolchain.main" />
+    <module name="aanno2.db-toolchain.main" />
     <option name="PROGRAM_PARAMETERS" value="-h" />
     <extension name="coverage">
       <pattern>

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="org.docbook.Main" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="org.docbook.Main" />
-    <module name="xslt20-stylesheets.main" />
+    <module name="aanno2.db-toolchain.main" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="org.docbook.*" />

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="App (asciidoctor -&gt; pdf)" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="com.github.aanno.dbtoolchain.App" />
-    <module name="aanno.db-toolchain.main" />
+    <module name="aanno2.db-toolchain.main" />
     <option name="PROGRAM_PARAMETERS" value="transform -w . -p ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc" />
     <option name="VM_PARAMETERS" value="--add-opens java.base/sun.nio.ch=org.jruby.core --illegal-access=warn" />
     <extension name="coverage">
