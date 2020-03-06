@@ -35,8 +35,8 @@ public class DbValidation {
         // https will fail...
         // Schematron will fail as ns http://purl.oclc.org/dsdl/schematron is expected
         // (This Schematron is too old)
-        // Path dbSchematronPath = traxSingleton.pathFromUri("http://docbook.org/xml/5.0/sch/docbook.sch");
-        Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.1CR4/sch/docbook.sch");
+        Path dbSchematronPath = traxSingleton.pathFromUri("http://docbook.org/xml/5.0/sch/docbook.sch");
+        // Path dbSchematronPath = traxSingleton.pathFromUri("http://www.oasis-open.org/docbook/xml/5.1CR4/sch/docbook.sch");
         // Path dbSchematronPath = null;
 
         Schema dbRelax = xmlSingleton.getRelaxNgSchema(dbRelaxPath);

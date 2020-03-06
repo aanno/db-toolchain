@@ -202,7 +202,7 @@ public class TraxSingleton {
         if (!result.startsWith("file:/")) {
             throw new IllegalStateException(result);
         }
-        result = result.substring(6);
+        result = result.substring(5);
         return Paths.get(result);
     }
 
