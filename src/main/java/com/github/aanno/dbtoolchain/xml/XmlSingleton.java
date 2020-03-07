@@ -1,12 +1,15 @@
 package com.github.aanno.dbtoolchain.xml;
 
+import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.schematron.ISchematronResource;
+import com.helger.schematron.config.*;
 import com.helger.schematron.pure.SchematronResourcePure;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import javax.xml.xpath.XPathFactoryConfigurationException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,6 +19,19 @@ public class XmlSingleton {
     private static final Path catalogPath = Paths.get("schema/5.1/schemas/catalog.xml");
 
     private static XmlSingleton INSTANCE = new XmlSingleton();
+
+    private static XPathConfig xPathConfig = null;
+
+    static {
+        try {
+            xPathConfig = new XPathConfigBuilder()
+                    // .setXPathFactoryClass(com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl.class)
+                    .setGlobalXPathFactory("com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl")
+                    .build();
+        } catch (XPathFactoryConfigurationException e) {
+            throw new ExceptionInInitializerError(e);
+        }
+    }
 
     private final TraxSingleton traxSingleton;
 
@@ -53,7 +69,9 @@ public class XmlSingleton {
     }
 
     public ISchematronResource getSchematronResource(Path path) {
-        ISchematronResource result = SchematronResourcePure.fromFile(path.toString());
+        // ISchematronResource result = SchematronResourcePure.fromFile(path.toString());
+        SchematronResourcePure result = new SchematronResourcePure(new FileSystemResource(path.toString()), true);
+        result.setXPathConfig(xPathConfig);
         if (!result.isValidSchematron()) {
             throw new IllegalArgumentException("Invalid Schematron!");
         }
