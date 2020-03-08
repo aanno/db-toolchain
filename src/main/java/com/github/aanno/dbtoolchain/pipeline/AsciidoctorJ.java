@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain.pipeline;
 import com.github.aanno.dbtoolchain.cli.EFileType;
 import com.github.aanno.dbtoolchain.cli.TransformCommand;
 import org.asciidoctor.Asciidoctor;
-import org.asciidoctor.api.Options;
-import org.asciidoctor.api.SafeMode;
+import org.asciidoctor.Options;
+import org.asciidoctor.SafeMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static org.asciidoctor.Asciidoctor.Factory.create;
-import static org.asciidoctor.api.OptionsBuilder.options;
+import static org.asciidoctor.OptionsBuilder.options;
 
 public class AsciidoctorJ implements IPipeline {
 

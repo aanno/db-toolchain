@@ -260,10 +260,10 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "2.3.0-SNAPSHOT") {
+    api("org.asciidoctor", "asciidoctorj", "2.2.0") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "2.3.0-SNAPSHOT")
+    api("org.asciidoctor", "asciidoctorj-api", "2.2.0")
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
@@ -539,7 +539,7 @@ tasks {
         }
 
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
-        args("transform -w . --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
+        args("transform -d . -w submodules/asciidoctorj/asciidoctorj-documentation --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
                 .split(" ")
         )
         // classpath = sourceSets["main"].runtimeClasspath

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.jruby:dirgra:0.3">
     <CLASSES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby/dirgra/0.3/fcdf20c966ff7bd3299c3d7fb3e7bfb14e38d4ee/dirgra-0.3.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jruby/dirgra/0.3/dirgra-0.3.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.jruby/dirgra/0.3/f68932056668d78df32f9debcd3476840d683f4e/dirgra-0.3-javadoc.jar!/" />

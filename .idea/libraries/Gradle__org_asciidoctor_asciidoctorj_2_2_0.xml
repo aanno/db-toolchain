@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.asciidoctor:asciidoctorj:2.2.0">
+    <CLASSES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj/2.2.0/1ac831d40e76904cbe80c2234841f35650ff260/asciidoctorj-2.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj/2.2.0/994beaca037309e6c0e85a5f06e1bddd794917a1/asciidoctorj-2.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.asciidoctor/asciidoctorj/2.2.0/fe3dfdd244870b41a0eda9550f4dc888fa102801/asciidoctorj-2.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
