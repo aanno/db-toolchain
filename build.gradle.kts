@@ -81,7 +81,7 @@ idea {
 }
 
 val xercesVersion = "2.12.0"
-val debugModulePath = false
+val debugModulePath = true
 val moduleJvmArgs = listOf(
         "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
 )
@@ -530,7 +530,7 @@ tasks {
     task("runApp1", ModularJavaExec::class) {
         doFirst {
             jvmArgs(
-                    "--show-module-resolution --add-opens java.base/sun.nio.ch=org.jruby.core"
+                    "--show-module-resolution --add-opens java.base/sun.nio.ch=org.jruby.core --add-opens java.base/sun.nio.ch=org.jruby.core"
                             .split(" ")
             )
             if (debugModulePath) {

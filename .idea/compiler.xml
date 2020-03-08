@@ -23,17 +23,6 @@
         </processorPath>
         <module name="aanno.db-toolchain.main" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="ph-schematron-maven-plugin" />
-        <module name="ph-schematron-testfiles" />
-        <module name="ph-schematron-ant-task" />
-        <module name="asciidoctor-pdf" />
-        <module name="ph-schematron-validator" />
-        <module name="ph-schematron" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aanno.db-toolchain.main" target="11" />
