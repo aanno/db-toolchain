@@ -529,15 +529,18 @@ tasks {
     // https://stackoverflow.com/questions/11696521/how-to-pass-arguments-from-command-line-to-gradle
     task("runApp1", ModularJavaExec::class) {
         doFirst {
-            jvmArgs(
-                    "--show-module-resolution --add-opens java.base/sun.nio.ch=org.jruby.core --add-opens java.base/sun.nio.ch=org.jruby.core"
-                            .split(" ")
-            )
+            // TODO tp: all this jvmArgs are ignored - but why?
+            // val oldArgs: List<String> = (if (jvmArgs != null) jvmArgs else emptyList()) as List<String>
+            jvmArgs("""--illegal-access=warn
+--show-module-resolution 
+--add-opens java.base/sun.nio.ch=org.jruby.core
+--add-opens java.base/sun.nio.ch=backport9
+""".split(kotlin.text.Regex("[ \n\t]+"))
+                    )
             if (debugModulePath) {
                 println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
             }
         }
-
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
         args("transform -d . -w submodules/asciidoctorj/asciidoctorj-documentation --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
                 .split(" ")
