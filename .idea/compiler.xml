@@ -46,20 +46,22 @@
       <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-api.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-api.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-distribution.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-distribution.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-documentation.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-documentation.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-test-support.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-test-support.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj.main" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-api.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-api.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-distribution.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-distribution.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-documentation.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-documentation.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-test-support.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-test-support.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj.test" target="11" />
+      <module name="asciidoctorj.main" target="11" />
+      <module name="asciidoctorj.test" target="11" />
       <module name="batik" target="1.5" />
       <module name="batik-all" target="1.5" />
       <module name="batik-anim" target="1.6" />

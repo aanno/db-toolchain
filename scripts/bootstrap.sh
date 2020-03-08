@@ -23,6 +23,7 @@ pushd "$ROOT"
         popd
 
         pushd xslt20-stylesheets
+            git remote add upstream https://github.com/docbook/xslt20-stylesheets.git
             touch settings.gradle.kts
             ../../gradlew -x test clean build
         popd
