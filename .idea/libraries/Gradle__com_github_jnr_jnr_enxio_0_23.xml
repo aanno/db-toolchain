@@ -2,10 +2,12 @@
   <library name="Gradle: com.github.jnr:jnr-enxio:0.23">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.23/640d589a76121acb847b5b60806b9d2dd8fc21a9/jnr-enxio-0.23.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.23/640d589a76121acb847b5b60806b9d2dd8fc21a9/jnr-enxio-0.23.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.23/5d4f3ba76e3ccd01139420445f1cc25495087e8e/jnr-enxio-0.23-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.jnr/jnr-enxio/0.23/5d4f3ba76e3ccd01139420445f1cc25495087e8e/jnr-enxio-0.23-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

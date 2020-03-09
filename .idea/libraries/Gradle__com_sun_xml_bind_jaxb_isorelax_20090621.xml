@@ -1,13 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.sun.xml.bind.jaxb:isorelax:20090621">
     <CLASSES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/c2fb438e3b3174fd606750a9c5547346efd9eabf/isorelax-20090621.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/c2fb438e3b3174fd606750a9c5547346efd9eabf/isorelax-20090621.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/d27b58b6f879e0aaea73f27908db3a2f3c8a7f4d/isorelax-20090621-javadoc.jar!/" />
-    </JAVADOC>
+    <JAVADOC />
     <SOURCES>
-      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/202fd36ba720bd28c2bcc02ffa79cec4a0a81b2a/isorelax-20090621-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/202fd36ba720bd28c2bcc02ffa79cec4a0a81b2a/isorelax-20090621-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

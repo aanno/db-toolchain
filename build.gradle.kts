@@ -331,7 +331,7 @@ dependencies {
     api("xml-apis", "xml-apis-ext", "1.3.04")
     api("xerces", "xercesImpl", xercesVersion)
 
-    api("com.helger", "ph-schematron", "5.4.1-SNAPSHOT") {
+    api("com.helger", "ph-schematron", "5.5.1-SNAPSHOT") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")

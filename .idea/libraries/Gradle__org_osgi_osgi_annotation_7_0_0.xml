@@ -2,10 +2,12 @@
   <library name="Gradle: org.osgi:osgi.annotation:7.0.0">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.osgi/osgi.annotation/7.0.0/c8c21fdf695aa93d8df0547c15fb6b52f3395787/osgi.annotation-7.0.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osgi/osgi.annotation/7.0.0/c8c21fdf695aa93d8df0547c15fb6b52f3395787/osgi.annotation-7.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.osgi/osgi.annotation/7.0.0/e7af3219af3c96433c935bc971d11f992760c137/osgi.annotation-7.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.osgi/osgi.annotation/7.0.0/e7af3219af3c96433c935bc971d11f992760c137/osgi.annotation-7.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

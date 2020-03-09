@@ -1,9 +1,10 @@
 package com.github.aanno.dbtoolchain.xml;
 
-import com.helger.commons.io.resource.FileSystemResource;
 import com.helger.schematron.ISchematronResource;
-import com.helger.schematron.config.*;
 import com.helger.schematron.pure.SchematronResourcePure;
+import com.helger.schematron.xpath.IXPathConfig;
+import com.helger.schematron.xpath.XPathConfigBuilder;
+import com.helger.commons.io.resource.FileSystemResource;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -20,7 +21,7 @@ public class XmlSingleton {
 
     private static XmlSingleton INSTANCE = new XmlSingleton();
 
-    private static XPathConfig xPathConfig = null;
+    private static IXPathConfig xPathConfig = null;
 
     static {
         try {

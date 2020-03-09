@@ -1,7 +1,7 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
     <DBN-PSQL>
-      <case-options enabled="true">
+      <case-options enabled="false">
         <option name="KEYWORD_CASE" value="lower" />
         <option name="FUNCTION_CASE" value="lower" />
         <option name="PARAMETER_CASE" value="lower" />
@@ -11,7 +11,7 @@
       <formatting-settings enabled="false" />
     </DBN-PSQL>
     <DBN-SQL>
-      <case-options enabled="true">
+      <case-options enabled="false">
         <option name="KEYWORD_CASE" value="lower" />
         <option name="FUNCTION_CASE" value="lower" />
         <option name="PARAMETER_CASE" value="lower" />
@@ -24,6 +24,10 @@
         <option name="ITERATION_ELEMENTS_WRAPPING" value="chop_down_if_not_single" />
       </formatting-settings>
     </DBN-SQL>
+    <JavaCodeStyleSettings>
+      <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="1000" />
+      <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="10000" />
+    </JavaCodeStyleSettings>
     <DBN-PSQL>
       <case-options enabled="false">
         <option name="KEYWORD_CASE" value="lower" />
@@ -48,5 +52,18 @@
         <option name="ITERATION_ELEMENTS_WRAPPING" value="chop_down_if_not_single" />
       </formatting-settings>
     </DBN-SQL>
+    <codeStyleSettings language="JSON">
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="XML">
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
   </code_scheme>
 </component>
