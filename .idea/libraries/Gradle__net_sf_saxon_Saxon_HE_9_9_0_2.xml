@@ -2,12 +2,10 @@
   <library name="Gradle: net.sf.saxon:Saxon-HE:9.9.0-2">
     <CLASSES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sf.saxon/Saxon-HE/9.9.0-2/c3437344acc4d2f1b5d1a638166e6ce52b300595/Saxon-HE-9.9.0-2.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.saxon/Saxon-HE/9.9.0-2/c3437344acc4d2f1b5d1a638166e6ce52b300595/Saxon-HE-9.9.0-2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sf.saxon/Saxon-HE/9.9.0-2/294ea53dfb38f001372deee809c375e8736f16f4/Saxon-HE-9.9.0-2-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.saxon/Saxon-HE/9.9.0-2/294ea53dfb38f001372deee809c375e8736f16f4/Saxon-HE-9.9.0-2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

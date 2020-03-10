@@ -16,13 +16,6 @@
       <entry name="!*.model" />
     </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.4/3d619a880a382b8e288a507ce96cfd4c70883d9/classindex-3.4.jar" />
-        </processorPath>
-        <module name="github.db-toolchain.main" />
-      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -43,34 +36,36 @@
       <module name="asciidoctor-fopub.fopub.main" target="11" />
       <module name="asciidoctor-fopub.fopub.test" target="11" />
       <module name="asciidoctor-pdf" target="1.5" />
-      <module name="asciidoctorj-parent.asciidoctorj-api.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-api.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-distribution.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-distribution.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-documentation.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-documentation.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-test-support.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-test-support.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj.main" target="1.8" />
-      <module name="asciidoctorj-parent.asciidoctorj.test" target="1.8" />
-      <module name="asciidoctorj.asciidoctorj-api.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-api.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj-distribution.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-distribution.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj-documentation.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-documentation.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj-test-support.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-test-support.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="11" />
-      <module name="asciidoctorj.asciidoctorj.main" target="11" />
-      <module name="asciidoctorj.asciidoctorj.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-api.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-api.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-distribution.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-distribution.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-documentation.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-documentation.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-test-support.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-test-support.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj.main" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj.test" target="11" />
+      <module name="asciidoctorj-parent.main" target="11" />
+      <module name="asciidoctorj-parent.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-api.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-api.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-distribution.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-distribution.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-documentation.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-documentation.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-test-support.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-test-support.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj.main" target="1.8" />
+      <module name="asciidoctorj.asciidoctorj.test" target="1.8" />
       <module name="asciidoctorj.main" target="11" />
       <module name="asciidoctorj.test" target="11" />
       <module name="batik" target="1.5" />
