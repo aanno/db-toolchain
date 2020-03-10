@@ -1,4 +1,4 @@
-val xercesVersion = "2.11.0"
+val xercesVersion = "2.12.0"
 
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-    ueberjars("com.github.jnr", "jnr-enxio", "0.19")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.21")
+    ueberjars("com.github.jnr", "jnr-enxio", "0.24")
+    ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
     ueberjars("xerces", "xercesImpl", xercesVersion)
 }
 
