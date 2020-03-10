@@ -1,11 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: net.sourceforge.jeuclid:jeuclid-fop:3.1.9">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.jeuclid/jeuclid-fop/3.1.9/aa0e63687d109bda35d434dd9e2daea299efa16e/jeuclid-fop-3.1.9.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sourceforge.jeuclid/jeuclid-fop/3.1.9/aa0e63687d109bda35d434dd9e2daea299efa16e/jeuclid-fop-3.1.9.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sourceforge.jeuclid/jeuclid-fop/3.1.9/3096de4fffd0ac5b9f118414255bddce9d6012f1/jeuclid-fop-3.1.9-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.jeuclid/jeuclid-fop/3.1.9/a7a097b39632c2c615551a2b70c55fac1864b760/jeuclid-fop-3.1.9-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sourceforge.jeuclid/jeuclid-fop/3.1.9/a7a097b39632c2c615551a2b70c55fac1864b760/jeuclid-fop-3.1.9-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

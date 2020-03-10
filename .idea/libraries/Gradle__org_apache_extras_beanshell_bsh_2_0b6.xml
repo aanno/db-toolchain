@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache-extras.beanshell:bsh:2.0b6">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

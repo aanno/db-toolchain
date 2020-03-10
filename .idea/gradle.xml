@@ -34,7 +34,7 @@
                   <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jingtrang">
+              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jing-trang">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
@@ -50,6 +50,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/splitjars" />
             <option value="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
@@ -62,7 +63,6 @@
             <option value="$PROJECT_DIR$/submodules/jing-trang" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

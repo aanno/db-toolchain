@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: net.sf.xslthl:xslthl:2.1.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.xslthl/xslthl/2.1.0/6ea5abc9a873307c871c3f7a7c9a449a4a7fe22b/xslthl-2.1.0.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sf.xslthl/xslthl/2.1.0/6ea5abc9a873307c871c3f7a7c9a449a4a7fe22b/xslthl-2.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.xslthl/xslthl/2.1.0/458f081638f0f13b196bf1fa4f2f49c81b814646/xslthl-2.1.0-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/net.sf.xslthl/xslthl/2.1.0/458f081638f0f13b196bf1fa4f2f49c81b814646/xslthl-2.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

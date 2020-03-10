@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.iml" filepath="$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.main.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.test.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/aanno.db-toolchain.splitjars.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/aanno.db-toolchain.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aanno2.db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/aanno2.db-toolchain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aanno2.db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/aanno2.db-toolchain.test.iml" />
@@ -35,8 +39,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-wildfly-integration-test/asciidoctorj.asciidoctorj-wildfly-integration-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-wildfly-integration-test/asciidoctorj.asciidoctorj-wildfly-integration-test.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-core/asciidoctorj.asciidoctorj.main.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-core/asciidoctorj.asciidoctorj.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj-core/asciidoctorj.asciidoctorj.test.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj-core/asciidoctorj.asciidoctorj.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj.main.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/asciidoctorj.test.iml" filepath="$PROJECT_DIR$/.idea/modules/asciidoctorj.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/db-toolchain.iml" filepath="$PROJECT_DIR$/db-toolchain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/db-toolchain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.main.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.test.iml" filepath="$PROJECT_DIR$/.idea/modules/splitjars/db-toolchain.splitjars.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/db-toolchain.submodules.jing-trang.jingtrang.test.iml" />
@@ -56,9 +65,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/github.db-toolchain.submodules.xslt20-resources.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/github.db-toolchain.submodules.xslt20-resources.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/github.db-toolchain.submodules.xslt20-resources.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/xslt20-resources/github.db-toolchain.submodules.xslt20-resources.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/github.db-toolchain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/github.db-toolchain.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.jingtrang.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jing-trang.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.test.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/jing-trang/jingtrang.test.iml" />

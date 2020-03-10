@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: de.rototor.jeuclid:jeuclid-core:3.1.14">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/523c6e958a17d03df6ccfde846f59ef136ea2a3d/jeuclid-core-3.1.14.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/523c6e958a17d03df6ccfde846f59ef136ea2a3d/jeuclid-core-3.1.14.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/19629f81f9d43e39cc0e839dc1599263eb5438d8/jeuclid-core-3.1.14-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/19629f81f9d43e39cc0e839dc1599263eb5438d8/jeuclid-core-3.1.14-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/5e3b0224d13c9e99de660d66225a1796b62d6f4d/jeuclid-core-3.1.14-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/de.rototor.jeuclid/jeuclid-core/3.1.14/5e3b0224d13c9e99de660d66225a1796b62d6f4d/jeuclid-core-3.1.14-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

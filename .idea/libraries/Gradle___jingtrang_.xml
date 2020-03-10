@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :jingtrang:">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/submodules/jing-trang/build/libs/jingtrang.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.xmlresolver:xmlresolver:1.0.5">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlresolver/xmlresolver/1.0.5/107abcef1ab1d80b368f128baa9fdd62f4512301/xmlresolver-1.0.5.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.xmlresolver/xmlresolver/1.0.5/107abcef1ab1d80b368f128baa9fdd62f4512301/xmlresolver-1.0.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlresolver/xmlresolver/1.0.5/314ec79fceb9d8e38269cd77577e7a12282fcbe7/xmlresolver-1.0.5-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.xmlresolver/xmlresolver/1.0.5/314ec79fceb9d8e38269cd77577e7a12282fcbe7/xmlresolver-1.0.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
