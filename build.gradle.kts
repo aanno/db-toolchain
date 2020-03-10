@@ -463,6 +463,11 @@ patchModules.config.forEach({ it -> println(it) })
 
 tasks {
 
+    wrapper {
+        distributionType = Wrapper.DistributionType.ALL
+        version = "6.2.2"
+    }
+
     withType<JavaCompile> {
 
         doFirst {
@@ -639,6 +644,6 @@ tasks.named("clean") {
 }
 
 tasks.named("compileJava") {
-    dependsOn(gradle.includedBuild("jingtrang").task(":build"))
+    dependsOn(gradle.includedBuild("jing-trang").task(":build"))
     dependsOn(":rezipStrippedXerces")
 }
