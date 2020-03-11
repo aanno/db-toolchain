@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.helger:ph-schematron:5.5.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.m2/repository/com/helger/ph-schematron/5.5.1-SNAPSHOT/ph-schematron-5.5.1-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/helger/ph-schematron/5.5.1-SNAPSHOT/ph-schematron-5.5.1-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.m2/repository/com/helger/ph-schematron/5.5.1-SNAPSHOT/ph-schematron-5.5.1-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/helger/ph-schematron/5.5.1-SNAPSHOT/ph-schematron-5.5.1-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
