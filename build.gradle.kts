@@ -40,9 +40,10 @@ repositories {
                 "lib/prince-java/lib",
                 "submodules/jing-trang/build/libs",
                 // "submodules/fop/fop/target",
-                "lib/ueberjars",
+                // "lib/ueberjars",
                 "build/libs",
-                "lib/stripped",
+                // "lib/stripped",
+                // TODO tp: docbook-xslt2-2.4.3.jar
                 "lib",
                 // "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
@@ -205,11 +206,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
     exclude("com.github.jnr", "jnr-ffi")
 
-    if (!name.equals("ueberjars")) {
-        exclude("com.github.jnr", "jnr-enxio")
-        exclude("com.github.jnr", "jnr-unixsocket")
-        exclude("xerces", "xercesImpl")
-    }
+    exclude("com.github.jnr", "jnr-enxio")
+    exclude("com.github.jnr", "jnr-unixsocket")
+    exclude("xerces", "xercesImpl")
 
     exclude("org.jruby", "jruby-complete")
 
@@ -251,7 +250,6 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     // TODO tp: Is this needed?
     exclude("net.sourceforge.jeuclid", "jeuclid-fop")
 }
-val ueberjars = configurations.create("ueberjars")
 
 dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
@@ -305,7 +303,8 @@ dependencies {
     api("com.github.jnr", "jnr-enxio", "0.24")
     api(project("splitjars", "jnrchannels"))
     // implementation("", "jnrchannels", "")
-    implementation("", "xmlcalabash-extensions", "")
+    // implementation("", "xmlcalabash-extensions", "")
+    api(project("splitjars", "calabashExt"))
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.3.1")
 
@@ -376,16 +375,12 @@ dependencies {
 
     implementation("org.slf4j", "slf4j-simple", "1.7.30")
 
-    ueberjars("com.github.jnr", "jnr-enxio", "0.24")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
-    ueberjars("xerces", "xercesImpl", xercesVersion)
-
-    ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
+    // ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
     api("de.rototor.jeuclid:jeuclid-core:3.1.14")
     // TODO tp: Is this needed?
     api("de.rototor.jeuclid:jeuclid-fop:3.1.14")
 
-    ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
+    // ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // needed to find xmlcalabash extension steps _in our code_
