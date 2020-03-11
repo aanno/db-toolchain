@@ -27,6 +27,7 @@ node_modules/
 *.pdf
 *.fo
 *.fo.xml
+splitjars/lib/
 
 # idea
 .idea/workspace.xml
@@ -34,4 +35,5 @@ node_modules/
 .idea/dbnavigator.xml
 .idea/markdown-doclet.xml
 .idea/uiDesigner.xml
+.idea/libraries/
 *.iml

@@ -81,6 +81,8 @@ idea {
     }
 }
 
+evaluationDependsOnChildren()
+
 val xercesVersion = "2.12.0"
 val debugModulePath = true
 val moduleJvmArgs = listOf(
@@ -137,6 +139,17 @@ configurations.all {
                 ))
                 because("""prefer "fop (all, stripped)" over "${requested.name}"""")
             }
+            if (requested.group.equals("com.github.jnr") && requested.name.startsWith("jffi-")) {
+                useTarget(mapOf(
+                        // "group" to requested.group,
+                        "group" to requested.group,
+                        "name" to "jffi",
+                        // "version" to requested.version
+                        "version" to "1.2.18",
+                        "classifier" to "native"
+                ))
+                because("""prefer jffi native over jffi""")
+            }
         }
     }
     resolutionStrategy.setForcedModules(
@@ -160,6 +173,7 @@ configurations.all {
     exclude("com.thaiopensource", "trang")
     exclude("", "trang")
     exclude("net.sf.saxon", "saxon")
+    exclude("com.github.jnr:jffi")
 
     // TODO
     exclude("relaxngDatatype", "relaxngDatatype")
@@ -243,11 +257,14 @@ dependencies {
     // taken from prince-java download at 'lib/prince-java/lib'
 
     api("", "prince", "")
+    api(project("splitjars", "xerces"))
 
     // TODO: This is hacky as it trashes the first build after clean
+    /*
     if (file("build/libs/xerces-stripped.jar").exists()) {
         api("", "xerces-stripped", "")
     }
+     */
 
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
@@ -275,9 +292,19 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "9.2.9.0")
+    api("com.github.jnr:jffi:1.2.18") {
+        artifact {
+            setName("jffi")
+            // setGroup("com.github.jnr")
+            // setExtension("jar")
+            setType("jar")
+            setClassifier("native")
+        }
+    }
     api("com.github.jnr", "jnr-unixsocket", "0.26")
     api("com.github.jnr", "jnr-enxio", "0.24")
-    implementation("", "jnrchannels", "")
+    api(project("splitjars", "jnrchannels"))
+    // implementation("", "jnrchannels", "")
     implementation("", "xmlcalabash-extensions", "")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.3.1")
@@ -581,6 +608,7 @@ tasks {
         // classpath = sourceSets["main"].runtimeClasspath
     }
 
+    /*
     val copyJarsForUeberJars = task("copyJarsForUeberJars", Copy::class) {
         val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
         println("ueberBaseFiles: " + ueberBaseFiles)
@@ -604,6 +632,7 @@ tasks {
         }
         dependsOn(unzipXerces)
     }
+     */
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
     val sourcesJar by registering(Jar::class) {
@@ -636,7 +665,7 @@ build {
  */
 // https://docs.gradle.org/current/userguide/kotlin_dsl.html#using_the_container_api
 tasks.named("build") {
-    dependsOn(":copyJarsForUeberJars")
+    dependsOn(":splitjars:copyJarsForUeberJars")
 }
 
 tasks.named("clean") {
@@ -645,5 +674,5 @@ tasks.named("clean") {
 
 tasks.named("compileJava") {
     dependsOn(gradle.includedBuild("jing-trang").task(":build"))
-    dependsOn(":rezipStrippedXerces")
+    dependsOn(":splitjars:build")
 }

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: com.helger:ph-xml:9.3.9">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/helger/ph-xml/9.3.9/ph-xml-9.3.9.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
