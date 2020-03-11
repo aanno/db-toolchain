@@ -59,6 +59,9 @@ repositories {
     // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    maven {
+        url = uri("https://plugins.gradle.org/m2/")
+    }
     // for use with https://github.com/jruby/rubygems-servlets
     // (as rubygems("https://rubygems.org") does NOT work)
     /*
@@ -96,6 +99,9 @@ class ShowSelection {
         println("id: " + selection.candidate + " meta: " + selection.metadata?.attributes)
     }
 }
+
+// HACK: force access to gradle plugins from within idea
+val gradlePlugins = configurations.create("gradlePlugins")
 
 configurations.all {
     // https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.ResolutionStrategy.html
@@ -252,6 +258,10 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 }
 
 dependencies {
+    gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.6.0")
+    gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.27.0")
+    gradlePlugins("com.github.jruby-gradle.base", "com.github.jruby-gradle.base.gradle.plugin", "2.0.0")
+
     // taken from prince-java download at 'lib/prince-java/lib'
 
     api("", "prince", "")
