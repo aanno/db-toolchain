@@ -2,5 +2,16 @@
 <project version="4">
   <component name="KotlinScriptingSettings">
     <option name="suppressDefinitionsCheck" value="true" />
+    <scriptDefinition className="org.jetbrains.kotlin.mainKts.MainKtsScript" definitionName="MainKtsScript">
+      <order>0</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="liveplugin.pluginrunner.kotlin.KotlinScriptTemplate" definitionName="KotlinScriptTemplate">
+      <order>1</order>
+      <isEnabled>false</isEnabled>
+    </scriptDefinition>
+    <scriptDefinition className="org.jetbrains.kotlin.idea.core.script.StandardIdeScriptDefinition" definitionName="Kotlin Script">
+      <order>2</order>
+    </scriptDefinition>
   </component>
 </project>

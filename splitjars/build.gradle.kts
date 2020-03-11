@@ -3,6 +3,7 @@ val xercesVersion = "2.12.0"
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
 val jnrchannels = configurations.create("jnrchannels")
+val calabashExt = configurations.create("calabashExt")
 
 plugins {
     `java`
@@ -21,6 +22,8 @@ dependencies {
     ueberjars("com.github.jnr", "jnr-enxio", "0.24")
     ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
     ueberjars("xerces", "xercesImpl", xercesVersion)
+    ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
+    ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
 }
 
 tasks {
@@ -64,6 +67,22 @@ tasks {
         dependsOn(unzipJnr)
     }
 
+    val unzipCalabashExt = task("unzipCalabashExt", Copy::class) {
+        from(zipTree(file("lib/tmp/xmlcalabash1-mathml-to-svg.jar"))) {
+        }
+        from(zipTree(file("lib/tmp/xmlcalabash1-xslthl.jar"))) {
+        }
+        into("./lib/tmp/xmlcalabash-extensions")
+        dependsOn(copyJarsForUeberJars)
+    }
+
+    val rezipStrippedCalabashExt = task("rezipStrippedCalabashExt", Jar::class) {
+        baseName = "xmlcalabash-extensions"
+        from(files("./lib/tmp/xmlcalabash-extensions")) {
+        }
+        dependsOn(unzipCalabashExt)
+    }
+
     val jar by register("jar1", Jar::class) {
         archiveName = "foo.jar"
         into("META-INF") {
@@ -76,19 +95,23 @@ tasks {
 artifacts {
     val xerces = tasks.named("rezipStrippedXerces")
     val jnrchannels = tasks.named("rezipStrippedJnr")
+    val calabashExt = tasks.named("rezipStrippedCalabashExt")
 
     add("archives", xerces)
     add("archives", jnrchannels)
+    add("archives", calabashExt)
 
     add("default", xerces)
     add("default", jnrchannels)
+    add("default", calabashExt)
 
     add("xerces", xerces)
     add("jnrchannels", jnrchannels)
+    add("calabashExt", calabashExt)
 }
 
 tasks.named("build") {
-    dependsOn("rezipStrippedXerces", "rezipStrippedJnr")
+    dependsOn("rezipStrippedXerces", "rezipStrippedJnr", "rezipStrippedCalabashExt")
 }
 
 defaultTasks("build")
