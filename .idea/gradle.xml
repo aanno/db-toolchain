@@ -63,7 +63,6 @@
             <option value="$PROJECT_DIR$/submodules/jing-trang" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

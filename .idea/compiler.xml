@@ -37,6 +37,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aanno.db-toolchain.main" target="11" />
+      <module name="aanno.db-toolchain.splitjars.main" target="11" />
+      <module name="aanno.db-toolchain.splitjars.test" target="11" />
       <module name="aanno.db-toolchain.test" target="11" />
       <module name="aanno2.db-toolchain.main" target="11" />
       <module name="aanno2.db-toolchain.test" target="11" />
@@ -63,6 +65,8 @@
       <module name="asciidoctorj.asciidoctorj-api.test" target="11" />
       <module name="asciidoctorj.asciidoctorj-arquillian-extension.main" target="11" />
       <module name="asciidoctorj.asciidoctorj-arquillian-extension.test" target="11" />
+      <module name="asciidoctorj.asciidoctorj-core.asciidoctorj.asciidoctorj.main" target="11" />
+      <module name="asciidoctorj.asciidoctorj-core.asciidoctorj.asciidoctorj.test" target="11" />
       <module name="asciidoctorj.asciidoctorj-distribution.main" target="11" />
       <module name="asciidoctorj.asciidoctorj-distribution.test" target="11" />
       <module name="asciidoctorj.asciidoctorj-documentation.main" target="11" />
@@ -114,6 +118,20 @@
       <module name="db-toolchain.main" target="11" />
       <module name="db-toolchain.splitjars.main" target="11" />
       <module name="db-toolchain.splitjars.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-api.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-api.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-arquillian-extension.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-arquillian-extension.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-distribution.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-distribution.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-documentation.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-documentation.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-test-support.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-test-support.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-wildfly-integration-test.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.main" target="11" />
+      <module name="db-toolchain.submodules.asciidoctorj.test" target="11" />
       <module name="db-toolchain.submodules.jing-trang.jingtrang.main" target="11" />
       <module name="db-toolchain.submodules.jing-trang.jingtrang.test" target="11" />
       <module name="db-toolchain.submodules.xslt20-resources.main" target="11" />

@@ -260,9 +260,11 @@ dependencies {
     api(project("splitjars", "xerces"))
 
     // TODO: This is hacky as it trashes the first build after clean
+    /*
     if (file("build/libs/xerces-stripped.jar").exists()) {
         api("", "xerces-stripped", "")
     }
+     */
 
     // compileClasspath("", "prince", "")
     // runtimeClasspath("", "prince", "")
@@ -302,7 +304,7 @@ dependencies {
     api("com.github.jnr", "jnr-unixsocket", "0.26")
     api("com.github.jnr", "jnr-enxio", "0.24")
     api(project("splitjars", "jnrchannels"))
-    implementation("", "jnrchannels", "")
+    // implementation("", "jnrchannels", "")
     implementation("", "xmlcalabash-extensions", "")
     // missing dep from jruby -> joni
     api("org.ow2.asm", "asm", "7.3.1")
@@ -606,6 +608,7 @@ tasks {
         // classpath = sourceSets["main"].runtimeClasspath
     }
 
+    /*
     val copyJarsForUeberJars = task("copyJarsForUeberJars", Copy::class) {
         val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
         println("ueberBaseFiles: " + ueberBaseFiles)
@@ -629,6 +632,7 @@ tasks {
         }
         dependsOn(unzipXerces)
     }
+     */
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
     val sourcesJar by registering(Jar::class) {

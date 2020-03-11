@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: org.restlet.jee:org.restlet:2.2.2">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/fa982f29ace5f076a7fd67d9208703339de4ba2d/org.restlet-2.2.2.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/fa982f29ace5f076a7fd67d9208703339de4ba2d/org.restlet-2.2.2.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/bf4eafa09ca25e17fb98362ab6a153b4ab97b32e/org.restlet-2.2.2-javadoc.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/bf4eafa09ca25e17fb98362ab6a153b4ab97b32e/org.restlet-2.2.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/43086dcb1cbab5419255d45289208736df3e9d98/org.restlet-2.2.2-sources.jar!/" />
+      <root url="jar:///home2/tpasch/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/43086dcb1cbab5419255d45289208736df3e9d98/org.restlet-2.2.2-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
