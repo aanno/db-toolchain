@@ -189,11 +189,22 @@ Currently supported formats are:
 * [To Context XSL](https://github.com/doctribute/docbook-to-context-xsl-stylesheets)
 * [Chunking](https://github.com/doctribute/docbook-xinclude-based-chunking-stylesheets)
 
-#### XSLT 2.0
+#### XSLT 1.0 Stylesheets
+
+* [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets)
+
+#### XSLT 2.0 Stylesheets
 
 * [XSLT 2.0](https://github.com/docbook/xslt20-stylesheets)
 * [Saxon 9.9 documentation](https://saxonica.com/documentation/index.html)
 * [XSLT 2.0 java implementations](https://stackoverflow.com/questions/529309/open-source-java-xslt-2-0-implementation)
+
+#### XSLT 3.0 Stylesheets
+
+* [xslTNG](https://xsltng.docbook.org/) XSLT 3.0 stylesheets for docbook (HTML only)
+  + https://github.com/docbook/xslTNG/
+* [xslTNG reference guide](https://xsltng.docbook.org/guide/index.html)
+
 
 ##### Technology used with DB XSLT 2.0
 
