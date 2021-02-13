@@ -65,7 +65,6 @@
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="delegatedBuild" value="true" />
@@ -85,7 +84,16 @@
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>
