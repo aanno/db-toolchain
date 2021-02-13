@@ -14,9 +14,10 @@ plugins {
     // Apply the java plugin to add support for Java
     // java
     `java-library`
-    id("org.javamodularity.moduleplugin") version "1.6.0"
-    id("com.github.ben-manes.versions") version "0.27.0"
-    id("com.github.jruby-gradle.base") version "2.0.0"
+    id("org.javamodularity.moduleplugin") version "1.7.0"
+    id("com.github.ben-manes.versions") version "0.36.0"
+    id("com.github.jruby-gradle.base") version "2.0.2"
+    id("se.patrikerdes.use-latest-versions") version "0.2.15"
 
     // Apply the application plugin to add support for building an application
     application
