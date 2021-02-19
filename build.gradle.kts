@@ -172,7 +172,10 @@ configurations.all {
             , "org.apache.httpcomponents:httpcore:4.4.14"
             , "org.apache.xmlgraphics:fop:2.6"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.6"
-            // , "xml-apis:xml-apis:1.4.01"
+            // TODO tp:
+            // testng changed modulename: testng -> org.testng in 7.3.x (tp)
+            , "org.testng:testng:6.14.3"
+        // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
@@ -255,6 +258,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.restlet.jee")
     exclude("commons-fileupload", "commons-fileupload")
     exclude("com.atlassian.commonmark", "commonmark")
+
+    // split with javax.annotations (tp)
+    exclude("com.google.code.findbugs", "jsr305")
 
     // exclude this for new jeuclid fork
     exclude("net.sourceforge.jeuclid", "jeuclid-core")
