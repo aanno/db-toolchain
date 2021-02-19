@@ -28,12 +28,12 @@ or DocBook to PDF, HTML and/or FO.
 
 So far the following pipelines are implemented:
 
-* **xsl-fo**: <br/>
+* **xsl20-fo**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and Apache FOP (2.4)
-* **xsl-css**: <br/>
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and Apache FOP (2.6)
+* **xsl20-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and 
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and 
   [Prince 14](https://www.princexml.com/)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
@@ -41,13 +41,13 @@ So far the following pipelines are implemented:
   [asciidoctor](https://github.com/asciidoctor/asciidoctor)
 * **xsl10-fo**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and Apache FOP (2.4)
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (snapshot 2020-06-03) and Apache FOP (2.6)
 * **xsl10-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and 
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (snapshot 2020-06-03) and 
   [Prince 14](https://www.princexml.com/)
 * **fo**: <br/>
-  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4)
+  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.6)
 
 ## Prerequisite
 

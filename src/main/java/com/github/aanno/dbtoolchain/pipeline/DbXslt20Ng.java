@@ -18,7 +18,7 @@ import java.util.StringJoiner;
 
 public class DbXslt20Ng implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("DbXslt20");
+    private static final Logger LOG = LoggerFactory.getLogger("DbXslt20Ng");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 

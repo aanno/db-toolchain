@@ -67,10 +67,10 @@ public class App {
             if (pipeline.contains("html")) {
                 p = new DbXslt10("html");
             } else {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("xsl10 is only for html");
             }
             result = p.process(transform);
-        } else if (pipeline.startsWith("xsl")) {
+        } else if (pipeline.startsWith("xsl20")) {
             DbXslt20Ng p;
             if (pipeline.contains("css")) {
                 p = new DbXslt20Ng("css");

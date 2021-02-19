@@ -28,7 +28,7 @@ import java.util.List;
 
 public class FoNg implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("Fo");
+    private static final Logger LOG = LoggerFactory.getLogger("FoNg");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
