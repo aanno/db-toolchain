@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.css.DOMImplementationCSS;
 import picocli.CommandLine;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -69,7 +71,8 @@ public class App {
             } else {
                 throw new IllegalArgumentException("xsl10 is only for html");
             }
-            result = p.process(transform);
+            // result = p.process(transform);
+            result = convertAdToDbIfNeeded(transform, p);
         } else if (pipeline.startsWith("xsl20")) {
             DbXslt20Ng p;
             if (pipeline.contains("css")) {
@@ -79,17 +82,7 @@ public class App {
             } else {
                 throw new IllegalArgumentException();
             }
-            LOG.warn("pipeline: " + p);
-            if (EFileType.AD == transform.inFormat) {
-                // If input is asciidoc(tor), first convert it to docbook ...
-                AsciidoctorJ aPipeline = new AsciidoctorJ();
-                result = aPipeline.process(transform, Stage.fromIn(transform),
-                        Stage.from(transform, EFileType.DB));
-                // ... and then proceed as normal
-                result = p.process(transform, result, Stage.fromOut(transform));
-            } else {
-                result = p.process(transform);
-            }
+            result = convertAdToDbIfNeeded(transform, p);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
             AsciidoctorJ ad = new AsciidoctorJ();
             LOG.warn("pipeline: " + ad);
@@ -102,6 +95,22 @@ public class App {
             throw new IllegalArgumentException("unknown pipeline: " + pipeline);
         }
         LOG.warn("result stage: " + result);
+    }
+
+    private IStage convertAdToDbIfNeeded(TransformCommand transform, IPipeline p) throws IOException, ReflectiveOperationException {
+        IStage result;
+        LOG.warn("pipeline: " + p);
+        if (EFileType.AD == transform.inFormat) {
+            // If input is asciidoc(tor), first convert it to docbook ...
+            AsciidoctorJ aPipeline = new AsciidoctorJ();
+            result = aPipeline.process(transform, Stage.fromIn(transform),
+                    Stage.from(transform, EFileType.DB));
+            // ... and then proceed as normal
+            result = p.process(transform, result, Stage.fromOut(transform));
+        } else {
+            result = p.process(transform);
+        }
+        return result;
     }
 
     private void list(ListCommand list) throws Exception {
