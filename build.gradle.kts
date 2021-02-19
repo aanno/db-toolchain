@@ -48,7 +48,8 @@ repositories {
                 "lib",
                 // "submodules/batik/batik-all/target",
                 "submodules/xslt20-stylesheets/build/libs",
-                "submodules/ph-schematron/ph-schematron/target",
+                "submodules/ph-schematron/ph-schematron-pure/target",
+                "submodules/ph-schematron/ph-schematron-api/target",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
@@ -136,7 +137,7 @@ configurations.all {
                         "group" to "org.apache.xmlgraphics",
                         "name" to "batik-all",
                         // "version" to requested.version
-                        "version" to "1.12"
+                        "version" to "1.14"
                 ))
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
             }
@@ -146,7 +147,7 @@ configurations.all {
                         "group" to "org.apache.xmlgraphics",
                         "name" to "fop",
                         // "version" to requested.version
-                        "version" to "2.4"
+                        "version" to "2.6"
                 ))
                 because("""prefer "fop (all, stripped)" over "${requested.name}"""")
             }
@@ -156,7 +157,7 @@ configurations.all {
                         "group" to requested.group,
                         "name" to "jffi",
                         // "version" to requested.version
-                        "version" to "1.2.18",
+                        "version" to "1.3.1",
                         "classifier" to "native"
                 ))
                 because("""prefer jffi native over jffi""")
@@ -164,13 +165,13 @@ configurations.all {
         }
     }
     resolutionStrategy.setForcedModules(
-            "net.sf.saxon:Saxon-HE:9.9.1-6"
+            "net.sf.saxon:Saxon-HE:10.3"
             , "com.nwalsh:nwalsh-annotations:1.0.1"
-            , "commons-codec:commons-codec:1.14"
-            , "org.apache.httpcomponents:httpclient:4.5.11"
-            , "org.apache.httpcomponents:httpcore:4.4.13"
-            , "org.apache.xmlgraphics:fop:2.4"
-            , "org.apache.xmlgraphics:xmlgraphics-commons:2.4"
+            , "commons-codec:commons-codec:1.15"
+            , "org.apache.httpcomponents:httpclient:4.5.13"
+            , "org.apache.httpcomponents:httpcore:4.4.14"
+            , "org.apache.xmlgraphics:fop:2.6"
+            , "org.apache.xmlgraphics:xmlgraphics-commons:2.6"
             // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
@@ -262,8 +263,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 }
 
 dependencies {
-    gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.6.0")
-    gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.27.0")
+    gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.7.0")
+    gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.36.0")
+    gradlePlugins("se.patrikerdes.use-latest-versions", "se.patrikerdes.use-latest-versions.gradle.plugin", "0.2.15")
     gradlePlugins("com.github.jruby-gradle.base", "com.github.jruby-gradle.base.gradle.plugin", "2.0.0")
 
     // taken from prince-java download at 'lib/prince-java/lib'
@@ -290,14 +292,14 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "2.3.0-SNAPSHOT") {
+    api("", "asciidoctorj", "2.4.4-SNAPSHOT") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "2.3.0-SNAPSHOT")
+    api("", "asciidoctorj-api", "2.4.4-SNAPSHOT")
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
-    api("org.asciidoctor", "asciidoctorj-pdf", "1.5.0") {
+    api("org.asciidoctor", "asciidoctorj-pdf", "1.5.4") {
         exclude("org.jruby", "jruby")
         exclude("org.jruby", "jruby-complete")
     }
@@ -313,14 +315,14 @@ dependencies {
             setClassifier("native")
         }
     }
-    api("com.github.jnr", "jnr-unixsocket", "0.26")
-    api("com.github.jnr", "jnr-enxio", "0.24")
+    api("com.github.jnr", "jnr-unixsocket", "0.38.5")
+    api("com.github.jnr", "jnr-enxio", "0.32.3")
     api(project("splitjars", "jnrchannels"))
     // implementation("", "jnrchannels", "")
     // implementation("", "xmlcalabash-extensions", "")
     api(project("splitjars", "calabashExt"))
     // missing dep from jruby -> joni
-    api("org.ow2.asm", "asm", "7.3.1")
+    api("org.ow2.asm", "asm", "9.1")
 
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
@@ -336,7 +338,7 @@ dependencies {
         exclude("com.thaiopensource", "jing")
     }
      */
-    api("", "docbook-xslt2", "2.4.3") {
+    api("", "docbook-xslt2", "2.6.0") {
         exclude("org.xmlresolver", "xmlresolver")
         exclude("org.apache.xmlgraphics", "fop")
         // exclude("org.apache.xmlgraphics", "batik-all")
@@ -345,7 +347,7 @@ dependencies {
         exclude("net.sf.saxon", "Saxon-HE")
         exclude("com.thaiopensource", "jing")
     }
-    api("com.xmlcalabash", "xmlcalabash", "1.1.30-99") {
+    api("com.xmlcalabash", "xmlcalabash", "1.2.5-100") {
         exclude("junit", "junit")
         exclude("nu.validator.htmlparser", "htmlparser")
     }
@@ -354,38 +356,44 @@ dependencies {
     api("commons-cli", "commons-cli", "1.4")
 
     // Needed for xmlcalabash (and original docbook-xslt20 Main.main) (tp)
-    api("org.xmlresolver", "xmlresolver", "1.0.6")
+    api("org.xmlresolver", "xmlresolver", "1.1.0")
 
-    api("net.sf.saxon", "Saxon-HE", "9.9.1-6")
-    api("org.apache.xmlgraphics", "fop-pdf-images", "2.4") {
+    api("net.sf.saxon", "Saxon-HE", "10.3")
+    api("org.apache.xmlgraphics", "fop-pdf-images", "2.6") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
-    api("org.apache.xmlgraphics", "fop-core", "2.4") {
+    api("org.apache.xmlgraphics", "fop-core", "2.6") {
         exclude("xml-apis", "xml-apis")
         // exclude("xml-apis", "xml-apis-ext")
     }
-    api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.4.0")
+    api("org.apache.xmlgraphics", "xmlgraphics-commons", "2.6")
     // pull in all deps (but batik-all will be excuded)
-    api("org.apache.xmlgraphics", "batik-all", "1.12")
+    api("org.apache.xmlgraphics", "batik-all", "1.14")
     api("xml-apis", "xml-apis-ext", "1.3.04")
     api("xerces", "xercesImpl", xercesVersion)
 
-    api("com.helger", "ph-schematron", "5.5.1-SNAPSHOT") {
+    api("com.helger", "ph-schematron-pure", "6.0.4-SNAPSHOT") {
         exclude("com.helger", "ph-jaxb")
         exclude("com.helger", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("com.helger", "ph-commons", "9.3.9") {
+    api("com.helger", "ph-schematron-api", "6.0.4-SNAPSHOT") {
+        exclude("com.helger", "ph-jaxb")
+        exclude("com.helger", "ph-jaxb-pom")
+        exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("com.helger", "ph-xml", "9.3.9") {
+    api("com.helger", "ph-commons", "9.5.4") {
+        exclude("com.google.code.findbugs", "jsr305")
+    }
+    api("com.helger", "ph-xml", "9.5.4") {
         exclude("com.google.code.findbugs", "jsr305")
     }
     // api("xml-resolver", "xml-resolver", "1.2")
 
-    api("info.picocli", "picocli", "4.2.0")
+    api("info.picocli", "picocli", "4.6.1")
 
     implementation("org.slf4j", "slf4j-simple", "1.7.30")
 
@@ -398,17 +406,17 @@ dependencies {
     api("net.sf.xslthl", "xslthl", "2.1.3")
 
     // needed to find xmlcalabash extension steps _in our code_
-    api("org.atteo.classindex", "classindex", "3.4")
-    annotationProcessor("org.atteo.classindex", "classindex", "3.4")
+    api("org.atteo.classindex", "classindex", "3.10")
+    annotationProcessor("org.atteo.classindex", "classindex", "3.10")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")
-    testImplementation("org.testng:testng:6.14.0")
+    testImplementation("org.testng:testng:7.3.0")
 
-    // TODO tp: Not in use
-    gems("rubygems:asciimath:1.0.9")
-    gems("rubygems:asciidoctor-epub3:1.5.0.alpha.13")
-    gems("rubygems:asciidoctor-diagram:2.0.1")
+    // TODO tp: Not in use - use https://rubygems.org/ for versions
+    gems("rubygems:asciimath:2.0.2")
+    gems("rubygems:asciidoctor-epub3:1.5.0.alpha.19")
+    gems("rubygems:asciidoctor-diagram:2.1.0")
     gems("rubygems:asciidoctor-latex:1.5.0.17.dev")
 }
 
@@ -501,7 +509,7 @@ tasks {
 
     wrapper {
         distributionType = Wrapper.DistributionType.ALL
-        version = "6.2.2"
+        version = "6.8.2"
     }
 
     withType<JavaCompile> {
