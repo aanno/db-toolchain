@@ -291,9 +291,11 @@ public class TraxSingleton {
             transformer.setURIResolver(new URIResolver() {
                 @Override
                 public Source resolve(String href, String base) throws TransformerException {
+                    LOG.warn("dummy resolver returns null for: '" + href + "' and '" + base + "'");
                     return null;
                 }
             });
+            LOG.warn("transform(" + template.getSystemId() + ", " + input.getSystemId() + ", " + output.getSystemId() + ")");
             transformer.transform(input, output);
         }
     }

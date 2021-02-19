@@ -20,11 +20,25 @@ public class DbXslt10a implements IPipeline {
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
     private static final String[] VARIANTS = new String[]{
-            "html"
+            "epub3",
+            "epub",
+            "fo",
+            "html",
+            "manpages",
+            "xhtml11",
+            "xhtml5",
+            "xhtml"
     };
 
     private static final String[] PATHS = new String[]{
             // "lib/docbook-xsl-1.79.2/html/docbook.xsl"
+            "lib/docbook-xsl/epub3/docbook.xsl",
+            "lib/docbook-xsl/epub/docbook.xsl",
+            "lib/docbook-xsl/fo/docbook.xsl",
+            "lib/docbook-xsl/html/docbook.xsl",
+            "lib/docbook-xsl/manpages/docbook.xsl",
+            "lib/docbook-xsl/xhtml-1_1/docbook.xsl",
+            "lib/docbook-xsl/xhtml5/docbook.xsl",
             "lib/docbook-xsl/xhtml/docbook.xsl"
     };
 
@@ -36,7 +50,7 @@ public class DbXslt10a implements IPipeline {
             String p = PATHS[i];
             Path path = Path.of(p);
             if (!path.toFile().isFile()) {
-                throw new ExceptionInInitializerError();
+                throw new ExceptionInInitializerError("Not a file: " + path);
             }
             variant2Path.put(v, path);
         }
