@@ -43,6 +43,10 @@ download https://www.princexml.com/download/prince-java-20180929.zip 1
 download https://github.com/docbook/xslt20-stylesheets/releases/download/2.6.0/docbook-xslt2-2.6.0.jar 5
 download https://github.com/docbook/xslt10-stylesheets/releases/download/snapshot%2F2020-06-03/docbook-xsl-snapshot.zip 6
 
+# not present any more in asciidoctorj >2.1.0
+download https://github.com/asciidoctor/asciidoctorj/blob/v2.1.0/docs/integrator-guide.adoc 5
+download https://github.com/asciidoctor/asciidoctorj/blob/v2.1.0/docs/extension-migration-guide.adoc 5
+
 mkdir -p "schema/5.1"
 pushd "schema/5.1"
 unzip -o "$DOWNLOAD_TMP/docbook-v5.1-os.zip"
