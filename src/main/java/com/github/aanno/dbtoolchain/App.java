@@ -63,9 +63,9 @@ public class App {
         IStage result;
         if (pipeline.startsWith("xsl10")) {
             result = null;
-            DbXslt10 p;
+            DbXslt10a p;
             if (pipeline.contains("html")) {
-                p = new DbXslt10("html");
+                p = new DbXslt10a("html");
             } else {
                 throw new IllegalArgumentException("xsl10 is only for html");
             }
