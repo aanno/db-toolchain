@@ -92,7 +92,7 @@ idea {
 
 evaluationDependsOnChildren()
 
-val xercesVersion = "2.12.0"
+val xercesVersion = "2.12.1"
 val debugModulePath = true
 val moduleJvmArgs = listOf(
         "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"

@@ -1,4 +1,4 @@
-val xercesVersion = "2.12.0"
+val xercesVersion = "2.12.1"
 
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
@@ -19,11 +19,11 @@ repositories {
 }
 
 dependencies {
-    ueberjars("com.github.jnr", "jnr-enxio", "0.24")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.26")
+    ueberjars("com.github.jnr", "jnr-enxio", "0.32.3")
+    ueberjars("com.github.jnr", "jnr-unixsocket", "0.38.5")
     ueberjars("xerces", "xercesImpl", xercesVersion)
-    ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
-    ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.0.0")
+    ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.2.0")
+    ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.2.0")
 }
 
 tasks {
