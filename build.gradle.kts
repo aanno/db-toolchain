@@ -311,7 +311,7 @@ dependencies {
     }
 
     // dependency of asciidocj and asciidocj-api
-    api("org.jruby", "jruby", "9.2.9.0")
+    api("org.jruby", "jruby", "9.2.14.0")
     api("com.github.jnr:jffi:1.2.18") {
         artifact {
             setName("jffi")
