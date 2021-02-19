@@ -11,6 +11,7 @@ import com.xmlcalabash.runtime.XAtomicStep;
 import com.xmlcalabash.util.ProcessMatch;
 import com.xmlcalabash.util.ProcessMatchingNodes;
 import com.xmlcalabash.util.XProcURIResolver;
+import net.sf.saxon.om.AttributeMap;
 import net.sf.saxon.s9api.QName;
 import net.sf.saxon.s9api.SaxonApiException;
 import net.sf.saxon.s9api.XdmNode;
@@ -109,39 +110,40 @@ public class XsltHL extends DefaultStep implements ProcessMatchingNodes {
     }
 
     @Override
-    public boolean processStartDocument(XdmNode node) throws SaxonApiException {
+    public boolean processStartDocument(XdmNode node) {
         throw new XProcException("Highlighter error; attempted to process start document");
     }
 
     @Override
-    public void processEndDocument(XdmNode node) throws SaxonApiException {
+    public void processEndDocument(XdmNode node) {
         throw new XProcException("Highlighter error; attempted to process end document");
     }
 
     @Override
-    public boolean processStartElement(XdmNode node) throws SaxonApiException {
+    public boolean processStartElement(XdmNode node, AttributeMap attributes) {
         throw new XProcException("Highlighter error; attempted to process start element");
     }
 
     @Override
-    public void processAttribute(XdmNode node) throws SaxonApiException {
+    public AttributeMap processAttributes(XdmNode node, AttributeMap matchingAttributes, AttributeMap nonMatchingAttributes) {
         throw new XProcException("Highlighter error; attempted to process attribute");
     }
 
     @Override
-    public void processEndElement(XdmNode node) throws SaxonApiException {
+    public void processEndElement(XdmNode node) {
         throw new XProcException("Highlighter error; attempted to process end element");
     }
 
     @Override
-    public void processText(XdmNode node) throws SaxonApiException {
+    public void processText(XdmNode node) {
         List<Block> blocks = highlighter.highlight(node.getStringValue());
 
         for (Block block: blocks) {
             if (block.isStyled()) {
                 StyledBlock styled = (StyledBlock) block;
                 matcher.addStartElement(new QName(prefix, namespace, styled.getStyle()));
-                matcher.startContent();
+                // ??? not in xmlcalabash 1.2.5 (tp)
+                // matcher.startContent();
                 matcher.addText(styled.getText());
                 matcher.addEndElement();
             } else {
@@ -151,12 +153,12 @@ public class XsltHL extends DefaultStep implements ProcessMatchingNodes {
     }
 
     @Override
-    public void processComment(XdmNode node) throws SaxonApiException {
+    public void processComment(XdmNode node) {
         throw new XProcException("Highlighter error; attempted to process comment");
     }
 
     @Override
-    public void processPI(XdmNode node) throws SaxonApiException {
+    public void processPI(XdmNode node) {
         throw new XProcException("Highlighter error; attempted to process processing instruction");
     }
 
