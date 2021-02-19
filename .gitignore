@@ -35,6 +35,7 @@ splitjars/lib/
 /*.txt
 /*.sch
 /catalog.xml
+/db-toolchain-*/
 
 # idea
 .idea/workspace.xml
