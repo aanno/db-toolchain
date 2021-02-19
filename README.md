@@ -34,7 +34,7 @@ So far the following pipelines are implemented:
 * **xsl-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
   [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and 
-  [Prince 13](https://www.princexml.com/)
+  [Prince 14](https://www.princexml.com/)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
@@ -45,7 +45,7 @@ So far the following pipelines are implemented:
 * **xsl10-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
   [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and 
-  [Prince 13](https://www.princexml.com/)
+  [Prince 14](https://www.princexml.com/)
 * **fo**: <br/>
   PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4)
 
@@ -98,8 +98,8 @@ Hence, a conversion from `*.adoc` to `*.pdf` using the `xsl-fo` pipeline (see ab
 
 ```bash
 > ./bin/db-toolchain transform --outdir . -p xsl-fo -if AD -of PDF \
-  -w submodules/asciidoctorj/asciidoctorj-documentation \
-  -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc
+  -w downloads \
+  -i downloads/integrator-guide.adoc
 ```
 
 Currently supported formats are:
