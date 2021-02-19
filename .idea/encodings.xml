@@ -3,19 +3,30 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-ant-task/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-ant-task/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-ant-task/target/buildinfo-maven-plugin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api/target/buildinfo-maven-plugin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api/target/generated-sources/svrl" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-maven-plugin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-maven-plugin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-pure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-pure/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-pure/target/buildinfo-maven-plugin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-schxslt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-schxslt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-schxslt/target/buildinfo-maven-plugin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/target/buildinfo-maven-plugin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/target/dirindex-maven-plugin/test-sch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/target/dirindex-maven-plugin/test-svrl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles/target/dirindex-maven-plugin/test-xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/target/buildinfo-maven-plugin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt/target/buildinfo-maven-plugin" charset="UTF-8" />
   </component>
 </project>

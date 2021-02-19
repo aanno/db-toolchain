@@ -28,6 +28,13 @@ node_modules/
 *.fo
 *.fo.xml
 splitjars/lib/
+*.db.html
+*.db.xhtml
+*.db.xml
+/*.xhtml
+/*.txt
+/*.sch
+/catalog.xml
 
 # idea
 .idea/workspace.xml
@@ -36,4 +43,6 @@ splitjars/lib/
 .idea/markdown-doclet.xml
 .idea/uiDesigner.xml
 .idea/libraries/
+.idea/codestream.xml
+.idea/sonarlint/
 *.iml
