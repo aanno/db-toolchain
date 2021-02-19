@@ -63,11 +63,13 @@ public class App {
     private void transform(TransformCommand transform) throws Exception {
         String pipeline = transform.pipeline;
         IStage result;
-        if (pipeline.startsWith("xsl10")) {
+        if (pipeline.startsWith("xsl10-")) {
             result = null;
+            int index = pipeline.indexOf("-");
+            String variant = pipeline.substring(index + 1);
             DbXslt10a p;
-            if (pipeline.contains("html")) {
-                p = new DbXslt10a("html");
+            if (variant != null) {
+                p = new DbXslt10a(variant);
             } else {
                 throw new IllegalArgumentException("xsl10 is only for html");
             }
