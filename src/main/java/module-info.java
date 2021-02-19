@@ -12,6 +12,8 @@ open module com.github.aanno.dbtoolchain {
     requires Saxon.HE;
     requires jingtrang;
     requires com.helger.schematron;
+    requires com.helger.schematron.pure;
+    requires com.helger.commons;
     requires xmlcalabash;
     requires prince;
 

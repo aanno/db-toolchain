@@ -2,8 +2,8 @@ package com.github.aanno.dbtoolchain.xml;
 
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.pure.SchematronResourcePure;
-import com.helger.schematron.xpath.IXPathConfig;
-import com.helger.schematron.xpath.XPathConfigBuilder;
+import com.helger.schematron.pure.xpath.IXPathConfig;
+import com.helger.schematron.pure.xpath.XPathConfigBuilder;
 import com.helger.commons.io.resource.FileSystemResource;
 import org.xml.sax.SAXException;
 

@@ -15,6 +15,84 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xmlcalabash/xmlcalabash/1.1.30-99/92d7e78ba0b0cff77b830df2ade976517f3eb3dd/xmlcalabash-1.1.30-99.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.nwalsh/nwalsh-annotations/1.0.0/96462ace40714ffedca05f72d4dcc1ff50b00389/nwalsh-annotations-1.0.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop/2.4/bfcf10f262a9ddfb6ee30a37dcbee3e569f15e81/fop-2.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop-core/2.4/e8f29bcaa00c3af625d9201e95bcf31b0ef6a0ff/fop-core-2.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-extension/1.12/e947026552361a3f6d100d92cde1ea1af8e231e4/batik-extension-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-transcoder/1.12/6836769a03abf9cec50f4ed668c57753a962771d/batik-transcoder-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-bridge/1.12/fbe0ddb2479947b626488a9782a6cf10358a5316/batik-bridge-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-script/1.12/1359da49bdbf10786fc9cb592833ded11b97e432/batik-script-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-anim/1.12/639288c6a28f0efcfea84ebb17e50f189a22e3e8/batik-anim-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.12/ccc87493a4074348b2e090b2ce7a3eccd4e8af44/batik-svg-dom-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-dom/1.12/1f7a51f02419a5b20333ec8116382fd7bca78bd5/batik-dom-1.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/xalan/xalan/2.7.2/xalan-2.7.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.avalon.framework/avalon-framework-impl/4.3.1/2d5f5a07fd14513ce6d7a7bfaff69419c26dbd0b/avalon-framework-impl-4.3.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.avalon.framework/avalon-framework-api/4.3.1/2dacadeb49bc14420990b1f28897d46f96e2181d/avalon-framework-api-4.3.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.media/jai_core/1.1.3/b179d2efb1174658483e8b41bf4ac9d2eb5de438/jai_core-1.1.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.media/jai-codec/1.1.3/34a67ba62097778e4695c951156bf189c2c8e016/jai-codec-1.1.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.3/33f0bbd46be05846bf4e58bd24ec2b21a881e411/classindex-3.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.relaxng/jing/20181222/d847e7f2685866a0a3783508669a881313a959ab/jing-20181222.jar" />
+          <entry name="$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/msv-core/2013.6.1/499b77056f070b2dbd18e08ef7984cf82be2e251/msv-core-2013.6.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.saxon/Saxon-HE/9.9.1-5/c1f413a1b810dbf0d673ffd3b27c8829a82ac31c/Saxon-HE-9.9.1-5.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/49.1/fbf7a438e6bf3660e0da2fd77dd1df1635fe503c/icu4j-49.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/nu.validator.htmlparser/htmlparser/1.4/70573d780fa08271499e201bbd86caa3c62f20e1/htmlparser-1.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop-events/2.4/f962e7a46585670ca3e48d66fd3cd9eef82cbd3/fop-events-2.4.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/ant/ant/1.9.4/ant-1.9.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.8/f5bd81aa5b2d091398199e6ee234bf7094889f1d/httpmime-4.5.8.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xmlresolver/xmlresolver/1.0.4/c11d294399dc5cfec821f3241f432acd8bc68783/xmlresolver-1.0.4.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.5.8/httpclient-4.5.8.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.12.1/4382e93136c06bfb34ddfa0bb8a9fb4ea2f3df59/log4j-core-2.12.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.12.1/14973e22497adaf0196d481fb99c5dc2a0b58d41/log4j-slf4j-impl-2.12.1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ccil.cowan.tagsoup/tagsoup/1.2.1/5584627487e984c03456266d3f8802eb85a9ce97/tagsoup-1.2.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.fileupload/2.2.2/52ca19a810a275149d513bd75ef61a69da7d5aa7/org.restlet.ext.fileupload-2.2.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet.ext.slf4j/2.2.2/b5fe67b6c59f790e900217dd63cd7661048f10df/org.restlet.ext.slf4j-2.2.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jee/org.restlet/2.2.2/fa982f29ace5f076a7fd67d9208703339de4ba2d/org.restlet-2.2.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.3/4ff14d809195b711fd6bcc87e6777f886730ca1/commons-fileupload-1.3.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.10/ce49a188721bc39cb9710b346ae9b7ec27b0f36b/jcl-over-slf4j-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.atlassian.commonmark/commonmark/0.12.1/9e0657f89ab2731f8a7235d926fdae7febf104cb/commonmark-0.12.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/fop-util/2.4/cb68e9caa0714d2dfd1a6fb94e6e3f3c46bc1376/fop-util-2.4.jar" />
+          <entry name="$MAVEN_REPOSITORY$/xalan/serializer/2.7.2/serializer-2.7.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.media/jai-core/1.1.3/b179d2efb1174658483e8b41bf4ac9d2eb5de438/jai-core-1.1.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/isorelax/isorelax/20030108/b21859c352bd959ea22d06b2fe8c93b2e24531b9/isorelax-20030108.jar" />
+          <entry name="$MAVEN_REPOSITORY$/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.msv/xsdlib/2013.6.1/280f7c45aaec5102cc756d1afdb416b7775f2ef4/xsdlib-2013.6.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.jaxb/isorelax/20090621/c2fb438e3b3174fd606750a9c5547346efd9eabf/isorelax-20090621.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.9.4/ant-launcher-1.9.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-gvt/1.12/c2b801412806277ade24cae0a2af286523105d71/batik-gvt-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-parser/1.12/90bfc41579c890d543acdb99b2b6390b09298b85/batik-parser-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svggen/1.12/53364380c4fb33ba49ddf25a56852bf405f698df/batik-svggen-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.12/652badd31839669cfa5f01442f8569fbecd21e8f/batik-awt-util-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-css/1.12/2be539a021bfb638880a7394ad5d5a7403fbe3c9/batik-css-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/xmlgraphics-commons/2.4/8d261df049a23d40a053d2700399ea76080fe0a8/xmlgraphics-commons-2.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.pdfbox/fontbox/2.0.16/3f7819279a0b90a01b07a870d1d27dffd8de24db/fontbox-2.0.16.jar" />
+          <entry name="$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.11/commons-codec-1.11.jar" />
+          <entry name="$MAVEN_REPOSITORY$/commons-io/commons-io/2.2/commons-io-2.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtworks.qdox/qdox/1.12/466993f8362511ecc42e6508d3db1880bfcd5c56/qdox-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.servlet/servlet-api/2.2/1fd87c45d200f4877c8440ecaa399940925d90f1/servlet-api-2.2.jar" />
+          <entry name="$MAVEN_REPOSITORY$/relaxngDatatype/relaxngDatatype/20020414/relaxngDatatype-20020414.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.12/a5850a5ae69a88ee18e961f8044dcba452d26e8f/batik-ext-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-xml/1.12/104615ba0f67a463bb70e2638d87e158c882ae79/batik-xml-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-util/1.12/a6d07d042ae8c8343eadd125d9eb76e25ffd908a/batik-util-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis-ext/1.3.04/41a8b86b358e87f3f13cf46069721719105aff66/xml-apis-ext-1.3.04.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-constants/1.12/5b29253d1cfa01e04c69e7c28bb8300feea8cc56/batik-constants-1.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-i18n/1.12/6044c6026b1178c078371e271222455671b5bd7/batik-i18n-1.12.jar" />
+        </processorPath>
+        <module name="xmlcalabash1-print.main" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aanno2.db-toolchain.main" target="11" />
       <module name="aanno2.db-toolchain.test" target="11" />
