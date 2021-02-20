@@ -305,7 +305,8 @@ public class TraxSingleton {
             });
              */
             // TODO aanno: Is this the resolver to use?!?
-            transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            // transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            transformer.setURIResolver(new LoggingURIResolver(getCatalogResolver()));
             LOG.warn("transform(" + template.getSystemId() + ", " + input.getSystemId() + ", " + output.getSystemId() + ")");
             transformer.transform(input, output);
         }
@@ -328,7 +329,8 @@ public class TraxSingleton {
             });
              */
             // TODO aanno: Is this the resolver to use?!?
-            transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            // transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            transformer.setURIResolver(new LoggingURIResolver(getCatalogResolver()));
             transformer.transform(input, output);
         }
     }

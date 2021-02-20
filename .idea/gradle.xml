@@ -34,7 +34,7 @@
                   <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jing-trang">
+              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jingtrang">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
