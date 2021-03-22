@@ -251,6 +251,12 @@ Currently supported formats are:
 * [xslt10](https://github.com/docbook/xslt10-stylesheets)
 * [design of xslt10](https://nwalsh.com/docs/articles/dbdesign/)
 
+### Customization
+
+* http://www.sagehill.net/docbookxsl/CustomMethods.html
+* http://doccookbook.sourceforge.net/html/en/dbc.common.dbcustomize.html
+* https://tdg.docbook.org/tdg/5.1/ch05.html
+
 ### Html, xHtml, Html5
 
 * [convert html to xhtml](https://stackoverflow.com/questions/29087077/is-it-possible-to-convert-html-into-xhtml-with-jsoup-1-8-1)
