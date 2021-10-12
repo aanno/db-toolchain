@@ -39,6 +39,11 @@
                   <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" name="ext">
+                <projects>
+                  <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -63,6 +68,7 @@
             <option value="$PROJECT_DIR$/submodules/jing-trang" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
+            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" />
           </set>
         </option>
       </GradleProjectSettings>

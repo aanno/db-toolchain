@@ -21,7 +21,7 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.10/8cc8e54208c07c75d5e190b46125e3879059f6f4/classindex-3.10.jar" />
         </processorPath>
-        <module name="aanno.db-toolchain.main" />
+        <module name="com.github.aanno.db-toolchain.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,16 +31,23 @@
       <module name="asciidoctor-fopub.fopub.test" target="11" />
       <module name="asciidoctorj-core.asciidoctorj.asciidoctorj.main" target="11" />
       <module name="asciidoctorj-core.asciidoctorj.asciidoctorj.test" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj" target="11" />
+      <module name="asciidoctorj-parent.asciidoctorj-api" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-api.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-api.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-arquillian-extension.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-distribution" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-distribution.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-distribution.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-documentation" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-documentation.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-documentation.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-test-support" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-test-support.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-test-support.test" target="1.8" />
+      <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test" target="11" />
       <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.main" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj-wildfly-integration-test.test" target="1.8" />
       <module name="asciidoctorj-parent.asciidoctorj.main" target="1.8" />
@@ -122,7 +129,6 @@
       <module name="github.db-toolchain.submodules.xslt20-resources.main" target="11" />
       <module name="github.db-toolchain.submodules.xslt20-resources.test" target="11" />
       <module name="github.db-toolchain.test" target="11" />
-      <module name="jing-trang" target="11" />
       <module name="jing-trang.jingtrang.main" target="11" />
       <module name="jing-trang.jingtrang.test" target="11" />
       <module name="jing-trang.main" target="11" />
@@ -200,8 +206,6 @@
       <module name="submodules.asciidoctorj.asciidoctorj-wildfly-integration-test.test" target="11" />
       <module name="submodules.asciidoctorj.main" target="11" />
       <module name="submodules.asciidoctorj.test" target="11" />
-      <module name="submodules.jing-trang.jingtrang.main" target="11" />
-      <module name="submodules.jing-trang.jingtrang.test" target="11" />
       <module name="submodules.jing-trang.main" target="11" />
       <module name="submodules.jing-trang.test" target="11" />
       <module name="submodules.xslt20-stylesheets.buildSrc.main" target="11" />
