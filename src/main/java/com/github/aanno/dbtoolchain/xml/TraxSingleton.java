@@ -100,6 +100,8 @@ public class TraxSingleton {
             CatalogFeatures catalogFeatures = CatalogFeatures.builder()
                     // .with(CatalogFeatures.Feature.FILES, current.toURI().toASCIIString())
                     .build();
+            // TODO tp: all this has to be packed in a jar
+            // TODO tp: Check if catalog really is there and emit a BIG warning if not
             catalog = CatalogManager.catalog(catalogFeatures,
                     new URI(currentURI + "/schema/5.1/schemas/catalog.xml"),
                     new URI(currentURI + "/schema/5.0.1/docbook-5.0.1/catalog.xml"),

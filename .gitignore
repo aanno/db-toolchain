@@ -14,6 +14,7 @@ build
 
 # misc
 node_modules/
+/scripts/env.sh
 /examples/
 /schema/
 /tmp/

@@ -116,7 +116,8 @@ public class App {
     }
 
     private void list(ListCommand list) throws Exception {
-        String[] pipelines = new String[]{"xsl-css", "xsl-fo", "ad", "fo"};
+        // TODO tp: Is there some way to extract this from pipeline implementations?
+        String[] pipelines = new String[]{"xsl10-css", "xsl10-fo", "xsl20-css", "xsl20-fo", "ad", "fo"};
         LOG.warn("implemented pipelines:");
         for (String p : pipelines) {
             LOG.warn("\t* " + p);

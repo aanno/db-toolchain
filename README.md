@@ -66,9 +66,13 @@ So far the following pipelines are implemented:
 2. `cd db-toolchain`
 3. `./script/bootstrap.sh`
 4. `./gradlew build` and `./scripts/merge-split-jars.sh` (ignoring any errors that may occur)
-5. `./gradlew runApp1` to run an example convertion.
+<!-- 5. `./gradlew runApp1` to run an example convertion. -->
+5. `./scripts/unzip-distribution.sh`
 6. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
    independent of the build process.
+7. `cp scripts/env.sh.template scripts/env.sh` and adopt copied file to your needs
+8. Use `./scripts/run-with-modulepath.sh` to invoke the program
+9. E.g. `./scripts/run-with-modulepath.sh transform -d . -w ./submodules/asciidoctor.org/docs --pipeline xsl20-fo -of HTML5 -i ./submodules/asciidoctor.org/docs/asciidoc-writers-guide.adoc`
    
 ## Usage
 
@@ -110,7 +114,8 @@ Currently supported formats are:
 * AD asciidoctor text file format (extension: `*.adoc`)
 * DB docbook (5.1) XML format (extension `*.db.xml`)
 * FO XSL formatting objects XML format (extension `*.fo.xml`)
-* XHTML XHTML/HTML5 markup (extensions: `*.xhtml` and `*.html`)
+* XHTML markup (extensions: `*.xhtml` and `*.html.xml`)
+* HTML5 markup (extensions: `*.html5` and `*.html`)
 * PDF document format (extension: `*.pdf`)
 
 ## Docbook
