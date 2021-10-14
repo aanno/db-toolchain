@@ -27,7 +27,10 @@ or DocBook to PDF, HTML and/or FO.
 ## Pipelines
 
 So far the following pipelines are implemented:
-
+* **xsl30**: <br/>
+  (X)Html conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook
+  [xslTNG 3.0 Stylesheets](https://xsltng.docbook.org/) (This does not support FO,
+  see [here](https://github.com/docbook/xslTNG/issues/121).) 
 * **xsl20-fo**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
   [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and Apache FOP (2.6)

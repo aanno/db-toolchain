@@ -85,6 +85,10 @@ public class App {
                 throw new IllegalArgumentException();
             }
             result = convertAdToDbIfNeeded(transform, p);
+        } else if (pipeline.startsWith("xsl30")) {
+            DbXslt30 p;
+            p = new DbXslt30("css");
+            result = convertAdToDbIfNeeded(transform, p);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
             AsciidoctorJ ad = new AsciidoctorJ();
             LOG.warn("pipeline: " + ad);
