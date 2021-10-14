@@ -325,6 +325,9 @@ public class XSLT20 {
                 serial = new Serialization(runtime, pipeline.getNode()); // The node's a hack
                 serial.setMethod(new QName("", "xhtml"));
             }
+            // https://www.saxonica.com/html/documentation11/xsl-elements/output.html
+            // indent
+            serial.setIndent(true);
 
             WritableDocument wd = null;
             if (options.containsKey(_output)) {

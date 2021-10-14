@@ -32,6 +32,8 @@ splitjars/lib/
 *.db.xhtml
 *.db.xml
 /*.xhtml
+/*.html
+/*.html5
 /*.txt
 /*.sch
 /catalog.xml

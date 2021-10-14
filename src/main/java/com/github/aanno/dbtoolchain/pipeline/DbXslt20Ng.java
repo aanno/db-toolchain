@@ -61,7 +61,7 @@ public class DbXslt20Ng implements IPipeline {
                     }
                 } else if (EFileType.FO == current.getType()) {
                     current = processFo(command, current, finish);
-                } else if (EFileType.XHTML == current.getType()) {
+                } else if (EFileType.HTML5 == current.getType() || EFileType.XHTML == current.getType()) {
                     current = processXhtmlByPrinceProcess(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
@@ -83,10 +83,10 @@ public class DbXslt20Ng implements IPipeline {
         IStage result;
         String format, output, xpl;
 
-        if ("css".equals(variant) || EFileType.XHTML == finish.getType()) {
-            result = Stage.from(command, EFileType.XHTML);
+        if ("css".equals(variant) || EFileType.HTML5 == finish.getType() || EFileType.XHTML == finish.getType()) {
+            result = Stage.from(command, finish.getType());
 
-            format = "xhtml";
+            format = getHtmlFormat(finish.getType());
             output = result.getPath().toString();
             // ???
             // xpl = "db2xhtml.xpl";
@@ -141,6 +141,18 @@ public class DbXslt20Ng implements IPipeline {
         xslt20.setOption("css", css);
         xslt20.runXpl(current.getPath().toString(), xpl, command.workDir.toString());
 
+        return result;
+    }
+
+    private String getHtmlFormat(EFileType type) {
+        final String result;
+        if (type == EFileType.XHTML) {
+            result = "xhtml";
+        } else if (type == EFileType.HTML5) {
+            result = "html";
+        } else {
+            throw new IllegalArgumentException(type.toString());
+        }
         return result;
     }
 
