@@ -172,9 +172,8 @@ configurations.all {
             , "org.apache.httpcomponents:httpcore:4.4.14"
             , "org.apache.xmlgraphics:fop:2.6"
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.6"
-            // TODO tp:
             // testng changed modulename: testng -> org.testng in 7.3.x (tp)
-            , "org.testng:testng:6.14.3"
+            , "org.testng:testng:7.3.0"
         // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
@@ -417,6 +416,7 @@ dependencies {
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")
+    implementation("org.testng:testng:7.3.0")
     testImplementation("org.testng:testng:7.3.0")
 
     // TODO tp: Not in use - use https://rubygems.org/ for versions

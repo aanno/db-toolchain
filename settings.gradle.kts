@@ -16,7 +16,8 @@ includeBuild("submodules/asciidoctorj")
 
 includeBuild("submodules/xslt20-stylesheets")
 includeBuild("submodules/xslt20-resources")
-includeBuild("submodules/asciidoctor-fopub")
+// does not build with gradle >=7.0
+// includeBuild("submodules/asciidoctor-fopub")
 
 // if jing-trang is a composite, merged jar resolution now works (tp)
 // https://docs.gradle.org/current/userguide/composite_builds.html

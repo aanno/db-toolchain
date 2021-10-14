@@ -69,4 +69,7 @@ open module com.github.aanno.dbtoolchain {
 
     // temporary (for original version of org.docbook.Main)
     requires commons.cli;
+
+    // ?test?
+    // requires org.testng;
 }

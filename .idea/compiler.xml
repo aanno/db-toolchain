@@ -15,15 +15,6 @@
       <entry name="!*.mpsr" />
       <entry name="!*.model" />
     </wildcardResourcePatterns>
-    <annotationProcessing>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.10/8cc8e54208c07c75d5e190b46125e3879059f6f4/classindex-3.10.jar" />
-        </processorPath>
-        <module name="com.github.aanno.db-toolchain.main" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aanno2.db-toolchain.main" target="11" />
       <module name="aanno2.db-toolchain.test" target="11" />
