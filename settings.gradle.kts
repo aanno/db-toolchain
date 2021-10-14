@@ -29,3 +29,6 @@ includeBuild("submodules/jing-trang") {
     }
 }
  */
+
+// this is maven based and can't be included
+// includeBuild("submodules/ph-schematron")
