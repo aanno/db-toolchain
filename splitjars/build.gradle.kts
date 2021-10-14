@@ -34,6 +34,7 @@ tasks {
             rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1.jar")
         }
         into("./lib/tmp")
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
     }
 
     val unzipXerces = task("unzipXerces", Copy::class) {
@@ -58,6 +59,7 @@ tasks {
         }
         into("./lib/tmp/jnrchannels")
         dependsOn(copyJarsForUeberJars)
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
     }
 
     val rezipStrippedJnr = task("rezipStrippedJnr", Jar::class) {
@@ -74,6 +76,7 @@ tasks {
         }
         into("./lib/tmp/xmlcalabash-extensions")
         dependsOn(copyJarsForUeberJars)
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
     }
 
     val rezipStrippedCalabashExt = task("rezipStrippedCalabashExt", Jar::class) {

@@ -515,7 +515,7 @@ tasks {
 
     wrapper {
         distributionType = Wrapper.DistributionType.ALL
-        version = "6.8.2"
+        version = "7.2"
     }
 
     withType<JavaCompile> {
