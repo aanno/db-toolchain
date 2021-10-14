@@ -208,6 +208,10 @@ Currently supported formats are:
   + https://github.com/docbook/xslTNG/
 * [xslTNG reference guide](https://xsltng.docbook.org/guide/index.html)
 
+#### BBC XSLT Stylesheets for Html5 (old)
+
+* [docbook-html5](https://bbcarchdev.github.io/docbook-html5/)
+* [docbook-html5 on github](https://github.com/bbcarchdev/docbook-html5)
 
 ##### Technology used with DB XSLT 2.0
 
