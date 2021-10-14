@@ -93,6 +93,13 @@ public class DbXslt30 implements IPipeline {
 
             args.add(current.getPath().toString());
             args.add("-o:" + result.getPath().toString());
+            // The --resources flag only _copies_ resources - hence it is not what we need.
+            // args.add("--resources:.");
+            // args.add("--resources:/mnt/home/tpasch/scm/aanno/db-toolchain");
+            
+            // Stylesheet params are simply appended (see Main for details)
+            // TODO tp: make this sane
+            args.add("resource-base-uri=/mnt/home/tpasch/scm/aanno/db-toolchain/lib/docbook-xslTNG/resources/");
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }
