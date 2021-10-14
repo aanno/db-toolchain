@@ -102,8 +102,11 @@ public class TraxSingleton {
                     .build();
             catalog = CatalogManager.catalog(catalogFeatures,
                     new URI(currentURI + "/schema/5.1/schemas/catalog.xml"),
-                    new URI(currentURI + "/schema/5.0/docbook-5.0/catalog.xml"),
+                    new URI(currentURI + "/schema/5.0.1/docbook-5.0.1/catalog.xml"),
                     new URI(currentURI + "/lib/docbook-xsl/catalog.xml"),
+                    new URI(currentURI + "/lib/docbook-xslTNG/xslt/catalog.xml"),
+                    // new URI(currentURI + "/schema/docbook-xslt20/catalog.xml"),
+                    new URI(currentURI + "/submodules/jing-trang/mod/catalog/src/test/com/thaiopensource/resolver/catalog/catalog.xml"),
                     new URI(currentURI + "/submodules/asciidoctor-fopub/src/dist/catalog.xml"),
                     new URI(xslt20CatalogUri)
             );

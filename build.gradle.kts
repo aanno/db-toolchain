@@ -605,7 +605,7 @@ tasks {
                     )
             )
         }
-        val version = "1.0-SNAPSHOT"
+        val version = "1.0.0-SNAPSHOT"
 
         // archiveName = "${application.applicationName}-$version.jar"
         // from(configurations.compile.getAsMap().map { if (it.isDirectory) it else zipTree(it) })

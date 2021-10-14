@@ -19,7 +19,7 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.10/8cc8e54208c07c75d5e190b46125e3879059f6f4/classindex-3.10.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.atteo.classindex/classindex/3.11/d7eb12a6e6e00fbe54ef22e1f31c52b93d4dce76/classindex-3.11.jar" />
         </processorPath>
         <module name="com.github.aanno.db-toolchain.main" />
       </profile>
