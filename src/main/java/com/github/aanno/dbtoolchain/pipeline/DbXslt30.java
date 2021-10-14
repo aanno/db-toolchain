@@ -96,10 +96,14 @@ public class DbXslt30 implements IPipeline {
             // The --resources flag only _copies_ resources - hence it is not what we need.
             // args.add("--resources:.");
             // args.add("--resources:/mnt/home/tpasch/scm/aanno/db-toolchain");
-            
+
             // Stylesheet params are simply appended (see Main for details)
             // TODO tp: make this sane
             args.add("resource-base-uri=/mnt/home/tpasch/scm/aanno/db-toolchain/lib/docbook-xslTNG/resources/");
+            // output parameters starts with '!', see https://www.saxonica.com/documentation9.5/using-xsl/commandline.html
+            args.add("!indent=yes");
+            // debug stylesheet, https://www.saxonica.com/documentation9.5/using-xsl/commandline.html
+            // args.add("-explain");
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }
