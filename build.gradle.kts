@@ -345,6 +345,8 @@ dependencies {
 
     // dependency of asciidocj and asciidocj-api
     api("org.jruby", "jruby", "${jruby_version}")
+    // needed for jruby >=9.3 (?)
+    // implementation("com.headius:options:1.6")
     api("com.github.jnr:jffi:${jffi_version}") {
         artifact {
             setName("jffi")
