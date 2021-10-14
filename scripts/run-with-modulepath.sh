@@ -4,4 +4,5 @@ BASE=`git rev-parse --show-toplevel`
 MYDIR=`ls -d $BASE/db-toolchain-*`
 MYDIR=`readlink -f $MYDIR`
 
-java -p $MYDIR:$MYDIR/lib -m com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App $*
+. "$BASE/scripts/env.sh"
+java $JAVA_OPTS -p $MYDIR:$MYDIR/lib -m com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App $*

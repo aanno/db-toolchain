@@ -2,6 +2,7 @@
 
 BASE=`git rev-parse --show-toplevel`
 CP=""
+. "$BASE/scripts/env.sh"
 
 pushd $BASE/db-toolchain-*
 
@@ -10,6 +11,6 @@ pushd $BASE/db-toolchain-*
     CP="$CP:$i"
   done
 
-  java -cp "${APP}${CP}" com.github.aanno.dbtoolchain.App $*
+  java $JAVA_OPTS -cp "${APP}${CP}" com.github.aanno.dbtoolchain.App $*
 
 popd

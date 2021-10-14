@@ -452,9 +452,11 @@ dependencies {
     api("org.atteo.classindex", "classindex", "${classindex_version}")
     annotationProcessor("org.atteo.classindex", "classindex", "${classindex_version}")
 
+    implementation("org.docbook:docbook-xslTNG:1.5.4")
+
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")
-    implementation("org.testng:testng:${testng_version}")
+    // implementation("org.testng:testng:${testng_version}")
     testImplementation("org.testng:testng:${testng_version}")
 
     // TODO tp: Not in use - use https://rubygems.org/ for versions
