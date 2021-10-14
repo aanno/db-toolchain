@@ -15,6 +15,8 @@
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
+                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
+                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
                   <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
                 </projects>
@@ -27,11 +29,6 @@
               <build path="$PROJECT_DIR$/submodules/xslt20-resources" name="xslt20-resources">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/xslt20-resources" />
-                </projects>
-              </build>
-              <build path="$PROJECT_DIR$/submodules/asciidoctor-fopub" name="fopub">
-                <projects>
-                  <project path="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
                 </projects>
               </build>
               <build path="$PROJECT_DIR$/submodules/jing-trang" name="jingtrang">
@@ -56,13 +53,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/splitjars" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctor-fopub" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-arquillian-extension" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
+            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
+            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
             <option value="$PROJECT_DIR$/submodules/jing-trang" />
@@ -86,20 +84,10 @@
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
+            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
+            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
             <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/submodules/xmlcalabash1-print" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -174,6 +174,7 @@ configurations.all {
             , "org.apache.xmlgraphics:xmlgraphics-commons:2.6"
             // testng changed modulename: testng -> org.testng in 7.3.x (tp)
             , "org.testng:testng:7.3.0"
+            , "org.yaml:snakeyaml:1.29"
         // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")

@@ -7,8 +7,12 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-pure" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-schxslt" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt" />
     <file type="web" url="file://$PROJECT_DIR$" />
     <file type="web" url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/../github/fop/fop-servlet" />
