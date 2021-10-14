@@ -83,6 +83,8 @@ repositories {
                 "submodules/xslt20-stylesheets/build/libs",
                 "submodules/ph-schematron/ph-schematron-pure/target",
                 "submodules/ph-schematron/ph-schematron-api/target",
+                "submodules/ph-commons/ph-commons/target",
+                "submodules/ph-commons/ph-xml/target",
                 "submodules/asciidoctorj/asciidoctorj-core/build/libs",
                 "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
