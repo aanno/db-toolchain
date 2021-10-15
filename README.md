@@ -7,6 +7,7 @@ This project has similiar aims as the following tools:
 * [asciidoctor](https://asciidoctor.org/)
 * [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub)
 * [daps](https://opensuse.github.io/daps/) (on [github](https://github.com/openSUSE/daps))
+* [metanorma](https://www.metanorma.org/author/approach/) (on [github](https://github.com/metanorma/metanorma-cli))
 
 Make using Asciidoc(tor) and DocBook convertion tools as easy as it can be.
 
@@ -324,9 +325,14 @@ Currently supported formats are:
 
 * [AsciiMath](https://en.m.wikipedia.org/wiki/AsciiMath)
   + [AsciiMath home page](http://asciimath.org/)
+  + [AsciiMath implementation on github](https://github.com/asciimath/asciimathml)
   + [MathJax Implementation](https://www.mathjax.org/)
     + [mathjax-node](https://github.com/mathjax/MathJax-node)
+  + [An AsciiMath parser and MathML/LaTeX generator written in pure Ruby](https://github.com/asciidoctor/AsciiMath)
+* [LaTeXML](https://dlmf.nist.gov/LaTeXML/) convert LaTeX to XML and then to Html
 * [mml2tex](https://github.com/transpect/mml2tex) MathML to Latex
+* [KaTeX](https://katex.org/) an alternative to the MathJax JS renderer
+  + [KaTeX on github](https://github.com/KaTeX/KaTeX)
     
 ### Diagrams
 
