@@ -1,15 +1,6 @@
-[submodule "xslt20-stylesheets"]
-	# url = https://github.com/docbook/xslt20-stylesheets.git
-	url = git@github.com:aanno/xslt20-stylesheets.git
-	path = submodules/xslt20-stylesheets
-	# branch = master
-	branch = feature/pr-gradle-6.x
 [submodule "asciidoctor-fopub"]
 	path = submodules/asciidoctor-fopub
 	url = https://github.com/asciidoctor/asciidoctor-fopub.git
-[submodule "xslt20-resources"]
-	path = submodules/xslt20-resources
-	url = https://github.com/docbook/xslt20-resources
 [submodule "xslt20-java"]
 	path = submodules/xslt20-java
 	url = https://github.com/docbook/xslt20-java.git
