@@ -18,5 +18,7 @@
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/submodules/ph-schematron/src/main/resources" charset="UTF-8" />
   </component>
 </project>

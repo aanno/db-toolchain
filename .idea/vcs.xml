@@ -7,6 +7,7 @@
     <mapping directory="$PROJECT_DIR$/submodules/asciidoctorj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/jing-trang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/jing-trang/relaxng.org" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/ph-commons" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/ph-schematron" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/xerces2-j" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/submodules/xmlcalabash1-print" vcs="Git" />

@@ -428,9 +428,6 @@ Currently supported formats are:
 * [parsX](https://www.parsx.de/)
 * [pretextbook markup](https://pretextbook.org/) (formerly 'MathBook XML')
   + [pretextbook github](https://github.com/rbeezer/mathbook)
-* [markua](https://leanpub.com/markua/read)
-  + [spec](http://markua.com/)
-* [mallard](http://projectmallard.org/) markup
 * [speedata publisher](https://www.speedata.de/de/entwickler/handbuch/)
   + [github](https://github.com/speedata/publisher)
 
@@ -444,13 +441,35 @@ Currently supported formats are:
 ### Markdown to Book (e.g. pandoc)
 
 * [Overview](https://www.linux-magazin.de/ausgaben/2015/12/bitparade/5/)
-* [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
-* [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
-* [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
+* [mdBook](https://rust-lang.github.io/mdBook/) with its [plugins](https://github.com/rust-lang/mdBook/wiki/Third-party-plugins)
+  (on [github](https://github.com/rust-lang/mdBook))
+* [bookdown](https://bookdown.org/) with its [documentation](https://bookdown.org/yihui/bookdown/)
+  (on [github](https://github.com/rstudio/bookdown))
 * [gaiden](http://kobo.github.io/gaiden/getting-started.html)
   + [gaiden github](https://github.com/kobo/gaiden)
+* [markua](https://leanpub.com/markua/read)
+  + [spec](http://markua.com/)
+  + [manual](https://leanpub.com/markua)
+* [mallard](http://projectmallard.org/) markup
+* [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
 * [toolchain manual publisher](https://blog.speedata.de/2018/03/27/handbuchschema/)
   (german)
+* [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
+* [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
+* [pandoc](https://pandoc.org/)
+* [kramdown](https://kramdown.gettalong.org/)
+* [alldoc](https://alldocs.app/) - a pandoc web-ui (on [github](https://github.com/ueberdosis/alldocs.app))
+
+#### Markdown editors
+
+* [typora](https://typora.io/)
+
+#### Markdown to asciidoc
+
+* [kramdown-asciidoc](https://github.com/asciidoctor/kramdown-asciidoc)
+  + https://matthewsetter.com/technical-documentation/asciidoc/convert-markdown-to-asciidoc-with-kramdoc/
+* [with panddoc](https://matthewsetter.com/convert-markdown-to-asciidoc-withpandoc/)
+
 ## IPC
 
 ### Java to Java
