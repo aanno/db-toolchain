@@ -7,6 +7,7 @@ This project has similiar aims as the following tools:
 * [asciidoctor](https://asciidoctor.org/)
 * [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub)
 * [daps](https://opensuse.github.io/daps/) (on [github](https://github.com/openSUSE/daps))
+* [metanorma](https://www.metanorma.org/author/approach/) (on [github](https://github.com/metanorma/metanorma-cli))
 
 Make using Asciidoc(tor) and DocBook convertion tools as easy as it can be.
 
@@ -27,27 +28,33 @@ or DocBook to PDF, HTML and/or FO.
 ## Pipelines
 
 So far the following pipelines are implemented:
-
-* **xsl-fo**: <br/>
+* **xsl30**: <br/>
+  (X)Html conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook
+  [xslTNG 3.0 Stylesheets](https://xsltng.docbook.org/) (This does not support FO,
+  see [here](https://github.com/docbook/xslTNG/issues/121).) 
+* **xsl20-fo**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and Apache FOP (2.4)
-* **xsl-css**: <br/>
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and Apache FOP (2.6)
+* **xsl20-css**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.4.3) and 
-  [Prince 13](https://www.princexml.com/)
+  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and 
+  [Prince 14](https://www.princexml.com/)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 
   [asciidoctor](https://github.com/asciidoctor/asciidoctor)
-* **xsl10-fo**: <br/>
+* **xsl10-html**: <br/>
+  (X)Html conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (snapshot 2020-06-03)
+* **xsl10-css**: (not implemented so far)<br/>
   PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and Apache FOP (2.4)
-* **xsl10-css**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (1.79.2) and 
-  [Prince 13](https://www.princexml.com/)
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (snapshot 2020-06-03) and 
+  [Prince 14](https://www.princexml.com/)
+* **xsl10-fo**: (not implemented so far)<br/>
+  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook
+  [Xslt 1.0 Stylesheets](https://github.com/docbook/xslt10-stylesheets) (snapshot 2020-06-03) and Apache FOP (2.6)
 * **fo**: <br/>
-  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.4)
+  PDF conversion of XSLT-FO (i.e. FO) using [Apache FOP](https://xmlgraphics.apache.org/fop/) (2.6)
 
 ## Prerequisite
 
@@ -63,9 +70,13 @@ So far the following pipelines are implemented:
 2. `cd db-toolchain`
 3. `./script/bootstrap.sh`
 4. `./gradlew build` and `./scripts/merge-split-jars.sh` (ignoring any errors that may occur)
-5. `./gradlew runApp1` to run an example convertion.
+<!-- 5. `./gradlew runApp1` to run an example convertion. -->
+5. `./scripts/unzip-distribution.sh`
 6. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
    independent of the build process.
+7. `cp scripts/env.sh.template scripts/env.sh` and adopt copied file to your needs
+8. Use `./scripts/run-with-modulepath.sh` to invoke the program
+9. E.g. `./scripts/run-with-modulepath.sh transform -d . -w ./submodules/asciidoctor.org/docs --pipeline xsl20-fo -of HTML5 -i ./submodules/asciidoctor.org/docs/asciidoc-writers-guide.adoc`
    
 ## Usage
 
@@ -98,8 +109,8 @@ Hence, a conversion from `*.adoc` to `*.pdf` using the `xsl-fo` pipeline (see ab
 
 ```bash
 > ./bin/db-toolchain transform --outdir . -p xsl-fo -if AD -of PDF \
-  -w submodules/asciidoctorj/asciidoctorj-documentation \
-  -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc
+  -w downloads \
+  -i downloads/integrator-guide.adoc
 ```
 
 Currently supported formats are:
@@ -107,7 +118,8 @@ Currently supported formats are:
 * AD asciidoctor text file format (extension: `*.adoc`)
 * DB docbook (5.1) XML format (extension `*.db.xml`)
 * FO XSL formatting objects XML format (extension `*.fo.xml`)
-* XHTML XHTML/HTML5 markup (extensions: `*.xhtml` and `*.html`)
+* XHTML markup (extensions: `*.xhtml` and `*.html.xml`)
+* HTML5 markup (extensions: `*.html5` and `*.html`)
 * PDF document format (extension: `*.pdf`)
 
 ## Docbook
@@ -205,6 +217,10 @@ Currently supported formats are:
   + https://github.com/docbook/xslTNG/
 * [xslTNG reference guide](https://xsltng.docbook.org/guide/index.html)
 
+#### BBC XSLT Stylesheets for Html5 (old)
+
+* [docbook-html5](https://bbcarchdev.github.io/docbook-html5/)
+* [docbook-html5 on github](https://github.com/bbcarchdev/docbook-html5)
 
 ##### Technology used with DB XSLT 2.0
 
@@ -247,6 +263,12 @@ Currently supported formats are:
 
 * [xslt10](https://github.com/docbook/xslt10-stylesheets)
 * [design of xslt10](https://nwalsh.com/docs/articles/dbdesign/)
+
+### Customization
+
+* http://www.sagehill.net/docbookxsl/CustomMethods.html
+* http://doccookbook.sourceforge.net/html/en/dbc.common.dbcustomize.html
+* https://tdg.docbook.org/tdg/5.1/ch05.html
 
 ### Html, xHtml, Html5
 
@@ -303,9 +325,14 @@ Currently supported formats are:
 
 * [AsciiMath](https://en.m.wikipedia.org/wiki/AsciiMath)
   + [AsciiMath home page](http://asciimath.org/)
+  + [AsciiMath implementation on github](https://github.com/asciimath/asciimathml)
   + [MathJax Implementation](https://www.mathjax.org/)
     + [mathjax-node](https://github.com/mathjax/MathJax-node)
+  + [An AsciiMath parser and MathML/LaTeX generator written in pure Ruby](https://github.com/asciidoctor/AsciiMath)
+* [LaTeXML](https://dlmf.nist.gov/LaTeXML/) convert LaTeX to XML and then to Html
 * [mml2tex](https://github.com/transpect/mml2tex) MathML to Latex
+* [KaTeX](https://katex.org/) an alternative to the MathJax JS renderer
+  + [KaTeX on github](https://github.com/KaTeX/KaTeX)
     
 ### Diagrams
 
@@ -401,9 +428,6 @@ Currently supported formats are:
 * [parsX](https://www.parsx.de/)
 * [pretextbook markup](https://pretextbook.org/) (formerly 'MathBook XML')
   + [pretextbook github](https://github.com/rbeezer/mathbook)
-* [markua](https://leanpub.com/markua/read)
-  + [spec](http://markua.com/)
-* [mallard](http://projectmallard.org/) markup
 * [speedata publisher](https://www.speedata.de/de/entwickler/handbuch/)
   + [github](https://github.com/speedata/publisher)
 
@@ -417,13 +441,35 @@ Currently supported formats are:
 ### Markdown to Book (e.g. pandoc)
 
 * [Overview](https://www.linux-magazin.de/ausgaben/2015/12/bitparade/5/)
-* [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
-* [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
-* [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
+* [mdBook](https://rust-lang.github.io/mdBook/) with its [plugins](https://github.com/rust-lang/mdBook/wiki/Third-party-plugins)
+  (on [github](https://github.com/rust-lang/mdBook))
+* [bookdown](https://bookdown.org/) with its [documentation](https://bookdown.org/yihui/bookdown/)
+  (on [github](https://github.com/rstudio/bookdown))
 * [gaiden](http://kobo.github.io/gaiden/getting-started.html)
   + [gaiden github](https://github.com/kobo/gaiden)
+* [markua](https://leanpub.com/markua/read)
+  + [spec](http://markua.com/)
+  + [manual](https://leanpub.com/markua)
+* [mallard](http://projectmallard.org/) markup
+* [pp](http://cdsoft.fr/pp/) (pandoc preprocessor)
 * [toolchain manual publisher](https://blog.speedata.de/2018/03/27/handbuchschema/)
   (german)
+* [Thorsten Ball](https://thorstenball.com/blog/2018/09/04/the-tools-i-use-to-write-books/)
+* [Ryan Frazier](https://pianomanfrazier.com/post/write-a-book-with-markdown/)
+* [pandoc](https://pandoc.org/)
+* [kramdown](https://kramdown.gettalong.org/)
+* [alldoc](https://alldocs.app/) - a pandoc web-ui (on [github](https://github.com/ueberdosis/alldocs.app))
+
+#### Markdown editors
+
+* [typora](https://typora.io/)
+
+#### Markdown to asciidoc
+
+* [kramdown-asciidoc](https://github.com/asciidoctor/kramdown-asciidoc)
+  + https://matthewsetter.com/technical-documentation/asciidoc/convert-markdown-to-asciidoc-with-kramdoc/
+* [with panddoc](https://matthewsetter.com/convert-markdown-to-asciidoc-withpandoc/)
+
 ## IPC
 
 ### Java to Java

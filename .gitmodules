@@ -38,3 +38,6 @@
 [submodule "submodules/ph-schematron"]
 	path = submodules/ph-schematron
 	url = git@github.com:phax/ph-schematron.git
+[submodule "submodules/ph-commons"]
+	path = submodules/ph-commons
+	url = git@github.com:phax/ph-commons.git

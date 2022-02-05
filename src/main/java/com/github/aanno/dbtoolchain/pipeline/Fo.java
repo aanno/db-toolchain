@@ -35,7 +35,8 @@ public class Fo implements IPipeline {
         if (EFileType.PDF == finish.getType()) {
             current = processToPdf(command, current);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("process command " + command + " failed:\n" +
+                    "\tcurrent=" + current + "\n\tfinish=" + finish);
         }
         return current;
     }

@@ -2,6 +2,7 @@ package com.github.aanno.dbtoolchain.xml;
 
 import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
+import org.apache.xmlgraphics.util.uri.CommonURIResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
@@ -16,7 +17,13 @@ import javax.xml.catalog.CatalogResolver;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.transform.*;
+import javax.xml.transform.ErrorListener;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
@@ -93,13 +100,18 @@ public class TraxSingleton {
             CatalogFeatures catalogFeatures = CatalogFeatures.builder()
                     // .with(CatalogFeatures.Feature.FILES, current.toURI().toASCIIString())
                     .build();
+            // TODO tp: all this has to be packed in a jar
+            // TODO tp: Check if catalog really is there and emit a BIG warning if not
             catalog = CatalogManager.catalog(catalogFeatures,
                     new URI(currentURI + "/schema/5.1/schemas/catalog.xml"),
-                    new URI(currentURI + "/schema/5.0/docbook-5.0/catalog.xml"),
+                    new URI(currentURI + "/schema/5.0.1/docbook-5.0.1/catalog.xml"),
                     new URI(currentURI + "/lib/docbook-xsl/catalog.xml"),
+                    new URI(currentURI + "/lib/docbook-xslTNG/xslt/catalog.xml"),
+                    // new URI(currentURI + "/schema/docbook-xslt20/catalog.xml"),
+                    new URI(currentURI + "/submodules/jing-trang/mod/catalog/src/test/com/thaiopensource/resolver/catalog/catalog.xml"),
                     new URI(currentURI + "/submodules/asciidoctor-fopub/src/dist/catalog.xml"),
                     new URI(xslt20CatalogUri)
-                    );
+            );
         } catch (URISyntaxException e) {
             throw new ExceptionInInitializerError(e);
         } catch (IOException e) {
@@ -244,7 +256,7 @@ public class TraxSingleton {
                     .filter(s -> s != null)
                     .findFirst().orElse(null);
         }
-        return  result;
+        return result;
     }
 
     public Source getSource(String path, boolean validating) throws IOException {
@@ -288,12 +300,19 @@ public class TraxSingleton {
             LOG.error("creating transformer failed: " + e.toString(), e);
         }
         if (transformer != null) {
+            /*
             transformer.setURIResolver(new URIResolver() {
                 @Override
                 public Source resolve(String href, String base) throws TransformerException {
+                    LOG.warn("dummy resolver returns null for: '" + href + "' and '" + base + "'");
                     return null;
                 }
             });
+             */
+            // TODO aanno: Is this the resolver to use?!?
+            // transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            transformer.setURIResolver(new LoggingURIResolver(getCatalogResolver()));
+            LOG.warn("transform(" + template.getSystemId() + ", " + input.getSystemId() + ", " + output.getSystemId() + ")");
             transformer.transform(input, output);
         }
     }
@@ -306,12 +325,17 @@ public class TraxSingleton {
             LOG.error("creating transformer failed: " + e.toString(), e);
         }
         if (transformer != null) {
+            /*
             transformer.setURIResolver(new URIResolver() {
                 @Override
                 public Source resolve(String href, String base) throws TransformerException {
                     return null;
                 }
             });
+             */
+            // TODO aanno: Is this the resolver to use?!?
+            // transformer.setURIResolver(new LoggingURIResolver(CommonURIResolver.getDefaultURIResolver()));
+            transformer.setURIResolver(new LoggingURIResolver(getCatalogResolver()));
             transformer.transform(input, output);
         }
     }

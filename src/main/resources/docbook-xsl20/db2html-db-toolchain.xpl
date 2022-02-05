@@ -26,6 +26,7 @@
   </dbp:docbook>
 
   <!-- p:import href="https://cdn.docbook.org/release/xsl20/current/xslt/base/pipelines/docbook.xpl"/ -->
+  <!-- see https://xmlcalabash.com/docs/reference/cx-steps.html -->
   <p:declare-step type="cx:mathml-to-svg">
     <p:input port="source" sequence="false"/>
     <p:input port="parameters" kind="parameter"/>

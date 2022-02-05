@@ -35,7 +35,7 @@ public class DbXslt10 implements IPipeline {
     };
 
     private static final String[] PATHS = new String[] {
-            "lib/docbook-xsl-1.79.2/html/docbook.xsl"
+            "lib/docbook-xsl/html/docbook.xsl"
     };
 
     private static final Map<String, Path> variant2Stylesheet = new HashMap<>();
@@ -95,7 +95,8 @@ public class DbXslt10 implements IPipeline {
                     }
                     current = Stage.from(command, EFileType.XHTML);
                 } else {
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("process command " + command + " failed:\n" +
+                            "\tcurrent=" + current + "\n\tfinish=" + finish);
                 }
                 if (old.getType() == current.getType()) {
                     throw new IllegalArgumentException("get stuck on " + old + " and " + current);

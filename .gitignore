@@ -14,6 +14,7 @@ build
 
 # misc
 node_modules/
+/scripts/env.sh
 /examples/
 /schema/
 /tmp/
@@ -28,6 +29,16 @@ node_modules/
 *.fo
 *.fo.xml
 splitjars/lib/
+*.db.html
+*.db.xhtml
+*.db.xml
+/*.xhtml
+/*.html
+/*.html5
+/*.txt
+/*.sch
+/catalog.xml
+/db-toolchain-*/
 
 # idea
 .idea/workspace.xml
@@ -36,4 +47,6 @@ splitjars/lib/
 .idea/markdown-doclet.xml
 .idea/uiDesigner.xml
 .idea/libraries/
+.idea/codestream.xml
+.idea/sonarlint/
 *.iml

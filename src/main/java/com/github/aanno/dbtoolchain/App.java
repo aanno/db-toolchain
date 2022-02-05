@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.w3c.dom.css.DOMImplementationCSS;
 import picocli.CommandLine;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -61,16 +63,19 @@ public class App {
     private void transform(TransformCommand transform) throws Exception {
         String pipeline = transform.pipeline;
         IStage result;
-        if (pipeline.startsWith("xsl10")) {
+        if (pipeline.startsWith("xsl10-")) {
             result = null;
-            DbXslt10 p;
-            if (pipeline.contains("html")) {
-                p = new DbXslt10("html");
+            int index = pipeline.indexOf("-");
+            String variant = pipeline.substring(index + 1);
+            DbXslt10a p;
+            if (variant != null) {
+                p = new DbXslt10a(variant);
             } else {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("xsl10 is only for html");
             }
-            result = p.process(transform);
-        } else if (pipeline.startsWith("xsl")) {
+            // result = p.process(transform);
+            result = convertAdToDbIfNeeded(transform, p);
+        } else if (pipeline.startsWith("xsl20")) {
             DbXslt20Ng p;
             if (pipeline.contains("css")) {
                 p = new DbXslt20Ng("css");
@@ -79,17 +84,11 @@ public class App {
             } else {
                 throw new IllegalArgumentException();
             }
-            LOG.warn("pipeline: " + p);
-            if (EFileType.AD == transform.inFormat) {
-                // If input is asciidoc(tor), first convert it to docbook ...
-                AsciidoctorJ aPipeline = new AsciidoctorJ();
-                result = aPipeline.process(transform, Stage.fromIn(transform),
-                        Stage.from(transform, EFileType.DB));
-                // ... and then proceed as normal
-                result = p.process(transform, result, Stage.fromOut(transform));
-            } else {
-                result = p.process(transform);
-            }
+            result = convertAdToDbIfNeeded(transform, p);
+        } else if (pipeline.startsWith("xsl30")) {
+            DbXslt30 p;
+            p = new DbXslt30("css");
+            result = convertAdToDbIfNeeded(transform, p);
         } else if (pipeline.startsWith("ascii") || pipeline.startsWith("ad")) {
             AsciidoctorJ ad = new AsciidoctorJ();
             LOG.warn("pipeline: " + ad);
@@ -104,8 +103,25 @@ public class App {
         LOG.warn("result stage: " + result);
     }
 
+    private IStage convertAdToDbIfNeeded(TransformCommand transform, IPipeline p) throws IOException, ReflectiveOperationException {
+        IStage result;
+        LOG.warn("pipeline: " + p);
+        if (EFileType.AD == transform.inFormat) {
+            // If input is asciidoc(tor), first convert it to docbook ...
+            AsciidoctorJ aPipeline = new AsciidoctorJ();
+            result = aPipeline.process(transform, Stage.fromIn(transform),
+                    Stage.from(transform, EFileType.DB));
+            // ... and then proceed as normal
+            result = p.process(transform, result, Stage.fromOut(transform));
+        } else {
+            result = p.process(transform);
+        }
+        return result;
+    }
+
     private void list(ListCommand list) throws Exception {
-        String[] pipelines = new String[]{"xsl-css", "xsl-fo", "ad", "fo"};
+        // TODO tp: Is there some way to extract this from pipeline implementations?
+        String[] pipelines = new String[]{"xsl10-css", "xsl10-fo", "xsl20-css", "xsl20-fo", "ad", "fo"};
         LOG.warn("implemented pipelines:");
         for (String p : pipelines) {
             LOG.warn("\t* " + p);

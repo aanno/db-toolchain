@@ -10,7 +10,9 @@ public enum EFileType {
     AD(new String[]{"adoc", "ad", "asciidoc", "asiciidoctor"}),
     DB(new String[]{"db.xml", "db", "docbook", "xml"}),
     FO(new String[]{"fo.xml", "fo", "xsl-fo"}),
+    @Deprecated
     XHTML(new String[]{"xhtml", "html.xml"}),
+    HTML5(new String[]{"html5", "html"}),
     PDF(new String[]{"pdf"});
 
     private final List<String> extensions;

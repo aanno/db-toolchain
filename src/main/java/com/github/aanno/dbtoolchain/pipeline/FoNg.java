@@ -28,7 +28,7 @@ import java.util.List;
 
 public class FoNg implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("Fo");
+    private static final Logger LOG = LoggerFactory.getLogger("FoNg");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
@@ -53,7 +53,8 @@ public class FoNg implements IPipeline {
         if (EFileType.PDF == finish.getType()) {
             current = processToPdf(command, current);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("process command " + command + " failed:\n" +
+                    "\tcurrent=" + current + "\n\tfinish=" + finish);
         }
         return current;
     }

@@ -2,10 +2,7 @@ package com.github.aanno.dbtoolchain.pipeline;
 
 import com.github.aanno.dbtoolchain.cli.EFileType;
 import com.github.aanno.dbtoolchain.cli.TransformCommand;
-import com.github.aanno.dbtoolchain.org.docbook.Main;
-import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
-import com.github.aanno.dbtoolchain.xml.TraxSingleton;
 import net.sf.saxon.s9api.SaxonApiException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,15 +12,16 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
+import org.docbook.xsltng.Main;
 
-public class DbXslt20Ng implements IPipeline {
+public class DbXslt30 implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("DbXslt20Ng");
+    private static final Logger LOG = LoggerFactory.getLogger("DbXslt30");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
     private static final String[] VARIANTS = new String[]{
-            "css", "fo"
+            "css"
     };
 
     public static String[] getVariants() {
@@ -32,20 +30,18 @@ public class DbXslt20Ng implements IPipeline {
 
     private final String variant;
 
-    private FoNg fo;
-
-    public DbXslt20Ng(String variant) {
+    public DbXslt30(String variant) {
         this.variant = variant;
     }
 
     @Override
     public String getName() {
-        return "DbXslt20Ng";
+        return "DbXslt30";
     }
 
     @Override
     public String getDescription() {
-        return "xslt20 based transform on arbitrary XPL";
+        return "docbook xslt30 based transform (https://xsltng.docbook.org/)";
     }
 
     @Override
@@ -59,9 +55,7 @@ public class DbXslt20Ng implements IPipeline {
                     } else {
                         current = processDbXmlByXhmtl(command, current, finish);
                     }
-                } else if (EFileType.FO == current.getType()) {
-                    current = processFo(command, current, finish);
-                } else if (EFileType.HTML5 == current.getType() || EFileType.XHTML == current.getType()) {
+                } else if (EFileType.XHTML == current.getType()) {
                     current = processXhtmlByPrinceProcess(command, current, finish);
                 }
                 if (old.getType() == current.getType()) {
@@ -81,35 +75,40 @@ public class DbXslt20Ng implements IPipeline {
             throw new IllegalArgumentException();
         }
         IStage result;
-        String format, output, xpl;
+        List<String> args = new ArrayList<>();
 
-        if ("css".equals(variant) || EFileType.HTML5 == finish.getType() || EFileType.XHTML == finish.getType()) {
-            result = Stage.from(command, finish.getType());
+        if ("css".equals(variant) || EFileType.HTML5 == finish.getType()) {
+            /* NOT working
+            result = Stage.from(command, EFileType.PDF);
 
-            format = getHtmlFormat(finish.getType());
-            output = result.getPath().toString();
-            // ???
-            // xpl = "db2xhtml.xpl";
-            // xpl = "db2html.xpl";
-            xpl = "/mnt/home/tpasch/scm/aanno/db-toolchain/src/main/resources/docbook-xsl20/db2html-db-toolchain.xpl";
-        } else if ("fo".equals(variant)) {
-            result = Stage.from(command, EFileType.FO);
+            args.add("-f");
+            args.add("cssprint");
+            args.add("-o");
+            args.add(result.getPath().toString());
+            args.add("--css");
+            args.add(css);
+            args.add(current.getPath().toString());
+             */
+            result = Stage.from(command, EFileType.HTML5);
 
-            format = "fo";
-            output = result.getPath().toString();
-            xpl = "db2fo.xpl";
+            args.add(current.getPath().toString());
+            args.add("-o:" + result.getPath().toString());
+            // The --resources flag only _copies_ resources - hence it is not what we need.
+            // args.add("--resources:.");
+            // args.add("--resources:/mnt/home/tpasch/scm/aanno/db-toolchain");
+
+            // Stylesheet params are simply appended (see Main for details)
+            // TODO tp: make this sane
+            args.add("resource-base-uri=/mnt/home/tpasch/scm/aanno/db-toolchain/lib/docbook-xslTNG/resources/");
+            // output parameters starts with '!', see https://www.saxonica.com/documentation9.5/using-xsl/commandline.html
+            args.add("!indent=yes");
+            // debug stylesheet, https://www.saxonica.com/documentation9.5/using-xsl/commandline.html
+            // args.add("-explain");
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }
-        XSLT20 xslt20 = new XSLT20();
-        if (!Path.of(xpl).isAbsolute()) {
-            // resolve relative stuff on db xslt20
-            xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
-        }
-        LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl);
-        xslt20.setOption("format", format);
-        xslt20.setOption("output", output);
-        xslt20.runXpl(current.getPath().toString(), xpl, command.workDir.toString());
+        LOG.warn("xslt30 args: " + args);
+        Main.main(args.toArray(EMPTY_STRING_ARRAY));
 
         return result;
     }
@@ -119,40 +118,27 @@ public class DbXslt20Ng implements IPipeline {
             throw new IllegalArgumentException();
         }
         IStage result;
-        String format, output, xpl, css;
+        List<String> args = new ArrayList<>();
 
         if ("css".equals(variant)) {
             result = Stage.from(command, EFileType.PDF);
+            String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
 
-            css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
-            format = "cssprint";
-            output = result.getPath().toString();
-            xpl = "db2pdf.xpl";
+            args.add("-f");
+            args.add("cssprint");
+            args.add("-o");
+            args.add(result.getPath().toString());
+            args.add("--css");
+            args.add(css);
+            args.add(current.getPath().toString());
         } else if ("fo".equals(variant)) {
             throw new IllegalStateException("processDbXmlByApi not available for  variant: " + variant);
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }
-        XSLT20 xslt20 = new XSLT20();
-        xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
-        LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl + " css: " + css);
-        xslt20.setOption("format", format);
-        xslt20.setOption("output", output);
-        xslt20.setOption("css", css);
-        xslt20.runXpl(current.getPath().toString(), xpl, command.workDir.toString());
+        LOG.warn("xslt30 args: " + args);
+        Main.main(args.toArray(EMPTY_STRING_ARRAY));
 
-        return result;
-    }
-
-    private String getHtmlFormat(EFileType type) {
-        final String result;
-        if (type == EFileType.XHTML) {
-            result = "xhtml";
-        } else if (type == EFileType.HTML5) {
-            result = "html";
-        } else {
-            throw new IllegalArgumentException(type.toString());
-        }
         return result;
     }
 
@@ -185,22 +171,10 @@ public class DbXslt20Ng implements IPipeline {
         return result;
     }
 
-    private IStage processFo(TransformCommand command, IStage current, IStage finish) throws IOException {
-        return getFo().process(command, current, finish);
-    }
-
-    private FoNg getFo() {
-        if (fo == null) {
-            fo = new FoNg();
-        }
-        return fo;
-    }
-
     @Override
     public String toString() {
-        return new StringJoiner(", ", DbXslt20Ng.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", DbXslt30.class.getSimpleName() + "[", "]")
                 .add("variant='" + variant + "'")
-                .add("fo=" + fo)
                 .toString();
     }
 }

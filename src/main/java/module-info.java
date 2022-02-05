@@ -12,6 +12,8 @@ open module com.github.aanno.dbtoolchain {
     requires Saxon.HE;
     requires jingtrang;
     requires com.helger.schematron;
+    requires com.helger.schematron.pure;
+    requires com.helger.commons;
     requires xmlcalabash;
     requires prince;
 
@@ -45,11 +47,11 @@ open module com.github.aanno.dbtoolchain {
     requires jdk.unsupported;
     // more jruby
     requires com.headius.invokebinder;
-    requires jnr.posix;
+    // requires jnr.posix;
     // requires jnrchannels;
     // requires jnr.enxio;
     // requires jnr.unixsocket;
-    requires jnr.constants;
+    // requires jnr.constants;
 
     // requires slf4j.api;
     requires info.picocli;
@@ -67,4 +69,7 @@ open module com.github.aanno.dbtoolchain {
 
     // temporary (for original version of org.docbook.Main)
     requires commons.cli;
+
+    // ?test?
+    // requires org.testng;
 }
