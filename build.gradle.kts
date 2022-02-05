@@ -84,9 +84,9 @@ repositories {
                 "submodules/ph-schematron/ph-schematron-pure/target",
                 "submodules/ph-schematron/ph-schematron-api/target",
                 "submodules/ph-commons/ph-commons/target",
-                "submodules/ph-commons/ph-xml/target",
-                "submodules/asciidoctorj/asciidoctorj-core/build/libs",
-                "submodules/asciidoctorj/asciidoctorj-api/build/libs"
+                "submodules/ph-commons/ph-xml/target"
+                // "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+                // "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
     }
 
@@ -333,10 +333,10 @@ dependencies {
     implementation("", "jingtrang", "")
 
     // api("", "xml-apis-stripped", "")
-    api("", "asciidoctorj", "${asciidoctorj_version}") {
+    api("org.asciidoctor", "asciidoctorj", "${asciidoctorj_version}") {
         // exclude("org.asciidoctor", "asciidoctorj-api")
     }
-    api("", "asciidoctorj-api", "${asciidoctorj_version}")
+    api("org.asciidoctor", "asciidoctorj-api", "${asciidoctorj_version}")
 
     // java.lang.module.ResolutionException:
     // Modules jruby.complete and org.jruby export package org.jruby.runtime.backtrace to module nailgun.server
@@ -555,7 +555,7 @@ tasks {
 
     wrapper {
         distributionType = Wrapper.DistributionType.ALL
-        version = "7.2"
+        version = "7.3.3"
     }
 
     withType<JavaCompile> {
