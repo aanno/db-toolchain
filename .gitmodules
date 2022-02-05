@@ -21,3 +21,12 @@
 	path = submodules/jing-trang
 	url = git@github.com:aanno/jing-trang.git
 	branch = feature/tp-saxon
+[submodule "submodules/asciidoctorj"]
+	path = submodules/asciidoctorj
+	url = git@github.com:asciidoctor/asciidoctorj.git
+[submodule "submodules/ph-commons"]
+	path = submodules/ph-commons
+	url = git@github.com:phax/ph-commons.git
+[submodule "submodules/ph-schematron"]
+	path = submodules/ph-schematron
+	url = git@github.com:phax/ph-schematron.git
