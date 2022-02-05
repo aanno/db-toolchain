@@ -18,3 +18,9 @@
 [submodule "submodules/ph-schematron"]
 	path = submodules/ph-schematron
 	url = git@github.com:phax/ph-schematron.git
+[submodule "submodules/xslt20-stylesheets"]
+	path = submodules/xslt20-stylesheets
+	url = git@github.com:docbook/xslt20-stylesheets.git
+[submodule "submodules/xslt20-resources"]
+	path = submodules/xslt20-resources
+	url = git@github.com:docbook/xslt20-resources.git

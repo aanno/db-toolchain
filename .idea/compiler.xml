@@ -143,6 +143,9 @@
       <module name="db-toolchain.submodules.xslt20-stylesheets.main" target="11" />
       <module name="db-toolchain.submodules.xslt20-stylesheets.test" target="11" />
       <module name="db-toolchain.test" target="11" />
+      <module name="ext" target="11" />
+      <module name="ext.main" target="11" />
+      <module name="ext.test" target="11" />
       <module name="fop" target="1.6" />
       <module name="fop-core" target="1.6" />
       <module name="fop-events" target="1.6" />
