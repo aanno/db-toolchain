@@ -11,6 +11,6 @@ pushd $BASE/db-toolchain-*
     CP="$CP:$i"
   done
 
-  java $JAVA_OPTS -cp "${APP}${CP}" com.github.aanno.dbtoolchain.App $*
+  $JAVA_HOME/bin/java $JAVA_OPTS -cp "${APP}${CP}" com.github.aanno.dbtoolchain.App $*
 
 popd
