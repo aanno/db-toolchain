@@ -337,6 +337,7 @@ Currently supported formats are:
 ### Diagrams
 
 * [Diagrams](https://jaxenter.de/hitchhikers-guide-docs-code-diagramme-66357)
+* [asciidoctor-kroki](https://github.com/Mogztter/asciidoctor-kroki)
   
 ### DB to ePub
 
@@ -413,6 +414,9 @@ Currently supported formats are:
   + [weasyprint docs](https://weasyprint.readthedocs.io/en/stable/tutorial.html)
 * [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) (java) based on
   + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer) renderer
+* [asciidoctor-web-pdf](https://github.com/Mogztter/asciidoctor-web-pdf) <br/>
+  complete solution with MathJax3 and Highlighting based on Puppeteer and Paged.js
+* [ReLaXed](https://github.com/RelaxedJS/ReLaXed)
 
 ### CSS drafts
 
