@@ -2,11 +2,13 @@
 val xerces_version: String by project
 val jnr_unixsocket_version: String by project
 val jnr_enxio_version: String by project
+val xmlresolver_version: String by project
 
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
 val jnrchannels = configurations.create("jnrchannels")
 val calabashExt = configurations.create("calabashExt")
+val xmlresolver = configurations.create("xmlresolver")
 
 plugins {
     `java`
@@ -34,6 +36,8 @@ dependencies {
     ueberjars("xerces", "xercesImpl", xerces_version)
     ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.2.0")
     ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.2.0")
+    ueberjars("org.xmlresolver", "xmlresolver", xmlresolver_version)
+    ueberjars("org.xmlresolver:xmlresolver:${xmlresolver_version}:data@jar")
 }
 
 tasks {
@@ -41,7 +45,8 @@ tasks {
         val ueberBaseFiles = configurations.get("ueberjars").resolvedConfiguration.files
         println("ueberBaseFiles: " + ueberBaseFiles)
         from(ueberBaseFiles) {
-            rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1.jar")
+            // $1$3: primary as support for mvn classifiers
+            rename("([a-zA-Z_]+)-([\\d\\.]+(.*)).jar", "$1$3.jar")
         }
         into("./lib/tmp")
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
@@ -97,6 +102,24 @@ tasks {
         dependsOn(unzipCalabashExt)
     }
 
+    val unzipXmlresolver = task("unzipXmlresolver", Copy::class) {
+        from(zipTree(file("lib/tmp/xmlresolver-data.jar"))) {
+        }
+        from(zipTree(file("lib/tmp/xmlresolver.jar"))) {
+        }
+        into("./lib/tmp/xmlresolver")
+        dependsOn(copyJarsForUeberJars)
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
+    }
+
+    val rezipStrippedXmlresolver = task("rezipStrippedXmlresolver", Jar::class) {
+        baseName = "xmlresolver"
+        from(files("./lib/tmp/xmlresolver")) {
+            // exclude("com/xmlcalabash/extensions/*.class")
+        }
+        dependsOn(unzipXmlresolver)
+    }
+
     val jar by register("jar1", Jar::class) {
         archiveName = "foo.jar"
         into("META-INF") {
@@ -110,22 +133,26 @@ artifacts {
     val xerces = tasks.named("rezipStrippedXerces")
     val jnrchannels = tasks.named("rezipStrippedJnr")
     val calabashExt = tasks.named("rezipStrippedCalabashExt")
+    val xmlresolver = tasks.named("rezipStrippedXmlresolver")
 
     add("archives", xerces)
     add("archives", jnrchannels)
     add("archives", calabashExt)
+    add("archives", xmlresolver)
 
     add("default", xerces)
     add("default", jnrchannels)
     add("default", calabashExt)
+    add("default", xmlresolver)
 
     add("xerces", xerces)
     add("jnrchannels", jnrchannels)
     add("calabashExt", calabashExt)
+    add("xmlresolver", xmlresolver)
 }
 
 tasks.named("build") {
-    dependsOn("rezipStrippedXerces", "rezipStrippedJnr", "rezipStrippedCalabashExt")
+    dependsOn("rezipStrippedXerces", "rezipStrippedJnr", "rezipStrippedCalabashExt", "rezipStrippedXmlresolver")
 }
 
 defaultTasks("build")
