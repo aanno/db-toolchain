@@ -67,7 +67,8 @@ pushd "$ROOT"
     touch "lib/ueberjars/jnrchannels.jar"
 
     ./gradlew copyJarsForUeberJars
-    ./scripts/merge-split-jars.sh
+    # obsolete
+    # ./scripts/merge-split-jars.sh
 
     ./gradlew build
 
