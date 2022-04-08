@@ -58,7 +58,7 @@ So far the following pipelines are implemented:
 
 ## Prerequisite
 
-* Java 11 JDK installed and set as JAVA_HOME environment.
+* Java 17 JDK installed and set as JAVA_HOME environment.
 * [Apache Maven](https://maven.apache.org/) (`mvn`) in PATH.
 * [Apache Ant](https://ant.apache.org/) (`ant`) in PATH.
 * Some Linux tools (e.g. `zip`, `unzip`, `bash`, `wget`) in PATH.

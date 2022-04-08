@@ -48,9 +48,9 @@ plugins {
     // java
     `java-library`
     id("org.javamodularity.moduleplugin") version "1.8.10"
-    id("com.github.ben-manes.versions") version "0.39.0"
-    id("com.github.jruby-gradle.base") version "2.0.2"
-    id("se.patrikerdes.use-latest-versions") version "0.2.17"
+    id("com.github.ben-manes.versions") version "0.42.0"
+    id("com.github.jruby-gradle.base") version "2.1.0-alpha.2"
+    id("se.patrikerdes.use-latest-versions") version "0.2.18"
 
     // Apply the application plugin to add support for building an application
     application
@@ -95,7 +95,7 @@ repositories {
 
     // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    // jcenter()
     maven {
         url = uri("https://plugins.gradle.org/m2/")
     }
@@ -210,7 +210,8 @@ configurations.all {
             // testng changed modulename: testng -> org.testng in 7.3.x (tp)
             , "org.testng:testng:${testng_version}"
             , "org.yaml:snakeyaml:${snakeyaml_version}"
-        // , "xml-apis:xml-apis:1.4.01"
+            , "org.xmlresolver:xmlresolver:${xmlresolver_version}"
+            // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
@@ -452,7 +453,7 @@ dependencies {
     api("org.atteo.classindex", "classindex", "${classindex_version}")
     annotationProcessor("org.atteo.classindex", "classindex", "${classindex_version}")
 
-    implementation("org.docbook:docbook-xslTNG:1.5.4")
+    implementation("org.docbook:docbook-xslTNG:1.6.2")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")
@@ -555,7 +556,7 @@ tasks {
 
     wrapper {
         distributionType = Wrapper.DistributionType.ALL
-        version = "7.3.3"
+        version = "7.4.2"
     }
 
     withType<JavaCompile> {
