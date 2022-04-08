@@ -1,7 +1,8 @@
 #!/bin/bash
+# TODO: probably unnecessary
 
 ROOT=`git rev-parse --show-toplevel`
-TMP="$ROOT/lib/tmp"
+TMP="$ROOT/splitjars/lib/tmp"
 DIR="$ROOT/lib/ueberjars"
 UEBERJAR1="$DIR/jnrchannels.jar"
 UEBERJAR2="$DIR/xmlcalabash-extensions.jar"

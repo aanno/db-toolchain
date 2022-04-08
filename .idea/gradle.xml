@@ -7,20 +7,6 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/submodules/asciidoctorj" name="asciidoctorj">
-                <projects>
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-arquillian-extension" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
-                  <project path="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
-                </projects>
-              </build>
               <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets" name="xslt20-stylesheets">
                 <projects>
                   <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
@@ -36,11 +22,6 @@
                   <project path="$PROJECT_DIR$/submodules/jing-trang" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" name="ext">
-                <projects>
-                  <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" />
-                </projects>
-              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -53,20 +34,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/splitjars" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-arquillian-extension" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
             <option value="$PROJECT_DIR$/submodules/jing-trang" />
             <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
             <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/ext" />
+            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -1,15 +1,6 @@
-[submodule "xslt20-stylesheets"]
-	# url = https://github.com/docbook/xslt20-stylesheets.git
-	url = git@github.com:aanno/xslt20-stylesheets.git
-	path = submodules/xslt20-stylesheets
-	# branch = master
-	branch = feature/pr-gradle-6.x
 [submodule "asciidoctor-fopub"]
 	path = submodules/asciidoctor-fopub
 	url = https://github.com/asciidoctor/asciidoctor-fopub.git
-[submodule "xslt20-resources"]
-	path = submodules/xslt20-resources
-	url = https://github.com/docbook/xslt20-resources
 [submodule "xslt20-java"]
 	path = submodules/xslt20-java
 	url = https://github.com/docbook/xslt20-java.git
@@ -21,23 +12,15 @@
 	path = submodules/jing-trang
 	url = git@github.com:aanno/jing-trang.git
 	branch = feature/tp-saxon
-[submodule "asciidoctorj"]
-	path = submodules/asciidoctorj
-	url = git@github.com:aanno/asciidoctorj.git
-	# branch = feature/module-jars
-	# branch = feature/pr-java11-module-jars
-	branch = master
-[submodule "xmlcalabash1-print"]
-	path = submodules/xmlcalabash1-print
-	url = git@github.com:aanno/xmlcalabash1-print.git
-	branch = feature/pr-java11-module
-[submodule "submodules/xerces2-j"]
-	path = submodules/xerces2-j
-	url = git@github.com:aanno/xerces2-j.git
-	branch = feature/xerces-java11
-[submodule "submodules/ph-schematron"]
-	path = submodules/ph-schematron
-	url = git@github.com:phax/ph-schematron.git
 [submodule "submodules/ph-commons"]
 	path = submodules/ph-commons
 	url = git@github.com:phax/ph-commons.git
+[submodule "submodules/ph-schematron"]
+	path = submodules/ph-schematron
+	url = git@github.com:phax/ph-schematron.git
+[submodule "submodules/xslt20-stylesheets"]
+	path = submodules/xslt20-stylesheets
+	url = git@github.com:docbook/xslt20-stylesheets.git
+[submodule "submodules/xslt20-resources"]
+	path = submodules/xslt20-resources
+	url = git@github.com:docbook/xslt20-resources.git

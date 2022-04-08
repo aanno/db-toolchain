@@ -58,7 +58,7 @@ So far the following pipelines are implemented:
 
 ## Prerequisite
 
-* Java 11 JDK installed and set as JAVA_HOME environment.
+* Java 17 JDK installed and set as JAVA_HOME environment.
 * [Apache Maven](https://maven.apache.org/) (`mvn`) in PATH.
 * [Apache Ant](https://ant.apache.org/) (`ant`) in PATH.
 * Some Linux tools (e.g. `zip`, `unzip`, `bash`, `wget`) in PATH.
@@ -69,7 +69,7 @@ So far the following pipelines are implemented:
 1. Check out the project from github.
 2. `cd db-toolchain`
 3. `./script/bootstrap.sh`
-4. `./gradlew build` and `./scripts/merge-split-jars.sh` (ignoring any errors that may occur)
+4. `./gradlew build`
 <!-- 5. `./gradlew runApp1` to run an example convertion. -->
 5. `./scripts/unzip-distribution.sh`
 6. You have now a distribution Zip at `build/distributions/db-toolchain.zip` that you can unzip and use 
@@ -230,7 +230,10 @@ Currently supported formats are:
 * [XProc](https://de.wikipedia.org/wiki/XProc)
   + [XProc Spec](https://www.w3.org/TR/xproc/)
   + [Introduction to XProc 3.0](https://www.xml.com/articles/2019/11/05/introduction-xproc-30/)
-  + [Calabash: XProc Implementation](http://xmlcalabash.com/)
+    - [XMLCalabash 3](https://github.com/xmlcalabash/xmlcalabash3)
+    - [JAFPL](https://jafpl.com/)
+    - [XProc 3.0 spec](https://xproc.org/)
+  + [Calabash 1: XProc Implementation](http://xmlcalabash.com/)
   + [MorganaXProc-III](https://www.xml-project.com/morganaxproc-iii/) (work-in-progress)
   + [Calabash Docs](https://github.com/ndw/xmlcalabash1-docs)
     - [Calabash Gradle Plugin](https://github.com/ndw/xmlcalabash1-gradle)
@@ -337,6 +340,7 @@ Currently supported formats are:
 ### Diagrams
 
 * [Diagrams](https://jaxenter.de/hitchhikers-guide-docs-code-diagramme-66357)
+* [asciidoctor-kroki](https://github.com/Mogztter/asciidoctor-kroki)
   
 ### DB to ePub
 
@@ -413,6 +417,9 @@ Currently supported formats are:
   + [weasyprint docs](https://weasyprint.readthedocs.io/en/stable/tutorial.html)
 * [openhtmltopdf](https://github.com/danfickle/openhtmltopdf) (java) based on
   + [Flying Saucer](https://github.com/flyingsaucerproject/flyingsaucer) renderer
+* [asciidoctor-web-pdf](https://github.com/Mogztter/asciidoctor-web-pdf) <br/>
+  complete solution with MathJax3 and Highlighting based on Puppeteer and Paged.js
+* [ReLaXed](https://github.com/RelaxedJS/ReLaXed)
 
 ### CSS drafts
 

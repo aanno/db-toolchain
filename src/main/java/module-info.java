@@ -15,7 +15,7 @@ open module com.github.aanno.dbtoolchain {
     requires com.helger.schematron.pure;
     requires com.helger.commons;
     requires xmlcalabash;
-    requires prince;
+    requires prince.java.wrapper;
 
     requires asciidoctorj.api;
     requires asciidoctorj;
