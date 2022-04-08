@@ -98,6 +98,11 @@ repositories {
     maven {
         url = uri("https://plugins.gradle.org/m2/")
     }
+    /*
+    maven {
+        url = uri("https://jitpack.io")
+    }
+     */
     // for use with https://github.com/jruby/rubygems-servlets
     // (as rubygems("https://rubygems.org") does NOT work)
     /*
@@ -419,22 +424,22 @@ dependencies {
     api("xml-apis", "xml-apis-ext", "${xml_apis_ext_version}")
     api("xerces", "xercesImpl", xercesVersion)
 
-    api("com.helger", "ph-schematron-pure", "${ph_schematron_version}") {
-        exclude("com.helger", "ph-jaxb")
-        exclude("com.helger", "ph-jaxb-pom")
+    api("com.helger.schematron", "ph-schematron-pure", "${ph_schematron_version}") {
+        exclude("com.helger.commons", "ph-jaxb")
+        exclude("com.helger.commons", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("com.helger", "ph-schematron-api", "${ph_schematron_version}") {
-        exclude("com.helger", "ph-jaxb")
-        exclude("com.helger", "ph-jaxb-pom")
+    api("com.helger.schematron", "ph-schematron-api", "${ph_schematron_version}") {
+        exclude("com.helger.commons", "ph-jaxb")
+        exclude("com.helger.commons", "ph-jaxb-pom")
         exclude("org.glassfish.jaxb", "jaxb-bom")
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("com.helger", "ph-commons", "${ph_commons_version}") {
+    api("com.helger.commons", "ph-commons", "${ph_commons_version}") {
         exclude("com.google.code.findbugs", "jsr305")
     }
-    api("com.helger", "ph-xml", "${ph_commons_version}") {
+    api("com.helger.commons", "ph-xml", "${ph_commons_version}") {
         exclude("com.google.code.findbugs", "jsr305")
     }
     // api("xml-resolver", "xml-resolver", "1.2")
