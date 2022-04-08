@@ -37,7 +37,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@vivliostyle/cli": "^4.6.0",
+    "@vivliostyle/cli": "^2.1.3",
     "@vivliostyle/core": "^2.14.1"
   }
 }
