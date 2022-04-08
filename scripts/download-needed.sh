@@ -39,10 +39,9 @@ popd
 
 download https://docbook.org/xml/5.1/docbook-v5.1-os.zip 2
 download https://docbook.org/xml/5.0.1/docbook-5.0.1.zip 2
-download https://www.princexml.com/download/prince-java-20180929.zip 1
 download https://github.com/docbook/xslt20-stylesheets/releases/download/2.6.0/docbook-xslt2-2.6.0.zip 6
 download https://github.com/docbook/xslt10-stylesheets/releases/download/snapshot%2F2020-06-03/docbook-xsl-snapshot.zip 6
-download https://github.com/docbook/xslTNG/releases/download/1.5.4/docbook-xslTNG-1.5.4.zip 6
+download https://github.com/docbook/xslTNG/releases/download/1.6.2/docbook-xslTNG-1.6.2.zip 6
 
 # not present any more in asciidoctorj >2.1.0
 download https://raw.githubusercontent.com/asciidoctor/asciidoctorj/v2.1.0/docs/integrator-guide.adoc 5
@@ -61,17 +60,14 @@ popd
 mkdir -p "lib"
 pushd "lib"
 
-unzip -o "$DOWNLOAD_TMP/prince-java-20180929.zip"
-ln -s "prince-java-20180929" "prince-java"
-
 unzip -o "$DOWNLOAD_TMP/docbook-xslt2-2.6.0.zip"
 ln -s "docbook-xslt2-2.6.0" "docbook-xslt2"
 
 unzip -o "$DOWNLOAD_TMP/docbook-xsl-snapshot.zip"
 ln -s "docbook-xsl-snapshot" "docbook-xsl"
 
-unzip -o "$DOWNLOAD_TMP/docbook-xslTNG-1.5.4.zip"
-ln -s "docbook-xslTNG-1.5.4" "docbook-xslTNG"
+unzip -o "$DOWNLOAD_TMP/docbook-xslTNG-1.6.2.zip"
+ln -s "docbook-xslTNG-1.6.2" "docbook-xslTNG"
 
 popd
 

@@ -71,7 +71,6 @@ apply {
 repositories {
     flatDir {
         dirs(
-                "lib/prince-java/lib",
                 "submodules/jing-trang/build/libs",
                 // "submodules/fop/fop/target",
                 // "lib/ueberjars",
@@ -306,13 +305,13 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
 dependencies {
     gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.8.10")
-    gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.39.0")
-    gradlePlugins("se.patrikerdes.use-latest-versions", "se.patrikerdes.use-latest-versions.gradle.plugin", "0.2.17")
-    gradlePlugins("com.github.jruby-gradle.base", "com.github.jruby-gradle.base.gradle.plugin", "2.0.2")
+    gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.42.0")
+    gradlePlugins("se.patrikerdes.use-latest-versions", "se.patrikerdes.use-latest-versions.gradle.plugin", "0.2.18")
+    gradlePlugins("com.github.jruby-gradle.base", "com.github.jruby-gradle.base.gradle.plugin", "2.1.0-alpha.2")
 
     // taken from prince-java download at 'lib/prince-java/lib'
 
-    api("", "prince", "")
+    api("com.princexml", "prince-java-wrapper", "1.2.0")
     api(project("splitjars", "xerces"))
 
     // TODO: This is hacky as it trashes the first build after clean

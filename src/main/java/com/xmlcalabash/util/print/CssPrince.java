@@ -14,13 +14,16 @@ import java.io.*;
 import java.util.Properties;
 import java.util.Vector;
 
+import com.princexml.wrapper.Prince;
+import com.princexml.wrapper.enums.InputType;
+import com.princexml.wrapper.enums.KeyBits;
+import com.princexml.wrapper.events.MessageType;
+import com.princexml.wrapper.events.PrinceEvents;
 import com.xmlcalabash.util.Base64;
 import com.xmlcalabash.util.S9apiUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.princexml.Prince;
-import com.princexml.PrinceEvents;
 import com.xmlcalabash.config.CssProcessor;
 import com.xmlcalabash.core.XProcConstants;
 import com.xmlcalabash.core.XProcException;
@@ -38,6 +41,11 @@ import net.sf.saxon.s9api.XdmNode;
  * Date: 9/1/11
  * Time: 4:24 PM
  * To change this template use File | Settings | File Templates.
+ *
+ * Now uses api("com.princexml", "prince-java-wrapper", "1.2.0")
+ * TODO: Settings are now normallized with no (i.e. setNoEmbedFonts)
+ * TODO: Check if there are more settings in Prince
+ * TODO: Recheck unsupported stuff
  */
 public class CssPrince implements CssProcessor {
     private Logger logger = LoggerFactory.getLogger(CssPrince.class);
@@ -69,12 +77,12 @@ public class CssPrince implements CssProcessor {
 
         String s = getStringProp("baseURL");
         if (s != null) {
-            prince.setBaseURL(s);
+            prince.setBaseUrl(s);
         }
 
         Boolean b = getBooleanProp("compress");
         if (b != null) {
-            prince.setCompress(b);
+            prince.setNoCompress(!b);
         }
 
         b = getBooleanProp("debug");
@@ -84,7 +92,7 @@ public class CssPrince implements CssProcessor {
 
         b = getBooleanProp("embedFonts");
         if (b != null) {
-            prince.setEmbedFonts(b);
+            prince.setNoEmbedFonts(!b);
         }
 
         b = getBooleanProp("encrypt");
@@ -95,37 +103,61 @@ public class CssPrince implements CssProcessor {
         Integer keyBits = getIntProp("keyBits");
         if (keyBits != null) {
             String up = getStringProp("userPassword");
+            if (up != null) {
+                prince.setUserPassword(up);
+            }
             String op = getStringProp("ownerPassword");
+            if (op != null) {
+                prince.setOwnerPassword(op);
+            }
             b = getBooleanProp("disallowPrint");
             boolean dp = b == null ? false : b;
+            prince.setDisallowPrint(dp);
+
             b = getBooleanProp("disallowModify");
             boolean dm = b == null ? false : b;
+            prince.setDisallowModify(dm);
+
             b = getBooleanProp("disallowCopy");
             boolean dc = b == null ? false : b;
+            prince.setDisallowCopy(dc);
+
             b = getBooleanProp("disallowAnnotate");
             boolean da = b == null ? false : b;
-            prince.setEncryptInfo(keyBits, up, op, dp, dm, dc, da);
+            prince.setDisallowAnnotate(da);
+
+            int kb = keyBits.intValue();
+            if (kb == 40) {
+                prince.setKeyBits(KeyBits.BITS40);
+            } else {
+                prince.setKeyBits(KeyBits.BITS128);
+            }
+
+            // prince.setEncryptInfo(keyBits, up, op, dp, dm, dc, da);
         }
 
         s = getStringProp("fileRoot");
         if (s != null) {
-            prince.setFileRoot(s);
+            // prince.setFileRoot(s);
+            // ???
+            throw new XProcException("Unsupported prop 'fileRoot': " + s);
         }
-
 
         b = getBooleanProp("html");
         if (b != null) {
-            prince.setHTML(b);
+            // prince.setHTML(b);
+            // ???
+            prince.setInputType(InputType.HTML);
         }
 
         s = getStringProp("httpPassword");
         if (s != null) {
-            prince.setHttpPassword(s);
+            prince.setAuthPassword(s);
         }
 
         s = getStringProp("httpUsername");
         if (s != null) {
-            prince.setHttpUsername(s);
+            prince.setAuthUser(s);
         }
 
         s = getStringProp("httpProxy");
@@ -135,7 +167,17 @@ public class CssPrince implements CssProcessor {
 
         s = getStringProp("inputType");
         if (s != null) {
-            prince.setInputType(s);
+            InputType type = null;
+            if (s.equalsIgnoreCase("html")) {
+                type = InputType.HTML;
+            } else if (s.equalsIgnoreCase("xml")) {
+                type = InputType.XML;
+            } else if (s.equalsIgnoreCase("auto")) {
+                type = InputType.AUTO;
+            } else {
+                throw new XProcException("Unsupported input type: " + s);
+            }
+            prince.setInputType(type);
         }
 
         b = getBooleanProp("javascript");
@@ -150,12 +192,12 @@ public class CssPrince implements CssProcessor {
 
         b = getBooleanProp("network");
         if (b != null) {
-            prince.setNetwork(b);
+            prince.setNoNetwork(!b);
         }
 
         b = getBooleanProp("subsetFonts");
         if (b != null) {
-            prince.setSubsetFonts(b);
+            prince.setNoSubsetFonts(!b);
         }
 
         b = getBooleanProp("verbose");
@@ -265,7 +307,7 @@ public class CssPrince implements CssProcessor {
         if (s != null) {
             try {
                 int i = Integer.parseInt(s);
-                return new Integer(i);
+                return i;
             } catch (NumberFormatException nfe) {
                 return null;
             }
@@ -283,14 +325,23 @@ public class CssPrince implements CssProcessor {
 
     private class PrinceMessages implements PrinceEvents {
         @Override
-        public void onMessage(String msgType, String msgLoc, String msgText) {
-            if ("inf".equals(msgType)) {
+        public void onMessage(MessageType msgType, String msgLoc, String msgText) {
+            if (MessageType.INF.equals(msgType)) {
                 step.info(step.getNode(), msgText);
-            } else if ("wrn".equals(msgType)) {
+            } else if (MessageType.WRN.equals(msgType)) {
                 step.warning(step.getNode(), msgText);
+            } else if (MessageType.DBG.equals(msgType)) {
+                step.info(step.getNode(), "Debug: " + msgText);
+            } else if (MessageType.OUT.equals(msgType)) {
+                step.info(step.getNode(), "Out: " + msgText);
             } else {
                 step.error(step.getNode(), msgText, new QName(XProcConstants.NS_XPROC_ERROR_EX, "prince"));
             }
+        }
+
+        @Override
+        public void onDataMessage(String name, String value) {
+            step.info(step.getNode(), "DataMessage: " + name + ": " + value);
         }
     }
 }
