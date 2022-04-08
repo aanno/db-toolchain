@@ -1,4 +1,7 @@
-val xercesVersion = "2.12.1"
+
+val xerces_version: String by project
+val jnr_unixsocket_version: String by project
+val jnr_enxio_version: String by project
 
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
@@ -16,12 +19,19 @@ repositories {
     // Use jcenter for resolving your dependenes.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    /*
+    repositories {
+        maven {
+            url = uri("https://repo.boundlessgeo.com/main/")
+        }
+    }
+     */
 }
 
 dependencies {
-    ueberjars("com.github.jnr", "jnr-enxio", "0.32.3")
-    ueberjars("com.github.jnr", "jnr-unixsocket", "0.38.5")
-    ueberjars("xerces", "xercesImpl", xercesVersion)
+    ueberjars("com.github.jnr", "jnr-enxio", jnr_enxio_version)
+    ueberjars("com.github.jnr", "jnr-unixsocket", jnr_unixsocket_version)
+    ueberjars("xerces", "xercesImpl", xerces_version)
     ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.2.0")
     ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.2.0")
 }
