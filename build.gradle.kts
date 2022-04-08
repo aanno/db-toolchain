@@ -282,8 +282,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
     // exclude old resolvers (use java 11 resolver)
     exclude("xml-resolver", "xml-resolver")
-    // can't be excluded because it is used by xmlcalabash
-    // exclude("org.xmlresolver", "xmlresolver")
+    // use splitjar xmlresolver
+    // can't really be excluded because it is used by xmlcalabash
+    exclude("org.xmlresolver", "xmlresolver")
 
     // from xmlcalabash
     exclude("net.java.dev.msv", "msv-core")
@@ -399,7 +400,9 @@ dependencies {
     api("commons-cli", "commons-cli", "${commons_cli_version}")
 
     // Needed for xmlcalabash (and original docbook-xslt20 Main.main) (tp)
-    api("org.xmlresolver", "xmlresolver", "${xmlresolver_version}")
+    // api("org.xmlresolver", "xmlresolver", "${xmlresolver_version}")
+    // use splitjar version
+    api(project("splitjars", "xmlresolver"))
 
     api("net.sf.saxon", "Saxon-HE", "${saxon_version}")
     api("org.apache.xmlgraphics", "fop-pdf-images", "${fop_version}") {
