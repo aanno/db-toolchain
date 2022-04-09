@@ -462,7 +462,9 @@ dependencies {
     api("org.apache.logging.log4j", "log4j-api", log4j2_version)
     implementation("org.apache.logging.log4j", "log4j-core", log4j2_version)
     implementation("org.apache.logging.log4j", "log4j-slf4j-impl", log4j2_version)
+    implementation("org.apache.logging.log4j", "log4j-jcl", log4j2_version)
     api("org.slf4j", "slf4j-api", "${slf4j_version}")
+    api("commons-logging:commons-logging-api:1.1")
 
     // ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
     api("de.rototor.jeuclid:jeuclid-core:${jeuclid_version}")
