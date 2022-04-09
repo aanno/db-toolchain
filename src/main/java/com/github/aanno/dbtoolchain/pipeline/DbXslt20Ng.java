@@ -101,7 +101,7 @@ public class DbXslt20Ng implements IPipeline {
 
             format = "fo";
             output = result.getPath().toString();
-            xpl = "db2fo.xpl";
+            xpl = "xslt/base/pipelines/db2fo.xpl";
         } else {
             throw new IllegalStateException("unknown variant: " + variant);
         }

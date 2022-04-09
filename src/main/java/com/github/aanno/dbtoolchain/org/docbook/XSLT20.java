@@ -250,13 +250,13 @@ public class XSLT20 {
             format = options.get(_format).getString();
         }
 
-        String xpl = "db2html.xpl";
+        String xpl = "xslt/base/pipelines/db2html.xpl";
         if (format.equals("foprint") || format.equals("cssprint")) {
-            xpl = "db2pdf.xpl";
+            xpl = "xslt/base/pipelines/db2pdf.xpl";
         } else if (format.equals("xhtml")) {
-            xpl = "db2xhtml.xpl";
+            xpl = "xslt/base/pipelines/db2xhtml.xpl";
         } else if (format.equals("fo")) {
-            xpl = "db2fo.xpl";
+            xpl = "xslt/base/pipelines/db2fo.xpl";
         }
 
         xpl = jarLoc + "/xslt/base/pipelines/" + xpl;
