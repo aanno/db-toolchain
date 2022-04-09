@@ -106,7 +106,7 @@ public class DbXslt20Ng implements IPipeline {
         if (!Path.of(xpl).isAbsolute()) {
             // resolve relative stuff on db xslt20
             // xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
-            xpl = S9ApiUtils.getResource(xpl);
+            xpl = S9ApiUtils.getResource(xpl).toExternalForm();
         }
         LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl);
         xslt20.setOption("format", format);

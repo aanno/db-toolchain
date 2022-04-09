@@ -6,6 +6,8 @@ import net.sf.saxon.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,13 +19,12 @@ public class S9ApiUtils {
 
     private static final Logger logger = LoggerFactory.getLogger(S9ApiUtils.class);
 
-
     private S9ApiUtils() {
         // Never invoked
     }
 
-    public static String getResource(String resource) {
-        String resLoc = null;
+    public static URL getResource(String resource) {
+        URL resLoc = null;
         // Where am I?
         // TODO tp
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
@@ -37,13 +38,14 @@ public class S9ApiUtils {
         }
         if (size == 1) {
             // throw new IllegalArgumentException("Resource " + resource + " not found");
-            resLoc = list.get(0).toExternalForm();
+            resLoc = list.get(0);
         }
+        logger.info("resource '" + resource + "' resolved to " + resLoc);
         return resLoc;
     }
 
     public static String jarOrBasePathForResource(String resource) {
-        String resLoc = getResource(resource);
+        String resLoc = getResource(resource).toExternalForm();
 
         String jarLoc = null;
         if (resLoc != null && resLoc.indexOf(".jar!/") >= 0) {
@@ -68,12 +70,14 @@ public class S9ApiUtils {
         return result;
     }
 
-    public static Path getDb2FoPath() {
-        return Paths.get("submodules/xslt20-stylesheets/build/xslt/base/pipelines/db2fo.xpl");
+    public static InputStream getDb2FoPath() throws IOException {
+        // return Paths.get("submodules/xslt20-stylesheets/build/xslt/base/pipelines/db2fo.xpl");
+        return getResource("xslt/base/pipelines/db2fo.xpl").openStream();
     }
 
-    public static Path getDocbookPath() {
-        return Paths.get("submodules/xslt20-stylesheets/build/xslt/base/pipelines/docbook.xpl");
+    public static InputStream getDocbookPath() throws IOException{
+        // return Paths.get("submodules/xslt20-stylesheets/build/xslt/base/pipelines/docbook.xpl");
+        return getResource("xslt/base/pipelines/docbook.xpl").openStream();
     }
 
     public static Path getDefaultCss() {
