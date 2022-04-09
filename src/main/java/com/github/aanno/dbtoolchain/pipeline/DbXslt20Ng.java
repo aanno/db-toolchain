@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +74,8 @@ public class DbXslt20Ng implements IPipeline {
             throw new IOException(e);
         } catch (InterruptedException e) {
             throw new IOException(e);
+        } catch (URISyntaxException e) {
+            throw new IOException(e);
         }
     }
 
@@ -104,8 +107,6 @@ public class DbXslt20Ng implements IPipeline {
         }
         XSLT20 xslt20 = new XSLT20();
         if (!Path.of(xpl).isAbsolute()) {
-            // resolve relative stuff on db xslt20
-            // xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
             xpl = S9ApiUtils.getResource(xpl).toExternalForm();
         }
         LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl);
@@ -116,7 +117,8 @@ public class DbXslt20Ng implements IPipeline {
         return result;
     }
 
-    private IStage processDbXmlByApi(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
+    private IStage processDbXmlByApi(TransformCommand command, IStage current, IStage finish)
+            throws IOException, SaxonApiException, URISyntaxException {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
@@ -126,7 +128,7 @@ public class DbXslt20Ng implements IPipeline {
         if ("css".equals(variant)) {
             result = Stage.from(command, EFileType.PDF);
 
-            css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+            css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
             format = "cssprint";
             output = result.getPath().toString();
             xpl = "db2pdf.xpl";
@@ -136,7 +138,9 @@ public class DbXslt20Ng implements IPipeline {
             throw new IllegalStateException("unknown variant: " + variant);
         }
         XSLT20 xslt20 = new XSLT20();
-        xpl = xslt20.getJarLoc() + "/xslt/base/pipelines/" + xpl;
+        if (!Path.of(xpl).isAbsolute()) {
+            xpl = S9ApiUtils.getResource(xpl).toExternalForm();
+        }
         LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl + " css: " + css);
         xslt20.setOption("format", format);
         xslt20.setOption("output", output);
@@ -159,10 +163,10 @@ public class DbXslt20Ng implements IPipeline {
     }
 
     private IStage processXhtmlByPrinceProcess(TransformCommand command, IStage current, IStage finish)
-            throws IOException, InterruptedException {
+            throws IOException, InterruptedException, URISyntaxException {
         IStage result = Stage.from(command, EFileType.PDF);
         Path log = command.workDir.resolve("prince.log");
-        String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+        String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
         List<String> args = new ArrayList<>();
 
         args.add("prince");

@@ -415,6 +415,7 @@ dependencies {
 
     // use splitjar version
     api(project("splitjars", "jffi"))
+    api(project("splitjars", "dbXslt2Resources"))
 
     api("net.sf.saxon", "Saxon-HE", "${saxon_version}")
     api("org.apache.xmlgraphics", "fop-pdf-images", "${fop_version}") {

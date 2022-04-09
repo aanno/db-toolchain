@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +72,8 @@ public class DbXslt20 implements IPipeline {
             throw new IOException(e);
         } catch (InterruptedException e) {
             throw new IOException(e);
+        } catch (URISyntaxException e) {
+            throw new IOException(e);
         }
     }
 
@@ -117,7 +120,7 @@ public class DbXslt20 implements IPipeline {
         return result;
     }
 
-    private IStage processDbXmlByApi(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException {
+    private IStage processDbXmlByApi(TransformCommand command, IStage current, IStage finish) throws IOException, SaxonApiException, URISyntaxException {
         if (EFileType.DB != current.getType()) {
             throw new IllegalArgumentException();
         }
@@ -126,7 +129,7 @@ public class DbXslt20 implements IPipeline {
 
         if ("css".equals(variant)) {
             result = Stage.from(command, EFileType.PDF);
-            String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+            String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
 
             args.add("-f");
             args.add("cssprint");
@@ -147,10 +150,10 @@ public class DbXslt20 implements IPipeline {
     }
 
     private IStage processXhtmlByPrinceProcess(TransformCommand command, IStage current, IStage finish)
-            throws IOException, InterruptedException {
+            throws IOException, InterruptedException, URISyntaxException {
         IStage result = Stage.from(command, EFileType.PDF);
         Path log = command.workDir.resolve("prince.log");
-        String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
+        String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
         List<String> args = new ArrayList<>();
 
         args.add("prince");

@@ -80,8 +80,9 @@ public class S9ApiUtils {
         return getResource("xslt/base/pipelines/docbook.xpl").openStream();
     }
 
-    public static Path getDefaultCss() {
-        return Paths.get("submodules/xslt20-resources/build/stage/css/default.css");
+    public static URL getDefaultCss() throws IOException {
+        // return Paths.get("submodules/xslt20-resources/build/stage/css/default.css");
+        return getResource("docbook-xslt2/resources/css/default.css");
     }
 
 }
