@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain;
 import com.github.aanno.dbtoolchain.cli.*;
 import com.github.aanno.dbtoolchain.pipeline.*;
 import com.github.aanno.dbtoolchain.xml.XmlSingleton;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.css.DOMImplementationCSS;
 import picocli.CommandLine;
 
@@ -18,7 +18,7 @@ import static picocli.CommandLine.RunAll;
 
 public class App {
 
-    private static final Logger LOG = LoggerFactory.getLogger("App");
+    private static final Logger LOG = LogManager.getLogger("App");
 
     // site effect for set system properties (tp)
     private XmlSingleton xmlSingleton = XmlSingleton.getInstance();

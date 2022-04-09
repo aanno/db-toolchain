@@ -1,14 +1,14 @@
 package com.github.aanno.dbtoolchain.cli;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class CliUtils {
 
-    private static final Logger LOG = LoggerFactory.getLogger("CliUtils");
+    private static final Logger LOG = LogManager.getLogger("CliUtils");
 
     private static final List<String> COMMANDS = Arrays.asList(new String[] {
        "list", "transform"

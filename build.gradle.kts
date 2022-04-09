@@ -21,6 +21,7 @@ val jnr_unixsocket_version: String by project
 val jnr_enxio_version: String by project
 val picocli_version: String by project
 val slf4j_version: String by project
+val log4j2_version: String by project
 val jeuclid_version: String by project
 val xslthl_version: String by project
 val classindex_version: String by project
@@ -283,7 +284,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
     exclude("org.apache.xmlgraphics", "batik-script")
     exclude("org.apache.xmlgraphics", "batik-constants")
 
-    exclude("org.apache.logging.log4j", "log4j-slf4j-impl")
+    // exclude("org.apache.logging.log4j", "log4j-slf4j-impl")
     exclude("org.restlet.jee", "org.restlet.ext.slf4j")
     // exclude("org.slf4j", "jcl-over-slf4j")
     exclude("org.apache.logging.log4j", "log4j")
@@ -306,6 +307,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 
     // split with javax.annotations (tp)
     exclude("com.google.code.findbugs", "jsr305")
+
+    exclude("org.slf4j", "slf4j-simple")
+    // exclude("org.slf4j", "slf4j-api")
 
     // exclude this for new jeuclid fork
     exclude("net.sourceforge.jeuclid", "jeuclid-core")
@@ -454,7 +458,11 @@ dependencies {
 
     api("info.picocli", "picocli", "${picocli_version}")
 
-    implementation("org.slf4j", "slf4j-simple", "${slf4j_version}")
+    // implementation("org.slf4j", "slf4j-simple", "${slf4j_version}")
+    api("org.apache.logging.log4j", "log4j-api", log4j2_version)
+    implementation("org.apache.logging.log4j", "log4j-core", log4j2_version)
+    implementation("org.apache.logging.log4j", "log4j-slf4j-impl", log4j2_version)
+    api("org.slf4j", "slf4j-api", "${slf4j_version}")
 
     // ueberjars("com.xmlcalabash", "xmlcalabash1-mathml-to-svg", "1.1.3")
     api("de.rototor.jeuclid:jeuclid-core:${jeuclid_version}")
@@ -560,7 +568,7 @@ val patchModule = listOf(
 )
 */
 patchModules.config = listOf(
-        "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
+        // "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
         // , "jing=" + spec2File[":trang"].toString()
         // , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )

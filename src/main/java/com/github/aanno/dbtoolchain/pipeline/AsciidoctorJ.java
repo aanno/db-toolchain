@@ -5,8 +5,8 @@ import com.github.aanno.dbtoolchain.cli.TransformCommand;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
 import org.asciidoctor.SafeMode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -19,7 +19,7 @@ import static org.asciidoctor.OptionsBuilder.options;
 
 public class AsciidoctorJ implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("AsciidoctorJ");
+    private static final Logger LOG = LogManager.getLogger("AsciidoctorJ");
 
     private final Asciidoctor asciidoctor;
     // private Asciidoctor asciidoctor = create("submodules/asciidoctorj/asciidoctorj-core/build/gems");

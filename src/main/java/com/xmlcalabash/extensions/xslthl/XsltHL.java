@@ -19,8 +19,8 @@ import net.sf.xslthl.Block;
 import net.sf.xslthl.Config;
 import net.sf.xslthl.MainHighlighter;
 import net.sf.xslthl.StyledBlock;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.xml.sax.InputSource;
 
 import javax.xml.transform.Source;
@@ -163,7 +163,7 @@ public class XsltHL extends DefaultStep implements ProcessMatchingNodes {
     }
 
     private static class StepResolver implements URIResolver {
-        Logger logger = LoggerFactory.getLogger(XsltHL.class);
+        Logger logger = LogManager.getLogger(XsltHL.class);
         URIResolver nextResolver = null;
 
         public StepResolver(URIResolver next) {

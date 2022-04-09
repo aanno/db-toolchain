@@ -1,7 +1,7 @@
 package com.github.aanno.dbtoolchain.cli;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.StringJoiner;
 import java.util.concurrent.Callable;
@@ -13,7 +13,7 @@ import static picocli.CommandLine.Option;
         subcommands = {TransformCommand.class, ListCommand.class})
 public class CommonFlags implements Callable<Object> {
 
-    private static final Logger LOG = LoggerFactory.getLogger("CommonFlags");
+    private static final Logger LOG = LogManager.getLogger("CommonFlags");
 
     @Option(names = {"-v", "--verbose"}, description = "be verbose", defaultValue = "false", required = false)
     public boolean verbose = false;

@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain;
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.Options;
 import org.asciidoctor.SafeMode;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import static org.asciidoctor.OptionsBuilder.options;
 
 public class AsciidoctorjExample {
 
-    private static final Logger LOG = LoggerFactory.getLogger("AsciidoctorjExample");
+    private static final Logger LOG = LogManager.getLogger("AsciidoctorjExample");
 
     private Asciidoctor asciidoctor = create();
 

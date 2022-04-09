@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain.pipeline;
 import com.github.aanno.dbtoolchain.cli.EFileType;
 import com.github.aanno.dbtoolchain.cli.TransformCommand;
 import com.github.aanno.dbtoolchain.xml.TraxSingleton;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.stream.StreamResult;
@@ -15,7 +15,7 @@ import java.util.*;
 
 public class DbXslt10a implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("DbXslt10a");
+    private static final Logger LOG = LogManager.getLogger("DbXslt10a");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 

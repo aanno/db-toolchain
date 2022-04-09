@@ -11,8 +11,8 @@ import com.xmlcalabash.runtime.XPipeline;
 import com.xmlcalabash.util.Input;
 import com.xmlcalabash.util.XProcURIResolver;
 import net.sf.saxon.s9api.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.ls.LSInput;
 import org.xml.sax.InputSource;
 
@@ -36,7 +36,7 @@ public class XSLT20 {
     private static final QName _output = new QName("", "output");
     private static final QName _format = new QName("", "format");
 
-    private static final  Logger logger = LoggerFactory.getLogger(XSLT20.class);
+    private static final  Logger logger = LogManager.getLogger(XSLT20.class);
 
     private String proctype = "he";
     private boolean schemaAware = false;

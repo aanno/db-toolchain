@@ -1,7 +1,7 @@
 package com.github.aanno.dbtoolchain.xml;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
@@ -9,7 +9,7 @@ import javax.xml.transform.URIResolver;
 
 public class LoggingURIResolver implements URIResolver {
 
-    private static final Logger LOG = LoggerFactory.getLogger(LoggingURIResolver.class);
+    private static final Logger LOG = LogManager.getLogger(LoggingURIResolver.class);
 
     private final URIResolver wrapped;
 

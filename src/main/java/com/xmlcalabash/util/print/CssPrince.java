@@ -21,8 +21,8 @@ import com.princexml.wrapper.events.MessageType;
 import com.princexml.wrapper.events.PrinceEvents;
 import com.xmlcalabash.util.Base64;
 import com.xmlcalabash.util.S9apiUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import com.xmlcalabash.config.CssProcessor;
 import com.xmlcalabash.core.XProcConstants;
@@ -48,7 +48,7 @@ import net.sf.saxon.s9api.XdmNode;
  * TODO: Recheck unsupported stuff
  */
 public class CssPrince implements CssProcessor {
-    private Logger logger = LoggerFactory.getLogger(CssPrince.class);
+    private Logger logger = LogManager.getLogger(CssPrince.class);
     private static final QName _content_type = new QName("content-type");
     private static final QName _encoding = new QName("", "encoding");
 

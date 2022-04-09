@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain.xml;
 import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.apache.xmlgraphics.util.uri.CommonURIResolver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -43,7 +43,7 @@ public class TraxSingleton {
     // from XIncludeAwareParserConfiguration
     public static final String XINCLUDE_FEATURE = "http://apache.org/xml/features/xinclude";
 
-    private static final Logger LOG = LoggerFactory.getLogger(TraxSingleton.class);
+    private static final Logger LOG = LogManager.getLogger(TraxSingleton.class);
 
     static {
         // full XInclude support, see 'DocBook V5.0 Transition Guide FAQ 6.6.1.4'

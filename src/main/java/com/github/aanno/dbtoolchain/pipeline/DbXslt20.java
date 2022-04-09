@@ -5,8 +5,8 @@ import com.github.aanno.dbtoolchain.cli.TransformCommand;
 import com.github.aanno.dbtoolchain.org.docbook.Main;
 import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
 import net.sf.saxon.s9api.SaxonApiException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -17,7 +17,7 @@ import java.util.StringJoiner;
 
 public class DbXslt20 implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("DbXslt20");
+    private static final Logger LOG = LogManager.getLogger("DbXslt20");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 

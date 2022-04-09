@@ -1,7 +1,7 @@
 package com.github.aanno.dbtoolchain.cli;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.nio.file.Path;
 import java.util.StringJoiner;
@@ -14,7 +14,7 @@ import static picocli.CommandLine.Option;
 @Command(name = "transform", aliases = {"build", "convert"}, description = "transform input file to output file")
 public class TransformCommand implements Callable<Object> {
 
-    private static final Logger LOG = LoggerFactory.getLogger("TransformCommand");
+    private static final Logger LOG = LogManager.getLogger("TransformCommand");
 
     @Option(names = {"-h", "--help"}, usageHelp = true)
     public boolean help;

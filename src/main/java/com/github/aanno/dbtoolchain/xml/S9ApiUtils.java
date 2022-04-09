@@ -3,8 +3,8 @@ package com.github.aanno.dbtoolchain.xml;
 
 import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import net.sf.saxon.Configuration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class S9ApiUtils {
 
-    private static final Logger logger = LoggerFactory.getLogger(S9ApiUtils.class);
+    private static final Logger logger = LogManager.getLogger(S9ApiUtils.class);
 
     private S9ApiUtils() {
         // Never invoked

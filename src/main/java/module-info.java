@@ -55,7 +55,9 @@ open module com.github.aanno.dbtoolchain {
 
     // requires slf4j.api;
     requires info.picocli;
+    // only api
     requires org.slf4j;
+    requires org.apache.logging.log4j;
 
     // exports
 

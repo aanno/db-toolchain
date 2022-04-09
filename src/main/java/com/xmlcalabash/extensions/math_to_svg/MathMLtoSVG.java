@@ -18,8 +18,8 @@ import net.sourceforge.jeuclid.MutableLayoutContext;
 import net.sourceforge.jeuclid.context.LayoutContextImpl;
 import net.sourceforge.jeuclid.context.Parameter;
 import net.sourceforge.jeuclid.converter.Converter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -162,7 +162,7 @@ public class MathMLtoSVG extends DefaultStep {
     }
 
     private static class StepResolver implements URIResolver {
-        Logger logger = LoggerFactory.getLogger(MathMLtoSVG.class);
+        Logger logger = LogManager.getLogger(MathMLtoSVG.class);
         URIResolver nextResolver = null;
 
         public StepResolver(URIResolver next) {

@@ -9,8 +9,8 @@ import org.apache.fop.apps.Fop;
 import org.apache.fop.apps.FopFactory;
 import org.apache.fop.apps.FopFactoryBuilder;
 import org.apache.fop.apps.MimeConstants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import net.sourceforge.jeuclid.fop.plugin.JEuclidFopFactoryConfigurator;
 
@@ -28,7 +28,7 @@ import java.util.List;
 
 public class FoNg implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("FoNg");
+    private static final Logger LOG = LogManager.getLogger("FoNg");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 

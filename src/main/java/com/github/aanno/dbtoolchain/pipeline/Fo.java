@@ -2,15 +2,15 @@ package com.github.aanno.dbtoolchain.pipeline;
 
 import com.github.aanno.dbtoolchain.cli.EFileType;
 import com.github.aanno.dbtoolchain.cli.TransformCommand;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fo implements IPipeline {
 
-    private static final Logger LOG = LoggerFactory.getLogger("Fo");
+    private static final Logger LOG = LogManager.getLogger("Fo");
 
     private static final String[] EMPTY_STRING_ARRAY = new String[0];
 
