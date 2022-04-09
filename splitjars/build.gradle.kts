@@ -3,12 +3,14 @@ val xerces_version: String by project
 val jnr_unixsocket_version: String by project
 val jnr_enxio_version: String by project
 val xmlresolver_version: String by project
+val jffi_version: String by project
 
 val ueberjars = configurations.create("ueberjars")
 val xerces = configurations.create("xerces")
 val jnrchannels = configurations.create("jnrchannels")
 val calabashExt = configurations.create("calabashExt")
 val xmlresolver = configurations.create("xmlresolver")
+val jffi = configurations.create("jffi")
 
 plugins {
     `java`
@@ -38,6 +40,8 @@ dependencies {
     ueberjars("com.xmlcalabash", "xmlcalabash1-xslthl", "1.2.0")
     ueberjars("org.xmlresolver", "xmlresolver", xmlresolver_version)
     ueberjars("org.xmlresolver:xmlresolver:${xmlresolver_version}:data@jar")
+    ueberjars("com.github.jnr:jffi:${jffi_version}")
+    ueberjars("com.github.jnr:jffi:${jffi_version}:native")
 }
 
 tasks {
@@ -120,6 +124,26 @@ tasks {
         dependsOn(unzipXmlresolver)
     }
 
+    val unzipJffi = task("unzipJffi", Copy::class) {
+        from(zipTree(file("lib/tmp/jffi.jar"))) {
+        }
+        /*
+        from(zipTree(file("lib/tmp/xmlresolver.jar"))) {
+        }
+         */
+        into("./lib/tmp/jffi")
+        dependsOn(copyJarsForUeberJars)
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
+    }
+
+    val rezipStrippedJffi = task("rezipStrippedJffi", Jar::class) {
+        baseName = "jffi"
+        from(files("./lib/tmp/jffi")) {
+            // exclude("com/xmlcalabash/extensions/*.class")
+        }
+        dependsOn(unzipXmlresolver)
+    }
+
     val jar by register("jar1", Jar::class) {
         archiveName = "foo.jar"
         into("META-INF") {
@@ -134,21 +158,25 @@ artifacts {
     val jnrchannels = tasks.named("rezipStrippedJnr")
     val calabashExt = tasks.named("rezipStrippedCalabashExt")
     val xmlresolver = tasks.named("rezipStrippedXmlresolver")
+    val jffi = tasks.named("rezipStrippedJffi")
 
     add("archives", xerces)
     add("archives", jnrchannels)
     add("archives", calabashExt)
     add("archives", xmlresolver)
+    add("archives", jffi)
 
     add("default", xerces)
     add("default", jnrchannels)
     add("default", calabashExt)
     add("default", xmlresolver)
+    add("default", jffi)
 
     add("xerces", xerces)
     add("jnrchannels", jnrchannels)
     add("calabashExt", calabashExt)
     add("xmlresolver", xmlresolver)
+    add("jffi", jffi)
 }
 
 tasks.named("build") {

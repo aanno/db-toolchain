@@ -190,6 +190,7 @@ configurations.all {
                 ))
                 because("""prefer "fop (all, stripped)" over "${requested.name}"""")
             }
+            /*
             if (requested.group.equals("com.github.jnr") && requested.name.startsWith("jffi-")) {
                 useTarget(mapOf(
                         // "group" to requested.group,
@@ -201,6 +202,7 @@ configurations.all {
                 ))
                 because("""prefer jffi native over jffi""")
             }
+             */
         }
     }
     resolutionStrategy.setForcedModules(
@@ -258,7 +260,9 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
      */
     // exclude("com.github.jnr", "jnr-unixsocket")
     // error: the unnamed module reads package jnr.enxio.channels from both jnr.unixsocket and jnr.enxio
-    exclude("com.github.jnr", "jnr-ffi")
+    // exclude("com.github.jnr", "jnr-ffi")
+
+    exclude("com.github.jnr", "jffi")
 
     exclude("com.github.jnr", "jnr-enxio")
     exclude("com.github.jnr", "jnr-unixsocket")
@@ -408,6 +412,9 @@ dependencies {
     // api("org.xmlresolver", "xmlresolver", "${xmlresolver_version}")
     // use splitjar version
     api(project("splitjars", "xmlresolver"))
+
+    // use splitjar version
+    api(project("splitjars", "jffi"))
 
     api("net.sf.saxon", "Saxon-HE", "${saxon_version}")
     api("org.apache.xmlgraphics", "fop-pdf-images", "${fop_version}") {
