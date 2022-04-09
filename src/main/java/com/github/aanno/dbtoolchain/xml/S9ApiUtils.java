@@ -98,6 +98,7 @@ public class S9ApiUtils {
         Path defaultUnpacked = tmpDir.resolve("default.css");
         if (!Files.exists(defaultUnpacked)) {
             Files.copy(getResource("docbook-xslt2/resources/css/default.css").openStream(), defaultUnpacked);
+            defaultUnpacked.toFile().deleteOnExit();
         }
         return defaultUnpacked;
     }

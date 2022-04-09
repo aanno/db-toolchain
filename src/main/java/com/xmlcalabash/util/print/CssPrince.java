@@ -17,6 +17,7 @@ import java.util.Vector;
 import com.princexml.wrapper.Prince;
 import com.princexml.wrapper.enums.InputType;
 import com.princexml.wrapper.enums.KeyBits;
+import com.princexml.wrapper.enums.PdfProfile;
 import com.princexml.wrapper.events.MessageType;
 import com.princexml.wrapper.events.PrinceEvents;
 import com.xmlcalabash.util.Base64;
@@ -43,7 +44,7 @@ import net.sf.saxon.s9api.XdmNode;
  * To change this template use File | Settings | File Templates.
  *
  * Now uses api("com.princexml", "prince-java-wrapper", "1.2.0")
- * TODO: Settings are now normallized with no (i.e. setNoEmbedFonts)
+ * TODO: Settings are now normalized with no (i.e. setNoEmbedFonts)
  * TODO: Check if there are more settings in Prince
  * TODO: Recheck unsupported stuff
  */
@@ -291,6 +292,13 @@ public class CssPrince implements CssProcessor {
             }
 
             ByteArrayInputStream bis = new ByteArrayInputStream(baos.toByteArray());
+
+            prince.setInputType(InputType.HTML);
+            // db-cssprint.xpl:161:65:output intent ICC profile required for PDF/X-4
+            // prince.setPdfProfile(PdfProfile.PDFX_4);
+            prince.setPageSize("A4");
+            prince.setVerbose(true);
+
             prince.convert(bis, out);
         } catch (IOException e) {
             logger.debug(e.getMessage(), e);
