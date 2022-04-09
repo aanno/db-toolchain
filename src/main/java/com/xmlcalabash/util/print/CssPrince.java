@@ -297,6 +297,8 @@ public class CssPrince implements CssProcessor {
             // db-cssprint.xpl:161:65:output intent ICC profile required for PDF/X-4
             // prince.setPdfProfile(PdfProfile.PDFX_4);
             prince.setPageSize("A4");
+            // prince.setCssDpi(300);
+            // prince.setRasterDpi(300);
             prince.setVerbose(true);
 
             prince.convert(bis, out);

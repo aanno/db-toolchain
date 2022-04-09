@@ -143,8 +143,11 @@ public class DbXslt20Ng implements IPipeline {
         }
         LOG.warn("xslt20 format: " + format + " output: " + output + " xpl: " + xpl + " css: " + css);
         xslt20.setOption("format", format);
-        xslt20.setOption("output", output);
+        // will only set a reference to pdf
+        // xslt20.setOption("output", output);
         xslt20.setOption("css", css);
+        // output file
+        xslt20.setOption("pdf", output);
         xslt20.runXpl(current.getPath().toString(), xpl, command.workDir.toString());
 
         return result;
