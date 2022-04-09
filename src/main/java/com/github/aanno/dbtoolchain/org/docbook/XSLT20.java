@@ -1,5 +1,6 @@
 package com.github.aanno.dbtoolchain.org.docbook;
 
+import com.github.aanno.dbtoolchain.xml.S9ApiUtils;
 import com.github.aanno.dbtoolchain.xml.TraxSingleton;
 import com.xmlcalabash.core.XProcConfiguration;
 import com.xmlcalabash.core.XProcRuntime;
@@ -35,11 +36,11 @@ public class XSLT20 {
     private static final QName _output = new QName("", "output");
     private static final QName _format = new QName("", "format");
 
-    protected Logger logger = null;
+    private static final  Logger logger = LoggerFactory.getLogger(XSLT20.class);
 
     private String proctype = "he";
     private boolean schemaAware = false;
-    private String classLoc = null;
+    // location of docbook-xsl.jar
     private String jarLoc = null;
     private Hashtable<String,String> nsbindings = new Hashtable<String, String> ();
     private Hashtable<QName,RuntimeValue> params = new Hashtable<QName, RuntimeValue> ();
@@ -52,26 +53,7 @@ public class XSLT20 {
     private Properties configProperties = null;
 
     public XSLT20() {
-        logger = LoggerFactory.getLogger(com.github.aanno.dbtoolchain.org.docbook.XSLT20.class);
-        // Where am I?
-        // TODO tp
-        CodeSource src = org.docbook.XSLT20.class.getProtectionDomain().getCodeSource();
-        classLoc = src.getLocation().toString();
-        logger.debug("classLoc=" + classLoc);
-
-        if (classLoc.endsWith(".jar")) {
-            jarLoc = "jar:" + classLoc + "!";
-        } else {
-            // This is only supposed to happen on a dev box; if you're integrating this into some bigger
-            // application, well, sorry, it's all a bit of a hack if it's not in the jar.
-            if (classLoc.indexOf("/build/") > 0) {
-                jarLoc = classLoc + "../../../resources/main";
-            } else if (classLoc.indexOf("/out/production/") > 0) { // IntelliJ
-                jarLoc = classLoc + "../resources";
-            } else {
-                throw new RuntimeException("org.docbook.XSLT20 cannot find root from " + classLoc);
-            }
-        }
+        jarLoc = S9ApiUtils.jarOrBasePathForResource("org/docbook/XSLT20.class");
     }
 
     public String getJarLoc() {

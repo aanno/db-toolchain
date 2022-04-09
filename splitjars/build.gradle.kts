@@ -127,10 +127,8 @@ tasks {
     val unzipJffi = task("unzipJffi", Copy::class) {
         from(zipTree(file("lib/tmp/jffi.jar"))) {
         }
-        /*
-        from(zipTree(file("lib/tmp/xmlresolver.jar"))) {
+        from(zipTree(file("lib/tmp/jffi-native.jar"))) {
         }
-         */
         into("./lib/tmp/jffi")
         dependsOn(copyJarsForUeberJars)
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE;
