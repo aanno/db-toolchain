@@ -128,10 +128,10 @@ public class DbXslt20Ng implements IPipeline {
         if ("css".equals(variant)) {
             result = Stage.from(command, EFileType.PDF);
 
-            css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
+            css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
             format = "cssprint";
             output = result.getPath().toString();
-            xpl = "db2pdf.xpl";
+            xpl = "xslt/base/pipelines/db2pdf.xpl";
         } else if ("fo".equals(variant)) {
             throw new IllegalStateException("processDbXmlByApi not available for  variant: " + variant);
         } else {
@@ -166,7 +166,7 @@ public class DbXslt20Ng implements IPipeline {
             throws IOException, InterruptedException, URISyntaxException {
         IStage result = Stage.from(command, EFileType.PDF);
         Path log = command.workDir.resolve("prince.log");
-        String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
+        String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
         List<String> args = new ArrayList<>();
 
         args.add("prince");

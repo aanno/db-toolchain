@@ -126,7 +126,7 @@ public class DbXslt30 implements IPipeline {
 
         if ("css".equals(variant)) {
             result = Stage.from(command, EFileType.PDF);
-            String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
+            String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
 
             args.add("-f");
             args.add("cssprint");
@@ -150,7 +150,7 @@ public class DbXslt30 implements IPipeline {
             throws IOException, InterruptedException, URISyntaxException {
         IStage result = Stage.from(command, EFileType.PDF);
         Path log = command.workDir.resolve("prince.log");
-        String css = Path.of(S9ApiUtils.getDefaultCss().toURI()).toAbsolutePath().toString();
+        String css = S9ApiUtils.getDefaultCss().toAbsolutePath().toString();
         List<String> args = new ArrayList<>();
 
         args.add("prince");

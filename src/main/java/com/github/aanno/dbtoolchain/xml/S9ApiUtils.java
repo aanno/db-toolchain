@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.CodeSource;
@@ -18,6 +19,16 @@ import java.util.stream.Collectors;
 public class S9ApiUtils {
 
     private static final Logger logger = LogManager.getLogger(S9ApiUtils.class);
+
+    private static Path tmpDir = null;
+
+    static {
+        try {
+            tmpDir = Files.createTempDirectory("db-toolchain");
+        } catch (IOException e) {
+            throw new ExceptionInInitializerError(e);
+        }
+    }
 
     private S9ApiUtils() {
         // Never invoked
@@ -80,9 +91,15 @@ public class S9ApiUtils {
         return getResource("xslt/base/pipelines/docbook.xpl").openStream();
     }
 
-    public static URL getDefaultCss() throws IOException {
+    public static Path getDefaultCss() throws IOException {
         // return Paths.get("submodules/xslt20-resources/build/stage/css/default.css");
-        return getResource("docbook-xslt2/resources/css/default.css");
+        // cannot be used
+        // return getResource("docbook-xslt2/resources/css/default.css");
+        Path defaultUnpacked = tmpDir.resolve("default.css");
+        if (!Files.exists(defaultUnpacked)) {
+            Files.copy(getResource("docbook-xslt2/resources/css/default.css").openStream(), defaultUnpacked);
+        }
+        return defaultUnpacked;
     }
 
 }
