@@ -72,21 +72,16 @@ apply {
 repositories {
     flatDir {
         dirs(
-                "submodules/jing-trang/build/libs",
-                // "submodules/fop/fop/target",
-                // "lib/ueberjars",
-                "build/libs",
-                // "lib/stripped",
-                // TODO tp: docbook-xslt2-2.4.3.jar
-                "lib",
-                // "submodules/batik/batik-all/target",
-                "submodules/xslt20-stylesheets/build/libs",
-                "submodules/ph-schematron/ph-schematron-pure/target",
-                "submodules/ph-schematron/ph-schematron-api/target",
-                "submodules/ph-commons/ph-commons/target",
-                "submodules/ph-commons/ph-xml/target"
-                // "submodules/asciidoctorj/asciidoctorj-core/build/libs",
-                // "submodules/asciidoctorj/asciidoctorj-api/build/libs"
+            "submodules/jing-trang/build/libs",
+            // "submodules/fop/fop/target",
+            "build/libs",
+            "submodules/xslt20-stylesheets/build/libs",
+            "submodules/ph-schematron/ph-schematron-pure/target",
+            "submodules/ph-schematron/ph-schematron-api/target",
+            "submodules/ph-commons/ph-commons/target",
+            "submodules/ph-commons/ph-xml/target"
+            // "submodules/asciidoctorj/asciidoctorj-core/build/libs",
+            // "submodules/asciidoctorj/asciidoctorj-api/build/libs"
         )
     }
 
@@ -135,7 +130,7 @@ evaluationDependsOnChildren()
 val xercesVersion = xerces_version
 val debugModulePath = true
 val moduleJvmArgs = listOf(
-        "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
+    "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
 )
 
 class ShowSelection {
@@ -172,23 +167,27 @@ configurations.all {
         // https://docs.gradle.org/current/userguide/customizing_dependency_resolution_behavior.html
         resolutionStrategy.eachDependency {
             if (requested.name.startsWith("batik-") && requested.name != "batik-all") {
-                useTarget(mapOf(
+                useTarget(
+                    mapOf(
                         // "group" to requested.group,
                         "group" to "org.apache.xmlgraphics",
                         "name" to "batik-all",
                         // "version" to requested.version
                         "version" to batik_version
-                ))
+                    )
+                )
                 because("""prefer "batik-all (stripped)" over "${requested.name}"""")
             }
             if (requested.name.startsWith("fop-") && requested.name != "fop") {
-                useTarget(mapOf(
+                useTarget(
+                    mapOf(
                         // "group" to requested.group,
                         "group" to "org.apache.xmlgraphics",
                         "name" to "fop",
                         // "version" to requested.version
                         "version" to fop_version
-                ))
+                    )
+                )
                 because("""prefer "fop (all, stripped)" over "${requested.name}"""")
             }
             /*
@@ -207,18 +206,19 @@ configurations.all {
         }
     }
     resolutionStrategy.setForcedModules(
-            "net.sf.saxon:Saxon-HE:${saxon_version}"
-            , "com.nwalsh:nwalsh-annotations:${nwalsh_annotations_version}"
-            , "commons-codec:commons-codec:${commons_codec_version}"
-            , "org.apache.httpcomponents:httpclient:${httpclient_version}"
-            , "org.apache.httpcomponents:httpcore:${httpcore_version}"
-            , "org.apache.xmlgraphics:fop:${fop_version}"
-            , "org.apache.xmlgraphics:xmlgraphics-commons:${xmlgraphics_common_version}"
-            // testng changed modulename: testng -> org.testng in 7.3.x (tp)
-            , "org.testng:testng:${testng_version}"
-            , "org.yaml:snakeyaml:${snakeyaml_version}"
-            , "org.xmlresolver:xmlresolver:${xmlresolver_version}"
-            // , "xml-apis:xml-apis:1.4.01"
+        "net.sf.saxon:Saxon-HE:${saxon_version}",
+        "com.nwalsh:nwalsh-annotations:${nwalsh_annotations_version}",
+        "commons-codec:commons-codec:${commons_codec_version}",
+        "org.apache.httpcomponents:httpclient:${httpclient_version}",
+        "org.apache.httpcomponents:httpcore:${httpcore_version}",
+        "org.apache.xmlgraphics:fop:${fop_version}",
+        "org.apache.xmlgraphics:xmlgraphics-commons:${xmlgraphics_common_version}"
+        // testng changed modulename: testng -> org.testng in 7.3.x (tp)
+        ,
+        "org.testng:testng:${testng_version}",
+        "org.yaml:snakeyaml:${snakeyaml_version}",
+        "org.xmlresolver:xmlresolver:${xmlresolver_version}"
+        // , "xml-apis:xml-apis:1.4.01"
     )
     exclude("javax.servlet", "javax.servlet-api")
     exclude("xml-apis", "xml-apis")
@@ -419,7 +419,6 @@ dependencies {
 
     // use splitjar version
     api(project("splitjars", "jffi"))
-    api(project("splitjars", "dbXslt2Resources"))
 
     api("net.sf.saxon", "Saxon-HE", "${saxon_version}")
     api("org.apache.xmlgraphics", "fop-pdf-images", "${fop_version}") {
@@ -509,6 +508,21 @@ application {
     mainClassName = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
 }
 
+distributions {
+    main {
+        contents {
+            from(files("lib/")) {
+                include("docbook-xslt2/resources/**/*")
+                eachFile {
+                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray())
+                    into("resources")
+                }
+                includeEmptyDirs = false
+            }
+        }
+    }
+}
+
 val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
@@ -570,9 +584,9 @@ val patchModule = listOf(
 )
 */
 patchModules.config = listOf(
-        // "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
-        // , "jing=" + spec2File[":trang"].toString()
-        // , "jnr.unixsocket=jnr-enxio-0.19.jar"
+    // "commons.logging=" + spec2File["org.slf4j:jcl-over-slf4j"].toString()
+    // , "jing=" + spec2File[":trang"].toString()
+    // , "jnr.unixsocket=jnr-enxio-0.19.jar"
 )
 println("\npatchModules.config:\n")
 patchModules.config.forEach({ it -> println(it) })
@@ -587,14 +601,16 @@ tasks {
     withType<JavaCompile> {
 
         doFirst {
-            options.compilerArgs.addAll(listOf(
+            options.compilerArgs.addAll(
+                listOf(
                     // "--release", "11"
                     "--add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=com.github.aanno.dbtoolchain"
                     // , "--add-modules jnr.enxio"
                     // , "-cp", "jnr-enxio-0.19.jar"
                     // , "--add-modules", "ALL-MODULE-PATH",
                     // , "--module-path", classpath.asPath
-            ) + moduleJvmArgs /*+ patchModule */)
+                ) + moduleJvmArgs /*+ patchModule */
+            )
             println("Args for for ${name} are ${options.allCompilerArgs}")
         }
         // HACK: adding 'submodules/jing-trang' as composite results in
@@ -613,8 +629,8 @@ tasks {
     withType<ModularJavaExec> {
         doFirst {
             val myArgs = listOf(
-                    "-Duser.country=US", "-Duser.language=en",
-                    "--show-module-resolution", "--add-opens java.base/sun.nio.ch=org.jruby.core"
+                "-Duser.country=US", "-Duser.language=en",
+                "--show-module-resolution", "--add-opens java.base/sun.nio.ch=org.jruby.core"
             )
             jvmArgs!!.addAll(myArgs)
         }
@@ -624,11 +640,11 @@ tasks {
 
         manifest {
             attributes(
-                    mapOf(
-                            "Main-Class" to "com.github.aanno.dbtoolchain.App"
-                            // "Main-Class" to application.mainClassName
-                            // "Class-Path" to configurations.compile.collect { it.getName() }.join(' ')
-                    )
+                mapOf(
+                    "Main-Class" to "com.github.aanno.dbtoolchain.App"
+                    // "Main-Class" to application.mainClassName
+                    // "Class-Path" to configurations.compile.collect { it.getName() }.join(' ')
+                )
             )
         }
         val version = "1.0.0-SNAPSHOT"
@@ -653,18 +669,20 @@ tasks {
         doFirst {
             // TODO tp: all this jvmArgs are ignored - but why?
             // val oldArgs: List<String> = (if (jvmArgs != null) jvmArgs else emptyList()) as List<String>
-            jvmArgs("""--illegal-access=warn
+            jvmArgs(
+                """--illegal-access=warn
 --show-module-resolution 
 --add-opens java.base/sun.nio.ch=org.jruby.core
 --add-opens java.base/sun.nio.ch=backport9
 """.split(Regex("[ \n\t]+"))
-                    )
+            )
             if (debugModulePath) {
                 println("${name}: jmvArgs: ${jvmArgs}\nargs: ${args}")
             }
         }
         main = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
-        args("transform -d . -w submodules/asciidoctorj/asciidoctorj-documentation --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
+        args(
+            "transform -d . -w submodules/asciidoctorj/asciidoctorj-documentation --pipeline ad -of PDF -i submodules/asciidoctorj/asciidoctorj-documentation/src/main/asciidoc/integrator-guide.adoc"
                 .split(Regex("[ \n\t]+"))
         )
         // classpath = sourceSets["main"].runtimeClasspath

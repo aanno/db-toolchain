@@ -93,14 +93,16 @@ public class S9ApiUtils {
 
     public static Path getDefaultCss() throws IOException {
         // return Paths.get("submodules/xslt20-resources/build/stage/css/default.css");
-        // cannot be used
-        // return getResource("docbook-xslt2/resources/css/default.css");
-        Path defaultUnpacked = tmpDir.resolve("default.css");
-        if (!Files.exists(defaultUnpacked)) {
-            Files.copy(getResource("docbook-xslt2/resources/css/default.css").openStream(), defaultUnpacked);
-            defaultUnpacked.toFile().deleteOnExit();
+        // from resources folder of distribution
+        return url2Filepath(getResource("docbook-xslt2/css/default.css"));
+    }
+
+    public static Path url2Filepath(URL url) throws IOException {
+        String urlStr = url.toExternalForm();
+        if (urlStr.startsWith("file:/")) {
+            return Paths.get(urlStr.replaceAll("file:/+(.*)", "/$1"));
         }
-        return defaultUnpacked;
+        throw new IllegalArgumentException("URL " + url + " is not a file URL");
     }
 
 }
