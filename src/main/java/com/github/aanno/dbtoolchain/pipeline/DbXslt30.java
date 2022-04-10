@@ -102,7 +102,7 @@ public class DbXslt30 implements IPipeline {
 
             // Stylesheet params are simply appended (see Main for details)
             // TODO tp: make this sane
-            args.add("resource-base-uri=/mnt/home/tpasch/scm/aanno/db-toolchain/lib/docbook-xslTNG/resources/");
+            args.add("resource-base-uri=" + S9ApiUtils.getDocbookXslTngResources() + "/");
             // output parameters starts with '!', see https://www.saxonica.com/documentation9.5/using-xsl/commandline.html
             args.add("!indent=yes");
             // debug stylesheet, https://www.saxonica.com/documentation9.5/using-xsl/commandline.html

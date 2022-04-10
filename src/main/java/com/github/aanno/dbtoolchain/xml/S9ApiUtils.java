@@ -91,10 +91,16 @@ public class S9ApiUtils {
         return getResource("xslt/base/pipelines/docbook.xpl").openStream();
     }
 
+    // default.css of docbook-xslt2
     public static Path getDefaultCss() throws IOException {
         // return Paths.get("submodules/xslt20-resources/build/stage/css/default.css");
         // from resources folder of distribution
         return url2Filepath(getResource("docbook-xslt2/css/default.css"));
+    }
+
+    // resources of docbook-xslTNG
+    public static Path getDocbookXslTngResources() throws IOException {
+        return url2Filepath(getResource("docbook-xslTNG/css/docbook.css")).getParent().getParent();
     }
 
     public static Path url2Filepath(URL url) throws IOException {

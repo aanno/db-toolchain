@@ -517,8 +517,15 @@ distributions {
                     relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray())
                     into("resources")
                 }
-                includeEmptyDirs = false
             }
+            from(files("lib/")) {
+                include("docbook-xslTNG/resources/**/*")
+                eachFile {
+                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray())
+                    into("resources")
+                }
+            }
+            includeEmptyDirs = false
         }
     }
 }
