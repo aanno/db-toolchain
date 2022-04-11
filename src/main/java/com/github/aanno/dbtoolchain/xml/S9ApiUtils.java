@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.CodeSource;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -142,22 +143,31 @@ public class S9ApiUtils {
     }
 
     public static List<URI> getCatalogs() throws IOException {
-        Path base = pathFromResource("schema/5.1/schemas/catalog.xml");
-        if (base == null || !Files.exists(base)) {
+        Path probePath = pathFromResource("schema/5.1/schemas/catalog.xml");
+        List<Path> base = new ArrayList<>();
+        if (probePath == null || !Files.exists(probePath)) {
             // development (e.g. idea, working directory is 'db-toolchain')
-            base = Paths.get(System.getProperty("user.dir"));
+            String userDir = System.getProperty("user.dir");
+            base.add(Paths.get(userDir, "schema"));
+            base.add(Paths.get(userDir, "lib"));
         } else {
-            base = base.getParent().getParent().getParent().getParent();
+            base.add(probePath.getParent().getParent().getParent().getParent());
         }
+        /*
         if (!Files.exists(base)) {
             throw new IllegalStateException("cannot find base");
         }
+         */
         logger.warn("base=" + base);
-        try (Stream<Path> walkStream = Files.walk(base)) {
-            return walkStream.filter(p -> p.toFile().isFile() && p.getFileName().toString().equals("catalog.xml"))
-                    .map(p -> p.toUri())
-                    .collect(Collectors.<URI>toList());
+        List<URI> result = new ArrayList<>();
+        for (Path b : base) {
+            try (Stream<Path> walkStream = Files.walk(b)) {
+                result.addAll(walkStream.filter(p -> p.toFile().isFile() && p.getFileName().toString().equals("catalog.xml"))
+                        .map(p -> p.toUri())
+                        .collect(Collectors.<URI>toList()));
+            }
         }
+        return result;
     }
 
 }
