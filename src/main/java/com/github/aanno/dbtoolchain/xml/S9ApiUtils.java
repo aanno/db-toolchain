@@ -137,8 +137,9 @@ public class S9ApiUtils {
         if (isDev()) {
             result = Paths.get(System.getProperty("user.dir"), name);
         } else {
-            result = Paths.get(getDefaultCss().getParent().toString(), name);
+            result = Paths.get(getDefaultCss().getParent().getParent().getParent().toString(), name);
         }
+        logger.warn("dynamicCatalog=" + result);
         return result;
     }
 
