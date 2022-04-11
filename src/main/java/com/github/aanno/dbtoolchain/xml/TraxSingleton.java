@@ -36,6 +36,8 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Iterator;
+import java.util.List;
 
 public class TraxSingleton {
 
@@ -89,31 +91,28 @@ public class TraxSingleton {
     private TraxSingleton() {
         xslt20 = new XSLT20();
         try {
-            File current = new File(System.getProperty("user.dir")).getCanonicalFile();
-            String currentURI = current.toURI().toASCIIString();
+            List<URI> list = S9ApiUtils.getCatalogs();
+            LOG.warn("catalogs: {}", list);
 
-            File xslt20Catalog = new File(current, "schema/docbook-xslt20/catalog.xml");
+            File xslt20Catalog = S9ApiUtils.dynamicCatalog().toFile();
             xslt20Catalog.getParentFile().mkdirs();
-            String xslt20CatalogUri = xslt20Catalog.toURI().toASCIIString();
             xslt20.createCatalog(xslt20Catalog.toString());
 
             CatalogFeatures catalogFeatures = CatalogFeatures.builder()
                     // .with(CatalogFeatures.Feature.FILES, current.toURI().toASCIIString())
                     .build();
+
             // TODO tp: all this has to be packed in a jar
             // TODO tp: Check if catalog really is there and emit a BIG warning if not
-            catalog = CatalogManager.catalog(catalogFeatures,
-                    new URI(currentURI + "/schema/5.1/schemas/catalog.xml"),
-                    new URI(currentURI + "/schema/5.0.1/docbook-5.0.1/catalog.xml"),
-                    new URI(currentURI + "/lib/docbook-xsl/catalog.xml"),
-                    new URI(currentURI + "/lib/docbook-xslTNG/xslt/catalog.xml"),
-                    // new URI(currentURI + "/schema/docbook-xslt20/catalog.xml"),
-                    new URI(currentURI + "/submodules/jing-trang/mod/catalog/src/test/com/thaiopensource/resolver/catalog/catalog.xml"),
-                    new URI(currentURI + "/submodules/asciidoctor-fopub/src/dist/catalog.xml"),
-                    new URI(xslt20CatalogUri)
-            );
-        } catch (URISyntaxException e) {
-            throw new ExceptionInInitializerError(e);
+            catalog = CatalogManager.catalog(catalogFeatures, list.toArray(new URI[0]));
+            // S9ApiUtils.getResource("/schema/5.1/schemas/catalog.xml").toURI(),
+            // S9ApiUtils.getResource("/schema/5.0.1/docbook-5.0.1/catalog.xml").toURI(),
+            // S9ApiUtils.getResource("/lib/docbook-xsl/catalog.xml").toURI(),
+            // S9ApiUtils.getResource("/lib/docbook-xslTNG/xslt/catalog.xml").toURI(),
+            // new URI(currentURI + "/schema/docbook-xslt20/catalog.xml"),
+            // new URI(currentURI + "/submodules/jing-trang/mod/catalog/src/test/com/thaiopensource/resolver/catalog/catalog.xml"),
+            // new URI(currentURI + "/submodules/asciidoctor-fopub/src/dist/catalog.xml"),
+            // xslt20CatalogUri
         } catch (IOException e) {
             throw new ExceptionInInitializerError(e);
         }

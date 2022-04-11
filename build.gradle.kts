@@ -525,6 +525,21 @@ distributions {
                     into("resources")
                 }
             }
+            from(files("lib/")) {
+                include("docbook-xsl/**/catalog.xml", "docbook-xslTNG/**/catalog.xml")
+                into("resources")
+            }
+            from(files("schema/")) {
+                include("5.0.1/docbook-5.0.1/**/*")
+                eachFile {
+                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 4 }.toTypedArray())
+                    into("resources/schema")
+                }
+            }
+            from(files("schema/")) {
+                include("5.1/**/*")
+                into("resources/schema")
+            }
             includeEmptyDirs = false
         }
     }
@@ -534,6 +549,7 @@ val test by tasks.getting(Test::class) {
     // Use TestNG for unit tests
     useTestNG()
     jvmArgs(moduleJvmArgs)
+    workingDir("${projectDir}")
 }
 
 var spec2File: Map<String, File> = emptyMap()
