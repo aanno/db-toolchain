@@ -48,7 +48,7 @@ plugins {
     // Apply the java plugin to add support for Java
     // java
     `java-library`
-    id("org.javamodularity.moduleplugin") version "1.8.10"
+    id("org.javamodularity.moduleplugin") version "1.8.12"
     id("com.github.ben-manes.versions") version "0.42.0"
     id("com.github.jruby-gradle.base") version "2.1.0-alpha.2"
     id("se.patrikerdes.use-latest-versions") version "0.2.18"
@@ -318,7 +318,7 @@ error: the unnamed module reads package jnr.ffi.provider.jffi.platform.arm.linux
 }
 
 dependencies {
-    gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.8.10")
+    gradlePlugins("org.javamodularity.moduleplugin", "org.javamodularity.moduleplugin.gradle.plugin", "1.8.12")
     gradlePlugins("com.github.ben-manes.versions", "com.github.ben-manes.versions.gradle.plugin", "0.42.0")
     gradlePlugins("se.patrikerdes.use-latest-versions", "se.patrikerdes.use-latest-versions.gradle.plugin", "0.2.18")
     gradlePlugins("com.github.jruby-gradle.base", "com.github.jruby-gradle.base.gradle.plugin", "2.1.0-alpha.2")
@@ -477,7 +477,7 @@ dependencies {
     api("org.atteo.classindex", "classindex", "${classindex_version}")
     annotationProcessor("org.atteo.classindex", "classindex", "${classindex_version}")
 
-    implementation("org.docbook:docbook-xslTNG:1.6.2")
+    implementation("org.docbook:docbook-xslTNG:1.8.1")
 
     // Use TestNG framework, also requires calling test.useTestNG() below
     // testImplementation("org.testng:testng:7.1.0")

@@ -7,19 +7,19 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/submodules/xslt20-stylesheets" name="xslt20-stylesheets">
+              <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" name="xslt20-stylesheets">
                 <projects>
-                  <project path="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
+                  <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/xslt20-resources" name="xslt20-resources">
+              <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" name="xslt20-resources">
                 <projects>
-                  <project path="$PROJECT_DIR$/submodules/xslt20-resources" />
+                  <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" />
                 </projects>
               </build>
-              <build path="$PROJECT_DIR$/submodules/jing-trang" name="jingtrang">
+              <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" name="jingtrang">
                 <projects>
-                  <project path="$PROJECT_DIR$/submodules/jing-trang" />
+                  <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" />
                 </projects>
               </build>
             </builds>
@@ -32,12 +32,12 @@
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/splitjars" />
-            <option value="$PROJECT_DIR$/submodules/jing-trang" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-resources" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets" />
-            <option value="$PROJECT_DIR$/submodules/xslt20-stylesheets/buildSrc" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/splitjars" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" />
+            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
       </GradleProjectSettings>

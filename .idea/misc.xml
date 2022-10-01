@@ -16,6 +16,7 @@
     <file type="web" url="file://$PROJECT_DIR$" />
     <file type="web" url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" />
     <file type="web" url="file://$PROJECT_DIR$/../github/fop/fop-servlet" />
+    <file type="web" url="file:///mnt/home/tpasch/scm/aanno/db-toolchain" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

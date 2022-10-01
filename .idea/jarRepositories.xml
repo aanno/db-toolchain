@@ -87,6 +87,11 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="MavenLocal" />
+      <option name="name" value="MavenLocal" />
+      <option name="url" value="file:$USER_HOME$/.m2/repository/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="rubygems-release" />
       <option name="name" value="rubygems-release" />
       <option name="url" value="http://rubygems-proxy.torquebox.org/releases" />
