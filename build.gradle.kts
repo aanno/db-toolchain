@@ -215,6 +215,9 @@ configurations.all {
         "org.apache.xmlgraphics:xmlgraphics-commons:${xmlgraphics_common_version}"
         // testng changed modulename: testng -> org.testng in 7.3.x (tp)
         ,
+        "org.jruby:jruby-stdlib:${jruby_version}",
+        "org.jruby:jruby-base:${jruby_version}",
+        "org.jruby:jruby:${jruby_version}",
         "org.testng:testng:${testng_version}",
         "org.yaml:snakeyaml:${snakeyaml_version}",
         "org.xmlresolver:xmlresolver:${xmlresolver_version}"
