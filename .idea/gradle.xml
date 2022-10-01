@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -27,7 +26,7 @@
         </compositeConfiguration>
         <option name="delegatedBuild" value="true" />
         <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
         <option name="modules">
@@ -38,27 +37,6 @@
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" />
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" />
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets/buildSrc" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/submodules/asciidoctorj" />
-        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-api" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-arquillian-extension" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-core" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-distribution" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-documentation" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-springboot-integration-test/springboot-app" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-test-support" />
-            <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctorj-wildfly-integration-test" />
           </set>
         </option>
       </GradleProjectSettings>

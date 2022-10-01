@@ -1,97 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ASMIdeaPluginConfiguration">
-    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
-    <groovy codeStyle="LEGACY" />
+  <component name="CheckStyle-IDEA">
+    <option name="configuration">
+      <map>
+        <entry key="checkstyle-version" value="8.19" />
+        <entry key="copy-libs" value="false" />
+        <entry key="location-0" value="BUNDLED:(bundled):Sun Checks" />
+        <entry key="location-1" value="BUNDLED:(bundled):Google Checks" />
+        <entry key="scan-before-checkin" value="false" />
+        <entry key="scanscope" value="JavaOnly" />
+        <entry key="suppress-errors" value="false" />
+      </map>
+    </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-api" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-pure" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-schxslt" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-testfiles" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-validator" />
-    <file type="Osmorc" url="file://$PROJECT_DIR$/submodules/ph-schematron/ph-schematron-xslt" />
-    <file type="web" url="file://$PROJECT_DIR$" />
-    <file type="web" url="file://$PROJECT_DIR$/submodules/fop/fop-servlet" />
-    <file type="web" url="file://$PROJECT_DIR$/../github/fop/fop-servlet" />
     <file type="web" url="file:///mnt/home/tpasch/scm/aanno/db-toolchain" />
   </component>
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/../github/fop/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/pom.xml" />
-        <option value="$PROJECT_DIR$/submodules/asciidoctorj/asciidoctor-pdf-gem-installer.pom" />
-        <option value="$PROJECT_DIR$/submodules/batik/pom.xml" />
-        <option value="$PROJECT_DIR$/submodules/batik/batik-test-util/pom.xml" />
-        <option value="$PROJECT_DIR$/submodules/fop/pom.xml" />
-        <option value="$PROJECT_DIR$/submodules/ph-schematron/pom.xml" />
-      </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/../github/batik/batik-all/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-anim/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-awt-util/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-bridge/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-codec/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-constants/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-css/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-dom/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-ext/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-extension/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-gui-util/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-gvt/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-i18n/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-parser/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-rasterizer-ext/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-rasterizer/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-script/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-slideshow/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-squiggle-ext/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-squiggle/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-svg-dom/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-svgbrowser/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-svggen/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-svgpp/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-svgrasterizer/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-swing/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-test-old/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-test-svg/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-test-swing/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-test/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-transcoder/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-ttf2svg/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-util/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/batik-xml/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/batik/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-core/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-events/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-sandbox/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-servlet/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-transcoder-allinone/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-transcoder/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop-util/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/fop/pom.xml" />
-        <option value="$PROJECT_DIR$/../github/fop/pom.xml" />
-      </set>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17 (fedora)" project-jdk-type="JavaSDK" />
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../packt/Mastering-Akka" value="PREVIEW" />
+      </map>
     </option>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="PantsSettings">
-    <option name="resolverVersion" value="15" />
-  </component>
-  <component name="ProjectResources">
-    <xml-schema-version>XMLSchema_1_1</xml-schema-version>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="17 (fedora)" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="jpab" />
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="$USER_HOME$/.sdkman/candidates/sbt/1.2.8/bin/sbt-launch.jar" />
   </component>
 </project>
