@@ -508,7 +508,8 @@ sourceSets {
 
 application {
     // Define the main class for the application
-    mainClassName = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
+    // mainClassName = "com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App"
+    getMainClass().set("com.github.aanno.dbtoolchain/com.github.aanno.dbtoolchain.App")
 }
 
 distributions {
@@ -769,13 +770,15 @@ tasks {
 
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
     val sourcesJar by registering(Jar::class) {
-        classifier = "sources"
+        // classifier = "sources"
+	getArchiveClassifier().set("sources")
         from(sourceSets.main.get().allSource)
         dependsOn(classes)
     }
 
     val javadocJar by registering(Jar::class) {
-        classifier = "javadoc"
+        // classifier = "javadoc"
+        getArchiveClassifier().set("sources")
         from(javadoc.get().destinationDir)
         dependsOn(classes)
     }

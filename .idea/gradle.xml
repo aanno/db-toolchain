@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" name="xslt20-stylesheets">
-                <projects>
-                  <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" />
-                </projects>
-              </build>
-              <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" name="xslt20-resources">
-                <projects>
-                  <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" />
-                </projects>
-              </build>
               <build path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" name="jingtrang">
                 <projects>
                   <project path="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" />
@@ -24,8 +15,6 @@
             </builds>
           </compositeBuild>
         </compositeConfiguration>
-        <option name="delegatedBuild" value="true" />
-        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
@@ -34,9 +23,6 @@
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain" />
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/splitjars" />
             <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/jing-trang" />
-            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-resources" />
-            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets" />
-            <option value="/mnt/home/tpasch/scm/aanno/db-toolchain/submodules/xslt20-stylesheets/buildSrc" />
           </set>
         </option>
       </GradleProjectSettings>

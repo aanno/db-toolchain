@@ -66,7 +66,8 @@ tasks {
     }
 
     val rezipStrippedXerces = task("rezipStrippedXerces", Jar::class) {
-        baseName = "xerces-stripped"
+        // baseName = "xerces-stripped"
+        getArchiveBaseName().set("xerces-stripped")
         from(files("./lib/tmp/xercesImpl")) {
         }
         dependsOn(unzipXerces)
@@ -83,7 +84,8 @@ tasks {
     }
 
     val rezipStrippedJnr = task("rezipStrippedJnr", Jar::class) {
-        baseName = "jnrchannels"
+        // baseName = "jnrchannels"
+        getArchiveBaseName().set("jnrchannels")
         from(files("./lib/tmp/jnrchannels")) {
         }
         dependsOn(unzipJnr)
@@ -100,7 +102,8 @@ tasks {
     }
 
     val rezipStrippedCalabashExt = task("rezipStrippedCalabashExt", Jar::class) {
-        baseName = "xmlcalabash-extensions"
+        // baseName = "xmlcalabash-extensions"
+        getArchiveBaseName().set("xmlcalabash-extensions")
         from(files("./lib/tmp/xmlcalabash-extensions")) {
             exclude("com/xmlcalabash/extensions/*.class")
         }
@@ -118,7 +121,8 @@ tasks {
     }
 
     val rezipStrippedXmlresolver = task("rezipStrippedXmlresolver", Jar::class) {
-        baseName = "xmlresolver"
+        // baseName = "xmlresolver"
+        getArchiveBaseName().set("xmlresolver")
         from(files("./lib/tmp/xmlresolver")) {
             // exclude("com/xmlcalabash/extensions/*.class")
         }
@@ -136,7 +140,8 @@ tasks {
     }
 
     val rezipStrippedJffi = task("rezipStrippedJffi", Jar::class) {
-        baseName = "jffi"
+        // baseName = "jffi"
+        getArchiveBaseName().set("jffi")
         from(files("./lib/tmp/jffi")) {
             // exclude("com/xmlcalabash/extensions/*.class")
         }
@@ -144,14 +149,16 @@ tasks {
     }
 
     val dbXslt2Resources by register("dbXslt2Resources", Jar::class) {
-        archiveName = "docbook-xslt2-resources.jar"
+        // archiveName = "docbook-xslt2-resources.jar"
+        getArchiveFileName().set("docbook-xslt2-resources.jar")
         from(files("../lib/")) {
             include("docbook-xslt2/resources/**/*")
         }
     }
 
     val jar by register("jar1", Jar::class) {
-        archiveName = "foo.jar"
+        // archiveName = "foo.jar"
+        getArchiveFileName().set("foo.jar")
         into("META-INF") {
             from("bar")
         }

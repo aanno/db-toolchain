@@ -16,7 +16,7 @@ In detail:
 * Provide several processing pipelines for conversion.
 * Provide the most up-to-date pipelines possible.
 * Provide an _unified CLI access_ to the different pipelines.
-* Only depend on an installed _Java JDK 11_ (and some standard Linux tools).
+* Only depend on an installed _Java JDK 17_ (and some standard Linux tools).
 * Support for _MathML_ (work-in-progress, depending on the pipeline).
 * Support for (code) _syntax highlighting_ (work-in-progress, depending on the pipeline).
 
