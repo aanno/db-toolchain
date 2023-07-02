@@ -11,7 +11,6 @@ val jnrchannels = configurations.create("jnrchannels")
 val calabashExt = configurations.create("calabashExt")
 val xmlresolver = configurations.create("xmlresolver")
 val jffi = configurations.create("jffi")
-val dbXslt2Resources = configurations.create("dbXslt2Resources")
 
 plugins {
     `java`
@@ -148,14 +147,6 @@ tasks {
         dependsOn(unzipJffi)
     }
 
-    val dbXslt2Resources by register("dbXslt2Resources", Jar::class) {
-        // archiveName = "docbook-xslt2-resources.jar"
-        getArchiveFileName().set("docbook-xslt2-resources.jar")
-        from(files("../lib/")) {
-            include("docbook-xslt2/resources/**/*")
-        }
-    }
-
     val jar by register("jar1", Jar::class) {
         // archiveName = "foo.jar"
         getArchiveFileName().set("foo.jar")
@@ -172,34 +163,29 @@ artifacts {
     val calabashExt = tasks.named("rezipStrippedCalabashExt")
     val xmlresolver = tasks.named("rezipStrippedXmlresolver")
     val jffi = tasks.named("rezipStrippedJffi")
-    val dbXslt2Resources = tasks.named("dbXslt2Resources")
 
     add("archives", xerces)
     add("archives", jnrchannels)
     add("archives", calabashExt)
     add("archives", xmlresolver)
     add("archives", jffi)
-    add("archives", dbXslt2Resources)
 
     add("default", xerces)
     add("default", jnrchannels)
     add("default", calabashExt)
     add("default", xmlresolver)
     add("default", jffi)
-    add("default", dbXslt2Resources)
 
     add("xerces", xerces)
     add("jnrchannels", jnrchannels)
     add("calabashExt", calabashExt)
     add("xmlresolver", xmlresolver)
     add("jffi", jffi)
-    add("dbXslt2Resources", dbXslt2Resources)
 }
 
 tasks.named("build") {
     dependsOn("rezipStrippedXerces", "rezipStrippedJnr",
-        "rezipStrippedCalabashExt", "rezipStrippedXmlresolver", "rezipStrippedJffi",
-        "dbXslt2Resources")
+        "rezipStrippedCalabashExt", "rezipStrippedXmlresolver", "rezipStrippedJffi")
 }
 
 defaultTasks("build")

@@ -387,33 +387,10 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     // api("com.google.guava:guava:26.0-jre")
 
-    /*
-    api("org.docbook", "docbook-xslt2", "2.3.10") {
-        exclude("org.xmlresolver", "xmlresolver")
-        exclude("org.apache.xmlgraphics", "fop")
-        // exclude("org.apache.xmlgraphics", "batik-all")
-        // exclude("org.apache.xmlgraphics", "batik-xml")
-        exclude("net.sf.saxon", "saxon")
-        exclude("net.sf.saxon", "Saxon-HE")
-        exclude("com.thaiopensource", "jing")
-    }
-     */
-    api("", "docbook-xslt2", "${docbook_xslt2_version}") {
-        exclude("org.xmlresolver", "xmlresolver")
-        exclude("org.apache.xmlgraphics", "fop")
-        // exclude("org.apache.xmlgraphics", "batik-all")
-        // exclude("org.apache.xmlgraphics", "batik-xml")
-        exclude("net.sf.saxon", "saxon")
-        exclude("net.sf.saxon", "Saxon-HE")
-        exclude("com.thaiopensource", "jing")
-    }
     api("com.xmlcalabash", "xmlcalabash", "${xmlcalabash_version}") {
         exclude("junit", "junit")
         exclude("nu.validator.htmlparser", "htmlparser")
     }
-
-    // Needed for docbook-xslt20 Main.main (tp)
-    api("commons-cli", "commons-cli", "${commons_cli_version}")
 
     // Needed for xmlcalabash (and original docbook-xslt20 Main.main) (tp)
     // api("org.xmlresolver", "xmlresolver", "${xmlresolver_version}")
@@ -515,16 +492,6 @@ application {
 distributions {
     main {
         contents {
-            from(files("lib/")) {
-                include("docbook-xslt2/resources/**/*")
-                eachFile {
-                    relativePath = RelativePath(
-                        true,
-                        *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray()
-                    )
-                    into("resources")
-                }
-            }
             from(files("lib/")) {
                 include("docbook-xslTNG/resources/**/*")
                 eachFile {

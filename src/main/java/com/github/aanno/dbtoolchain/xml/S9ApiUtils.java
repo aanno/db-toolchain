@@ -1,7 +1,6 @@
 package com.github.aanno.dbtoolchain.xml;
 
 
-import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import net.sf.saxon.Configuration;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;

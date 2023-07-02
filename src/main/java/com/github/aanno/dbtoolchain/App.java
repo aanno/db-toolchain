@@ -75,16 +75,6 @@ public class App {
             }
             // result = p.process(transform);
             result = convertAdToDbIfNeeded(transform, p);
-        } else if (pipeline.startsWith("xsl20")) {
-            DbXslt20Ng p;
-            if (pipeline.contains("css")) {
-                p = new DbXslt20Ng("css");
-            } else if (pipeline.contains("fo")){
-                p = new DbXslt20Ng("fo");
-            } else {
-                throw new IllegalArgumentException();
-            }
-            result = convertAdToDbIfNeeded(transform, p);
         } else if (pipeline.startsWith("xsl30")) {
             DbXslt30 p;
             p = new DbXslt30("css");
@@ -121,7 +111,7 @@ public class App {
 
     private void list(ListCommand list) throws Exception {
         // TODO tp: Is there some way to extract this from pipeline implementations?
-        String[] pipelines = new String[]{"xsl10-css", "xsl10-fo", "xsl20-css", "xsl20-fo", "ad", "fo"};
+        String[] pipelines = new String[]{"xsl10-css", "xsl10-fo", "ad", "fo"};
         LOG.warn("implemented pipelines:");
         for (String p : pipelines) {
             LOG.warn("\t* " + p);

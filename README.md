@@ -20,6 +20,10 @@ In detail:
 * Support for _MathML_ (work-in-progress, depending on the pipeline).
 * Support for (code) _syntax highlighting_ (work-in-progress, depending on the pipeline).
 
+## News
+
+* 07/2023: Removed xsl20 pipeline because of deprecation
+
 ## State
 
 This project is a work-in-progress, but most things work now: Using pipelines to convert Asciidoc(tor)
@@ -31,14 +35,7 @@ So far the following pipelines are implemented:
 * **xsl30**: <br/>
   (X)Html conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook
   [xslTNG 3.0 Stylesheets](https://xsltng.docbook.org/) (This does not support FO,
-  see [here](https://github.com/docbook/xslTNG/issues/121).) 
-* **xsl20-fo**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and Apache FOP (2.6)
-* **xsl20-css**: <br/>
-  PDF (or intermediate) conversion of Asciidoc(tor) and DocBook (5.1) using the DocBook 
-  [Xslt 2.0 Stylesheets](https://github.com/docbook/xslt20-stylesheets) (2.6.0) and 
-  [Prince 14](https://www.princexml.com/)
+  see [here](https://github.com/docbook/xslTNG/issues/121).)
 * **ad**: <br/>
   PDF (or intermediate) conversion of Asciidoc(tor) using the 
   [acsiidoctorj](https://github.com/asciidoctor/asciidoctorj) port of 

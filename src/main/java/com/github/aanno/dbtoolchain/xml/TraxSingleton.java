@@ -1,6 +1,5 @@
 package com.github.aanno.dbtoolchain.xml;
 
-import com.github.aanno.dbtoolchain.org.docbook.XSLT20;
 import com.thaiopensource.relaxng.jaxp.XMLSyntaxSchemaFactory;
 import org.apache.xmlgraphics.util.uri.CommonURIResolver;
 import org.apache.logging.log4j.Logger;
@@ -85,18 +84,13 @@ public class TraxSingleton {
 
     private final EntityResolver entityResolver;
 
-    // We need an instance of XSLT20 (for getting the catalog), but it could _NOT_ be shared
-    private final XSLT20 xslt20;
-
     private TraxSingleton() {
-        xslt20 = new XSLT20();
         try {
             List<URI> list = S9ApiUtils.getCatalogs();
             LOG.warn("catalogs: {}", list);
 
             File xslt20Catalog = S9ApiUtils.dynamicCatalog().toFile();
             xslt20Catalog.getParentFile().mkdirs();
-            xslt20.createCatalog(xslt20Catalog.toString());
 
             CatalogFeatures catalogFeatures = CatalogFeatures.builder()
                     // .with(CatalogFeatures.Feature.FILES, current.toURI().toASCIIString())

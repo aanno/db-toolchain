@@ -20,7 +20,6 @@ open module com.github.aanno.dbtoolchain {
     requires asciidoctorj.api;
     requires asciidoctorj;
     // requires asciidoctorj.pdf;
-    requires docbook.xslt2;
 
     // fop stuff
     requires fop;
@@ -70,9 +69,6 @@ open module com.github.aanno.dbtoolchain {
     exports com.xmlcalabash.util.print;
     exports com.xmlcalabash.extensions.math_to_svg;
     exports com.xmlcalabash.extensions.xslthl;
-
-    // temporary (for original version of org.docbook.Main)
-    requires commons.cli;
 
     // ?test?
     // requires org.testng;

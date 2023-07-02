@@ -1,10 +1,6 @@
 [submodule "asciidoctor-fopub"]
 	path = submodules/asciidoctor-fopub
 	url = https://github.com/asciidoctor/asciidoctor-fopub.git
-[submodule "xslt20-java"]
-	path = submodules/xslt20-java
-	url = https://github.com/docbook/xslt20-java.git
-	branch = saxon95
 [submodule "asciidoctor.org"]
 	path = submodules/asciidoctor.org
 	url = https://github.com/asciidoctor/asciidoctor.org.git
@@ -18,9 +14,3 @@
 [submodule "submodules/ph-schematron"]
 	path = submodules/ph-schematron
 	url = git@github.com:phax/ph-schematron.git
-[submodule "submodules/xslt20-stylesheets"]
-	path = submodules/xslt20-stylesheets
-	url = git@github.com:docbook/xslt20-stylesheets.git
-[submodule "submodules/xslt20-resources"]
-	path = submodules/xslt20-resources
-	url = git@github.com:docbook/xslt20-resources.git

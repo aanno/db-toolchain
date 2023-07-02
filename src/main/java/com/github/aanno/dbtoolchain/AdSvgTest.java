@@ -61,8 +61,8 @@ options.put(Options.BACKEND, "docbook5");
         adj.convert2(ad, dbOut);
         System.out.println("AdSvgTest from " + ad + " (ad-svg) to " + dbOut + " (db)");
 
-        org.docbook.Main.main(("-f fo -o " + foOut + " " + dbOut).split("[ \t]+"));
-        System.out.println("AdSvgTest from " + dbOut + " (db) to " + foOut + " (fo)");
+        // org.docbook.Main.main(("-f fo -o " + foOut + " " + dbOut).split("[ \t]+"));
+        // System.out.println("AdSvgTest from " + dbOut + " (db) to " + foOut + " (fo)");
 
         org.apache.fop.cli.Main.main("out.fo.xml -pdf out.pdf".split("[ \t]"));
         System.out.println("AdSvgTest from " + foOut + " (fo) to " + pdfOut + " (pdf)");
