@@ -2,7 +2,7 @@
 
 Asciidoc and DocBook to PDF (or FO, HTML, ...) conversion made easy! 
 
-This project has similiar aims as the following tools:
+This project has similar aims as the following tools:
 
 * [asciidoctor](https://asciidoctor.org/)
 * [asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub)

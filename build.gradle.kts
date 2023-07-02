@@ -518,14 +518,20 @@ distributions {
             from(files("lib/")) {
                 include("docbook-xslt2/resources/**/*")
                 eachFile {
-                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray())
+                    relativePath = RelativePath(
+                        true,
+                        *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray()
+                    )
                     into("resources")
                 }
             }
             from(files("lib/")) {
                 include("docbook-xslTNG/resources/**/*")
                 eachFile {
-                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray())
+                    relativePath = RelativePath(
+                        true,
+                        *relativePath.segments.filterIndexed { index, _ -> index != 3 }.toTypedArray()
+                    )
                     into("resources")
                 }
             }
@@ -536,7 +542,10 @@ distributions {
             from(files("schema/")) {
                 include("5.0.1/docbook-5.0.1/**/*")
                 eachFile {
-                    relativePath = RelativePath(true, *relativePath.segments.filterIndexed { index, _ -> index != 4 }.toTypedArray())
+                    relativePath = RelativePath(
+                        true,
+                        *relativePath.segments.filterIndexed { index, _ -> index != 4 }.toTypedArray()
+                    )
                     into("resources/schema")
                 }
             }
@@ -622,7 +631,7 @@ tasks {
 
     wrapper {
         distributionType = Wrapper.DistributionType.ALL
-        version = "7.4.2"
+        version = "8.2"
     }
 
     withType<JavaCompile> {
@@ -771,7 +780,7 @@ tasks {
     // https://stackoverflow.com/questions/52596968/build-source-jar-with-gradle-kotlin-dsl
     val sourcesJar by registering(Jar::class) {
         // classifier = "sources"
-	getArchiveClassifier().set("sources")
+        getArchiveClassifier().set("sources")
         from(sourceSets.main.get().allSource)
         dependsOn(classes)
     }
